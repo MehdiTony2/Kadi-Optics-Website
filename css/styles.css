@@ -1,178 +1,131 @@
-/* ── RESET & BASE ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
   font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-  background: #F0F4F8;
+  background: #EDF1F7;
   color: #1D3557;
-  line-height: 1.6;
 }
 
-/* ── ANIMATION SECTION WRAPPER ── */
 .animation-section {
-  max-width: 1100px;
+  max-width: 1160px;
   margin: 60px auto;
-  padding: 0 24px;
+  padding: 0 20px;
 }
 
-.animation-section h2 {
+.animation-section > h2 {
   text-align: center;
-  font-size: 1.6rem;
+  font-size: 1.7rem;
   font-weight: 700;
-  color: #1D3557;
-  margin-bottom: 8px;
-  letter-spacing: 0.02em;
+  color: #0F172A;
+  margin-bottom: 6px;
 }
 
-.animation-section .section-sub {
+.animation-section > .sub {
   text-align: center;
-  font-size: 1rem;
-  color: #457B9D;
-  margin-bottom: 36px;
+  color: #64748B;
+  font-size: 0.95rem;
+  margin-bottom: 34px;
 }
 
-/* ── TWO-PANEL LAYOUT ── */
+/* ── TWO PANEL GRID ── */
 .panels-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 18px;
+  align-items: start;
 }
 
-/* ── INDIVIDUAL PANEL ── */
+/* ── PANEL BASE ── */
 .panel {
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 4px 24px rgba(29, 53, 87, 0.10);
-  background: #fff;
+  box-shadow: 0 4px 28px rgba(0,0,0,0.13);
+}
+
+.panel-left  { background: #FFFFFF; }
+.panel-right { background: #0B1D30; }
+
+/* ── PANEL HEADER ── */
+.panel-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 22px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.015em;
+}
+
+.panel-left  .panel-header { background: #F1F5F9; color: #1E293B; border-bottom: 2px solid #E2E8F0; }
+.panel-right .panel-header { background: #071422; color: #E0F0FF; border-bottom: 2px solid #152A42; }
+
+.header-icon { font-size: 1.15rem; }
+
+/* ── HALF SCENE CONTAINER ── */
+.half {
   display: flex;
   flex-direction: column;
 }
 
-.panel-header {
-  padding: 16px 20px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 700;
-  font-size: 1rem;
-  letter-spacing: 0.03em;
+/* ── SCENE LABEL ── */
+.scene-label {
+  text-align: center;
+  padding: 6px 0 3px;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
+.panel-left  .scene-label { color: #94A3B8; }
+.panel-right .scene-label { color: #38BDF8; }
 
-.panel-left .panel-header {
-  background: #E63946;
-  color: #fff;
-}
+/* ── SVG STAGE ── */
+.stage { width: 100%; line-height: 0; }
+.stage svg { width: 100%; height: auto; display: block; }
 
-.panel-right .panel-header {
-  background: #2A9D8F;
-  color: #fff;
-}
-
-.panel-header .icon {
-  font-size: 1.3rem;
-}
-
-/* ── ANIMATION CANVAS ── */
-.animation-canvas {
+/* ── CAPTION ZONE — text lives here, BELOW the SVG, never overlapping ── */
+.caption-zone {
   position: relative;
-  width: 100%;
-  height: 400px;
-  background: #F8FAFC;
+  height: 46px;
   overflow: hidden;
 }
 
-/* Scene divider label */
-.scene-divider {
+.cap {
   position: absolute;
   left: 0; right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  text-align: center;
-  pointer-events: none;
-  z-index: 10;
-}
-
-.scene-divider span {
-  display: inline-block;
-  background: #A8DADC;
-  color: #1D3557;
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  padding: 3px 14px;
-  border-radius: 99px;
-}
-
-/* ── CAPTION TEXTS ── */
-.caption {
-  position: absolute;
-  left: 0; right: 0;
-  text-align: center;
-  font-size: 0.78rem;
+  bottom: 0; top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+  font-size: 0.82rem;
   font-weight: 600;
-  color: #1D3557;
+  text-align: center;
+  line-height: 1.35;
   opacity: 0;
   pointer-events: none;
-  z-index: 20;
-  padding: 0 12px;
 }
+.panel-left  .cap         { color: #334155; }
+.panel-right .cap         { color: #CBD5E1; }
+.panel-left  .cap.problem { color: #B91C1C; }
+.panel-left  .cap.note    { color: #1E40AF; }
+.panel-right .cap.good    { color: #34D399; }
 
-.caption.problem { color: #C1121F; }
-.caption.solution { color: #1A7A70; }
-.caption.neutral { color: #457B9D; }
-
-/* ── SCENE SVG CONTAINERS ── */
-.scene svg {
-  width: 100%;
-  height: 100%;
-}
-
-/* ── LIVE BADGE ── */
-.live-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  background: #2A9D8F;
-  color: white;
-  font-size: 0.7rem;
-  font-weight: 700;
-  padding: 3px 10px;
-  border-radius: 99px;
-  letter-spacing: 0.08em;
-}
-
-.live-dot {
-  width: 7px; height: 7px;
-  border-radius: 50%;
-  background: #fff;
-  animation: live-blink 1s ease-in-out infinite;
-}
-
-@keyframes live-blink {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0.2; }
-}
+/* ── SEPARATOR ── */
+.scene-sep { height: 8px; }
+.panel-left  .scene-sep { background: #E9EFF6; }
+.panel-right .scene-sep { background: #122033; }
 
 /* ── PROGRESS BAR ── */
-.progress-bar-wrap {
-  height: 4px;
-  background: #E2EAF0;
-  width: 100%;
-}
+.progress-bar-wrap { height: 5px; }
+.panel-left  .progress-bar-wrap { background: #E2E8F0; }
+.panel-right .progress-bar-wrap { background: #122033; }
 
-.progress-bar {
-  height: 100%;
-  width: 0%;
-  border-radius: 2px;
-  transition: none;
-}
-
-.panel-left .progress-bar  { background: #E63946; }
-.panel-right .progress-bar { background: #2A9D8F; }
+.progress-bar { height: 100%; width: 0%; }
+.panel-left  .progress-bar { background: #3B82F6; }
+.panel-right .progress-bar { background: #2DD4BF; }
 
 /* ── MOBILE ── */
-@media (max-width: 680px) {
+@media (max-width: 700px) {
   .panels-wrapper { grid-template-columns: 1fr; }
-  .animation-canvas { height: 340px; }
 }

@@ -1,239 +1,223 @@
-/* ── ANIMATION STATE CONTROL ── */
-.panel-right .scene { animation-play-state: paused !important; }
-.panel-right.active .scene { animation-play-state: running !important; }
+/* ══════════════════════════════════════════
+   RIGHT PANEL — paused until JS activates it
+══════════════════════════════════════════ */
+.panel-right .animated { animation-play-state: paused !important; }
+.panel-right.active .animated { animation-play-state: running !important; }
 
-/* ── SHARED SCENE BASE ── */
-.scene { position: absolute; width: 100%; height: 100%; top: 0; left: 0; opacity: 0; }
+/* ══════════════════════════════════════════
+   CAPTION FADE — managed by JS (adds .visible)
+══════════════════════════════════════════ */
+.cap { transition: opacity 0.35s ease; }
+.cap.visible { opacity: 1; }
 
-/* ════════════════════════════════════════
-   LEFT PANEL — CLINICAL SCENE
-   Total duration: 8s
-════════════════════════════════════════ */
+/* ══════════════════════════════════════════
+   LEFT CLINICAL — nurse walks, clock ticks
+══════════════════════════════════════════ */
 
-/* Scene fade in/out */
-.lc-scene {
-  animation: scene-show 8s linear infinite;
-  animation-delay: 0s;
+/* Nurse walks right (out) then comes back */
+#lc-nurse {
+  animation: lc-nurse-walk 8s linear infinite;
 }
-.lh-scene {
-  animation: scene-show 8s linear infinite;
-  animation-delay: 8s;
+@keyframes lc-nurse-walk {
+  0%   { transform: translateX(0);    }
+  28%  { transform: translateX(0);    }
+  42%  { transform: translateX(96px); }
+  55%  { transform: translateX(96px); }
+  70%  { transform: translateX(0);    }
+  100% { transform: translateX(0);    }
 }
 
-@keyframes scene-show {
-  0%   { opacity: 0; }
+/* Clock hand rotates */
+#lc-clock-hand {
+  transform-origin: 228px 62px;
+  animation: lc-clock-spin 8s linear infinite;
+}
+@keyframes lc-clock-spin {
+  0%   { transform: rotate(-70deg); opacity: 0; }
+  28%  { transform: rotate(-70deg); opacity: 1; }
+  62%  { transform: rotate(220deg); opacity: 1; }
+  70%  { transform: rotate(220deg); opacity: 0.3; }
+  100% { transform: rotate(220deg); opacity: 0; }
+}
+
+/* Result paper appears when nurse returns */
+#lc-paper {
+  animation: lc-paper-appear 8s linear infinite;
+}
+@keyframes lc-paper-appear {
+  0%, 65% { opacity: 0; transform: scale(0.6) translateX(30px); }
+  78%     { opacity: 1; transform: scale(1)   translateX(0);    }
+  95%     { opacity: 1; }
+  100%    { opacity: 0; }
+}
+
+/* Patient pulse line on bedside monitor */
+#lc-flatline {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  animation: lc-flatline-draw 8s linear infinite;
+}
+@keyframes lc-flatline-draw {
+  0%  { stroke-dashoffset: 200; }
+  20% { stroke-dashoffset: 0;   }
+  100%{ stroke-dashoffset: 0;   }
+}
+
+/* ══════════════════════════════════════════
+   LEFT HOME — blood drop, strip, dots
+══════════════════════════════════════════ */
+#lh-drop {
+  animation: lh-drop-appear 8s linear infinite;
+}
+@keyframes lh-drop-appear {
+  0%, 20%  { opacity: 0; transform: translateY(-12px); }
+  32%      { opacity: 1; transform: translateY(0);     }
+  60%      { opacity: 1; transform: translateY(0);     }
+  68%      { opacity: 0; }
+  100%     { opacity: 0; }
+}
+
+#lh-strip {
+  animation: lh-strip-slide 8s linear infinite;
+}
+@keyframes lh-strip-slide {
+  0%, 35%  { opacity: 0; transform: translateX(-24px); }
+  48%      { opacity: 1; transform: translateX(0);     }
+  90%      { opacity: 1; }
+  98%      { opacity: 0; }
+  100%     { opacity: 0; }
+}
+
+.lh-dot {
+  animation: lh-dot-pulse 8s linear infinite;
+}
+.lh-dot:nth-child(1) { animation-delay: 0s;    }
+.lh-dot:nth-child(2) { animation-delay: 0.45s; }
+.lh-dot:nth-child(3) { animation-delay: 0.9s;  }
+
+@keyframes lh-dot-pulse {
+  0%, 48%  { opacity: 0; r: 3; }
+  55%      { opacity: 1; r: 5; }
+  80%      { opacity: 1; r: 5; }
+  90%      { opacity: 0; r: 3; }
+  100%     { opacity: 0; r: 3; }
+}
+
+/* ══════════════════════════════════════════
+   RIGHT CLINICAL — probe draws, waveform animates
+══════════════════════════════════════════ */
+#rc-probe {
+  stroke-dasharray: 160;
+  stroke-dashoffset: 160;
+  animation: rc-probe-draw 8s linear infinite;
+}
+@keyframes rc-probe-draw {
+  0%   { stroke-dashoffset: 160; opacity: 1; }
+  30%  { stroke-dashoffset: 0;   opacity: 1; }
+  90%  { stroke-dashoffset: 0;   opacity: 1; }
+  100% { stroke-dashoffset: 0;   opacity: 0; }
+}
+
+/* Data dots flowing from probe to device */
+.rc-dot {
+  animation: rc-dot-flow 8s linear infinite;
+}
+.rc-dot:nth-child(1) { animation-delay: 0.0s; }
+.rc-dot:nth-child(2) { animation-delay: 0.5s; }
+.rc-dot:nth-child(3) { animation-delay: 1.0s; }
+
+@keyframes rc-dot-flow {
+  0%   { offset-distance: 0%;   opacity: 0; }
   5%   { opacity: 1; }
+  28%  { offset-distance: 0%;   opacity: 0; }
+  32%  { offset-distance: 0%;   opacity: 1; }
+  70%  { offset-distance: 100%; opacity: 1; }
+  80%  { offset-distance: 100%; opacity: 0; }
+  100% { offset-distance: 0%;   opacity: 0; }
+}
+
+/* Live waveform drawing on monitor */
+#rc-wave {
+  stroke-dasharray: 340;
+  stroke-dashoffset: 340;
+  animation: rc-wave-draw 8s linear infinite;
+}
+@keyframes rc-wave-draw {
+  0%, 28%  { stroke-dashoffset: 340; opacity: 0; }
+  32%      { opacity: 1; }
+  70%      { stroke-dashoffset: 0; opacity: 1; }
+  90%      { stroke-dashoffset: 0; opacity: 1; }
+  100%     { opacity: 0; }
+}
+
+/* LIVE badge blink */
+#rc-live-dot {
+  animation: rc-live-blink 0.9s ease-in-out infinite;
+}
+@keyframes rc-live-blink {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.15; }
+}
+
+/* Device LED */
+#rc-led {
+  animation: rc-led-pulse 1.4s ease-in-out infinite;
+}
+@keyframes rc-led-pulse {
+  0%, 100% { opacity: 1; filter: drop-shadow(0 0 4px #2DD4BF); }
+  50%      { opacity: 0.5; filter: drop-shadow(0 0 1px #2DD4BF); }
+}
+
+/* ══════════════════════════════════════════
+   RIGHT HOME — wrist glow, signal arcs, phone
+══════════════════════════════════════════ */
+#rh-wrist-glow {
+  animation: rh-wrist-glow 8s linear infinite;
+}
+@keyframes rh-wrist-glow {
+  0%   { opacity: 0; filter: drop-shadow(0 0 0px #2DD4BF); }
+  12%  { opacity: 1; filter: drop-shadow(0 0 8px #2DD4BF); }
+  50%  { filter: drop-shadow(0 0 14px #2DD4BF); }
   90%  { opacity: 1; }
   100% { opacity: 0; }
 }
 
-/* Nurse walking out */
-.nurse-out {
-  animation: walk-out 8s linear infinite;
+.rh-arc {
+  fill: none;
+  stroke: #2DD4BF;
+  stroke-linecap: round;
+  animation: rh-arc-pulse 8s linear infinite;
 }
-@keyframes walk-out {
-  0%   { transform: translateX(0);   opacity: 1; }
-  20%  { transform: translateX(0);   opacity: 1; }
-  35%  { transform: translateX(80px); opacity: 1; }
-  40%  { transform: translateX(80px); opacity: 0; }
-  60%  { transform: translateX(80px); opacity: 0; }
-  65%  { transform: translateX(80px); opacity: 1; }
-  80%  { transform: translateX(0);   opacity: 1; }
-  100% { transform: translateX(0);   opacity: 1; }
-}
+.rh-arc:nth-child(1) { animation-delay: 0.2s; stroke-width: 2.5; }
+.rh-arc:nth-child(2) { animation-delay: 0.6s; stroke-width: 2; opacity: 0.7; }
+.rh-arc:nth-child(3) { animation-delay: 1.0s; stroke-width: 1.5; opacity: 0.45; }
 
-/* Clock ticking */
-.clock-hand {
-  transform-origin: 50% 100%;
-  animation: tick-hand 8s linear infinite;
-}
-@keyframes tick-hand {
-  0%   { transform: rotate(-60deg); opacity: 0; }
-  25%  { transform: rotate(-60deg); opacity: 1; }
-  65%  { transform: rotate(240deg); opacity: 1; }
-  75%  { transform: rotate(240deg); opacity: 0; }
-  100% { transform: rotate(240deg); opacity: 0; }
-}
-
-/* Text captions — left clinical */
-.lc-text-1 { animation: caption-show 8s linear infinite; animation-delay: 0s; }
-.lc-text-2 { animation: caption-show 8s linear infinite; animation-delay: 0.5s; }
-.lc-text-3 { animation: caption-show 8s linear infinite; animation-delay: 3.5s; }
-.lc-text-4 { animation: caption-show 8s linear infinite; animation-delay: 5.5s; }
-
-@keyframes caption-show {
-  0%   { opacity: 0; transform: translateY(4px); }
-  8%   { opacity: 1; transform: translateY(0); }
-  85%  { opacity: 1; }
-  95%  { opacity: 0; }
-  100% { opacity: 0; }
-}
-
-/* Paper result appearing */
-.result-paper {
-  animation: paper-appear 8s linear infinite;
-}
-@keyframes paper-appear {
-  0%   { opacity: 0; transform: scale(0.5); }
-  65%  { opacity: 0; transform: scale(0.5); }
-  75%  { opacity: 1; transform: scale(1); }
-  90%  { opacity: 1; transform: scale(1); }
-  100% { opacity: 0; transform: scale(1); }
-}
-
-/* ════════════════════════════════════════
-   LEFT PANEL — HOME SCENE
-   Duration: 8s, starts at 8s
-════════════════════════════════════════ */
-
-.lh-blood-drop {
-  animation: drop-fall 8s linear infinite;
-  animation-delay: 8s;
-}
-@keyframes drop-fall {
-  0%   { opacity: 0; transform: translateY(-8px); }
-  15%  { opacity: 0; transform: translateY(-8px); }
-  25%  { opacity: 1; transform: translateY(0); }
-  60%  { opacity: 1; transform: translateY(0); }
-  70%  { opacity: 0; }
-  100% { opacity: 0; }
-}
-
-.lh-strip {
-  animation: strip-insert 8s linear infinite;
-  animation-delay: 8s;
-}
-@keyframes strip-insert {
-  0%   { opacity: 0; transform: translateX(-20px); }
-  30%  { opacity: 0; transform: translateX(-20px); }
-  42%  { opacity: 1; transform: translateX(0); }
-  85%  { opacity: 1; }
-  95%  { opacity: 0; }
-  100% { opacity: 0; }
-}
-
-.lh-wait-dots span {
-  animation: dot-pulse 8s linear infinite;
-  animation-delay: 8s;
-}
-.lh-wait-dots span:nth-child(1) { animation-delay: 10.5s; }
-.lh-wait-dots span:nth-child(2) { animation-delay: 11s; }
-.lh-wait-dots span:nth-child(3) { animation-delay: 11.5s; }
-
-@keyframes dot-pulse {
-  0%, 35% { opacity: 0; transform: scale(0); }
-  50%     { opacity: 1; transform: scale(1); }
-  80%     { opacity: 1; transform: scale(1); }
-  90%     { opacity: 0; }
-  100%    { opacity: 0; }
-}
-
-.lh-text-1 { animation: caption-show 8s linear infinite; animation-delay: 8s; }
-.lh-text-2 { animation: caption-show 8s linear infinite; animation-delay: 9.5s; }
-.lh-text-3 { animation: caption-show 8s linear infinite; animation-delay: 12s; }
-
-/* ════════════════════════════════════════
-   RIGHT PANEL — CLINICAL SCENE
-   Duration: 8s
-════════════════════════════════════════ */
-
-.rc-scene {
-  animation: scene-show 8s linear infinite;
-  animation-delay: 0s;
-}
-.rh-scene {
-  animation: scene-show 8s linear infinite;
-  animation-delay: 8s;
-}
-
-.rc-probe-line {
-  stroke-dasharray: 120;
-  stroke-dashoffset: 120;
-  animation: draw-line 8s linear infinite;
-}
-@keyframes draw-line {
-  0%   { stroke-dashoffset: 120; opacity: 0; }
-  5%   { opacity: 1; }
-  25%  { stroke-dashoffset: 0; }
-  90%  { stroke-dashoffset: 0; opacity: 1; }
-  100% { stroke-dashoffset: 0; opacity: 0; }
-}
-
-.rc-waveform path {
-  stroke-dasharray: 300;
-  stroke-dashoffset: 300;
-  animation: draw-wave 8s linear infinite;
-}
-@keyframes draw-wave {
-  0%   { stroke-dashoffset: 300; opacity: 0; }
-  30%  { opacity: 1; }
-  35%  { stroke-dashoffset: 200; }
-  55%  { stroke-dashoffset: 0; }
-  90%  { stroke-dashoffset: 0; opacity: 1; }
-  100% { opacity: 0; }
-}
-
-.rc-live-badge {
-  animation: badge-pulse 8s linear infinite;
-}
-@keyframes badge-pulse {
-  0%, 25% { opacity: 0; transform: scale(0.8); }
-  35%     { opacity: 1; transform: scale(1); }
-  80%     { opacity: 1; }
-  90%     { opacity: 0; }
-  100%    { opacity: 0; }
-}
-
-.rc-text-1 { animation: caption-show 8s linear infinite; animation-delay: 0s; }
-.rc-text-2 { animation: caption-show 8s linear infinite; animation-delay: 2s; }
-.rc-text-3 { animation: caption-show 8s linear infinite; animation-delay: 5s; }
-
-/* ════════════════════════════════════════
-   RIGHT PANEL — HOME SCENE
-   Duration: 8s, starts at 8s
-════════════════════════════════════════ */
-
-.rh-wrist-band {
-  animation: band-glow 8s linear infinite;
-  animation-delay: 8s;
-}
-@keyframes band-glow {
-  0%   { opacity: 0; filter: drop-shadow(0 0 0px #2A9D8F); }
-  10%  { opacity: 1; filter: drop-shadow(0 0 6px #2A9D8F); }
-  50%  { filter: drop-shadow(0 0 12px #2A9D8F); }
-  85%  { opacity: 1; }
-  95%  { opacity: 0; }
-  100% { opacity: 0; }
-}
-
-.rh-signal-1, .rh-signal-2, .rh-signal-3 {
-  animation: signal-ripple 8s linear infinite;
-  animation-delay: 8s;
-  transform-origin: center;
-}
-.rh-signal-1 { animation-delay: 9s; }
-.rh-signal-2 { animation-delay: 9.4s; }
-.rh-signal-3 { animation-delay: 9.8s; }
-
-@keyframes signal-ripple {
-  0%   { opacity: 0; transform: scale(0.5); }
-  10%  { opacity: 0.8; transform: scale(1); }
-  30%  { opacity: 0; transform: scale(1.5); }
-  100% { opacity: 0; }
-}
-
-.rh-phone-data {
-  animation: data-stream 8s linear infinite;
-  animation-delay: 8s;
-}
-@keyframes data-stream {
-  0%,  30% { opacity: 0; }
-  45%      { opacity: 1; }
-  85%      { opacity: 1; }
-  95%      { opacity: 0; }
+@keyframes rh-arc-pulse {
+  0%, 10%  { opacity: 0; }
+  18%      { opacity: 1; }
+  70%      { opacity: 1; }
+  82%      { opacity: 0; }
   100%     { opacity: 0; }
 }
 
-.rh-text-1 { animation: caption-show 8s linear infinite; animation-delay: 8s; }
-.rh-text-2 { animation: caption-show 8s linear infinite; animation-delay: 9.5s; }
-.rh-text-3 { animation: caption-show 8s linear infinite; animation-delay: 12s; }
+#rh-phone-data {
+  animation: rh-phone-appear 8s linear infinite;
+}
+@keyframes rh-phone-appear {
+  0%, 30%  { opacity: 0; transform: translateY(10px); }
+  45%      { opacity: 1; transform: translateY(0);    }
+  90%      { opacity: 1; }
+  100%     { opacity: 0; }
+}
+
+/* Phone waveform draws continuously */
+#rh-phone-wave {
+  stroke-dasharray: 280;
+  stroke-dashoffset: 280;
+  animation: rh-wave-draw 8s linear infinite;
+}
+@keyframes rh-wave-draw {
+  0%, 42%  { stroke-dashoffset: 280; }
+  75%      { stroke-dashoffset: 0;   }
+  100%     { stroke-dashoffset: 0;   }
+}
