@@ -39,91 +39,86 @@ body {
 .panel {
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 4px 28px rgba(0,0,0,0.13);
+  box-shadow: 0 4px 28px rgba(0,0,0,0.11);
+  background: #FFFFFF;
 }
-
-.panel-left  { background: #FFFFFF; }
-.panel-right { background: #0B1D30; }
 
 /* ── PANEL HEADER ── */
 .panel-header {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 14px 22px;
+  padding: 13px 22px;
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: 0.94rem;
   letter-spacing: 0.015em;
+  border-bottom: 2px solid;
 }
 
-.panel-left  .panel-header { background: #F1F5F9; color: #1E293B; border-bottom: 2px solid #E2E8F0; }
-.panel-right .panel-header { background: #071422; color: #E0F0FF; border-bottom: 2px solid #152A42; }
+.panel-left  .panel-header { background: #F1F5F9; color: #1E293B; border-color: #CBD5E1; }
+.panel-right .panel-header { background: #E6FAF8; color: #0E5A52; border-color: #99E6DE; }
 
-.header-icon { font-size: 1.15rem; }
+.header-icon { font-size: 1.1rem; }
 
-/* ── HALF SCENE CONTAINER ── */
-.half {
-  display: flex;
-  flex-direction: column;
-}
+/* ── HALF SCENE ── */
+.half { display: flex; flex-direction: column; }
 
-/* ── SCENE LABEL ── */
 .scene-label {
   text-align: center;
-  padding: 6px 0 3px;
-  font-size: 0.68rem;
+  padding: 5px 0 3px;
+  font-size: 0.67rem;
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 .panel-left  .scene-label { color: #94A3B8; }
-.panel-right .scene-label { color: #38BDF8; }
+.panel-right .scene-label { color: #0E7490; }
 
-/* ── SVG STAGE ── */
-.stage { width: 100%; line-height: 0; }
+/* ── SVG STAGE: clips overflow during zoom ── */
+.stage { width: 100%; line-height: 0; overflow: hidden; }
 .stage svg { width: 100%; height: auto; display: block; }
 
-/* ── CAPTION ZONE — text lives here, BELOW the SVG, never overlapping ── */
+/* ── CAPTION ZONE — text BELOW SVG, never overlapping ── */
 .caption-zone {
   position: relative;
-  height: 46px;
+  height: 44px;
   overflow: hidden;
 }
 
 .cap {
   position: absolute;
-  left: 0; right: 0;
-  bottom: 0; top: 0;
+  inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0 16px;
-  font-size: 0.82rem;
+  font-size: 0.81rem;
   font-weight: 600;
   text-align: center;
   line-height: 1.35;
   opacity: 0;
+  transition: opacity 0.3s ease;
   pointer-events: none;
 }
-.panel-left  .cap         { color: #334155; }
-.panel-right .cap         { color: #CBD5E1; }
-.panel-left  .cap.problem { color: #B91C1C; }
-.panel-left  .cap.note    { color: #1E40AF; }
-.panel-right .cap.good    { color: #34D399; }
+.cap.visible      { opacity: 1; }
+.panel-left  .cap { color: #334155; }
+.panel-right .cap { color: #1E4A45; }
+.cap.problem      { color: #B91C1C; }
+.cap.good         { color: #0E5A52; font-weight: 700; }
 
 /* ── SEPARATOR ── */
-.scene-sep { height: 8px; }
+.scene-sep { height: 6px; }
 .panel-left  .scene-sep { background: #E9EFF6; }
-.panel-right .scene-sep { background: #122033; }
+.panel-right .scene-sep { background: #D1FAF5; }
 
 /* ── PROGRESS BAR ── */
-.progress-bar-wrap { height: 5px; }
+.progress-bar-wrap { height: 4px; }
 .panel-left  .progress-bar-wrap { background: #E2E8F0; }
-.panel-right .progress-bar-wrap { background: #122033; }
+.panel-right .progress-bar-wrap { background: #CCFBF1; }
 
 .progress-bar { height: 100%; width: 0%; }
 .panel-left  .progress-bar { background: #3B82F6; }
-.panel-right .progress-bar { background: #2DD4BF; }
+.panel-right .progress-bar { background: #0D9488; }
 
 /* ── MOBILE ── */
 @media (max-width: 700px) {

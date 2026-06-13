@@ -1,223 +1,312 @@
-/* ══════════════════════════════════════════
-   RIGHT PANEL — paused until JS activates it
-══════════════════════════════════════════ */
-.panel-right .animated { animation-play-state: paused !important; }
-.panel-right.active .animated { animation-play-state: running !important; }
+/* ════════════════════════════════════════
+   RIGHT PANEL — paused until JS activates
+════════════════════════════════════════ */
+.panel-right .anim { animation-play-state: paused !important; }
+.panel-right.active .anim { animation-play-state: running !important; }
 
-/* ══════════════════════════════════════════
-   CAPTION FADE — managed by JS (adds .visible)
-══════════════════════════════════════════ */
-.cap { transition: opacity 0.35s ease; }
-.cap.visible { opacity: 1; }
+/* ════════════════════════════════════════
+   LEFT CLINICAL
+════════════════════════════════════════ */
 
-/* ══════════════════════════════════════════
-   LEFT CLINICAL — nurse walks, clock ticks
-══════════════════════════════════════════ */
-
-/* Nurse walks right (out) then comes back */
+/* Nurse walks right then back */
 #lc-nurse {
-  animation: lc-nurse-walk 8s linear infinite;
+  animation: lc-nurse-move 8s linear infinite;
 }
-@keyframes lc-nurse-walk {
+@keyframes lc-nurse-move {
   0%   { transform: translateX(0);    }
-  28%  { transform: translateX(0);    }
-  42%  { transform: translateX(96px); }
-  55%  { transform: translateX(96px); }
-  70%  { transform: translateX(0);    }
+  25%  { transform: translateX(0);    }
+  42%  { transform: translateX(145px);}
+  58%  { transform: translateX(145px);}
+  75%  { transform: translateX(0);    }
   100% { transform: translateX(0);    }
 }
 
-/* Clock hand rotates */
-#lc-clock-hand {
-  transform-origin: 228px 62px;
-  animation: lc-clock-spin 8s linear infinite;
+/* Nurse flips direction (scaleX) when walking right vs returning */
+#lc-nurse-flip {
+  animation: lc-nurse-flip 8s linear infinite;
 }
-@keyframes lc-clock-spin {
-  0%   { transform: rotate(-70deg); opacity: 0; }
-  28%  { transform: rotate(-70deg); opacity: 1; }
-  62%  { transform: rotate(220deg); opacity: 1; }
-  70%  { transform: rotate(220deg); opacity: 0.3; }
-  100% { transform: rotate(220deg); opacity: 0; }
+@keyframes lc-nurse-flip {
+  0%,  25% { transform: scaleX(1);  }
+  30%       { transform: scaleX(-1); }
+  72%       { transform: scaleX(-1); }
+  77%       { transform: scaleX(1);  }
+  100%      { transform: scaleX(1);  }
 }
 
-/* Result paper appears when nurse returns */
-#lc-paper {
-  animation: lc-paper-appear 8s linear infinite;
+/* Walking leg bob */
+#lc-leg-l { animation: leg-bob 0.4s ease-in-out infinite alternate; }
+#lc-leg-r { animation: leg-bob 0.4s ease-in-out infinite alternate-reverse; }
+@keyframes leg-bob {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-4px); }
 }
-@keyframes lc-paper-appear {
-  0%, 65% { opacity: 0; transform: scale(0.6) translateX(30px); }
-  78%     { opacity: 1; transform: scale(1)   translateX(0);    }
-  95%     { opacity: 1; }
+
+/* Clinical clock hand — local coords, starts at 12, goes to 3 (90°=15 min) */
+#lc-clock-hand {
+  transform-origin: 0px 0px;
+  animation: clock-15min 8s linear infinite;
+}
+@keyframes clock-15min {
+  0%   { transform: rotate(0deg);  opacity: 0; }
+  30%  { transform: rotate(0deg);  opacity: 1; }
+  68%  { transform: rotate(90deg); opacity: 1; }
+  80%  { transform: rotate(90deg); opacity: 0; }
+  100% { transform: rotate(0deg);  opacity: 0; }
+}
+
+/* Result paper fade in */
+#lc-paper {
+  animation: fade-in-out-late 8s linear infinite;
+}
+@keyframes fade-in-out-late {
+  0%, 72% { opacity: 0; transform: translateY(6px); }
+  82%     { opacity: 1; transform: translateY(0); }
+  96%     { opacity: 1; }
   100%    { opacity: 0; }
 }
 
-/* Patient pulse line on bedside monitor */
-#lc-flatline {
-  stroke-dasharray: 200;
-  stroke-dashoffset: 200;
-  animation: lc-flatline-draw 8s linear infinite;
+/* Bedside monitor flatline draw */
+#lc-ecg-line {
+  stroke-dasharray: 220;
+  stroke-dashoffset: 220;
+  animation: draw-ecg 8s linear infinite;
 }
-@keyframes lc-flatline-draw {
-  0%  { stroke-dashoffset: 200; }
-  20% { stroke-dashoffset: 0;   }
-  100%{ stroke-dashoffset: 0;   }
+@keyframes draw-ecg {
+  0%   { stroke-dashoffset: 220; }
+  22%  { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: 0; }
 }
 
-/* ══════════════════════════════════════════
-   LEFT HOME — blood drop, strip, dots
-══════════════════════════════════════════ */
+/* ════════════════════════════════════════
+   LEFT HOME
+════════════════════════════════════════ */
+
+/* Blood drop forms and falls */
 #lh-drop {
-  animation: lh-drop-appear 8s linear infinite;
+  animation: drop-form 8s linear infinite;
 }
-@keyframes lh-drop-appear {
-  0%, 20%  { opacity: 0; transform: translateY(-12px); }
-  32%      { opacity: 1; transform: translateY(0);     }
-  60%      { opacity: 1; transform: translateY(0);     }
-  68%      { opacity: 0; }
+@keyframes drop-form {
+  0%, 18%  { opacity: 0; transform: translateY(-10px) scale(0.3); }
+  32%      { opacity: 1; transform: translateY(0)    scale(1);   }
+  60%      { opacity: 1; transform: translateY(0)    scale(1);   }
+  70%      { opacity: 0; }
   100%     { opacity: 0; }
 }
 
-#lh-strip {
-  animation: lh-strip-slide 8s linear infinite;
+/* Glucometer slides in */
+#lh-glucometer {
+  animation: slide-in-right 8s linear infinite;
 }
-@keyframes lh-strip-slide {
-  0%, 35%  { opacity: 0; transform: translateX(-24px); }
-  48%      { opacity: 1; transform: translateX(0);     }
-  90%      { opacity: 1; }
-  98%      { opacity: 0; }
+@keyframes slide-in-right {
+  0%, 35%  { opacity: 0; transform: translateX(20px); }
+  48%      { opacity: 1; transform: translateX(0); }
+  92%      { opacity: 1; }
   100%     { opacity: 0; }
 }
 
-.lh-dot {
-  animation: lh-dot-pulse 8s linear infinite;
-}
+/* Waiting dots sequence */
+.lh-dot { animation: dot-appear 8s linear infinite; }
 .lh-dot:nth-child(1) { animation-delay: 0s;    }
-.lh-dot:nth-child(2) { animation-delay: 0.45s; }
-.lh-dot:nth-child(3) { animation-delay: 0.9s;  }
-
-@keyframes lh-dot-pulse {
-  0%, 48%  { opacity: 0; r: 3; }
-  55%      { opacity: 1; r: 5; }
-  80%      { opacity: 1; r: 5; }
-  90%      { opacity: 0; r: 3; }
-  100%     { opacity: 0; r: 3; }
+.lh-dot:nth-child(2) { animation-delay: 0.35s; }
+.lh-dot:nth-child(3) { animation-delay: 0.70s; }
+@keyframes dot-appear {
+  0%, 44%  { opacity: 0; r: 3px; }
+  52%      { opacity: 1; r: 5px; }
+  78%      { opacity: 1; r: 5px; }
+  88%      { opacity: 0; r: 3px; }
+  100%     { opacity: 0; r: 3px; }
 }
 
-/* ══════════════════════════════════════════
-   RIGHT CLINICAL — probe draws, waveform animates
-══════════════════════════════════════════ */
-#rc-probe {
-  stroke-dasharray: 160;
-  stroke-dashoffset: 160;
-  animation: rc-probe-draw 8s linear infinite;
+/* Home clock hand — 30 seconds shown (half a revolution) */
+#lh-clock-hand {
+  transform-origin: 0px 0px;
+  animation: clock-30sec 8s linear infinite;
 }
-@keyframes rc-probe-draw {
-  0%   { stroke-dashoffset: 160; opacity: 1; }
-  30%  { stroke-dashoffset: 0;   opacity: 1; }
-  90%  { stroke-dashoffset: 0;   opacity: 1; }
-  100% { stroke-dashoffset: 0;   opacity: 0; }
+@keyframes clock-30sec {
+  0%   { transform: rotate(0deg);   opacity: 0; }
+  36%  { transform: rotate(0deg);   opacity: 1; }
+  75%  { transform: rotate(180deg); opacity: 1; }
+  86%  { transform: rotate(180deg); opacity: 0; }
+  100% { transform: rotate(0deg);   opacity: 0; }
 }
 
-/* Data dots flowing from probe to device */
-.rc-dot {
-  animation: rc-dot-flow 8s linear infinite;
+/* Glucometer result number blinks in */
+#lh-result-num {
+  animation: result-blink 8s linear infinite;
 }
-.rc-dot:nth-child(1) { animation-delay: 0.0s; }
-.rc-dot:nth-child(2) { animation-delay: 0.5s; }
-.rc-dot:nth-child(3) { animation-delay: 1.0s; }
-
-@keyframes rc-dot-flow {
-  0%   { offset-distance: 0%;   opacity: 0; }
-  5%   { opacity: 1; }
-  28%  { offset-distance: 0%;   opacity: 0; }
-  32%  { offset-distance: 0%;   opacity: 1; }
-  70%  { offset-distance: 100%; opacity: 1; }
-  80%  { offset-distance: 100%; opacity: 0; }
-  100% { offset-distance: 0%;   opacity: 0; }
+@keyframes result-blink {
+  0%, 68%  { opacity: 0; }
+  76%      { opacity: 1; }
+  92%      { opacity: 1; }
+  100%     { opacity: 0; }
 }
 
-/* Live waveform drawing on monitor */
+/* ════════════════════════════════════════
+   RIGHT CLINICAL
+════════════════════════════════════════ */
+
+/* CPB pump spinner */
+#rc-pump-blades {
+  transform-origin: 288px 86px;
+  animation: pump-spin 1.8s linear infinite;
+}
+@keyframes pump-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Venous flow dashes */
+#rc-venous-flow {
+  animation: flow-right 0.9s linear infinite;
+}
+@keyframes flow-right {
+  from { stroke-dashoffset: 0; }
+  to   { stroke-dashoffset: -22; }
+}
+
+/* Arterial flow dashes */
+#rc-arterial-flow {
+  animation: flow-left 0.9s linear infinite;
+}
+@keyframes flow-left {
+  from { stroke-dashoffset: 0; }
+  to   { stroke-dashoffset: 22; }
+}
+
+/* KADI fiber probe draws in */
+#rc-fiber {
+  stroke-dasharray: 80;
+  stroke-dashoffset: 80;
+  animation: draw-fiber 8s linear infinite;
+}
+@keyframes draw-fiber {
+  0%, 8%   { stroke-dashoffset: 80; opacity: 0; }
+  12%      { opacity: 1; }
+  30%      { stroke-dashoffset: 0; }
+  92%      { stroke-dashoffset: 0; opacity: 1; }
+  100%     { opacity: 0; }
+}
+
+/* KADI device appears */
+#rc-kadi-unit {
+  animation: unit-appear 8s linear infinite;
+}
+@keyframes unit-appear {
+  0%, 26%  { opacity: 0; transform: translateY(8px); }
+  36%      { opacity: 1; transform: translateY(0); }
+  92%      { opacity: 1; }
+  100%     { opacity: 0; }
+}
+
+/* KADI LED pulse */
+#rc-led {
+  animation: led-pulse 1.2s ease-in-out infinite;
+}
+@keyframes led-pulse {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.25; }
+}
+
+/* Monitor waveform draws */
 #rc-wave {
   stroke-dasharray: 340;
   stroke-dashoffset: 340;
-  animation: rc-wave-draw 8s linear infinite;
+  animation: draw-wave 8s linear infinite;
 }
-@keyframes rc-wave-draw {
-  0%, 28%  { stroke-dashoffset: 340; opacity: 0; }
-  32%      { opacity: 1; }
-  70%      { stroke-dashoffset: 0; opacity: 1; }
-  90%      { stroke-dashoffset: 0; opacity: 1; }
+@keyframes draw-wave {
+  0%, 32%  { stroke-dashoffset: 340; opacity: 0; }
+  36%      { opacity: 1; }
+  70%      { stroke-dashoffset: 0; }
+  92%      { stroke-dashoffset: 0; opacity: 1; }
   100%     { opacity: 0; }
 }
 
-/* LIVE badge blink */
+/* LIVE dot blink */
 #rc-live-dot {
-  animation: rc-live-blink 0.9s ease-in-out infinite;
+  animation: live-blink 0.85s ease-in-out infinite;
 }
-@keyframes rc-live-blink {
+@keyframes live-blink {
   0%, 100% { opacity: 1; }
-  50%      { opacity: 0.15; }
+  50%      { opacity: 0.1; }
 }
 
-/* Device LED */
-#rc-led {
-  animation: rc-led-pulse 1.4s ease-in-out infinite;
+/* Data cable from KADI to monitor */
+#rc-data-cable {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  animation: draw-cable 8s linear infinite;
 }
-@keyframes rc-led-pulse {
-  0%, 100% { opacity: 1; filter: drop-shadow(0 0 4px #2DD4BF); }
-  50%      { opacity: 0.5; filter: drop-shadow(0 0 1px #2DD4BF); }
+@keyframes draw-cable {
+  0%, 28%  { stroke-dashoffset: 200; }
+  42%      { stroke-dashoffset: 0; }
+  100%     { stroke-dashoffset: 0; }
 }
 
-/* ══════════════════════════════════════════
-   RIGHT HOME — wrist glow, signal arcs, phone
-══════════════════════════════════════════ */
-#rh-wrist-glow {
-  animation: rh-wrist-glow 8s linear infinite;
+/* ════════════════════════════════════════
+   RIGHT HOME
+════════════════════════════════════════ */
+
+/* Wrist device glow pulse */
+#rh-device {
+  animation: device-glow 8s linear infinite;
 }
-@keyframes rh-wrist-glow {
-  0%   { opacity: 0; filter: drop-shadow(0 0 0px #2DD4BF); }
-  12%  { opacity: 1; filter: drop-shadow(0 0 8px #2DD4BF); }
-  50%  { filter: drop-shadow(0 0 14px #2DD4BF); }
+@keyframes device-glow {
+  0%   { opacity: 0; filter: drop-shadow(0 0 0px #0D9488); }
+  10%  { opacity: 1; filter: drop-shadow(0 0 8px #0D9488); }
+  55%  { filter: drop-shadow(0 0 14px #0D9488); }
   90%  { opacity: 1; }
   100% { opacity: 0; }
 }
 
-.rh-arc {
-  fill: none;
-  stroke: #2DD4BF;
-  stroke-linecap: round;
-  animation: rh-arc-pulse 8s linear infinite;
+/* Wrist device mini waveform draw */
+#rh-wrist-wave {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: draw-wrist-wave 8s linear infinite;
 }
-.rh-arc:nth-child(1) { animation-delay: 0.2s; stroke-width: 2.5; }
-.rh-arc:nth-child(2) { animation-delay: 0.6s; stroke-width: 2; opacity: 0.7; }
-.rh-arc:nth-child(3) { animation-delay: 1.0s; stroke-width: 1.5; opacity: 0.45; }
+@keyframes draw-wrist-wave {
+  0%, 8%   { stroke-dashoffset: 100; }
+  28%      { stroke-dashoffset: 0; }
+  100%     { stroke-dashoffset: 0; }
+}
 
-@keyframes rh-arc-pulse {
-  0%, 10%  { opacity: 0; }
-  18%      { opacity: 1; }
-  70%      { opacity: 1; }
-  82%      { opacity: 0; }
+/* Signal arcs ripple */
+.rh-arc { animation: arc-ripple 8s linear infinite; }
+.rh-arc:nth-child(1) { animation-delay: 0.0s; }
+.rh-arc:nth-child(2) { animation-delay: 0.4s; }
+.rh-arc:nth-child(3) { animation-delay: 0.8s; }
+@keyframes arc-ripple {
+  0%, 12%  { opacity: 0; }
+  20%      { opacity: 1; }
+  72%      { opacity: 1; }
+  84%      { opacity: 0; }
   100%     { opacity: 0; }
 }
 
-#rh-phone-data {
-  animation: rh-phone-appear 8s linear infinite;
+/* Phone slides up and appears */
+#rh-phone {
+  animation: phone-appear 8s linear infinite;
 }
-@keyframes rh-phone-appear {
-  0%, 30%  { opacity: 0; transform: translateY(10px); }
-  45%      { opacity: 1; transform: translateY(0);    }
+@keyframes phone-appear {
+  0%, 30%  { opacity: 0; transform: translateY(12px); }
+  46%      { opacity: 1; transform: translateY(0); }
   90%      { opacity: 1; }
   100%     { opacity: 0; }
 }
 
-/* Phone waveform draws continuously */
+/* Phone waveform draws */
 #rh-phone-wave {
-  stroke-dasharray: 280;
-  stroke-dashoffset: 280;
-  animation: rh-wave-draw 8s linear infinite;
+  stroke-dasharray: 260;
+  stroke-dashoffset: 260;
+  animation: draw-phone-wave 8s linear infinite;
 }
-@keyframes rh-wave-draw {
-  0%, 42%  { stroke-dashoffset: 280; }
-  75%      { stroke-dashoffset: 0;   }
-  100%     { stroke-dashoffset: 0;   }
+@keyframes draw-phone-wave {
+  0%, 44%  { stroke-dashoffset: 260; }
+  78%      { stroke-dashoffset: 0; }
+  100%     { stroke-dashoffset: 0; }
+}
+
+/* Phone live dot */
+#rh-live-dot {
+  animation: live-blink 0.9s ease-in-out infinite;
 }

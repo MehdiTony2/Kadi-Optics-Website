@@ -15,244 +15,339 @@
 
   <div class="panels-wrapper">
 
-    <!-- ═══════════════════════════════════
+    <!-- ═══════════════════════════════
          LEFT PANEL — THE PROBLEM TODAY
-    ═══════════════════════════════════ -->
+    ═══════════════════════════════ -->
     <div class="panel panel-left">
       <div class="panel-header">
         <span class="header-icon">⚠</span> The Problem Today
       </div>
 
-      <!-- ── CLINICAL SCENE ── -->
+      <!-- ── LEFT CLINICAL ── -->
       <div class="half">
-        <div class="scene-label">Clinical Setting</div>
-
+        <div class="scene-label">Clinical Setting — Cardiac Surgery / CPB</div>
         <div class="stage">
-          <svg viewBox="0 0 460 175" xmlns="http://www.w3.org/2000/svg">
+          <svg id="svg-lc" viewBox="0 0 460 175" xmlns="http://www.w3.org/2000/svg">
+
             <!-- Room -->
             <rect width="460" height="175" fill="#EBF2FA"/>
-            <!-- Floor line -->
-            <rect y="148" width="460" height="27" fill="#D5E3F0"/>
+            <rect y="150" width="460" height="25" fill="#D1E3F5"/>
             <!-- Ceiling lights -->
-            <rect x="60"  y="0" width="50" height="8" rx="2" fill="#FEF9C3"/>
-            <rect x="200" y="0" width="50" height="8" rx="2" fill="#FEF9C3"/>
-            <rect x="340" y="0" width="50" height="8" rx="2" fill="#FEF9C3"/>
-            <!-- Light rays -->
-            <line x1="85"  y1="8" x2="70"  y2="30" stroke="#FEF08A" stroke-width="1" opacity="0.5"/>
-            <line x1="85"  y1="8" x2="100" y2="30" stroke="#FEF08A" stroke-width="1" opacity="0.5"/>
-            <line x1="225" y1="8" x2="210" y2="30" stroke="#FEF08A" stroke-width="1" opacity="0.5"/>
-            <line x1="225" y1="8" x2="240" y2="30" stroke="#FEF08A" stroke-width="1" opacity="0.5"/>
+            <rect x="50"  y="0" width="56" height="7" rx="2" fill="#FEF9C3" stroke="#FDE68A" stroke-width="1"/>
+            <rect x="196" y="0" width="56" height="7" rx="2" fill="#FEF9C3" stroke="#FDE68A" stroke-width="1"/>
+            <rect x="352" y="0" width="56" height="7" rx="2" fill="#FEF9C3" stroke="#FDE68A" stroke-width="1"/>
+            <!-- Light cones -->
+            <polygon points="50,7 106,7 92,38 64,38" fill="#FFFDE7" opacity="0.4"/>
+            <polygon points="196,7 252,7 238,38 210,38" fill="#FFFDE7" opacity="0.4"/>
 
-            <!-- Hospital bed frame -->
-            <rect x="18" y="96" width="115" height="14" rx="4" fill="#93C5FD" stroke="#3B82F6" stroke-width="1.5"/>
-            <rect x="18" y="92" width="28"  height="18" rx="4" fill="#BFDBFE" stroke="#3B82F6" stroke-width="1.5"/>
+            <!-- ── PATIENT BED ── -->
+            <!-- Bed frame -->
+            <rect x="12" y="104" width="122" height="16" rx="5" fill="#93C5FD" stroke="#3B82F6" stroke-width="2"/>
+            <rect x="12" y="100" width="32" height="20" rx="5" fill="#BFDBFE" stroke="#3B82F6" stroke-width="1.5"/>
             <!-- Mattress -->
-            <rect x="20" y="88" width="111" height="9" rx="3" fill="#DBEAFE"/>
-            <!-- Bed rails -->
-            <rect x="50"  y="86" width="3" height="12" fill="#93C5FD"/>
-            <rect x="100" y="86" width="3" height="12" fill="#93C5FD"/>
+            <rect x="14" y="92" width="118" height="14" rx="4" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1"/>
+            <!-- Bedrails -->
+            <rect x="55"  y="90" width="3" height="14" rx="1" fill="#93C5FD"/>
+            <rect x="100" y="90" width="3" height="14" rx="1" fill="#93C5FD"/>
             <!-- Bed legs -->
-            <rect x="20"  y="110" width="6" height="38" rx="2" fill="#7FB3DC"/>
-            <rect x="127" y="110" width="6" height="38" rx="2" fill="#7FB3DC"/>
-
-            <!-- Patient lying in bed -->
-            <!-- Head -->
-            <circle cx="34" cy="82" r="12" fill="#F5CBA7" stroke="#C8956C" stroke-width="1.5"/>
+            <rect x="15"  y="120" width="7" height="30" rx="3" fill="#60A5FA"/>
+            <rect x="130" y="120" width="7" height="30" rx="3" fill="#60A5FA"/>
             <!-- Pillow -->
-            <rect x="20" y="76" width="35" height="14" rx="4" fill="#F0F9FF" stroke="#BAE6FD" stroke-width="1"/>
-            <!-- Body under blanket -->
-            <rect x="45" y="80" width="80" height="18" rx="5" fill="#BFDBFE" stroke="#3B82F6" stroke-width="1"/>
-            <!-- IV line -->
-            <line x1="60" y1="85" x2="80" y2="65" stroke="#FDA4AF" stroke-width="1.5" stroke-dasharray="3,2"/>
+            <rect x="14"  y="82" width="36" height="14" rx="5" fill="#F0F9FF" stroke="#BAE6FD" stroke-width="1"/>
+
+            <!-- Patient body -->
+            <circle cx="32" cy="78" r="13" fill="#F5CBA7" stroke="#C8956C" stroke-width="1.5"/>
+            <!-- Hair -->
+            <path d="M20,73 Q32,60 44,73" fill="#78350F"/>
+            <!-- Face hints -->
+            <circle cx="28" cy="76" r="1.5" fill="#92400E" opacity="0.6"/>
+            <circle cx="36" cy="76" r="1.5" fill="#92400E" opacity="0.6"/>
+            <!-- Patient gown -->
+            <rect x="22" y="91" width="20" height="18" rx="4" fill="#BFDBFE" stroke="#93C5FD" stroke-width="1"/>
+
+            <!-- IV pole + bag -->
+            <rect x="136" y="32" width="3"  height="72" rx="1" fill="#94A3B8"/>
+            <rect x="128" y="32" width="19" height="4"  rx="2" fill="#94A3B8"/>
             <!-- IV bag -->
-            <ellipse cx="82" cy="58" rx="9" ry="13" fill="#FEE2E2" stroke="#FCA5A5" stroke-width="1.5"/>
-            <rect x="80" y="71" width="4" height="6" fill="#FDA4AF"/>
-            <!-- IV pole -->
-            <rect x="81" y="40" width="2" height="20" fill="#94A3B8"/>
-            <rect x="76" y="40" width="12" height="3" rx="1" fill="#94A3B8"/>
+            <path d="M133,37 Q128,40 128,52 Q128,66 137,68 Q146,66 146,52 Q146,40 141,37 Z" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1.5"/>
+            <rect x="135" y="68" width="4" height="6" fill="#93C5FD"/>
+            <!-- IV line -->
+            <path d="M137,74 Q128,82 42,88" stroke="#FCA5A5" stroke-width="1.5" fill="none" stroke-dasharray="3,2"/>
 
             <!-- Bedside cardiac monitor -->
-            <rect x="145" y="68" width="48" height="38" rx="5" fill="#1E293B" stroke="#334155" stroke-width="1.5"/>
-            <rect x="148" y="71" width="42" height="25" rx="3" fill="#0F172A"/>
-            <!-- Flatline pulse on monitor — animates -->
-            <polyline id="lc-flatline" class="animated"
-              points="150,83 155,83 158,72 161,94 164,83 168,83 171,75 174,91 177,83 181,83 184,78 187,88 190,83"
+            <rect x="148" y="64" width="54" height="46" rx="6" fill="#1E293B" stroke="#334155" stroke-width="2"/>
+            <rect x="152" y="68" width="46" height="30" rx="4" fill="#0F172A"/>
+            <!-- ECG line on monitor -->
+            <polyline id="lc-ecg-line" class="anim"
+              points="154,83 158,83 161,72 164,94 167,83 170,83 173,75 176,91 179,83 182,83 185,78 188,88 191,83 196,83"
               fill="none" stroke="#4ADE80" stroke-width="1.8" stroke-linecap="round"/>
+            <!-- Monitor bottom bar -->
+            <rect x="152" y="100" width="46" height="8" rx="2" fill="#0F172A"/>
+            <text x="175" y="107" text-anchor="middle" font-size="5.5" fill="#4ADE80">HR 68</text>
             <!-- Monitor stand -->
-            <rect x="166" y="106" width="4" height="16" fill="#64748B"/>
-            <rect x="158" y="120" width="20" height="4" rx="2" fill="#64748B"/>
+            <rect x="171" y="110" width="4"  height="18" fill="#475569"/>
+            <rect x="162" y="126" width="22" height="5" rx="2" fill="#475569"/>
 
-            <!-- Clock on wall -->
-            <circle cx="228" cy="48" r="24" fill="#FFFBEB" stroke="#F59E0B" stroke-width="2.5"/>
-            <circle cx="228" cy="48" r="2.5" fill="#D97706"/>
-            <!-- Clock tick marks -->
-            <line x1="228" y1="26" x2="228" y2="30" stroke="#92400E" stroke-width="2"/>
-            <line x1="228" y1="66" x2="228" y2="70" stroke="#92400E" stroke-width="2"/>
-            <line x1="206" y1="48" x2="210" y2="48" stroke="#92400E" stroke-width="2"/>
-            <line x1="246" y1="48" x2="250" y2="48" stroke="#92400E" stroke-width="2"/>
-            <!-- Clock hand -->
-            <line id="lc-clock-hand" class="animated"
-              x1="228" y1="48" x2="228" y2="30"
-              stroke="#B45309" stroke-width="2.5" stroke-linecap="round"/>
-            <!-- Clock label -->
-            <text x="228" y="82" text-anchor="middle" font-size="8.5" fill="#92400E" font-weight="700">10–15 min</text>
-
-            <!-- NURSE — animated walk group -->
-            <g id="lc-nurse" class="animated">
-              <!-- Body -->
-              <circle cx="285" cy="88" r="12" fill="#F5CBA7" stroke="#C8956C" stroke-width="1.5"/>
-              <!-- Nurse cap -->
-              <rect x="275" y="75" width="20" height="7" rx="2" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
-              <rect x="282" y="73" width="6" height="4" rx="1" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
-              <!-- Cross on cap -->
-              <rect x="284" y="74" width="2" height="5" fill="#E63946"/>
-              <rect x="282" y="76" width="6" height="2" fill="#E63946"/>
-              <!-- Uniform -->
-              <rect x="275" y="100" width="20" height="28" rx="5" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
-              <!-- Cross on chest -->
-              <rect x="283" y="104" width="4" height="10" fill="#E63946"/>
-              <rect x="280" y="108" width="10" height="4" fill="#E63946"/>
-              <!-- Arms -->
-              <rect x="266" y="101" width="9" height="20" rx="4" fill="#F5CBA7" stroke="#C8956C" stroke-width="1"/>
-              <rect x="295" y="101" width="9" height="20" rx="4" fill="#F5CBA7" stroke="#C8956C" stroke-width="1"/>
-              <!-- Blood vial in hand -->
-              <rect x="297" y="112" width="7" height="16" rx="3" fill="#FCA5A5" stroke="#E63946" stroke-width="1.5"/>
-              <rect x="299" y="108" width="3" height="6" rx="1" fill="#9CA3AF"/>
-              <rect x="299" y="108" width="3" height="3" fill="#E63946"/>
-              <!-- Legs -->
-              <rect x="277" y="128" width="7" height="20" rx="3" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1"/>
-              <rect x="286" y="128" width="7" height="20" rx="3" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1"/>
-              <!-- Shoes -->
-              <rect x="275" y="146" width="11" height="6" rx="2" fill="#475569"/>
-              <rect x="284" y="146" width="11" height="6" rx="2" fill="#475569"/>
+            <!-- ── CLOCK (centered at 268,40, r=26) ── -->
+            <g transform="translate(268,40)">
+              <circle r="26" fill="#FFFBEB" stroke="#F59E0B" stroke-width="2.5"/>
+              <!-- Hour tick marks -->
+              <line x1="0"   y1="-22" x2="0"   y2="-18" stroke="#92400E" stroke-width="2"/>
+              <line x1="0"   y1="22"  x2="0"   y2="18"  stroke="#92400E" stroke-width="2"/>
+              <line x1="-22" y1="0"   x2="-18" y2="0"   stroke="#92400E" stroke-width="2"/>
+              <line x1="22"  y1="0"   x2="18"  y2="0"   stroke="#92400E" stroke-width="2"/>
+              <!-- Diagonal ticks -->
+              <line x1="-15" y1="-15" x2="-12" y2="-12" stroke="#92400E" stroke-width="1.5"/>
+              <line x1="15"  y1="-15" x2="12"  y2="-12" stroke="#92400E" stroke-width="1.5"/>
+              <line x1="-15" y1="15"  x2="-12" y2="12"  stroke="#92400E" stroke-width="1.5"/>
+              <line x1="15"  y1="15"  x2="12"  y2="12"  stroke="#92400E" stroke-width="1.5"/>
+              <!-- Minute hand (long) — rotates from 12→3 = 90° = 15 min -->
+              <line id="lc-clock-hand" class="anim"
+                x1="0" y1="0" x2="0" y2="-19"
+                stroke="#B45309" stroke-width="2.5" stroke-linecap="round"/>
+              <!-- Short hour hand (static, at 10 o'clock roughly) -->
+              <line x1="0" y1="0" x2="-9" y2="-9"
+                stroke="#92400E" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+              <!-- Center -->
+              <circle r="3" fill="#D97706"/>
             </g>
+            <text x="268" y="76" text-anchor="middle" font-size="8" fill="#92400E" font-weight="700">10–15 min</text>
 
-            <!-- Door (right side) -->
-            <rect x="390" y="60" width="50" height="88" rx="4" fill="#CBD5E1" stroke="#94A3B8" stroke-width="2"/>
-            <rect x="393" y="63" width="44" height="82" rx="3" fill="#E2E8F0"/>
-            <!-- Door knob -->
-            <circle cx="403" cy="106" r="4" fill="#F59E0B" stroke="#D97706" stroke-width="1"/>
-            <!-- Door frame -->
-            <rect x="388" y="58" width="54" height="92" rx="4" fill="none" stroke="#94A3B8" stroke-width="2"/>
+            <!-- ── NURSE (animated walk right) ── -->
+            <!-- SVG transform attribute sets the base position (feet at 220,150).
+                 CSS animation on #lc-nurse applies translateX delta on top of this. -->
+            <g transform="translate(220,150)">
+            <g id="lc-nurse" class="anim">
+              <g id="lc-nurse-flip" class="anim" style="transform-origin:13px 0px;">
+                <!-- Head -->
+                <circle cx="13" cy="-62" r="12" fill="#F5CBA7" stroke="#C8956C" stroke-width="1.5"/>
+                <!-- Nurse cap -->
+                <rect x="3" y="-77" width="20" height="8" rx="2" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
+                <rect x="9" y="-79" width="8" height="5" rx="1" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
+                <!-- Red cross on cap -->
+                <rect x="12" y="-79" width="2.5" height="6" fill="#E63946"/>
+                <rect x="9"  y="-76" width="8"   height="2.5" fill="#E63946"/>
+                <!-- Face -->
+                <circle cx="9"  cy="-64" r="1.5" fill="#92400E" opacity="0.7"/>
+                <circle cx="17" cy="-64" r="1.5" fill="#92400E" opacity="0.7"/>
+                <!-- Smile -->
+                <path d="M9,-59 Q13,-57 17,-59" fill="none" stroke="#92400E" stroke-width="1.2"/>
+                <!-- Uniform -->
+                <rect x="3"  y="-50" width="20" height="28" rx="5" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+                <!-- Cross on chest -->
+                <rect x="11" y="-46" width="3" height="10" fill="#E63946"/>
+                <rect x="8"  y="-42" width="9" height="3"  fill="#E63946"/>
+                <!-- Left arm -->
+                <rect x="-5" y="-48" width="8"  height="22" rx="4" fill="#F5CBA7" stroke="#C8956C" stroke-width="1"/>
+                <!-- Right arm + vial -->
+                <rect x="21" y="-48" width="8"  height="22" rx="4" fill="#F5CBA7" stroke="#C8956C" stroke-width="1"/>
+                <!-- Blood vial in hand -->
+                <rect x="27" y="-32" width="8" height="18" rx="3" fill="#FCA5A5" stroke="#E63946" stroke-width="1.5"/>
+                <rect x="29" y="-35" width="4" height="5"  rx="1" fill="#94A3B8"/>
+                <rect x="29" y="-35" width="4" height="3"  fill="#E63946"/>
+                <!-- Legs -->
+                <rect id="lc-leg-l" class="anim" x="5"  y="-22" width="8" height="24" rx="3" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1" style="transform-origin:9px -22px;"/>
+                <rect id="lc-leg-r" class="anim" x="15" y="-22" width="8" height="24" rx="3" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1" style="transform-origin:19px -22px;"/>
+                <!-- Shoes -->
+                <rect x="3"  y="0" width="12" height="7" rx="2" fill="#334155"/>
+                <rect x="13" y="0" width="12" height="7" rx="2" fill="#334155"/>
+              </g>
+            </g>
+            </g><!-- /nurse position wrapper -->
+
+            <!-- Door (far right) -->
+            <rect x="408" y="52" width="48" height="98" rx="4" fill="#CBD5E1" stroke="#94A3B8" stroke-width="2"/>
+            <rect x="411" y="55" width="42" height="92" rx="3" fill="#E2E8F0"/>
+            <circle cx="420" cy="102" r="4.5" fill="#F59E0B" stroke="#D97706" stroke-width="1"/>
+            <!-- Door frame shadow -->
+            <rect x="406" y="50" width="52" height="102" rx="4" fill="none" stroke="#94A3B8" stroke-width="2"/>
 
             <!-- Walking path dashes -->
-            <line x1="305" y1="148" x2="385" y2="148" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="6,4"/>
-            <!-- Arrow -->
-            <polygon points="388,144 382,148 388,152" fill="#94A3B8"/>
+            <line x1="240" y1="150" x2="404" y2="150" stroke="#CBD5E1" stroke-width="1.5" stroke-dasharray="6,4"/>
+            <polygon points="407,146 401,150 407,154" fill="#94A3B8"/>
 
-            <!-- Doctor (left, waiting) -->
-            <circle cx="198" cy="88" r="12" fill="#FDE8D8" stroke="#C8956C" stroke-width="1.5"/>
-            <!-- Doctor scrubs -->
-            <rect x="188" y="100" width="20" height="28" rx="5" fill="#7DD3FC" stroke="#38BDF8" stroke-width="1.5"/>
-            <!-- Stethoscope -->
-            <path d="M193,110 Q188,118 192,122 Q196,126 200,122" fill="none" stroke="#0369A1" stroke-width="1.8"/>
-            <circle cx="200" cy="122" r="3" fill="#0369A1"/>
-            <!-- Doctor legs -->
-            <rect x="190" y="128" width="7" height="20" rx="3" fill="#BFDBFE" stroke="#93C5FD" stroke-width="1"/>
-            <rect x="199" y="128" width="7" height="20" rx="3" fill="#BFDBFE" stroke="#93C5FD" stroke-width="1"/>
-            <rect x="188" y="146" width="11" height="6" rx="2" fill="#1E40AF"/>
-            <rect x="197" y="146" width="11" height="6" rx="2" fill="#1E40AF"/>
+            <!-- ── DOCTOR (left, waiting for result) ── -->
+            <g transform="translate(168,150)">
+              <!-- Head -->
+              <circle cx="0" cy="-68" r="12" fill="#FDE8D8" stroke="#C8956C" stroke-width="1.5"/>
+              <!-- Hair -->
+              <path d="M-11,-74 Q0,-82 11,-74" fill="#3B1E08"/>
+              <!-- Face -->
+              <circle cx="-4" cy="-70" r="1.5" fill="#7C3AED" opacity="0.6"/>
+              <circle cx="4"  cy="-70" r="1.5" fill="#7C3AED" opacity="0.6"/>
+              <!-- Scrubs -->
+              <rect x="-10" y="-56" width="20" height="28" rx="5" fill="#7DD3FC" stroke="#38BDF8" stroke-width="1.5"/>
+              <!-- Stethoscope -->
+              <path d="M-5,-50 Q-12,-42 -10,-35 Q-8,-28 -3,-28" fill="none" stroke="#0369A1" stroke-width="1.8"/>
+              <circle cx="-2" cy="-27" r="4" fill="#0369A1"/>
+              <!-- Arms -->
+              <rect x="-18" y="-54" width="8" height="20" rx="4" fill="#FDE8D8" stroke="#C8956C" stroke-width="1"/>
+              <rect x="10"  y="-54" width="8" height="20" rx="4" fill="#FDE8D8" stroke="#C8956C" stroke-width="1"/>
+              <!-- Legs -->
+              <rect x="-8"  y="-28" width="8" height="28" rx="3" fill="#BFDBFE" stroke="#93C5FD" stroke-width="1"/>
+              <rect x="2"   y="-28" width="8" height="28" rx="3" fill="#BFDBFE" stroke="#93C5FD" stroke-width="1"/>
+              <!-- Shoes -->
+              <rect x="-10" y="0" width="12" height="7" rx="2" fill="#1E3A5F"/>
+              <rect x="0"   y="0" width="12" height="7" rx="2" fill="#1E3A5F"/>
+            </g>
 
             <!-- Result paper (appears when nurse returns) -->
-            <g id="lc-paper" class="animated">
-              <rect x="192" y="99" width="26" height="32" rx="3" fill="#FFFFFF" stroke="#3B82F6" stroke-width="1.5"/>
-              <line x1="196" y1="108" x2="214" y2="108" stroke="#93C5FD" stroke-width="1.5"/>
-              <line x1="196" y1="114" x2="214" y2="114" stroke="#93C5FD" stroke-width="1.5"/>
-              <line x1="196" y1="120" x2="208" y2="120" stroke="#93C5FD" stroke-width="1.5"/>
-              <!-- ACT result text -->
-              <text x="205" y="130" text-anchor="middle" font-size="6" fill="#1E40AF" font-weight="700">ACT 420</text>
+            <g id="lc-paper" class="anim" transform="translate(168,150)">
+              <rect x="12" y="-56" width="30" height="38" rx="4" fill="#FFFFFF" stroke="#3B82F6" stroke-width="2"/>
+              <!-- Paper lines -->
+              <line x1="17" y1="-48" x2="37" y2="-48" stroke="#BFDBFE" stroke-width="1.5"/>
+              <line x1="17" y1="-42" x2="37" y2="-42" stroke="#BFDBFE" stroke-width="1.5"/>
+              <line x1="17" y1="-36" x2="37" y2="-36" stroke="#BFDBFE" stroke-width="1.5"/>
+              <!-- ACT result -->
+              <text x="27" y="-27" text-anchor="middle" font-size="6.5" fill="#1E40AF" font-weight="800">ACT</text>
+              <text x="27" y="-21" text-anchor="middle" font-size="6"   fill="#DC2626" font-weight="700">420s ↑</text>
+              <!-- Stamp/check -->
+              <text x="37" y="-48" font-size="9" fill="#16A34A">✓</text>
             </g>
+
           </svg>
         </div>
-
-        <!-- Captions injected by JS -->
         <div class="caption-zone" id="cap-lc"></div>
       </div>
 
       <div class="scene-sep"></div>
 
-      <!-- ── HOME SCENE ── -->
+      <!-- ── LEFT HOME ── -->
       <div class="half">
-        <div class="scene-label">Home Setting</div>
-
+        <div class="scene-label">Home Setting — Anticoagulated Patient</div>
         <div class="stage">
-          <svg viewBox="0 0 460 175" xmlns="http://www.w3.org/2000/svg">
+          <svg id="svg-lh" viewBox="0 0 460 175" xmlns="http://www.w3.org/2000/svg">
+
             <!-- Room -->
-            <rect width="460" height="175" fill="#FFF7ED"/>
-            <!-- Floor -->
-            <rect y="148" width="460" height="27" fill="#FED7AA"/>
-            <!-- Wall -->
-            <rect width="460" height="148" fill="#FFF7ED"/>
+            <rect width="460" height="175" fill="#FFF8F0"/>
+            <rect y="150" width="460" height="25" fill="#FED7AA"/>
+            <!-- Baseboard -->
+            <rect y="148" width="460" height="4" fill="#D97706" opacity="0.3"/>
+
             <!-- Window -->
-            <rect x="340" y="15" width="80" height="60" rx="4" fill="#BAE6FD" stroke="#7DD3FC" stroke-width="2"/>
-            <line x1="380" y1="15" x2="380" y2="75" stroke="#7DD3FC" stroke-width="1.5"/>
-            <line x1="340" y1="45" x2="420" y2="45" stroke="#7DD3FC" stroke-width="1.5"/>
+            <rect x="330" y="8"  width="96" height="72" rx="6" fill="#BAE6FD" stroke="#7DD3FC" stroke-width="2"/>
+            <line x1="378" y1="8"  x2="378" y2="80"  stroke="#7DD3FC" stroke-width="1.5"/>
+            <line x1="330" y1="44" x2="426" y2="44"  stroke="#7DD3FC" stroke-width="1.5"/>
+            <!-- Curtains -->
+            <path d="M330,8 Q320,25 325,80" fill="#FDE68A" stroke="#F59E0B" stroke-width="1" opacity="0.7"/>
+            <path d="M426,8 Q436,25 431,80" fill="#FDE68A" stroke="#F59E0B" stroke-width="1" opacity="0.7"/>
+            <!-- Outside scene (simple) -->
+            <circle cx="360" cy="28" r="12" fill="#FEF08A" opacity="0.6"/>
+            <path d="M345,65 Q352,50 360,65 Q368,50 378,65" fill="#86EFAC" opacity="0.7"/>
+
+            <!-- Wall clock (centered at 380,115, r=20) -->
+            <g transform="translate(380,115)">
+              <circle r="20" fill="#FFFBEB" stroke="#F59E0B" stroke-width="2"/>
+              <line x1="0"   y1="-17" x2="0"   y2="-14" stroke="#92400E" stroke-width="1.5"/>
+              <line x1="0"   y1="17"  x2="0"   y2="14"  stroke="#92400E" stroke-width="1.5"/>
+              <line x1="-17" y1="0"   x2="-14" y2="0"   stroke="#92400E" stroke-width="1.5"/>
+              <line x1="17"  y1="0"   x2="14"  y2="0"   stroke="#92400E" stroke-width="1.5"/>
+              <!-- Minute hand — rotates 180° = 30 seconds -->
+              <line id="lh-clock-hand" class="anim"
+                x1="0" y1="0" x2="0" y2="-14"
+                stroke="#B45309" stroke-width="2" stroke-linecap="round"/>
+              <!-- Hour hand (static) -->
+              <line x1="0" y1="0" x2="5" y2="-7" stroke="#92400E" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+              <circle r="2.5" fill="#D97706"/>
+            </g>
+            <text x="380" y="140" text-anchor="middle" font-size="7.5" fill="#92400E" font-weight="700">~30 sec</text>
 
             <!-- Table -->
-            <rect x="100" y="118" width="260" height="10" rx="4" fill="#A16207" stroke="#78350F" stroke-width="1.5"/>
-            <rect x="115" y="128" width="10" height="28" rx="3" fill="#92400E"/>
-            <rect x="334" y="128" width="10" height="28" rx="3" fill="#92400E"/>
+            <rect x="95"  y="118" width="270" height="10" rx="4" fill="#92400E" stroke="#78350F" stroke-width="1.5"/>
+            <rect x="110" y="128" width="10"  height="24" rx="3" fill="#7C2D12"/>
+            <rect x="340" y="128" width="10"  height="24" rx="3" fill="#7C2D12"/>
 
-            <!-- Person sitting -->
-            <!-- Head -->
-            <circle cx="85" cy="78" r="14" fill="#F5CBA7" stroke="#C8956C" stroke-width="1.5"/>
-            <!-- Hair -->
-            <path d="M72,73 Q85,60 98,73" fill="#451A03" stroke="none"/>
-            <!-- Body (casual shirt) -->
-            <rect x="73" y="92" width="24" height="34" rx="6" fill="#FDE68A" stroke="#D97706" stroke-width="1.5"/>
-            <!-- Arms -->
-            <rect x="62" y="93" width="11" height="24" rx="4" fill="#F5CBA7" stroke="#C8956C" stroke-width="1"/>
-            <!-- Extended arm on table -->
-            <rect x="97" y="110" width="50" height="9" rx="4" fill="#F5CBA7" stroke="#C8956C" stroke-width="1"/>
-            <!-- Legs -->
-            <rect x="75" y="126" width="9" height="22" rx="3" fill="#1E3A5F" stroke="#1E3A5F" stroke-width="1"/>
-            <rect x="86" y="126" width="9" height="22" rx="3" fill="#1E3A5F" stroke="#1E3A5F" stroke-width="1"/>
+            <!-- ── PERSON sitting at table ── -->
+            <g transform="translate(82,150)">
+              <!-- Head -->
+              <circle cx="0" cy="-70" r="14" fill="#F5CBA7" stroke="#C8956C" stroke-width="1.5"/>
+              <!-- Hair -->
+              <path d="M-13,-76 Q0,-88 13,-76" fill="#451A03"/>
+              <!-- Face -->
+              <circle cx="-5" cy="-72" r="1.5" fill="#92400E" opacity="0.7"/>
+              <circle cx="5"  cy="-72" r="1.5" fill="#92400E" opacity="0.7"/>
+              <!-- Shirt (casual) -->
+              <rect x="-12" y="-56" width="24" height="30" rx="6" fill="#FDE68A" stroke="#D97706" stroke-width="1.5"/>
+              <!-- Collar -->
+              <path d="M-6,-56 L0,-48 L6,-56" fill="#FCD34D" stroke="#D97706" stroke-width="1"/>
+              <!-- Left arm resting -->
+              <rect x="-22" y="-54" width="10" height="24" rx="4" fill="#F5CBA7" stroke="#C8956C" stroke-width="1"/>
+              <rect x="-22" y="-32" width="10" height="15" rx="4" fill="#F5CBA7" stroke="#C8956C" stroke-width="1"/>
+              <!-- Right arm extended on table -->
+              <rect x="12"  y="-54" width="10" height="24" rx="4" fill="#F5CBA7" stroke="#C8956C" stroke-width="1"/>
+              <rect x="12"  y="-32" width="72" height="9"  rx="4" fill="#F5CBA7" stroke="#C8956C" stroke-width="1"/>
+              <!-- Pants -->
+              <rect x="-10" y="-26" width="9" height="26" rx="3" fill="#1E3A5F"/>
+              <rect x="1"   y="-26" width="9" height="26" rx="3" fill="#1E3A5F"/>
+            </g>
 
-            <!-- Lancet device (pen-like) on table -->
-            <rect x="145" y="110" width="9" height="28" rx="4" fill="#475569" stroke="#334155" stroke-width="1.5"/>
-            <rect x="147" y="135" width="5" height="5" rx="1" fill="#94A3B8"/>
+            <!-- ── HAND CLOSE-UP AREA (x≈130-165, y≈108-150) ── -->
+            <!-- Fingertip / hand on table -->
+            <!-- Detailed hand drawn with fingers -->
+            <g transform="translate(148,118)">
+              <!-- Palm -->
+              <rect x="-10" y="0" width="24" height="20" rx="5" fill="#F5CBA7" stroke="#C8956C" stroke-width="1.2"/>
+              <!-- Fingers (4 fingers extended) -->
+              <rect x="-8"  y="-16" width="5" height="18" rx="3" fill="#F5CBA7" stroke="#C8956C" stroke-width="1.2"/>
+              <rect x="-1"  y="-18" width="5" height="20" rx="3" fill="#F5CBA7" stroke="#C8956C" stroke-width="1.2"/>
+              <rect x="6"   y="-16" width="5" height="18" rx="3" fill="#F5CBA7" stroke="#C8956C" stroke-width="1.2"/>
+              <rect x="12"  y="-12" width="5" height="14" rx="3" fill="#F5CBA7" stroke="#C8956C" stroke-width="1.2"/>
+              <!-- Thumb (side) -->
+              <rect x="-18" y="4"   width="10" height="6"  rx="3" fill="#F5CBA7" stroke="#C8956C" stroke-width="1.2"/>
+              <!-- Fingernails -->
+              <rect x="-7"  y="-15" width="3" height="4" rx="1" fill="#FECACA" opacity="0.7"/>
+              <rect x="0"   y="-17" width="3" height="4" rx="1" fill="#FECACA" opacity="0.7"/>
+              <rect x="7"   y="-15" width="3" height="4" rx="1" fill="#FECACA" opacity="0.7"/>
+            </g>
+
+            <!-- Lancet device (pen shape) -->
+            <rect x="145" y="106" width="10" height="30" rx="5" fill="#475569" stroke="#334155" stroke-width="1.5"/>
+            <rect x="147" y="133" width="6"  height="5"  rx="1" fill="#64748B"/>
             <!-- Lancet needle tip -->
-            <polygon points="150,138 149,145 151,145" fill="#CBD5E1"/>
+            <polygon points="150,138 149,146 151,146" fill="#E2E8F0"/>
+            <!-- Press button (color band) -->
+            <rect x="145" y="114" width="10" height="5"  rx="2" fill="#3B82F6"/>
 
             <!-- Blood drop — animated -->
-            <g id="lh-drop" class="animated">
-              <ellipse cx="148" cy="155" rx="6" ry="8" fill="#E63946"/>
-              <polygon points="148,142 144,153 152,153" fill="#E63946"/>
-              <ellipse cx="145" cy="150" rx="2" ry="2.5" fill="#FECACA" opacity="0.5"/>
+            <g id="lh-drop" class="anim">
+              <!-- Drop shape -->
+              <ellipse cx="150" cy="154" rx="6" ry="8"  fill="#E63946"/>
+              <polygon points="150,141 146,152 154,152"  fill="#E63946"/>
+              <!-- Highlight -->
+              <ellipse cx="147" cy="150" rx="2.5" ry="3" fill="#FECACA" opacity="0.5"/>
             </g>
 
-            <!-- Test strip device -->
-            <g id="lh-strip" class="animated">
-              <!-- Glucometer body -->
-              <rect x="200" y="105" width="55" height="34" rx="8" fill="#1E293B" stroke="#334155" stroke-width="2"/>
-              <rect x="204" y="109" width="47" height="20" rx="4" fill="#0F172A"/>
-              <!-- Screen content: "- - -" waiting -->
-              <text x="227" y="123" text-anchor="middle" font-size="10" fill="#64748B" font-weight="700">- - -</text>
+            <!-- ── GLUCOMETER ── -->
+            <g id="lh-glucometer" class="anim">
+              <!-- Body -->
+              <rect x="200" y="100" width="62" height="40" rx="9" fill="#1E293B" stroke="#334155" stroke-width="2"/>
+              <!-- Screen -->
+              <rect x="206" y="105" width="42" height="22" rx="4" fill="#0F172A"/>
+              <!-- Screen content: waiting dashes, then result -->
+              <text x="218" y="116" font-size="7"  fill="#64748B">INR</text>
+              <!-- Result number (animated separate) -->
+              <text id="lh-result-num" class="anim" x="236" y="122" text-anchor="middle" font-size="11" fill="#FCD34D" font-weight="800">2.4</text>
               <!-- Strip slot -->
-              <rect x="253" y="118" width="12" height="5" rx="2" fill="#334155"/>
-              <!-- Strip -->
-              <rect x="258" y="113" width="5" height="22" rx="2" fill="#FCD34D" stroke="#D97706" stroke-width="1"/>
-              <!-- Button -->
+              <rect x="260" y="116" width="10" height="6" rx="2" fill="#334155"/>
+              <!-- Lancet button -->
               <circle cx="212" cy="130" r="5" fill="#3B82F6" stroke="#1D4ED8" stroke-width="1"/>
+              <!-- Brand dots -->
+              <circle cx="228" cy="130" r="2" fill="#475569"/>
+              <circle cx="235" cy="130" r="2" fill="#475569"/>
+              <circle cx="242" cy="130" r="2" fill="#475569"/>
+              <!-- Test strip -->
+              <rect x="258" y="108" width="6" height="26" rx="2" fill="#FCD34D" stroke="#D97706" stroke-width="1.2"/>
             </g>
 
-            <!-- Waiting dots — animated -->
+            <!-- Waiting dots (appear while processing) -->
             <g>
-              <circle class="lh-dot animated" cx="282" cy="84" r="5" fill="#F59E0B"/>
-              <circle class="lh-dot animated" cx="297" cy="84" r="5" fill="#F59E0B"/>
-              <circle class="lh-dot animated" cx="312" cy="84" r="5" fill="#F59E0B"/>
+              <circle class="lh-dot anim" cx="240" cy="84" r="5" fill="#F59E0B"/>
+              <circle class="lh-dot anim" cx="256" cy="84" r="5" fill="#F59E0B"/>
+              <circle class="lh-dot anim" cx="272" cy="84" r="5" fill="#F59E0B"/>
             </g>
 
-            <!-- "No DOAC monitor" display -->
-            <rect x="340" y="90" width="72" height="50" rx="6" fill="#1E293B" stroke="#334155" stroke-width="2"/>
-            <rect x="343" y="93" width="66" height="38" rx="4" fill="#0F172A"/>
-            <!-- No signal icon -->
-            <line x1="356" y1="100" x2="396" y2="126" stroke="#E63946" stroke-width="2.5" stroke-linecap="round"/>
-            <line x1="356" y1="126" x2="396" y2="100" stroke="#E63946" stroke-width="2.5" stroke-linecap="round"/>
-            <text x="376" y="140" text-anchor="middle" font-size="7" fill="#64748B">No DOAC monitor</text>
           </svg>
         </div>
-
         <div class="caption-zone" id="cap-lh"></div>
       </div>
 
@@ -260,250 +355,411 @@
     </div><!-- /panel-left -->
 
 
-    <!-- ═══════════════════════════════════
+    <!-- ═══════════════════════════════
          RIGHT PANEL — THE KADI SOLUTION
-    ═══════════════════════════════════ -->
+    ═══════════════════════════════ -->
     <div class="panel panel-right">
       <div class="panel-header">
         <span class="header-icon">✦</span> The KADI Solution
       </div>
 
-      <!-- ── CLINICAL SCENE ── -->
+      <!-- ── RIGHT CLINICAL ── -->
       <div class="half">
-        <div class="scene-label">Clinical Setting</div>
-
+        <div class="scene-label">Clinical Setting — Real-Time CPB Monitoring</div>
         <div class="stage">
-          <svg viewBox="0 0 460 175" xmlns="http://www.w3.org/2000/svg">
-            <!-- Dark OR background -->
-            <rect width="460" height="175" fill="#071525"/>
-            <!-- Subtle grid lines (tech feel) -->
-            <line x1="0" y1="40"  x2="460" y2="40"  stroke="#0F2540" stroke-width="1"/>
-            <line x1="0" y1="80"  x2="460" y2="80"  stroke="#0F2540" stroke-width="1"/>
-            <line x1="0" y1="120" x2="460" y2="120" stroke="#0F2540" stroke-width="1"/>
-            <line x1="115" y1="0" x2="115" y2="175" stroke="#0F2540" stroke-width="1"/>
-            <line x1="230" y1="0" x2="230" y2="175" stroke="#0F2540" stroke-width="1"/>
-            <line x1="345" y1="0" x2="345" y2="175" stroke="#0F2540" stroke-width="1"/>
+          <svg id="svg-rc" viewBox="0 0 460 175" xmlns="http://www.w3.org/2000/svg">
 
-            <!-- Floor -->
-            <rect y="148" width="460" height="27" fill="#0A1929"/>
+            <!-- Room -->
+            <rect width="460" height="175" fill="#EFFEFB"/>
+            <rect y="150" width="460" height="25" fill="#CCFBF1"/>
+            <!-- Floor line -->
+            <rect y="148" width="460" height="4" fill="#99F6E4" opacity="0.5"/>
+            <!-- OR ceiling lights -->
+            <rect x="60"  y="0" width="56" height="7" rx="2" fill="#FEF9C3" stroke="#FDE68A" stroke-width="1"/>
+            <rect x="200" y="0" width="56" height="7" rx="2" fill="#FEF9C3" stroke="#FDE68A" stroke-width="1"/>
+            <polygon points="60,7 116,7 102,38 74,38" fill="#FFFDE7" opacity="0.35"/>
+            <polygon points="200,7 256,7 242,38 214,38" fill="#FFFDE7" opacity="0.35"/>
 
-            <!-- OR lights -->
-            <ellipse cx="160" cy="8" rx="30" ry="8" fill="#1E3A5F"/>
-            <ellipse cx="160" cy="8" rx="20" ry="5" fill="#2DD4BF" opacity="0.15"/>
-
-            <!-- Hospital bed -->
-            <rect x="18" y="96" width="115" height="14" rx="4" fill="#1E3A5F" stroke="#2D5A8E" stroke-width="1.5"/>
-            <rect x="18" y="92" width="28" height="18" rx="4" fill="#162D4A" stroke="#2D5A8E" stroke-width="1.5"/>
-            <rect x="20" y="88" width="111" height="9" rx="3" fill="#1A3352"/>
-            <!-- Bed legs -->
-            <rect x="20"  y="110" width="5" height="38" rx="2" fill="#122033"/>
-            <rect x="128" y="110" width="5" height="38" rx="2" fill="#122033"/>
+            <!-- ── PATIENT BED ── -->
+            <rect x="12" y="104" width="122" height="16" rx="5" fill="#6EE7B7" stroke="#10B981" stroke-width="2"/>
+            <rect x="12" y="100" width="32"  height="20" rx="5" fill="#A7F3D0" stroke="#10B981" stroke-width="1.5"/>
+            <rect x="14" y="92"  width="118" height="14" rx="4" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1"/>
+            <rect x="55" y="90"  width="3"   height="14" rx="1" fill="#6EE7B7"/>
+            <rect x="100" y="90" width="3"   height="14" rx="1" fill="#6EE7B7"/>
+            <rect x="15"  y="120" width="7"  height="30" rx="3" fill="#34D399"/>
+            <rect x="130" y="120" width="7"  height="30" rx="3" fill="#34D399"/>
+            <!-- Pillow -->
+            <rect x="14"  y="82"  width="36" height="14" rx="5" fill="#F0FDF4" stroke="#A7F3D0" stroke-width="1"/>
 
             <!-- Patient -->
-            <circle cx="34" cy="82" r="12" fill="#D4956A" stroke="#A0744E" stroke-width="1.5"/>
-            <rect x="20" y="76" width="34" height="14" rx="4" fill="#1A3352"/>
-            <!-- Patient blanket -->
-            <rect x="45" y="80" width="80" height="18" rx="5" fill="#1E3A5F" stroke="#2D5A8E" stroke-width="1"/>
+            <circle cx="32" cy="78" r="13" fill="#F5CBA7" stroke="#C8956C" stroke-width="1.5"/>
+            <path d="M20,73 Q32,60 44,73" fill="#78350F"/>
+            <circle cx="28" cy="76" r="1.5" fill="#92400E" opacity="0.6"/>
+            <circle cx="36" cy="76" r="1.5" fill="#92400E" opacity="0.6"/>
+            <!-- Patient gown -->
+            <rect x="22" y="91" width="20" height="18" rx="4" fill="#A7F3D0" stroke="#6EE7B7" stroke-width="1"/>
 
-            <!-- CPB circuit tubing -->
-            <path d="M130,96 Q160,88 195,92 Q220,96 240,90"
-              stroke="#7DD3FC" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.7"/>
-            <!-- Circuit flow indicator -->
-            <path d="M130,96 Q160,88 195,92 Q220,96 240,90"
-              stroke="#38BDF8" stroke-width="2" fill="none" stroke-dasharray="6,6" opacity="0.5">
-              <animateTransform attributeName="transform" type="translate" values="0 0;12 0" dur="1s" repeatCount="indefinite"/>
-            </path>
+            <!-- IV pole + bag -->
+            <rect x="136" y="32" width="3"  height="72" rx="1" fill="#94A3B8"/>
+            <rect x="128" y="32" width="19" height="4"  rx="2" fill="#94A3B8"/>
+            <path d="M133,37 Q128,40 128,52 Q128,66 137,68 Q146,66 146,52 Q146,40 141,37 Z" fill="#D1FAE5" stroke="#6EE7B7" stroke-width="1.5"/>
+            <rect x="135" y="68" width="4" height="6" fill="#6EE7B7"/>
+            <path d="M137,74 Q128,82 42,88" stroke="#FCA5A5" stroke-width="1.5" fill="none" stroke-dasharray="3,2"/>
 
-            <!-- ── FIBER OPTIC PROBE LINE (animated draw) ── -->
-            <path id="rc-probe" class="animated"
-              d="M240,90 Q260,85 275,88"
-              fill="none" stroke="#2DD4BF" stroke-width="3"
+            <!-- ══════════════════════════════
+                 CPB CIRCUIT — TWO PIPES
+            ══════════════════════════════ -->
+
+            <!-- VENOUS LINE (blue) — blood goes FROM patient TO CPB machine -->
+            <!-- Pipe body (thick) -->
+            <path d="M134,96 Q170,90 220,88"
+              stroke="#3B82F6" stroke-width="9" fill="none" stroke-linecap="round"/>
+            <!-- Inner color (lighter blue, tube interior) -->
+            <path d="M134,96 Q170,90 220,88"
+              stroke="#BFDBFE" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <!-- Flow animation dashes -->
+            <path id="rc-venous-flow" class="anim"
+              d="M134,96 Q170,90 220,88"
+              stroke="#93C5FD" stroke-width="3" fill="none"
+              stroke-dasharray="11,11" stroke-linecap="round"/>
+
+            <!-- "Venous" label -->
+            <text x="160" y="82" text-anchor="middle" font-size="7" fill="#1D4ED8" font-weight="700">Venous</text>
+
+            <!-- ARTERIAL LINE (red) — blood goes FROM CPB machine BACK TO patient -->
+            <path d="M220,108 Q172,114 134,110"
+              stroke="#E63946" stroke-width="9" fill="none" stroke-linecap="round"/>
+            <path d="M220,108 Q172,114 134,110"
+              stroke="#FECACA" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <path id="rc-arterial-flow" class="anim"
+              d="M220,108 Q172,114 134,110"
+              stroke="#FCA5A5" stroke-width="3" fill="none"
+              stroke-dasharray="11,11" stroke-linecap="round"/>
+            <text x="162" y="127" text-anchor="middle" font-size="7" fill="#B91C1C" font-weight="700">Arterial</text>
+
+            <!-- Connection arrows at patient end -->
+            <polygon points="134,92 128,96 134,100" fill="#3B82F6"/>
+            <polygon points="134,106 140,110 134,114" fill="#E63946"/>
+
+            <!-- ══════════════════════════════
+                 KADI DEVICE on venous line
+            ══════════════════════════════ -->
+
+            <!-- Probe insertion point — Y-connector on venous line at x≈178 -->
+            <circle cx="178" cy="90" r="9" fill="#ECFDF5" stroke="#0D9488" stroke-width="2.5"/>
+            <!-- Probe port symbol (cross) -->
+            <line x1="178" y1="83" x2="178" y2="97" stroke="#0D9488" stroke-width="2"/>
+            <line x1="171" y1="90" x2="185" y2="90" stroke="#0D9488" stroke-width="2"/>
+
+            <!-- Fiber optic cable going DOWN from port to KADI unit -->
+            <line id="rc-fiber" class="anim"
+              x1="178" y1="99" x2="178" y2="124"
+              stroke="#0D9488" stroke-width="2.5" stroke-linecap="round"/>
+
+            <!-- KADI Analysis Unit -->
+            <g id="rc-kadi-unit" class="anim">
+              <!-- Unit body -->
+              <rect x="154" y="124" width="48" height="26" rx="7" fill="#0F172A" stroke="#0D9488" stroke-width="2"/>
+              <!-- Inner dark screen -->
+              <rect x="158" y="128" width="30" height="16" rx="4" fill="#071525" stroke="#164E63" stroke-width="1"/>
+              <!-- Optical icon: prism dispersing light (no text) -->
+              <!-- Input beam -->
+              <line x1="158" y1="136" x2="166" y2="136" stroke="#7DD3FC" stroke-width="1.5" stroke-linecap="round"/>
+              <!-- Prism triangle -->
+              <polygon points="166,128 166,144 178,136" fill="none" stroke="#0D9488" stroke-width="1.5"/>
+              <!-- Dispersed output beams (rainbow) -->
+              <line x1="178" y1="136" x2="187" y2="130" stroke="#60A5FA" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="178" y1="136" x2="187" y2="134" stroke="#34D399" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="178" y1="136" x2="187" y2="138" stroke="#FCD34D" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="178" y1="136" x2="187" y2="142" stroke="#F87171" stroke-width="1.5" stroke-linecap="round"/>
+              <!-- LED status -->
+              <circle id="rc-led" class="anim" cx="195" cy="136" r="4" fill="#0D9488"/>
+              <!-- KADI label (tiny, brand only) -->
+              <text x="178" y="156" text-anchor="middle" font-size="5.5" fill="#64748B" font-weight="700">KADI OPTICS</text>
+            </g>
+
+            <!-- Data cable from KADI unit to monitor -->
+            <path id="rc-data-cable" class="anim"
+              d="M202,136 Q260,132 315,76"
+              fill="none" stroke="#475569" stroke-width="1.8"
+              stroke-dasharray="200" stroke-dashoffset="200"
               stroke-linecap="round"/>
-            <!-- Probe tip -->
-            <circle cx="242" cy="90" r="4" fill="#2DD4BF" opacity="0.8"/>
 
-            <!-- KADI DEVICE BOX (no text — icon only) -->
-            <rect x="276" y="72" width="58" height="42" rx="8" fill="#0D2137" stroke="#2DD4BF" stroke-width="2"/>
-            <!-- Inner glow -->
-            <rect x="279" y="75" width="52" height="36" rx="6" fill="#071525" stroke="#1E3A5F" stroke-width="1"/>
-            <!-- Optical icon: prism/fiber symbol -->
-            <!-- Input beam -->
-            <line x1="279" y1="93" x2="298" y2="93" stroke="#38BDF8" stroke-width="2" stroke-linecap="round"/>
-            <!-- Prism shape -->
-            <polygon points="298,82 298,104 316,93" fill="none" stroke="#7DD3FC" stroke-width="1.5"/>
-            <!-- Dispersed output beams -->
-            <line x1="316" y1="93" x2="329" y2="82" stroke="#2DD4BF"  stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="316" y1="93" x2="329" y2="93" stroke="#38BDF8"  stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="316" y1="93" x2="329" y2="104" stroke="#06B6D4" stroke-width="1.5" stroke-linecap="round"/>
-            <!-- LED status indicator -->
-            <circle id="rc-led" class="animated" cx="320" cy="107" r="4" fill="#2DD4BF"/>
+            <!-- ══════════════════════════════
+                 CPB MACHINE (big box, center)
+            ══════════════════════════════ -->
+            <rect x="224" y="18" width="90" height="132" rx="8" fill="#DBEAFE" stroke="#3B82F6" stroke-width="2.5"/>
+            <!-- Machine inner panel -->
+            <rect x="228" y="22" width="82" height="124" rx="6" fill="#EFF6FF"/>
+            <!-- Machine top display -->
+            <rect x="232" y="26" width="74" height="36" rx="4" fill="#1E293B"/>
+            <rect x="235" y="29" width="68" height="28" rx="3" fill="#0F172A"/>
+            <!-- Display content: vitals -->
+            <text x="248" y="39" font-size="5.5" fill="#4ADE80">♥ HR  72</text>
+            <text x="248" y="47" font-size="5.5" fill="#60A5FA">O₂  99%</text>
+            <text x="248" y="55" font-size="5.5" fill="#FCD34D">BP  82/50</text>
+            <!-- Status light on display -->
+            <circle cx="295" cy="30" r="3" fill="#22C55E">
+              <animate attributeName="opacity" values="1;0.2;1" dur="1s" repeatCount="indefinite"/>
+            </circle>
 
-            <!-- Connection cable to monitor -->
-            <path d="M334,93 Q356,93 358,86"
-              fill="none" stroke="#475569" stroke-width="2.5" stroke-linecap="round"/>
+            <!-- Oxygenator column (center of machine) -->
+            <rect x="244" y="68" width="22" height="72" rx="6" fill="#BFDBFE" stroke="#3B82F6" stroke-width="1.5"/>
+            <!-- Column internal structure (horizontal bands) -->
+            <line x1="246" y1="78"  x2="264" y2="78"  stroke="#93C5FD" stroke-width="1"/>
+            <line x1="246" y1="86"  x2="264" y2="86"  stroke="#93C5FD" stroke-width="1"/>
+            <line x1="246" y1="94"  x2="264" y2="94"  stroke="#93C5FD" stroke-width="1"/>
+            <line x1="246" y1="102" x2="264" y2="102" stroke="#93C5FD" stroke-width="1"/>
+            <line x1="246" y1="110" x2="264" y2="110" stroke="#93C5FD" stroke-width="1"/>
+            <line x1="246" y1="118" x2="264" y2="118" stroke="#93C5FD" stroke-width="1"/>
+            <line x1="246" y1="126" x2="264" y2="126" stroke="#93C5FD" stroke-width="1"/>
+            <!-- Oxygenator label icon (O2 molecule) -->
+            <text x="255" y="73" text-anchor="middle" font-size="6" fill="#1D4ED8" font-weight="700">O₂</text>
 
-            <!-- LARGE MONITOR SCREEN -->
-            <rect x="358" y="38" width="90" height="70" rx="8" fill="#0D1B2A" stroke="#1E3A5F" stroke-width="2"/>
-            <rect x="361" y="41" width="84" height="58" rx="6" fill="#060F1A"/>
+            <!-- Centrifugal pump -->
+            <circle cx="288" cy="86" r="20" fill="#BFDBFE" stroke="#3B82F6" stroke-width="2"/>
+            <circle cx="288" cy="86" r="14" fill="#DBEAFE" stroke="#60A5FA" stroke-width="1"/>
+            <!-- Pump blades (rotate in CSS) -->
+            <g id="rc-pump-blades" class="anim">
+              <line x1="288" y1="72"  x2="288" y2="82"  stroke="#3B82F6" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="288" y1="90"  x2="288" y2="100" stroke="#3B82F6" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="274" y1="86"  x2="284" y2="86"  stroke="#3B82F6" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="292" y1="86"  x2="302" y2="86"  stroke="#3B82F6" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="278" y1="76"  x2="285" y2="83"  stroke="#3B82F6" stroke-width="2" stroke-linecap="round"/>
+              <line x1="291" y1="89"  x2="298" y2="96"  stroke="#3B82F6" stroke-width="2" stroke-linecap="round"/>
+              <line x1="278" y1="96"  x2="285" y2="89"  stroke="#3B82F6" stroke-width="2" stroke-linecap="round"/>
+              <line x1="291" y1="83"  x2="298" y2="76"  stroke="#3B82F6" stroke-width="2" stroke-linecap="round"/>
+            </g>
+            <circle cx="288" cy="86" r="4" fill="#1D4ED8"/>
+            <!-- Pump label area -->
+            <text x="288" y="116" text-anchor="middle" font-size="5.5" fill="#1D4ED8" font-weight="700">PUMP</text>
+
+            <!-- Venous in-port on machine left side -->
+            <rect x="216" y="87" width="10" height="8" rx="2" fill="#3B82F6" stroke="#1D4ED8" stroke-width="1"/>
+            <!-- Arterial out-port -->
+            <rect x="216" y="105" width="10" height="8" rx="2" fill="#E63946" stroke="#B91C1C" stroke-width="1"/>
+            <!-- Port connectors -->
+            <rect x="224" y="89" width="4" height="4" fill="#2563EB"/>
+            <rect x="224" y="107" width="4" height="4" fill="#DC2626"/>
+
+            <!-- Heat exchanger at bottom of machine -->
+            <rect x="272" y="112" width="34" height="26" rx="4" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1.5"/>
+            <line x1="274" y1="118" x2="304" y2="118" stroke="#93C5FD" stroke-width="1.5"/>
+            <line x1="274" y1="122" x2="304" y2="122" stroke="#93C5FD" stroke-width="1.5"/>
+            <line x1="274" y1="126" x2="304" y2="126" stroke="#93C5FD" stroke-width="1.5"/>
+            <line x1="274" y1="130" x2="304" y2="130" stroke="#93C5FD" stroke-width="1.5"/>
+            <text x="288" y="145" text-anchor="middle" font-size="5" fill="#3B82F6">HEAT EXCHANGER</text>
+
+            <!-- "CPB Machine" label at bottom of machine -->
+            <text x="269" y="157" text-anchor="middle" font-size="6.5" fill="#1D4ED8" font-weight="800">CPB Machine</text>
+
+            <!-- ══════════════════════════════
+                 MONITOR (right side)
+            ══════════════════════════════ -->
+            <rect x="318" y="24" width="100" height="80" rx="8" fill="#1E293B" stroke="#0D9488" stroke-width="2.5"/>
+            <rect x="322" y="28" width="92" height="68" rx="6" fill="#0F172A"/>
             <!-- Monitor stand -->
-            <rect x="397" y="108" width="4" height="18" fill="#1E3A5F"/>
-            <rect x="388" y="124" width="22" height="5" rx="2" fill="#1E3A5F"/>
-            <!-- Monitor top bar -->
-            <rect x="361" y="41" width="84" height="10" rx="6" fill="#0A1929"/>
-            <!-- LIVE badge in top bar -->
-            <circle id="rc-live-dot" cx="370" cy="46" r="4" fill="#22C55E"/>
-            <text x="378" y="50" font-size="7" fill="#4ADE80" font-weight="700">LIVE</text>
-            <text x="410" y="50" font-size="6" fill="#64748B">00:00:00</text>
+            <rect x="362" y="104" width="6"  height="22" fill="#334155"/>
+            <rect x="350" y="124" width="30" height="6" rx="3" fill="#334155"/>
+            <!-- Top bar -->
+            <rect x="322" y="28" width="92" height="12" rx="6" fill="#071525"/>
+            <!-- LIVE indicator -->
+            <circle id="rc-live-dot" class="anim" cx="333" cy="34" r="4.5" fill="#22C55E"/>
+            <text x="342" y="38" font-size="7.5" fill="#4ADE80" font-weight="700">LIVE</text>
+            <text x="395" y="38" font-size="6.5" fill="#475569">00:00</text>
 
-            <!-- Label -->
-            <text x="403" y="62" text-anchor="middle" font-size="6" fill="#475569">Coagulation Index</text>
+            <!-- Coagulation label -->
+            <text x="368" y="52" text-anchor="middle" font-size="6" fill="#64748B">Coagulation Index</text>
 
-            <!-- Waveform — animated draw -->
-            <polyline id="rc-wave" class="animated"
-              points="363,82 368,82 372,68 376,96 380,82 384,82 388,71 392,93 396,82 400,82 404,74 408,90 412,82 416,82 420,76 424,88 428,82 432,82 436,79 440,85 444,82"
-              fill="none" stroke="#2DD4BF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- Live waveform (drawn by CSS animation) -->
+            <polyline id="rc-wave" class="anim"
+              points="324,72 328,72 332,58 336,86 340,72 344,72 348,62 352,82 356,72 360,72 364,65 368,79 372,72 376,72 380,66 384,78 388,72 392,72 396,68 400,76 404,72 408,72"
+              fill="none" stroke="#0D9488" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
 
-            <!-- Coag value -->
-            <text x="403" y="98" text-anchor="middle" font-size="8" fill="#7DD3FC" font-weight="700">ACT: 420 s</text>
+            <!-- Current value display -->
+            <text x="368" y="98" text-anchor="middle" font-size="8" fill="#34D399" font-weight="800">ACT: 412 s</text>
 
-            <!-- Doctor watching -->
-            <circle cx="352" cy="70" r="12" fill="#D4956A" stroke="#A0744E" stroke-width="1.5"/>
-            <!-- Scrubs (teal for right panel) -->
-            <rect x="342" y="82" width="20" height="28" rx="5" fill="#0E7490" stroke="#0891B2" stroke-width="1.5"/>
-            <rect x="344" y="110" width="7" height="20" rx="3" fill="#0C4A6E" stroke="#0369A1" stroke-width="1"/>
-            <rect x="353" y="110" width="7" height="20" rx="3" fill="#0C4A6E" stroke="#0369A1" stroke-width="1"/>
-            <!-- Doctor arm pointing at screen -->
-            <rect x="362" y="88" width="22" height="8" rx="4" fill="#D4956A" stroke="#A0744E" stroke-width="1"/>
+            <!-- ── DOCTOR (right side, watching monitor) ── -->
+            <g transform="translate(420,150)">
+              <circle cx="0" cy="-70" r="12" fill="#FDE8D8" stroke="#C8956C" stroke-width="1.5"/>
+              <path d="M-11,-76 Q0,-84 11,-76" fill="#3B1E08"/>
+              <circle cx="-4" cy="-72" r="1.5" fill="#0E7490" opacity="0.7"/>
+              <circle cx="4"  cy="-72" r="1.5" fill="#0E7490" opacity="0.7"/>
+              <!-- Teal scrubs -->
+              <rect x="-10" y="-58" width="20" height="28" rx="5" fill="#0E7490" stroke="#0891B2" stroke-width="1.5"/>
+              <rect x="-8"  y="-30" width="8"  height="30" rx="3" fill="#0C4A6E"/>
+              <rect x="2"   y="-30" width="8"  height="30" rx="3" fill="#0C4A6E"/>
+              <!-- Arm pointing at monitor -->
+              <rect x="-18" y="-56" width="8"  height="22" rx="4" fill="#FDE8D8" stroke="#C8956C" stroke-width="1"/>
+              <rect x="-26" y="-38" width="28" height="8"  rx="4" fill="#FDE8D8" stroke="#C8956C" stroke-width="1"/>
+            </g>
+
           </svg>
         </div>
-
         <div class="caption-zone" id="cap-rc"></div>
       </div>
 
       <div class="scene-sep"></div>
 
-      <!-- ── HOME SCENE ── -->
+      <!-- ── RIGHT HOME ── -->
       <div class="half">
-        <div class="scene-label">Home Setting</div>
-
+        <div class="scene-label">Home Setting — DOAC / Warfarin Patient</div>
         <div class="stage">
-          <svg viewBox="0 0 460 175" xmlns="http://www.w3.org/2000/svg">
-            <!-- Dark home bg -->
-            <rect width="460" height="175" fill="#071525"/>
-            <!-- Subtle warm light from left (lamp) -->
-            <radialGradient id="lamp-glow" cx="10%" cy="50%" r="40%">
-              <stop offset="0%"   stop-color="#78350F" stop-opacity="0.3"/>
-              <stop offset="100%" stop-color="#071525" stop-opacity="0"/>
-            </radialGradient>
-            <rect width="460" height="175" fill="url(#lamp-glow)"/>
-            <!-- Floor -->
-            <rect y="148" width="460" height="27" fill="#0A1929"/>
+          <svg id="svg-rh" viewBox="0 0 460 175" xmlns="http://www.w3.org/2000/svg">
 
-            <!-- Couch/sofa -->
-            <rect x="10" y="104" width="145" height="44" rx="8" fill="#1E3A5F" stroke="#2D5A8E" stroke-width="2"/>
-            <rect x="10" y="96"  width="145" height="14" rx="5" fill="#162D4A" stroke="#2D5A8E" stroke-width="1.5"/>
-            <!-- Sofa cushions -->
-            <rect x="12" y="106" width="68" height="38" rx="5" fill="#1A3352"/>
-            <rect x="82" y="106" width="71" height="38" rx="5" fill="#1A3352"/>
-            <!-- Sofa armrests -->
-            <rect x="10"  y="100" width="18" height="48" rx="5" fill="#162D4A" stroke="#2D5A8E" stroke-width="1.5"/>
-            <rect x="137" y="100" width="18" height="48" rx="5" fill="#162D4A" stroke="#2D5A8E" stroke-width="1.5"/>
+            <!-- Room -->
+            <rect width="460" height="175" fill="#F0FFF9"/>
+            <rect y="150" width="460" height="25" fill="#CCFBF1"/>
+            <rect y="148" width="460" height="4" fill="#99F6E4" opacity="0.4"/>
 
-            <!-- Person sitting on sofa -->
-            <!-- Head -->
-            <circle cx="75" cy="76" r="14" fill="#D4956A" stroke="#A0744E" stroke-width="1.5"/>
-            <!-- Hair -->
-            <path d="M62,71 Q75,58 88,71" fill="#1C1917"/>
-            <!-- Body (casual) -->
-            <rect x="63" y="90" width="24" height="32" rx="6" fill="#1E3A5F" stroke="#2D5A8E" stroke-width="1.5"/>
-            <!-- Left arm relaxed on armrest -->
-            <rect x="18" y="100" width="45" height="9" rx="4" fill="#D4956A" stroke="#A0744E" stroke-width="1"/>
-            <!-- Right arm extended -->
-            <rect x="87" y="104" width="44" height="8" rx="4" fill="#D4956A" stroke="#A0744E" stroke-width="1"/>
-            <!-- Legs -->
-            <rect x="65" y="120" width="9" height="28" rx="3" fill="#1C3253"/>
-            <rect x="76" y="120" width="9" height="28" rx="3" fill="#1C3253"/>
+            <!-- Lamp (warm light, top left) -->
+            <rect x="18" y="18" width="8"  height="36" rx="3" fill="#D97706"/>
+            <ellipse cx="22" cy="18" rx="18" ry="10" fill="#FDE68A" stroke="#F59E0B" stroke-width="1.5"/>
+            <!-- Lamp glow -->
+            <ellipse cx="22" cy="28" rx="28" ry="28" fill="#FEF9C3" opacity="0.3"/>
 
-            <!-- KADI WRIST DEVICE (on right arm) -->
-            <g id="rh-wrist-glow" class="animated">
-              <!-- Band -->
-              <rect x="119" y="100" width="28" height="16" rx="6" fill="#0E7490" stroke="#2DD4BF" stroke-width="2"/>
+            <!-- Window -->
+            <rect x="340" y="8"  width="96" height="72" rx="6" fill="#BAE6FD" stroke="#7DD3FC" stroke-width="2"/>
+            <line x1="388" y1="8"  x2="388" y2="80"  stroke="#7DD3FC" stroke-width="1.5"/>
+            <line x1="340" y1="44" x2="436" y2="44"  stroke="#7DD3FC" stroke-width="1.5"/>
+            <path d="M340,8 Q330,25 335,80" fill="#D1FAE5" stroke="#6EE7B7" stroke-width="1" opacity="0.7"/>
+            <path d="M436,8 Q446,25 441,80" fill="#D1FAE5" stroke="#6EE7B7" stroke-width="1" opacity="0.7"/>
+            <!-- Tree outside window -->
+            <ellipse cx="365" cy="38" rx="14" ry="18" fill="#4ADE80" opacity="0.6"/>
+            <rect x="363" y="56" width="4"  height="18" fill="#92400E" opacity="0.7"/>
+            <circle cx="395" cy="30" r="10" fill="#86EFAC" opacity="0.5"/>
+
+            <!-- ── COUCH ── -->
+            <rect x="10" y="104" width="155" height="46" rx="10" fill="#A7F3D0" stroke="#34D399" stroke-width="2"/>
+            <rect x="10" y="96"  width="155" height="14" rx="6"  fill="#6EE7B7" stroke="#34D399" stroke-width="1.5"/>
+            <!-- Cushions -->
+            <rect x="12" y="106" width="74" height="40" rx="6" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1"/>
+            <rect x="88" y="106" width="75" height="40" rx="6" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1"/>
+            <!-- Armrests -->
+            <rect x="10"  y="98" width="20" height="52" rx="7" fill="#6EE7B7" stroke="#34D399" stroke-width="1.5"/>
+            <rect x="145" y="98" width="20" height="52" rx="7" fill="#6EE7B7" stroke="#34D399" stroke-width="1.5"/>
+
+            <!-- ── PERSON on couch ── -->
+            <g transform="translate(72,150)">
+              <!-- Head -->
+              <circle cx="0" cy="-72" r="14" fill="#F5CBA7" stroke="#C8956C" stroke-width="1.5"/>
+              <!-- Hair -->
+              <path d="M-13,-78 Q0,-90 13,-78" fill="#1C1917"/>
+              <!-- Face (relaxed/happy) -->
+              <circle cx="-5" cy="-74" r="1.5" fill="#92400E" opacity="0.7"/>
+              <circle cx="5"  cy="-74" r="1.5" fill="#92400E" opacity="0.7"/>
+              <path d="M-5,-68 Q0,-65 5,-68" fill="none" stroke="#92400E" stroke-width="1.5"/>
+              <!-- Casual shirt -->
+              <rect x="-12" y="-58" width="24" height="32" rx="6" fill="#D1FAE5" stroke="#6EE7B7" stroke-width="1.5"/>
+              <!-- Left arm resting on couch armrest -->
+              <rect x="-20" y="-56" width="10" height="56" rx="5" fill="#F5CBA7" stroke="#C8956C" stroke-width="1"/>
+              <!-- Right arm — hand extends toward right, shows wrist device -->
+              <rect x="12"  y="-56" width="10" height="26" rx="5" fill="#F5CBA7" stroke="#C8956C" stroke-width="1"/>
+              <!-- Forearm extending right (rotated) -->
+              <rect x="12"  y="-32" width="80" height="10" rx="5" fill="#F5CBA7" stroke="#C8956C" stroke-width="1"/>
+              <!-- Pants (sitting) -->
+              <rect x="-10" y="-26" width="9" height="26" rx="3" fill="#0F4C2A"/>
+              <rect x="2"   y="-26" width="9" height="26" rx="3" fill="#0F4C2A"/>
+            </g>
+
+            <!-- ── KADI WRIST DEVICE (on right wrist, x≈145, y≈118) ── -->
+            <!-- Wrist bone suggestion -->
+            <ellipse cx="148" cy="120" rx="12" ry="8" fill="#F5CBA7" stroke="#C8956C" stroke-width="1.2"/>
+            <!-- Wrist device band -->
+            <g id="rh-device" class="anim">
+              <!-- Band strap (back) -->
+              <rect x="135" y="115" width="26" height="10" rx="8" fill="#0D9488" stroke="#0D9488" stroke-width="1"/>
               <!-- Watch face -->
-              <rect x="122" y="102" width="22" height="12" rx="3" fill="#060F1A" stroke="#2DD4BF" stroke-width="1"/>
-              <!-- Mini waveform on wrist -->
-              <polyline points="124,108 126,105 128,111 130,107 132,108 134,108 136,106 138,110 140,108 142,108"
-                fill="none" stroke="#2DD4BF" stroke-width="1.2" stroke-linecap="round"/>
-              <!-- Pulse dot -->
-              <circle cx="133" cy="114" r="2" fill="#22C55E">
-                <animate attributeName="opacity" values="1;0.2;1" dur="0.8s" repeatCount="indefinite"/>
+              <rect x="138" y="111" width="20" height="18" rx="5" fill="#0F172A" stroke="#0D9488" stroke-width="2.5"/>
+              <!-- Screen glow -->
+              <rect x="140" y="113" width="16" height="14" rx="3" fill="#071525"/>
+              <!-- Mini live waveform on wrist screen -->
+              <polyline id="rh-wrist-wave" class="anim"
+                points="141,120 143,117 145,123 147,119 149,120 151,120 153,118 155,122"
+                fill="none" stroke="#0D9488" stroke-width="1.4" stroke-linecap="round"/>
+              <!-- Pulse dot on wrist -->
+              <circle cx="148" cy="126" r="2.5" fill="#22C55E">
+                <animate attributeName="opacity" values="1;0.15;1" dur="0.8s" repeatCount="indefinite"/>
               </circle>
+              <!-- Crown/button -->
+              <rect x="158" y="117" width="3" height="6" rx="1" fill="#0D9488"/>
             </g>
 
-            <!-- Wireless signal arcs from wrist -->
-            <g transform="translate(133, 100)">
-              <path class="rh-arc animated" d="M-10,-6 Q0,-16 10,-6" stroke-width="2.5"/>
-              <path class="rh-arc animated" d="M-17,-12 Q0,-26 17,-12" stroke-width="2" opacity="0.65"/>
-              <path class="rh-arc animated" d="M-24,-18 Q0,-36 24,-18" stroke-width="1.5" opacity="0.35"/>
+            <!-- Signal arcs from wrist to phone -->
+            <g transform="translate(148, 112)">
+              <path class="rh-arc anim" d="M-14,-10 Q0,-26 14,-10" stroke="#0D9488" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <path class="rh-arc anim" d="M-22,-18 Q0,-40 22,-18" stroke="#0D9488" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.7"/>
+              <path class="rh-arc anim" d="M-30,-26 Q0,-54 30,-26" stroke="#0D9488" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.4"/>
             </g>
 
-            <!-- Side table -->
-            <rect x="160" y="120" width="70" height="8" rx="3" fill="#1E3A5F" stroke="#2D5A8E" stroke-width="1.5"/>
-            <rect x="172" y="128" width="6" height="20" rx="2" fill="#162D4A"/>
-            <rect x="212" y="128" width="6" height="20" rx="2" fill="#162D4A"/>
-            <!-- Coffee mug on table (no lancets!) -->
-            <rect x="176" y="104" width="18" height="18" rx="3" fill="#7C3AED" stroke="#6D28D9" stroke-width="1.5"/>
-            <path d="M194,109 Q202,109 202,117 Q202,120 194,120" fill="none" stroke="#7C3AED" stroke-width="2"/>
-            <!-- Steam -->
-            <path d="M181,103 Q183,98 181,93" fill="none" stroke="#475569" stroke-width="1.5" stroke-linecap="round"/>
-            <path d="M186,103 Q188,97 186,92" fill="none" stroke="#475569" stroke-width="1.5" stroke-linecap="round"/>
+            <!-- ── SIDE TABLE ── -->
+            <rect x="175" y="116" width="62" height="8" rx="3" fill="#92400E" stroke="#78350F" stroke-width="1.5"/>
+            <rect x="184" y="124" width="8"  height="26" rx="3" fill="#7C2D12"/>
+            <rect x="218" y="124" width="8"  height="26" rx="3" fill="#7C2D12"/>
 
-            <!-- SMARTPHONE showing data -->
-            <g id="rh-phone-data" class="animated">
+            <!-- Coffee mug on table (person is relaxed — no medical devices!) -->
+            <rect x="184" y="98"  width="22" height="20" rx="4" fill="#7C3AED" stroke="#6D28D9" stroke-width="1.5"/>
+            <path d="M206,102 Q215,102 215,111 Q215,116 206,116" fill="none" stroke="#7C3AED" stroke-width="2.5" stroke-linecap="round"/>
+            <!-- Steam wisps -->
+            <path d="M190,97 Q192,91 190,85" fill="none" stroke="#CBD5E1" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M197,96 Q199,90 197,84" fill="none" stroke="#CBD5E1" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M204,97 Q206,91 204,85" fill="none" stroke="#CBD5E1" stroke-width="1.5" stroke-linecap="round"/>
+            <!-- Mug label (coffee icon) -->
+            <text x="195" y="112" font-size="8" fill="#EDE9FE">☕</text>
+
+            <!-- ── SMARTPHONE (detailed) ── -->
+            <g id="rh-phone" class="anim">
               <!-- Phone body -->
-              <rect x="238" y="58" width="68" height="116" rx="12" fill="#0D1B2A" stroke="#2DD4BF" stroke-width="2"/>
-              <rect x="242" y="68" width="60" height="96" rx="6" fill="#060F1A"/>
+              <rect x="248" y="46"  width="72" height="120" rx="12" fill="#1E293B" stroke="#0D9488" stroke-width="2.5"/>
+              <!-- Screen -->
+              <rect x="252" y="58"  width="64" height="98"  rx="7"  fill="#0F172A"/>
               <!-- Camera notch -->
-              <rect x="264" y="60" width="16" height="5" rx="2" fill="#122033"/>
-              <!-- Screen header -->
-              <rect x="242" y="68" width="60" height="14" rx="6" fill="#0A1929"/>
-              <circle cx="250" cy="75" r="3.5" fill="#22C55E">
-                <animate attributeName="opacity" values="1;0.2;1" dur="0.9s" repeatCount="indefinite"/>
-              </circle>
-              <text x="257" y="78" font-size="6.5" fill="#4ADE80" font-weight="700">LIVE</text>
-              <text x="294" y="78" font-size="6" fill="#475569">24/7</text>
+              <rect x="274" y="48"  width="16" height="6"   rx="3"  fill="#0F172A"/>
+              <!-- Home indicator -->
+              <rect x="276" y="162" width="12" height="3"   rx="1"  fill="#334155"/>
 
-              <!-- Graph area label -->
-              <text x="272" y="92" text-anchor="middle" font-size="6" fill="#64748B">Coagulation Index</text>
+              <!-- Header bar -->
+              <rect x="252" y="58" width="64" height="14" rx="7" fill="#071525"/>
+              <!-- LIVE badge -->
+              <circle id="rh-live-dot" class="anim" cx="261" cy="65" r="4" fill="#22C55E"/>
+              <text x="268" y="69" font-size="7" fill="#4ADE80" font-weight="700">LIVE</text>
+              <text x="306" y="69" font-size="6" fill="#475569">24/7</text>
 
-              <!-- Waveform on phone -->
-              <polyline id="rh-phone-wave" class="animated"
-                points="244,110 248,110 251,100 254,120 257,110 260,110 263,103 266,117 269,110 272,110 275,105 278,115 281,110 284,110 287,107 290,113 293,110 296,110 299,108 302,112"
-                fill="none" stroke="#2DD4BF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              <!-- App header -->
+              <text x="284" y="84" text-anchor="middle" font-size="6" fill="#64748B">Coagulation Monitor</text>
 
-              <!-- Status -->
-              <rect x="248" y="122" width="56" height="14" rx="4" fill="#064E3B"/>
-              <text x="276" y="132" text-anchor="middle" font-size="7" fill="#4ADE80" font-weight="700">● Normal Range</text>
+              <!-- Waveform graph -->
+              <rect x="254" y="88" width="60" height="36" rx="3" fill="#071525" stroke="#0F4C2A" stroke-width="1"/>
+              <polyline id="rh-phone-wave" class="anim"
+                points="256,106 259,106 262,96 265,116 268,106 271,106 274,99 277,113 280,106 283,106 286,101 289,111 292,106 295,106 298,103 301,109 304,106 307,106 310,104 313,108"
+                fill="none" stroke="#0D9488" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              <!-- Axis labels -->
+              <text x="256" y="96" font-size="5" fill="#0F4C2A">High</text>
+              <text x="256" y="122" font-size="5" fill="#0F4C2A">Low</text>
 
-              <!-- Last reading -->
-              <text x="272" y="148" text-anchor="middle" font-size="6" fill="#475569">Last: 2 min ago</text>
-              <!-- Time -->
-              <text x="272" y="158" text-anchor="middle" font-size="7" fill="#7DD3FC" font-weight="600">10:42 AM</text>
+              <!-- Status panel -->
+              <rect x="254" y="128" width="60" height="16" rx="4" fill="#064E3B"/>
+              <text x="284" y="139" text-anchor="middle" font-size="7.5" fill="#34D399" font-weight="700">● Normal Range</text>
+
+              <!-- Metrics row -->
+              <text x="260" y="152" font-size="6"   fill="#94A3B8">INR</text>
+              <text x="260" y="160" font-size="8"   fill="#34D399" font-weight="700">2.3</text>
+              <text x="285" y="152" font-size="6"   fill="#94A3B8">Trend</text>
+              <text x="285" y="160" font-size="8"   fill="#34D399" font-weight="700">→ Stable</text>
             </g>
 
-            <!-- "No blood draw needed" badge (bottom left) -->
-            <g transform="translate(16, 60)">
-              <rect width="88" height="28" rx="6" fill="#1A0A0A" stroke="#E63946" stroke-width="1.5"/>
-              <!-- Crossed-out needle icon -->
-              <rect x="8" y="7" width="4" height="14" rx="2" fill="#94A3B8"/>
-              <polygon points="10,21 8,26 12,26" fill="#94A3B8"/>
-              <line x1="6" y1="5"  x2="18" y2="25" stroke="#E63946" stroke-width="2" stroke-linecap="round"/>
-              <line x1="6" y1="25" x2="18" y2="5"  stroke="#E63946" stroke-width="2" stroke-linecap="round"/>
-              <text x="24" y="11" font-size="6.5" fill="#FCA5A5" font-weight="700">No blood</text>
-              <text x="24" y="22" font-size="6.5" fill="#FCA5A5" font-weight="700">draws ever</text>
-            </g>
+            <!-- "No blood draw" badge -->
+            <rect x="8" y="14" width="98" height="30" rx="8" fill="#FFF1F2" stroke="#FDA4AF" stroke-width="1.5"/>
+            <!-- Crossed needle icon -->
+            <rect x="18" y="20" width="4"  height="18" rx="2" fill="#94A3B8"/>
+            <polygon points="20,38 18,44 22,44" fill="#94A3B8"/>
+            <line x1="14" y1="18" x2="28" y2="46" stroke="#E63946" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="14" y1="46" x2="28" y2="18" stroke="#E63946" stroke-width="2.5" stroke-linecap="round"/>
+            <text x="36" y="27" font-size="7"   fill="#B91C1C" font-weight="700">No blood</text>
+            <text x="36" y="37" font-size="7"   fill="#B91C1C" font-weight="700">draws ever</text>
+
           </svg>
         </div>
-
         <div class="caption-zone" id="cap-rh"></div>
       </div>
 
