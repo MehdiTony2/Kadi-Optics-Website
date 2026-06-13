@@ -1,0 +1,239 @@
+/* ── ANIMATION STATE CONTROL ── */
+.panel-right .scene { animation-play-state: paused !important; }
+.panel-right.active .scene { animation-play-state: running !important; }
+
+/* ── SHARED SCENE BASE ── */
+.scene { position: absolute; width: 100%; height: 100%; top: 0; left: 0; opacity: 0; }
+
+/* ════════════════════════════════════════
+   LEFT PANEL — CLINICAL SCENE
+   Total duration: 8s
+════════════════════════════════════════ */
+
+/* Scene fade in/out */
+.lc-scene {
+  animation: scene-show 8s linear infinite;
+  animation-delay: 0s;
+}
+.lh-scene {
+  animation: scene-show 8s linear infinite;
+  animation-delay: 8s;
+}
+
+@keyframes scene-show {
+  0%   { opacity: 0; }
+  5%   { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* Nurse walking out */
+.nurse-out {
+  animation: walk-out 8s linear infinite;
+}
+@keyframes walk-out {
+  0%   { transform: translateX(0);   opacity: 1; }
+  20%  { transform: translateX(0);   opacity: 1; }
+  35%  { transform: translateX(80px); opacity: 1; }
+  40%  { transform: translateX(80px); opacity: 0; }
+  60%  { transform: translateX(80px); opacity: 0; }
+  65%  { transform: translateX(80px); opacity: 1; }
+  80%  { transform: translateX(0);   opacity: 1; }
+  100% { transform: translateX(0);   opacity: 1; }
+}
+
+/* Clock ticking */
+.clock-hand {
+  transform-origin: 50% 100%;
+  animation: tick-hand 8s linear infinite;
+}
+@keyframes tick-hand {
+  0%   { transform: rotate(-60deg); opacity: 0; }
+  25%  { transform: rotate(-60deg); opacity: 1; }
+  65%  { transform: rotate(240deg); opacity: 1; }
+  75%  { transform: rotate(240deg); opacity: 0; }
+  100% { transform: rotate(240deg); opacity: 0; }
+}
+
+/* Text captions — left clinical */
+.lc-text-1 { animation: caption-show 8s linear infinite; animation-delay: 0s; }
+.lc-text-2 { animation: caption-show 8s linear infinite; animation-delay: 0.5s; }
+.lc-text-3 { animation: caption-show 8s linear infinite; animation-delay: 3.5s; }
+.lc-text-4 { animation: caption-show 8s linear infinite; animation-delay: 5.5s; }
+
+@keyframes caption-show {
+  0%   { opacity: 0; transform: translateY(4px); }
+  8%   { opacity: 1; transform: translateY(0); }
+  85%  { opacity: 1; }
+  95%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* Paper result appearing */
+.result-paper {
+  animation: paper-appear 8s linear infinite;
+}
+@keyframes paper-appear {
+  0%   { opacity: 0; transform: scale(0.5); }
+  65%  { opacity: 0; transform: scale(0.5); }
+  75%  { opacity: 1; transform: scale(1); }
+  90%  { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1); }
+}
+
+/* ════════════════════════════════════════
+   LEFT PANEL — HOME SCENE
+   Duration: 8s, starts at 8s
+════════════════════════════════════════ */
+
+.lh-blood-drop {
+  animation: drop-fall 8s linear infinite;
+  animation-delay: 8s;
+}
+@keyframes drop-fall {
+  0%   { opacity: 0; transform: translateY(-8px); }
+  15%  { opacity: 0; transform: translateY(-8px); }
+  25%  { opacity: 1; transform: translateY(0); }
+  60%  { opacity: 1; transform: translateY(0); }
+  70%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+.lh-strip {
+  animation: strip-insert 8s linear infinite;
+  animation-delay: 8s;
+}
+@keyframes strip-insert {
+  0%   { opacity: 0; transform: translateX(-20px); }
+  30%  { opacity: 0; transform: translateX(-20px); }
+  42%  { opacity: 1; transform: translateX(0); }
+  85%  { opacity: 1; }
+  95%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+.lh-wait-dots span {
+  animation: dot-pulse 8s linear infinite;
+  animation-delay: 8s;
+}
+.lh-wait-dots span:nth-child(1) { animation-delay: 10.5s; }
+.lh-wait-dots span:nth-child(2) { animation-delay: 11s; }
+.lh-wait-dots span:nth-child(3) { animation-delay: 11.5s; }
+
+@keyframes dot-pulse {
+  0%, 35% { opacity: 0; transform: scale(0); }
+  50%     { opacity: 1; transform: scale(1); }
+  80%     { opacity: 1; transform: scale(1); }
+  90%     { opacity: 0; }
+  100%    { opacity: 0; }
+}
+
+.lh-text-1 { animation: caption-show 8s linear infinite; animation-delay: 8s; }
+.lh-text-2 { animation: caption-show 8s linear infinite; animation-delay: 9.5s; }
+.lh-text-3 { animation: caption-show 8s linear infinite; animation-delay: 12s; }
+
+/* ════════════════════════════════════════
+   RIGHT PANEL — CLINICAL SCENE
+   Duration: 8s
+════════════════════════════════════════ */
+
+.rc-scene {
+  animation: scene-show 8s linear infinite;
+  animation-delay: 0s;
+}
+.rh-scene {
+  animation: scene-show 8s linear infinite;
+  animation-delay: 8s;
+}
+
+.rc-probe-line {
+  stroke-dasharray: 120;
+  stroke-dashoffset: 120;
+  animation: draw-line 8s linear infinite;
+}
+@keyframes draw-line {
+  0%   { stroke-dashoffset: 120; opacity: 0; }
+  5%   { opacity: 1; }
+  25%  { stroke-dashoffset: 0; }
+  90%  { stroke-dashoffset: 0; opacity: 1; }
+  100% { stroke-dashoffset: 0; opacity: 0; }
+}
+
+.rc-waveform path {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: draw-wave 8s linear infinite;
+}
+@keyframes draw-wave {
+  0%   { stroke-dashoffset: 300; opacity: 0; }
+  30%  { opacity: 1; }
+  35%  { stroke-dashoffset: 200; }
+  55%  { stroke-dashoffset: 0; }
+  90%  { stroke-dashoffset: 0; opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.rc-live-badge {
+  animation: badge-pulse 8s linear infinite;
+}
+@keyframes badge-pulse {
+  0%, 25% { opacity: 0; transform: scale(0.8); }
+  35%     { opacity: 1; transform: scale(1); }
+  80%     { opacity: 1; }
+  90%     { opacity: 0; }
+  100%    { opacity: 0; }
+}
+
+.rc-text-1 { animation: caption-show 8s linear infinite; animation-delay: 0s; }
+.rc-text-2 { animation: caption-show 8s linear infinite; animation-delay: 2s; }
+.rc-text-3 { animation: caption-show 8s linear infinite; animation-delay: 5s; }
+
+/* ════════════════════════════════════════
+   RIGHT PANEL — HOME SCENE
+   Duration: 8s, starts at 8s
+════════════════════════════════════════ */
+
+.rh-wrist-band {
+  animation: band-glow 8s linear infinite;
+  animation-delay: 8s;
+}
+@keyframes band-glow {
+  0%   { opacity: 0; filter: drop-shadow(0 0 0px #2A9D8F); }
+  10%  { opacity: 1; filter: drop-shadow(0 0 6px #2A9D8F); }
+  50%  { filter: drop-shadow(0 0 12px #2A9D8F); }
+  85%  { opacity: 1; }
+  95%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+.rh-signal-1, .rh-signal-2, .rh-signal-3 {
+  animation: signal-ripple 8s linear infinite;
+  animation-delay: 8s;
+  transform-origin: center;
+}
+.rh-signal-1 { animation-delay: 9s; }
+.rh-signal-2 { animation-delay: 9.4s; }
+.rh-signal-3 { animation-delay: 9.8s; }
+
+@keyframes signal-ripple {
+  0%   { opacity: 0; transform: scale(0.5); }
+  10%  { opacity: 0.8; transform: scale(1); }
+  30%  { opacity: 0; transform: scale(1.5); }
+  100% { opacity: 0; }
+}
+
+.rh-phone-data {
+  animation: data-stream 8s linear infinite;
+  animation-delay: 8s;
+}
+@keyframes data-stream {
+  0%,  30% { opacity: 0; }
+  45%      { opacity: 1; }
+  85%      { opacity: 1; }
+  95%      { opacity: 0; }
+  100%     { opacity: 0; }
+}
+
+.rh-text-1 { animation: caption-show 8s linear infinite; animation-delay: 8s; }
+.rh-text-2 { animation: caption-show 8s linear infinite; animation-delay: 9.5s; }
+.rh-text-3 { animation: caption-show 8s linear infinite; animation-delay: 12s; }

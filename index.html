@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KADI Optics — Real-Time Noninvasive Blood Coagulation Monitoring</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/animation.css" />
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     ANIMATION SECTION
+══════════════════════════════════════════ -->
+<section class="animation-section">
+  <h2>The Problem — and Our Solution</h2>
+  <p class="section-sub">Today's coagulation monitoring is slow, invasive, and full of dangerous gaps.</p>
+
+  <div class="panels-wrapper">
+
+    <!-- ════════════ LEFT PANEL — PROBLEMS ════════════ -->
+    <div class="panel panel-left">
+      <div class="panel-header">
+        <span class="icon">⚠️</span> The Problem Today
+      </div>
+
+      <div class="animation-canvas">
+
+        <!-- ── CLINICAL SCENE (top half) ── -->
+        <div class="scene lc-scene" style="height:50%; top:0;">
+          <svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg">
+
+            <!-- OR Room background -->
+            <rect width="340" height="200" fill="#EFF6FF"/>
+            <rect x="0" y="160" width="340" height="40" fill="#DBEAFE"/>
+            <!-- Bed -->
+            <rect x="30" y="110" width="90" height="18" rx="4" fill="#93C5FD"/>
+            <rect x="28" y="105" width="22" height="23" rx="3" fill="#BFDBFE"/>
+            <!-- Patient -->
+            <circle cx="39" cy="100" r="9" fill="#FDE8D8"/>
+            <rect x="33" y="109" width="12" height="16" rx="3" fill="#E0F2FE"/>
+            <!-- IV line from patient arm -->
+            <line x1="45" y1="115" x2="70" y2="100" stroke="#F87171" stroke-width="1.5" stroke-dasharray="3,2"/>
+            <circle cx="70" cy="97" r="5" fill="#FCA5A5"/>
+
+            <!-- Nurse figure (animated walk-out) -->
+            <g class="nurse-out">
+              <!-- Body -->
+              <circle cx="180" cy="90" r="11" fill="#FDE8D8"/>
+              <rect x="173" y="101" width="14" height="22" rx="4" fill="#FFFFFF"/>
+              <!-- Nurse cross on uniform -->
+              <rect x="178" y="106" width="4" height="10" fill="#E63946"/>
+              <rect x="175" y="110" width="10" height="4" fill="#E63946"/>
+              <!-- Legs -->
+              <rect x="175" y="121" width="5" height="14" rx="2" fill="#DBEAFE"/>
+              <rect x="182" y="121" width="5" height="14" rx="2" fill="#DBEAFE"/>
+              <!-- Vial in hand -->
+              <rect x="191" y="108" width="7" height="14" rx="3" fill="#FCA5A5" stroke="#E63946" stroke-width="1"/>
+              <rect x="193" y="104" width="3" height="5" rx="1" fill="#9CA3AF"/>
+            </g>
+
+            <!-- Door on right -->
+            <rect x="270" y="80" width="40" height="70" rx="4" fill="#CBD5E1"/>
+            <rect x="272" y="82" width="36" height="66" rx="3" fill="#E2E8F0"/>
+            <circle cx="283" cy="116" r="3" fill="#94A3B8"/>
+
+            <!-- Clock -->
+            <g transform="translate(240,55)">
+              <circle r="22" fill="#FEF9C3" stroke="#E9C46A" stroke-width="2"/>
+              <line x1="0" y1="0" x2="0" y2="-14" stroke="#1D3557" stroke-width="2" stroke-linecap="round" class="clock-hand"/>
+              <circle r="2.5" fill="#E63946"/>
+              <text x="0" y="38" text-anchor="middle" font-size="9" fill="#92400E" font-weight="600">⏱ 10–15 min</text>
+            </g>
+
+            <!-- Doctor figure (waiting) -->
+            <circle cx="295" cy="90" r="11" fill="#FDE8D8"/>
+            <rect x="288" y="101" width="14" height="22" rx="4" fill="#DBEAFE"/>
+            <rect x="290" y="121" width="5" height="14" rx="2" fill="#93C5FD"/>
+            <rect x="297" y="121" width="5" height="14" rx="2" fill="#93C5FD"/>
+
+            <!-- Result paper (appears at end) -->
+            <g class="result-paper" transform="translate(285,101)">
+              <rect width="22" height="28" rx="3" fill="#fff" stroke="#2A9D8F" stroke-width="1.5"/>
+              <line x1="4" y1="8"  x2="18" y2="8"  stroke="#A8DADC" stroke-width="1.5"/>
+              <line x1="4" y1="13" x2="18" y2="13" stroke="#A8DADC" stroke-width="1.5"/>
+              <line x1="4" y1="18" x2="14" y2="18" stroke="#A8DADC" stroke-width="1.5"/>
+            </g>
+          </svg>
+
+          <!-- Captions -->
+          <div class="caption problem lc-text-1" style="bottom:56px;">Blood sample collected from OR</div>
+          <div class="caption neutral lc-text-2" style="bottom:40px;">Nurse carries sample to lab...</div>
+          <div class="caption problem lc-text-3" style="bottom:40px; font-size:0.85rem;">⏱ 10–15 minute blind spot</div>
+          <div class="caption neutral lc-text-4" style="bottom:40px;">Result returned — monitoring resumes</div>
+        </div>
+
+        <!-- Divider -->
+        <div class="scene-divider" style="top:50%;">
+          <span>Clinical → Home</span>
+        </div>
+
+        <!-- ── HOME SCENE (bottom half) ── -->
+        <div class="scene lh-scene" style="height:50%; top:50%;">
+          <svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg">
+            <rect width="340" height="200" fill="#FFF7ED"/>
+            <!-- Table -->
+            <rect x="60" y="130" width="220" height="10" rx="3" fill="#D1C9BD"/>
+            <rect x="80" y="140" width="8" height="40" rx="2" fill="#B7AFA5"/>
+            <rect x="250" y="140" width="8" height="40" rx="2" fill="#B7AFA5"/>
+
+            <!-- Person sitting -->
+            <circle cx="100" cy="80" r="14" fill="#FDE8D8"/>
+            <rect x="89" y="94" width="22" height="36" rx="5" fill="#FED7AA"/>
+            <rect x="89" y="128" width="10" height="18" rx="3" fill="#DBEAFE"/>
+            <rect x="101" y="128" width="10" height="18" rx="3" fill="#DBEAFE"/>
+            <!-- Arm extended -->
+            <rect x="111" y="108" width="35" height="8" rx="4" fill="#FDE8D8"/>
+            <!-- Finger prick device -->
+            <rect x="144" y="100" width="16" height="22" rx="5" fill="#94A3B8"/>
+            <rect x="149" y="120" width="6" height="8" rx="2" fill="#64748B"/>
+
+            <!-- Blood drop -->
+            <g class="lh-blood-drop">
+              <ellipse cx="155" cy="138" rx="5" ry="7" fill="#E63946"/>
+              <polygon points="155,125 151,135 159,135" fill="#E63946"/>
+            </g>
+
+            <!-- Test strip -->
+            <g class="lh-strip">
+              <rect x="190" y="122" width="50" height="12" rx="4" fill="#fff" stroke="#E9C46A" stroke-width="1.5"/>
+              <rect x="192" y="124" width="12" height="8" rx="2" fill="#FCA5A5"/>
+              <text x="210" y="131" font-size="7" fill="#92400E" font-weight="600">STRIP</text>
+            </g>
+
+            <!-- Waiting dots -->
+            <g class="lh-wait-dots">
+              <circle cx="210" cy="100" r="5" fill="#E9C46A"/>
+              <circle cx="225" cy="100" r="5" fill="#E9C46A"/>
+              <circle cx="240" cy="100" r="5" fill="#E9C46A"/>
+            </g>
+
+            <!-- Small monitor -->
+            <rect x="255" y="95" width="50" height="36" rx="5" fill="#1E293B"/>
+            <rect x="258" y="98" width="44" height="28" rx="3" fill="#0F172A"/>
+            <text x="280" y="112" text-anchor="middle" font-size="7" fill="#94A3B8">NO DOAC</text>
+            <text x="280" y="122" text-anchor="middle" font-size="7" fill="#94A3B8">MONITOR</text>
+          </svg>
+
+          <div class="caption problem lh-text-1" style="bottom:56px;">Daily finger-stick required</div>
+          <div class="caption neutral lh-text-2" style="bottom:40px;">Waiting for result...</div>
+          <div class="caption problem lh-text-3" style="bottom:40px;">No home monitoring for DOAC patients</div>
+        </div>
+      </div>
+
+      <div class="progress-bar-wrap">
+        <div class="progress-bar"></div>
+      </div>
+    </div><!-- /panel-left -->
+
+
+    <!-- ════════════ RIGHT PANEL — SOLUTIONS ════════════ -->
+    <div class="panel panel-right">
+      <div class="panel-header">
+        <span class="icon">✅</span> The KADI Solution
+      </div>
+
+      <div class="animation-canvas">
+
+        <!-- ── CLINICAL SCENE ── -->
+        <div class="scene rc-scene" style="height:50%; top:0;">
+          <svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg">
+            <rect width="340" height="200" fill="#ECFDF5"/>
+            <rect x="0" y="160" width="340" height="40" fill="#D1FAE5"/>
+
+            <!-- Patient bed -->
+            <rect x="20" y="110" width="90" height="18" rx="4" fill="#6EE7B7"/>
+            <rect x="18" y="105" width="22" height="23" rx="3" fill="#A7F3D0"/>
+            <circle cx="29" cy="98" r="9" fill="#FDE8D8"/>
+            <rect x="23" y="107" width="12" height="16" rx="3" fill="#E0F2FE"/>
+
+            <!-- CPB circuit tube -->
+            <path d="M45,115 Q80,90 120,100 Q150,108 170,100" stroke="#A8DADC" stroke-width="5" fill="none" rx="4"/>
+
+            <!-- LC-DLS device box -->
+            <rect x="172" y="82" width="54" height="36" rx="6" fill="#1D3557"/>
+            <rect x="175" y="85" width="48" height="24" rx="4" fill="#0F2540"/>
+            <!-- Device label -->
+            <text x="199" y="96" text-anchor="middle" font-size="6" fill="#2A9D8F" font-weight="700">LC-DLS</text>
+            <text x="199" y="105" text-anchor="middle" font-size="5" fill="#64748B">KADI OPTICS</text>
+            <!-- Status light -->
+            <circle cx="215" cy="109" r="3" fill="#2A9D8F">
+              <animate attributeName="opacity" values="1;0.3;1" dur="1.2s" repeatCount="indefinite"/>
+            </circle>
+
+            <!-- Fiber probe line -->
+            <svg class="rc-probe-line-svg" viewBox="0 0 340 200" style="position:absolute;top:0;left:0;width:100%;height:50%;">
+              <line class="rc-probe-line" x1="170" y1="100" x2="172" y2="100"
+                x2="172" y2="100"
+                stroke="#2A9D8F" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+
+            <!-- Monitor screen -->
+            <rect x="240" y="70" width="82" height="60" rx="6" fill="#1E293B"/>
+            <rect x="243" y="73" width="76" height="50" rx="4" fill="#0F172A"/>
+
+            <!-- Waveform group -->
+            <g class="rc-waveform" transform="translate(243,73)">
+              <path d="M2,25 L8,25 L12,10 L16,40 L20,25 L26,25 L30,12 L34,38 L38,25 L44,25 L48,8 L52,42 L56,25 L62,25 L66,15 L70,35 L74,25"
+                fill="none" stroke="#2A9D8F" stroke-width="1.8" stroke-linecap="round"/>
+              <text x="2" y="8" font-size="5" fill="#64748B">Coagulation Index</text>
+              <text x="52" y="48" font-size="5" fill="#2A9D8F" font-weight="700">REAL-TIME</text>
+            </g>
+
+            <!-- Live badge -->
+            <g class="rc-live-badge" transform="translate(243, 130)">
+              <rect width="60" height="18" rx="9" fill="#2A9D8F"/>
+              <circle cx="12" cy="9" r="4" fill="#fff">
+                <animate attributeName="opacity" values="1;0.2;1" dur="0.9s" repeatCount="indefinite"/>
+              </circle>
+              <text x="20" y="13" font-size="8" fill="#fff" font-weight="700">● LIVE</text>
+            </g>
+
+            <!-- Doctor watching monitor -->
+            <circle cx="310" cy="88" r="11" fill="#FDE8D8"/>
+            <rect x="303" y="99" width="14" height="22" rx="4" fill="#DBEAFE"/>
+            <rect x="305" y="119" width="5" height="14" rx="2" fill="#93C5FD"/>
+            <rect x="312" y="119" width="5" height="14" rx="2" fill="#93C5FD"/>
+          </svg>
+
+          <div class="caption solution rc-text-1" style="bottom:56px;">Fiber probe connected to circuit</div>
+          <div class="caption solution rc-text-2" style="bottom:40px;">Live coagulation data — no waiting</div>
+          <div class="caption solution rc-text-3" style="bottom:40px; font-size:0.85rem;">✅ Continuous monitoring, zero gaps</div>
+        </div>
+
+        <!-- Divider -->
+        <div class="scene-divider" style="top:50%;">
+          <span>Clinical → Home</span>
+        </div>
+
+        <!-- ── HOME SCENE ── -->
+        <div class="scene rh-scene" style="height:50%; top:50%;">
+          <svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg">
+            <rect width="340" height="200" fill="#F0FDF4"/>
+
+            <!-- Person sitting/relaxing -->
+            <circle cx="90" cy="80" r="14" fill="#FDE8D8"/>
+            <rect x="79" y="94" width="22" height="36" rx="5" fill="#BBF7D0"/>
+            <rect x="79" y="128" width="10" height="18" rx="3" fill="#DBEAFE"/>
+            <rect x="91" y="128" width="10" height="18" rx="3" fill="#DBEAFE"/>
+            <!-- Wrist band on arm -->
+            <rect x="100" y="112" width="35" height="8" rx="4" fill="#FDE8D8"/>
+            <g class="rh-wrist-band">
+              <rect x="118" y="108" width="22" height="16" rx="5" fill="#2A9D8F"/>
+              <rect x="121" y="111" width="16" height="10" rx="2" fill="#0F172A"/>
+              <!-- Tiny waveform on wrist screen -->
+              <polyline points="123,117 125,113 127,119 129,115 131,117 133,117 135,114"
+                stroke="#2A9D8F" stroke-width="1.2" fill="none"/>
+            </g>
+
+            <!-- Wireless signal arcs -->
+            <g transform="translate(129, 108)">
+              <path class="rh-signal-1" d="M-8,-8 Q0,-18 8,-8" stroke="#2A9D8F" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+              <path class="rh-signal-2" d="M-14,-14 Q0,-28 14,-14" stroke="#2A9D8F" stroke-width="1.8" fill="none" stroke-linecap="round" opacity="0.7"/>
+              <path class="rh-signal-3" d="M-20,-20 Q0,-38 20,-20" stroke="#2A9D8F" stroke-width="1.8" fill="none" stroke-linecap="round" opacity="0.4"/>
+            </g>
+
+            <!-- Phone screen -->
+            <g class="rh-phone-data">
+              <rect x="200" y="60" width="58" height="100" rx="10" fill="#1E293B"/>
+              <rect x="204" y="70" width="50" height="82" rx="6" fill="#0F172A"/>
+              <!-- Phone data display -->
+              <text x="229" y="86" text-anchor="middle" font-size="6" fill="#64748B">COAGULATION</text>
+              <!-- Mini waveform -->
+              <polyline points="208,100 214,92 218,106 222,94 226,100 230,100 234,90 238,108 242,100 248,100 252,96"
+                stroke="#2A9D8F" stroke-width="1.5" fill="none"/>
+              <text x="229" y="120" text-anchor="middle" font-size="7" fill="#2A9D8F" font-weight="700">● LIVE</text>
+              <text x="229" y="132" text-anchor="middle" font-size="5.5" fill="#4ADE80">Normal Range</text>
+              <!-- No blood icon -->
+              <text x="229" y="148" text-anchor="middle" font-size="7" fill="#94A3B8">No blood draw</text>
+            </g>
+
+            <!-- "No finger prick" cross-out -->
+            <g opacity="0.6" transform="translate(155, 70)">
+              <circle r="18" fill="#FEE2E2" stroke="#E63946" stroke-width="1.5"/>
+              <!-- Lancet crossed out -->
+              <rect x="-4" y="-10" width="8" height="20" rx="3" fill="#94A3B8"/>
+              <line x1="-15" y1="-15" x2="15" y2="15" stroke="#E63946" stroke-width="3" stroke-linecap="round"/>
+            </g>
+          </svg>
+
+          <div class="caption solution rh-text-1" style="bottom:56px;">Wear the KADI wrist device</div>
+          <div class="caption solution rh-text-2" style="bottom:40px;">Continuous monitoring — no blood draws</div>
+          <div class="caption solution rh-text-3" style="bottom:40px; font-size:0.85rem;">✅ 24/7 real-time. First ever for DOAC patients.</div>
+        </div>
+
+      </div>
+
+      <div class="progress-bar-wrap">
+        <div class="progress-bar"></div>
+      </div>
+    </div><!-- /panel-right -->
+
+  </div><!-- /panels-wrapper -->
+</section>
+
+<script src="js/animation.js"></script>
+</body>
+</html>
