@@ -1,54 +1,11 @@
 /*
- * Animation engine:
- *  - ViewBox zoom keyframes drive the "zoom in → zoom out → zoom in results" effect
- *  - Caption text managed via rAF loop
- *  - Left panel plays first (16s), then right panel starts
+ * Animation engine — captions + right-panel sequencing.
+ * ViewBox zoom removed; all four scenes display full-frame.
  */
 
 const SCENE_MS = 8000;
 const PANEL_MS = 16000;
 
-/* ── ViewBox keyframes: [timeMs, [x, y, w, h]] ── */
-const VB = {
-  lc: [ /* left clinical */
-    [0,    [0,   0,   460, 175]], /* full */
-    [350,  [0,   52,  255, 120]], /* zoom: patient+nurse at bedside */
-    [2500, [0,   52,  255, 120]], /* hold */
-    [3200, [0,   0,   460, 175]], /* zoom out — nurse walking */
-    [5400, [0,   0,   460, 175]], /* hold full scene */
-    [6100, [115, 52,  240, 118]], /* zoom: doctor + result paper */
-    [8000, [115, 52,  240, 118]], /* hold */
-  ],
-  lh: [ /* left home */
-    [0,    [0,   0,   460, 175]], /* full */
-    [350,  [62,  80,  220, 90]],  /* zoom: hand + lancet + blood drop */
-    [2600, [62,  80,  220, 90]],  /* hold */
-    [3300, [0,   0,   460, 175]], /* zoom out — person at table */
-    [5200, [0,   0,   460, 175]], /* hold */
-    [5800, [140, 82,  230, 88]],  /* zoom: glucometer + clock result */
-    [8000, [140, 82,  230, 88]],  /* hold */
-  ],
-  rc: [ /* right clinical */
-    [0,    [0,   0,   460, 175]], /* full */
-    [350,  [5,   62,  265, 110]], /* zoom: patient + CPB circuit + KADI probe */
-    [2600, [5,   62,  265, 110]], /* hold */
-    [3300, [0,   0,   460, 175]], /* zoom out — full OR */
-    [5300, [0,   0,   460, 175]], /* hold */
-    [5900, [305, 22,  155, 105]], /* zoom: monitor with live waveform */
-    [8000, [305, 22,  155, 105]], /* hold */
-  ],
-  rh: [ /* right home */
-    [0,    [0,   0,   460, 175]], /* full */
-    [350,  [62,  88,  210, 82]],  /* zoom: wrist + KADI device close-up */
-    [2600, [62,  88,  210, 82]],  /* hold */
-    [3300, [0,   0,   460, 175]], /* zoom out — person on couch + coffee */
-    [5200, [0,   0,   460, 175]], /* hold */
-    [5800, [218, 42,  200, 130]], /* zoom: phone screen with live data */
-    [8000, [218, 42,  200, 130]], /* hold */
-  ],
-};
-
-/* ── Captions: [startMs, endMs, text, cssClass] ── */
 const CAPTIONS = {
   lc: [
     [0,    2600, "Blood sample collected — nurse leaves OR",  ""],
@@ -69,32 +26,9 @@ const CAPTIONS = {
   rh: [
     [0,    2700, "Simply put on the KADI wrist device",       "good"],
     [2700, 5300, "Coagulation data streams to your phone 24/7","good"],
-    [5300, 8000, "✓  No blood draws. No waiting. Ever.",       "good"],
+    [5300, 8000, "✓  No blood draws. No waiting. Ever.",      "good"],
   ],
 };
-
-/* ── Helpers ── */
-function easeInOut(t) {
-  return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
-}
-
-function lerpViewBox(kf, elapsed) {
-  const t = elapsed % SCENE_MS;
-  let prev = kf[0], next = kf[kf.length - 1];
-  for (let i = 0; i < kf.length - 1; i++) {
-    if (t >= kf[i][0] && t <= kf[i + 1][0]) {
-      prev = kf[i]; next = kf[i + 1]; break;
-    }
-  }
-  const span = next[0] - prev[0];
-  if (span === 0) return next[1];
-  const a = easeInOut(Math.min((t - prev[0]) / span, 1));
-  return prev[1].map((v, i) => v + (next[1][i] - v) * a);
-}
-
-function setVB(svgEl, vb) {
-  if (svgEl) svgEl.setAttribute('viewBox', vb.join(' '));
-}
 
 function buildCaptions(zoneId, schedule) {
   const zone = document.getElementById(zoneId);
@@ -126,25 +60,19 @@ function animateBar(bar, duration) {
   }));
 }
 
-/* ── Main ── */
 function init() {
   buildCaptions('cap-lc', CAPTIONS.lc);
   buildCaptions('cap-lh', CAPTIONS.lh);
   buildCaptions('cap-rc', CAPTIONS.rc);
   buildCaptions('cap-rh', CAPTIONS.rh);
 
-  const svgLC = document.getElementById('svg-lc');
-  const svgLH = document.getElementById('svg-lh');
-  const svgRC = document.getElementById('svg-rc');
-  const svgRH = document.getElementById('svg-rh');
   const rightPanel = document.querySelector('.panel-right');
   const leftBar    = document.querySelector('.panel-left  .progress-bar');
   const rightBar   = document.querySelector('.panel-right .progress-bar');
-
-  const lcZone = document.getElementById('cap-lc');
-  const lhZone = document.getElementById('cap-lh');
-  const rcZone = document.getElementById('cap-rc');
-  const rhZone = document.getElementById('cap-rh');
+  const lcZone     = document.getElementById('cap-lc');
+  const lhZone     = document.getElementById('cap-lh');
+  const rcZone     = document.getElementById('cap-rc');
+  const rhZone     = document.getElementById('cap-rh');
 
   animateBar(leftBar, PANEL_MS);
 
@@ -155,16 +83,12 @@ function init() {
     const leftElapsed = now - leftStart;
     const leftCycle   = leftElapsed % PANEL_MS;
 
-    /* Left clinical / home split at 8s within each cycle */
     if (leftCycle < SCENE_MS) {
-      setVB(svgLC, lerpViewBox(VB.lc, leftCycle));
       updateCaptions(lcZone, CAPTIONS.lc, leftCycle);
     } else {
-      setVB(svgLH, lerpViewBox(VB.lh, leftCycle - SCENE_MS));
       updateCaptions(lhZone, CAPTIONS.lh, leftCycle - SCENE_MS);
     }
 
-    /* Start right panel after first left cycle */
     if (!rightStart && leftElapsed >= PANEL_MS) {
       rightStart = now;
       rightPanel.classList.add('active');
@@ -174,10 +98,8 @@ function init() {
     if (rightStart) {
       const rightElapsed = (now - rightStart) % PANEL_MS;
       if (rightElapsed < SCENE_MS) {
-        setVB(svgRC, lerpViewBox(VB.rc, rightElapsed));
         updateCaptions(rcZone, CAPTIONS.rc, rightElapsed);
       } else {
-        setVB(svgRH, lerpViewBox(VB.rh, rightElapsed - SCENE_MS));
         updateCaptions(rhZone, CAPTIONS.rh, rightElapsed - SCENE_MS);
       }
     }
@@ -188,8 +110,49 @@ function init() {
   requestAnimationFrame(tick);
 }
 
+/* ── Nav: scroll opacity + active section highlight ── */
+function initNav() {
+  const nav     = document.getElementById('site-nav');
+  const links   = document.querySelectorAll('.nav-links a[href^="#"]');
+  const burger  = document.getElementById('hamburger');
+  const navMenu = document.getElementById('nav-menu');
+
+  /* Hamburger toggle */
+  if (burger && navMenu) {
+    burger.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+      burger.classList.toggle('active');
+    });
+    navMenu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+        burger.classList.remove('active');
+      });
+    });
+  }
+
+  /* Active section on scroll */
+  const sections = Array.from(document.querySelectorAll('section[id], footer[id]'));
+
+  function onScroll() {
+    if (nav) nav.classList.toggle('scrolled', window.scrollY > 40);
+
+    const scrollY = window.scrollY + 120;
+    let current = '';
+    sections.forEach(s => {
+      if (s.offsetTop <= scrollY) current = s.id;
+    });
+    links.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+}
+
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', init);
+  document.addEventListener('DOMContentLoaded', () => { init(); initNav(); });
 } else {
-  init();
+  init(); initNav();
 }
