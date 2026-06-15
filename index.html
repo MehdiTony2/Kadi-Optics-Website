@@ -24,7 +24,6 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Subtle background glow */
     body::before {
       content: '';
       position: fixed;
@@ -55,22 +54,16 @@
       max-width: 560px;
     }
 
-    /* Logo */
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 14px;
+    /* Brand name — text only, no icon */
+    .brand {
+      font-family: 'Space Grotesk', system-ui, sans-serif;
+      font-size: 2.6rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      color: #fff;
+      line-height: 1;
     }
-    .logo-text { display: flex; flex-direction: column; line-height: 1; text-align: left; }
-    .logo-name { font-family: 'Space Grotesk', system-ui, sans-serif; font-size: 1.5rem; font-weight: 700; color: #fff; letter-spacing: 0.06em; }
-    .logo-sub  { font-size: 0.62rem; font-weight: 500; color: #14B8A6; letter-spacing: 0.24em; text-transform: uppercase; margin-top: 3px; }
-
-    /* Divider */
-    .divider {
-      width: 48px; height: 2px;
-      background: linear-gradient(90deg, #0D9488, #2DD4BF);
-      border-radius: 2px;
-    }
+    .brand span { color: #14B8A6; }
 
     h1 {
       font-family: 'Space Grotesk', system-ui, sans-serif;
@@ -88,27 +81,36 @@
       line-height: 1.75;
     }
 
+    /* Badge — sharper corners, no blinking dot */
     .badge {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 7px 18px;
-      border-radius: 100px;
+      gap: 0;
+      padding: 8px 20px;
+      border-radius: 8px;
       border: 1px solid rgba(13,148,136,0.35);
       background: rgba(13,148,136,0.08);
-      font-size: 0.8rem;
+      font-size: 0.82rem;
       font-weight: 600;
       color: #2DD4BF;
       letter-spacing: 0.04em;
     }
-    .badge::before {
-      content: '';
-      width: 7px; height: 7px;
-      border-radius: 50%;
-      background: #2DD4BF;
-      animation: blink 1.4s ease-in-out infinite;
+
+    /* Consecutive dots */
+    .dot {
+      opacity: 0;
+      display: inline-block;
+      animation: dot-seq 2.2s ease-in-out infinite;
     }
-    @keyframes blink { 0%,100%{opacity:1;} 50%{opacity:0.2;} }
+    .dot.d1 { animation-delay: 0.0s; }
+    .dot.d2 { animation-delay: 0.5s; }
+    .dot.d3 { animation-delay: 1.0s; }
+
+    @keyframes dot-seq {
+      0%,  12% { opacity: 0; }
+      22%, 80% { opacity: 1; }
+      92%, 100% { opacity: 0; }
+    }
 
     .contact {
       font-size: 0.875rem;
@@ -132,36 +134,22 @@
 <body>
   <div class="wrap">
 
-    <div class="logo">
-      <svg width="48" height="38" viewBox="0 0 52 42" xmlns="http://www.w3.org/2000/svg">
-        <polygon points="26,3 3,39 49,39" fill="rgba(13,148,136,0.15)" stroke="#0D9488" stroke-width="1.8"/>
-        <line x1="0"  y1="21" x2="14" y2="21" stroke="rgba(255,255,255,0.85)" stroke-width="1.8" stroke-linecap="round"/>
-        <line x1="37" y1="21" x2="52" y2="10" stroke="#60A5FA" stroke-width="1.5" stroke-linecap="round"/>
-        <line x1="37" y1="21" x2="52" y2="16" stroke="#34D399" stroke-width="1.5" stroke-linecap="round"/>
-        <line x1="37" y1="21" x2="52" y2="22" stroke="#2DD4BF" stroke-width="2.2" stroke-linecap="round"/>
-        <line x1="37" y1="21" x2="52" y2="28" stroke="#FCD34D" stroke-width="1.5" stroke-linecap="round"/>
-        <line x1="37" y1="21" x2="52" y2="34" stroke="#F87171" stroke-width="1.5" stroke-linecap="round"/>
-      </svg>
-      <div class="logo-text">
-        <span class="logo-name">KADI</span>
-        <span class="logo-sub">OPTICS</span>
-      </div>
+    <div class="brand">KADI <span>OPTICS</span></div>
+
+    <div class="badge">
+      Something big is coming<span class="dot d1">.</span><span class="dot d2">.</span><span class="dot d3">.</span>
     </div>
-
-    <div class="divider"></div>
-
-    <div class="badge">Something big is coming</div>
 
     <h1>Real-Time Blood Coagulation<br>Monitoring, <span>Reinvented.</span></h1>
 
-    <p>We are building an optical platform for continuous, non-invasive coagulation monitoring — from the operating room to the patient's home. Our website is on its way.</p>
+    <p>We are building an optical platform for continuous, non-invasive coagulation monitoring. From the operating room to the patient's home. Our website is on its way.</p>
 
     <div class="contact">
-      Interested in learning more? &nbsp;<a href="mailto:m.eshaghi2010@gmail.com">Get in touch →</a>
+      Interested in learning more? &nbsp;<a href="mailto:kadioptics@gmail.com">Get in touch →</a>
     </div>
 
   </div>
 
-  <span class="footer-note">© 2026 KADI Optics LLC · UCF CREOL · Orlando, FL</span>
+  <span class="footer-note">© 2026 KADI Optics LLC · Orlando, FL</span>
 </body>
 </html>
