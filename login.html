@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KADI Optics | Team Access</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #07111F;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 32px 24px;
+      -webkit-font-smoothing: antialiased;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      top: -200px; right: -200px;
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(13,148,136,0.10) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    body::after {
+      content: '';
+      position: fixed;
+      bottom: -200px; left: -200px;
+      width: 500px; height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(29,78,216,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .wrap {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 28px;
+      width: 100%;
+      max-width: 400px;
+    }
+    .brand-box {
+      font-family: 'Space Grotesk', system-ui, sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      color: #fff;
+      background: #0A6B62;
+      padding: 18px 28px;
+      border-radius: 12px;
+      line-height: 1;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .card {
+      width: 100%;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 36px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .card-title {
+      font-family: 'Space Grotesk', system-ui, sans-serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #fff;
+      text-align: center;
+    }
+    .card-sub {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.35);
+      text-align: center;
+      line-height: 1.65;
+      margin-top: -8px;
+    }
+    .field { display: flex; flex-direction: column; gap: 7px; }
+    label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+    }
+    input[type="password"] {
+      width: 100%;
+      padding: 12px 16px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      color: #fff;
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.2s;
+      letter-spacing: 0.1em;
+    }
+    input[type="password"]:focus { border-color: #0D9488; }
+    input[type="password"]::placeholder { color: rgba(255,255,255,0.18); letter-spacing: 0; }
+    .btn {
+      width: 100%;
+      padding: 13px;
+      background: #0D9488;
+      color: #fff;
+      font-family: 'Space Grotesk', system-ui, sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn:hover { background: #14B8A6; }
+    .error {
+      font-size: 0.83rem;
+      color: #F87171;
+      text-align: center;
+      display: none;
+    }
+    .error.visible { display: block; }
+    .back {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.22);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .back:hover { color: rgba(255,255,255,0.5); }
+    .footer-note {
+      position: fixed;
+      bottom: 20px;
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.12);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <a href="/" class="brand-box">KADI OPTICS</a>
+
+    <div class="card">
+      <div class="card-title">Team Access</div>
+      <p class="card-sub">This area is for KADI Optics team members only.<br>Enter your access code to continue.</p>
+      <div class="field">
+        <label for="code">Access Code</label>
+        <input type="password" id="code" placeholder="Enter access code" autocomplete="off" autofocus/>
+      </div>
+      <button class="btn" onclick="tryLogin()">Enter →</button>
+      <div class="error" id="err">Incorrect access code. Please try again.</div>
+    </div>
+
+    <a href="/" class="back">← Back to kadioptics.com</a>
+  </div>
+
+  <span class="footer-note">© 2026 KADI Optics LLC · Internal Use Only</span>
+
+  <script>
+    /* ── Change this to your preferred access code ── */
+    const ACCESS_CODE = 'KADI2026';
+
+    const params = new URLSearchParams(window.location.search);
+    const next   = params.get('next') || '/market.html';
+
+    if (localStorage.getItem('kadi_access') === 'granted') {
+      window.location.replace(next);
+    }
+
+    document.getElementById('code').addEventListener('keydown', e => {
+      if (e.key === 'Enter') tryLogin();
+    });
+
+    function tryLogin() {
+      const val = document.getElementById('code').value.trim();
+      if (val === ACCESS_CODE) {
+        localStorage.setItem('kadi_access', 'granted');
+        window.location.replace(next);
+      } else {
+        document.getElementById('err').classList.add('visible');
+        document.getElementById('code').value = '';
+        document.getElementById('code').focus();
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KADI Optics | Market Intelligence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="/css/internal.css"/>
+  <script src="/js/auth.js"></script>
+</head>
+<body>
+
+  <nav class="int-nav">
+    <a href="/" class="brand-box">KADI OPTICS</a>
+    <div class="int-links">
+      <a href="/market.html"       class="int-link active">Market</a>
+      <a href="/tech.html"         class="int-link">Technology</a>
+      <a href="/publications.html" class="int-link">Publications</a>
+      <a href="/proposals.html"    class="int-link">Proposals</a>
+    </div>
+    <button class="logout-btn" onclick="logout()">Log out</button>
+  </nav>
+
+  <main class="int-page">
+
+    <header class="page-header">
+      <div class="page-tag">Internal · Market Intelligence</div>
+      <h1 class="page-title">Blood Coagulation Market</h1>
+      <p class="page-desc">Global market analysis, current landscape, competitive positioning, and the opportunity for KADI Optics. This document is a living report — updated as new data becomes available.</p>
+    </header>
+
+    <!-- ── Key Stats ── -->
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="stat-value">$4.72B</div>
+        <div class="stat-label">Global coagulation testing market size (2024)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">$6.43B</div>
+        <div class="stat-label">Projected market size by 2030</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">~5.3%</div>
+        <div class="stat-label">CAGR 2024–2030</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">1.5M+</div>
+        <div class="stat-label">Open-heart surgeries per year in the US alone</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">0</div>
+        <div class="stat-label">Continuous real-time coagulation monitors currently available</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">0</div>
+        <div class="stat-label">Home monitoring options for DOAC patients today</div>
+      </div>
+    </div>
+
+    <!-- ── Current Solutions ── -->
+    <section class="section">
+      <h2 class="section-title">Current Monitoring Methods &amp; Their Limitations</h2>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Method</th>
+            <th>Setting</th>
+            <th>Turnaround</th>
+            <th>Blood Draw?</th>
+            <th>Continuous?</th>
+            <th>Key Limitation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>ACT</strong> (Activated Clotting Time)</td>
+            <td>OR, cath lab, ECMO</td>
+            <td>2–5 min</td>
+            <td><span class="tag tag-red">Yes</span></td>
+            <td><span class="tag tag-red">No</span></td>
+            <td>Intermittent only; creates monitoring blind spots during surgery</td>
+          </tr>
+          <tr>
+            <td><strong>TEG</strong> (Thromboelastography)</td>
+            <td>Hospital lab, major ORs</td>
+            <td>10–30 min</td>
+            <td><span class="tag tag-red">Yes</span></td>
+            <td><span class="tag tag-red">No</span></td>
+            <td>Slow turnaround; batch testing; expensive equipment</td>
+          </tr>
+          <tr>
+            <td><strong>ROTEM</strong> (Rotational Thromboelastometry)</td>
+            <td>Hospital lab, major ORs</td>
+            <td>10–30 min</td>
+            <td><span class="tag tag-red">Yes</span></td>
+            <td><span class="tag tag-red">No</span></td>
+            <td>Same as TEG; operator-dependent; not real-time</td>
+          </tr>
+          <tr>
+            <td><strong>PT / INR</strong></td>
+            <td>Lab (send-out)</td>
+            <td>Hours to days</td>
+            <td><span class="tag tag-red">Yes</span></td>
+            <td><span class="tag tag-red">No</span></td>
+            <td>No continuous monitoring; lab send-out delays therapy adjustment</td>
+          </tr>
+          <tr>
+            <td><strong>aPTT</strong></td>
+            <td>Hospital lab</td>
+            <td>1–2 hours</td>
+            <td><span class="tag tag-red">Yes</span></td>
+            <td><span class="tag tag-red">No</span></td>
+            <td>Lab-based; batch; not suitable for bedside or home</td>
+          </tr>
+          <tr>
+            <td><strong>Anti-Xa Assay</strong></td>
+            <td>Hospital lab</td>
+            <td>1–2 hours</td>
+            <td><span class="tag tag-red">Yes</span></td>
+            <td><span class="tag tag-red">No</span></td>
+            <td>DOAC monitoring only; lab-based; not point-of-care</td>
+          </tr>
+          <tr>
+            <td><strong>CoaguChek (Roche)</strong></td>
+            <td>Home / clinic</td>
+            <td>1–2 min</td>
+            <td><span class="tag tag-red">Yes — finger prick</span></td>
+            <td><span class="tag tag-red">No</span></td>
+            <td>Warfarin only; cannot monitor DOACs; requires daily finger stick</td>
+          </tr>
+          <tr>
+            <td><strong>KADI Optics (LC-DLS)</strong></td>
+            <td>OR / ICU / Home</td>
+            <td>Real-time</td>
+            <td><span class="tag tag-green">No</span></td>
+            <td><span class="tag tag-green">Yes — always on</span></td>
+            <td>—</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ── Market Segments ── -->
+    <section class="section">
+      <h2 class="section-title">Target Market Segments</h2>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Segment</th>
+            <th>Priority</th>
+            <th>Key Use Case</th>
+            <th>Why KADI Fits</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Cardiac Surgery / CPB</strong></td>
+            <td><span class="tag tag-green">Beachhead</span></td>
+            <td>Heparin management during cardiopulmonary bypass</td>
+            <td>Fiber probe clips directly onto CPB tubing; replaces intermittent ACT testing</td>
+          </tr>
+          <tr>
+            <td><strong>ECMO</strong></td>
+            <td><span class="tag tag-green">Elevated — Tier 1</span></td>
+            <td>Anticoagulation management during extracorporeal membrane oxygenation</td>
+            <td>ECMO patients require continuous anticoagulation monitoring 24/7 — exact gap KADI fills</td>
+          </tr>
+          <tr>
+            <td><strong>ICU / Critical Care</strong></td>
+            <td><span class="tag tag-blue">Tier 1</span></td>
+            <td>Post-surgical coagulation monitoring, sepsis, DIC management</td>
+            <td>Reduces blood draws; enables real-time response to coagulopathy</td>
+          </tr>
+          <tr>
+            <td><strong>Anticoagulation Clinics</strong></td>
+            <td><span class="tag tag-blue">Tier 1</span></td>
+            <td>Warfarin and DOAC patient management</td>
+            <td>Could replace or supplement INR testing; extends to DOAC monitoring (no current option)</td>
+          </tr>
+          <tr>
+            <td><strong>Home Health (DOAC patients)</strong></td>
+            <td><span class="tag tag-yellow">Tier 2</span></td>
+            <td>Continuous home monitoring for patients on rivaroxaban, apixaban, etc.</td>
+            <td><strong>First-ever DOAC home monitor</strong> — unique differentiator with no existing competition</td>
+          </tr>
+          <tr>
+            <td><strong>Dialysis Centers</strong></td>
+            <td><span class="tag tag-yellow">Tier 2</span></td>
+            <td>Heparin management during dialysis sessions</td>
+            <td>Non-invasive probe integrates with dialysis circuit lines</td>
+          </tr>
+          <tr>
+            <td><strong>Emergency / Trauma</strong></td>
+            <td><span class="tag tag-yellow">Tier 2</span></td>
+            <td>Rapid coagulopathy assessment in trauma patients</td>
+            <td>Speed advantage over TEG/ROTEM in emergency settings</td>
+          </tr>
+          <tr>
+            <td><strong>Veterinary Critical Care</strong></td>
+            <td><span class="tag tag-purple">Emerging</span></td>
+            <td>Surgical anticoagulation monitoring in large animals</td>
+            <td>Identified in I-Corps Week 3 interviews; no strong competitors in vet space</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ── Customer Segments ── -->
+    <section class="section">
+      <h2 class="section-title">Key Customer &amp; Decision-Maker Segments</h2>
+      <div class="two-col">
+        <div class="info-card">
+          <div class="info-card-title">Cardiac Anesthesiologists <span class="tag tag-green" style="margin-left:6px">Key decision-maker</span></div>
+          <p>Identified in Week 3 I-Corps as the primary coagulation decision-makers in the OR — not the surgeon. Control heparin dosing and anticoagulation protocols. High influence on device adoption.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-title">Cardiac Surgeons</div>
+          <p>Primary end-user in cardiac surgery beachhead. Benefit from real-time coagulation feedback during CPB and ECMO. Champions for hospital purchasing decisions.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-title">Perfusionists</div>
+          <p>Operate the CPB machine. Direct users of KADI probe in the OR clinical setting. Very process-oriented — value workflow integration and ease of use.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-title">Intensivists / ICU Physicians</div>
+          <p>Manage post-surgical patients on ECMO and anticoagulation therapy. High demand for continuous data; currently rely on intermittent blood draws.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-title">DOAC Patients (Home)</div>
+          <p>~6M Americans on direct oral anticoagulants (rivaroxaban, apixaban, dabigatran). No home monitoring option exists today. RPM reimbursement via CPT 99454/99457 highlighted as revenue stream.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-title">Hematologists</div>
+          <p>Manage complex coagulopathies, bleeding disorders, and anticoagulation regimens. Potential clinical champions for hospital-wide adoption.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Clinical Network ── -->
+    <section class="section">
+      <h2 class="section-title">Clinical Network &amp; Partners</h2>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Partner</th>
+            <th>Type</th>
+            <th>Role</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Orlando Health</strong></td>
+            <td>Hospital System</td>
+            <td>Clinical network partner; site for customer discovery interviews and future validation studies</td>
+            <td><span class="tag tag-green">Active</span></td>
+          </tr>
+          <tr>
+            <td><strong>UCF CREOL</strong></td>
+            <td>Research Institution</td>
+            <td>Technology origin; lab space; research collaboration with Prof. Dogariu's group</td>
+            <td><span class="tag tag-green">Active</span></td>
+          </tr>
+          <tr>
+            <td><strong>TBD — ECMO Center</strong></td>
+            <td>Hospital</td>
+            <td>Primary beachhead validation site for ECMO use case</td>
+            <td><span class="tag tag-yellow">To be identified</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ── Market Gaps ── -->
+    <section class="section">
+      <h2 class="section-title">Key Market Gaps — The KADI Opportunity</h2>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Gap</th>
+            <th>Impact</th>
+            <th>KADI Solution</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>No continuous real-time coagulation monitor exists anywhere in the market</td>
+            <td>Surgeons and intensivists operate in monitoring blind spots lasting 10–30+ minutes</td>
+            <td>LC-DLS provides continuous, always-on optical signal — no gaps, no delays</td>
+          </tr>
+          <tr>
+            <td>Every existing method requires a blood draw</td>
+            <td>Patient discomfort, nursing burden, risk of infection, sampling delays</td>
+            <td>Non-invasive transcutaneous measurement — no blood draw ever</td>
+          </tr>
+          <tr>
+            <td>No home monitoring option for ~6M DOAC patients in the US</td>
+            <td>Patients cannot self-monitor; clinic visits required; dosing errors go undetected</td>
+            <td>Wrist device enabling 24/7 home coagulation monitoring — first of its kind</td>
+          </tr>
+          <tr>
+            <td>ECMO patients need continuous anticoagulation monitoring but rely on hourly ACT draws</td>
+            <td>Elevated bleeding/clotting risk; nursing labor intensive; ICU resource strain</td>
+            <td>KADI fiber probe clips onto ECMO circuit — real-time monitoring with zero blood draws</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ── Business Model ── -->
+    <section class="section">
+      <h2 class="section-title">Business Model Overview</h2>
+      <div class="two-col">
+        <div class="info-card">
+          <div class="info-card-title">Clinical / Hospital Revenue</div>
+          <p>Durable hardware sale (no consumables model). One-time device placement with service/maintenance contract. No per-test reagent costs — key differentiation from TEG/ROTEM.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-title">Home Monitoring Revenue</div>
+          <p>Device sale + remote patient monitoring (RPM) reimbursement. CPT codes 99454 and 99457 enable physician billing for continuous monitoring data. Subscription model possible.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-title">Data &amp; Software (Future)</div>
+          <p>Future layer: coagulation trend analytics, AI-assisted dosing recommendations, integration with hospital EHR systems. Revenue from SaaS / data services.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-title">Regulatory Pathway</div>
+          <p>FDA regulatory strategy to be defined. Clinical use device likely requires 510(k) clearance. Home device pathway to be determined in consultation with regulatory advisor.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Notes / To Do ── -->
+    <section class="section">
+      <h2 class="section-title">Data Gaps — To Be Researched</h2>
+      <div class="placeholder-box">
+        <strong>Items to add to this report:</strong><br><br>
+        ACT market share by geography (US, EU, Asia) · ECMO patient volume per year · DOAC patient population breakdown by drug ·
+        Hospital purchasing decision timelines · TEG/ROTEM installed base estimates ·
+        Reimbursement rate data for RPM codes (99454/99457) ·
+        Competitor funding &amp; valuation data · Regulatory timeline estimates ·
+        Market size breakdown by segment (perioperative vs. home vs. ICU)
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="int-footer">
+    © 2026 KADI Optics LLC · Internal Use Only · Not for Distribution
+  </footer>
+
+</body>
+</html>
