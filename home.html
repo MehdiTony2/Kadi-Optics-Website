@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="KADI Optics — Real-time, non-invasive blood coagulation monitoring powered by Low-Coherence Dynamic Light Scattering."/>
+  <title>KADI Optics — Real-Time Blood Coagulation Monitoring</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/styles.css"/>
+  <link rel="stylesheet" href="css/animation.css"/>
+</head>
+<body>
+
+<!-- ══════════ NAV ══════════ -->
+<nav class="site-nav" id="site-nav">
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <svg class="logo-icon" viewBox="0 0 52 42" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="26,3 3,39 49,39" fill="rgba(13,148,136,0.15)" stroke="#0D9488" stroke-width="1.8"/>
+        <line x1="0"  y1="21" x2="14" y2="21" stroke="rgba(255,255,255,0.85)" stroke-width="1.8" stroke-linecap="round"/>
+        <line x1="37" y1="21" x2="52" y2="10" stroke="#60A5FA" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="37" y1="21" x2="52" y2="16" stroke="#34D399" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="37" y1="21" x2="52" y2="22" stroke="#2DD4BF" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="37" y1="21" x2="52" y2="28" stroke="#FCD34D" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="37" y1="21" x2="52" y2="34" stroke="#F87171" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      <div class="logo-text">
+        <span class="logo-name">KADI</span>
+        <span class="logo-sub">OPTICS</span>
+      </div>
+    </a>
+
+    <div id="nav-menu">
+      <ul class="nav-links">
+        <li><a href="#solution">Problem &amp; Solution</a></li>
+        <li><a href="#technology">Technology</a></li>
+        <li><a href="#applications">Applications</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#contact" class="nav-cta">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+
+<!-- ══════════ HERO ══════════ -->
+<section id="hero" class="hero">
+  <div class="hero-blobs">
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="blob b3"></div>
+  </div>
+
+  <div class="container hero-grid">
+    <div class="hero-text">
+      <div class="hero-badge">LC-DLS Optical Technology &nbsp;·&nbsp; UCF CREOL</div>
+      <h1>Blood Coagulation<br>Monitoring,<br><span class="accent">Reinvented.</span></h1>
+      <p class="hero-lead">Continuous. Non-invasive. Always on.</p>
+      <p class="hero-body">KADI Optics is developing an optical platform that delivers real-time coagulation data — without blood draws, without waiting, without gaps. From the operating room to the patient's home.</p>
+      <div class="hero-actions">
+        <a href="#technology" class="btn btn-primary">Explore Technology</a>
+        <a href="#contact"    class="btn btn-ghost">Get in Touch →</a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <svg class="prism-svg" viewBox="0 0 320 240" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="160" cy="140" rx="110" ry="90" fill="none" stroke="rgba(13,148,136,0.06)" stroke-width="30"/>
+        <polygon points="160,18 20,222 300,222" fill="rgba(13,148,136,0.07)" stroke="rgba(13,148,136,0.45)" stroke-width="1.8"/>
+        <line x1="160" y1="18"  x2="20"  y2="222" stroke="rgba(255,255,255,0.1)"  stroke-width="1"/>
+        <line x1="160" y1="18"  x2="300" y2="222" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+        <line class="beam-in" x1="0" y1="120" x2="90" y2="120" stroke="rgba(255,255,255,0.85)" stroke-width="2.2" stroke-linecap="round"/>
+        <circle cx="90" cy="120" r="4" fill="rgba(0,0,0,0)" stroke="rgba(13,148,136,0.6)" stroke-width="1.5"/>
+        <line x1="90" y1="120" x2="230" y2="120" stroke="rgba(255,255,255,0.05)" stroke-width="1.5" stroke-dasharray="4,4"/>
+        <line class="beam-out d1" x1="230" y1="120" x2="320" y2="66"  stroke="#60A5FA" stroke-width="2"   stroke-linecap="round"/>
+        <line class="beam-out d2" x1="230" y1="120" x2="320" y2="92"  stroke="#34D399" stroke-width="2"   stroke-linecap="round"/>
+        <line class="beam-out d3" x1="230" y1="120" x2="320" y2="120" stroke="#2DD4BF" stroke-width="2.8" stroke-linecap="round"/>
+        <line class="beam-out d4" x1="230" y1="120" x2="320" y2="149" stroke="#FCD34D" stroke-width="2"   stroke-linecap="round"/>
+        <line class="beam-out d5" x1="230" y1="120" x2="320" y2="176" stroke="#F87171" stroke-width="2"   stroke-linecap="round"/>
+        <circle cx="320" cy="66"  r="5" fill="#60A5FA" opacity="0.7"><animate attributeName="opacity" values="0.7;0.2;0.7" dur="2.2s" repeatCount="indefinite"/></circle>
+        <circle cx="320" cy="92"  r="5" fill="#34D399" opacity="0.7"><animate attributeName="opacity" values="0.7;0.2;0.7" dur="2.6s" repeatCount="indefinite"/></circle>
+        <circle cx="320" cy="120" r="6" fill="#2DD4BF" opacity="0.9"><animate attributeName="opacity" values="0.9;0.3;0.9" dur="1.8s" repeatCount="indefinite"/></circle>
+        <circle cx="320" cy="149" r="5" fill="#FCD34D" opacity="0.7"><animate attributeName="opacity" values="0.7;0.2;0.7" dur="3.0s" repeatCount="indefinite"/></circle>
+        <circle cx="320" cy="176" r="5" fill="#F87171" opacity="0.7"><animate attributeName="opacity" values="0.7;0.2;0.7" dur="2.4s" repeatCount="indefinite"/></circle>
+        <circle class="pulse-ring"   cx="160" cy="130" r="28" fill="none" stroke="rgba(13,148,136,0.35)" stroke-width="1.5"/>
+        <circle class="pulse-ring-2" cx="160" cy="130" r="28" fill="none" stroke="rgba(13,148,136,0.18)" stroke-width="1"/>
+        <text x="160" y="210" text-anchor="middle" font-family="Inter,system-ui" font-size="10" fill="rgba(13,148,136,0.4)" letter-spacing="2">LC-DLS</text>
+      </svg>
+    </div>
+  </div>
+
+  <a href="#solution" class="scroll-hint">
+    <span>See the problem</span>
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
+</section>
+
+
+<!-- ══════════ STATS ══════════ -->
+<div class="stats-bar">
+  <div class="container stats-grid">
+    <div class="stat"><span class="stat-num">$4.7B</span><span class="stat-label">Global Coagulation Market</span></div>
+    <div class="stat"><span class="stat-num">200+</span><span class="stat-label">Research Publications</span></div>
+    <div class="stat"><span class="stat-num">20+</span><span class="stat-label">Registered Patents</span></div>
+    <div class="stat"><span class="stat-num">$250K+</span><span class="stat-label">Research Funding Secured</span></div>
+  </div>
+</div>
+
+
+<!-- ══════════ PROBLEM & SOLUTION ══════════ -->
+<section id="solution" class="section anim-section">
+  <div class="container">
+    <div class="section-label">The Problem — and Our Solution</div>
+    <h2 class="section-title">Today's coagulation monitoring has dangerous gaps.</h2>
+    <p class="section-sub">Patients undergoing cardiac surgery or managing anticoagulation at home are left without live data for critical minutes — or entirely. KADI Optics closes that gap.</p>
+
+    <div class="panels-wrapper">
+
+      <!-- LEFT PANEL -->
+      <div class="panel panel-left">
+        <div class="panel-header"><span class="header-icon">⚠</span> The Problem Today</div>
+
+        <!-- LEFT CLINICAL -->
+        <div class="half">
+          <div class="scene-label">Clinical Setting — Cardiac Surgery / CPB</div>
+          <div class="stage">
+            <svg id="svg-lc" viewBox="0 0 460 175" xmlns="http://www.w3.org/2000/svg">
+              <rect width="460" height="175" fill="#EBF2FA"/>
+              <rect y="150" width="460" height="25" fill="#D1E3F5"/>
+              <rect x="50"  y="0" width="56" height="7" rx="2" fill="#FEF9C3" stroke="#FDE68A" stroke-width="1"/>
+              <rect x="196" y="0" width="56" height="7" rx="2" fill="#FEF9C3" stroke="#FDE68A" stroke-width="1"/>
+              <rect x="352" y="0" width="56" height="7" rx="2" fill="#FEF9C3" stroke="#FDE68A" stroke-width="1"/>
+              <polygon points="50,7 106,7 92,38 64,38"    fill="#FFFDE7" opacity="0.4"/>
+              <polygon points="196,7 252,7 238,38 210,38"  fill="#FFFDE7" opacity="0.4"/>
+              <rect x="12" y="104" width="122" height="16" rx="5" fill="#93C5FD" stroke="#3B82F6" stroke-width="2"/>
+              <rect x="12" y="100" width="32"  height="20" rx="5" fill="#BFDBFE" stroke="#3B82F6" stroke-width="1.5"/>
+              <rect x="14" y="92"  width="118" height="14" rx="4" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1"/>
+              <rect x="55"  y="90" width="3" height="14" rx="1" fill="#93C5FD"/>
+              <rect x="100" y="90" width="3" height="14" rx="1" fill="#93C5FD"/>
+              <rect x="15"  y="120" width="7" height="30" rx="3" fill="#60A5FA"/>
+              <rect x="130" y="120" width="7" height="30" rx="3" fill="#60A5FA"/>
+              <rect x="14"  y="82"  width="36" height="14" rx="5" fill="#F0F9FF" stroke="#BAE6FD" stroke-width="1"/>
+              <circle cx="32" cy="78" r="13" fill="#F5CBA7" stroke="#C8956C" stroke-width="1.5"/>
+              <path d="M20,73 Q32,60 44,73" fill="#78350F"/>
+              <circle cx="28" cy="76" r="1.5" fill="#92400E" opacity="0.6"/>
+              <circle cx="36" cy="76" r="1.5" fill="#92400E" opacity="0.6"/>
+              <rect x="22" y="91" width="20" height="18" rx="4" fill="#BFDBFE" stroke="#93C5FD" stroke-width="1"/>
+              <rect x="136" y="32" width="3"  height="72" rx="1" fill="#94A3B8"/>
+              <rect x="128" y="32" width="19" height="4"  rx="2" fill="#94A3B8"/>
+              <path d="M133,37 Q128,40 128,52 Q128,66 137,68 Q146,66 146,52 Q146,40 141,37 Z" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1.5"/>
+              <rect x="135" y="68" width="4" height="6" fill="#93C5FD"/>
+              <path d="M137,74 Q128,82 42,88" stroke="#FCA5A5" stroke-width="1.5" fill="none" stroke-dasharray="3,2"/>
+              <rect x="148" y="64" width="54" height="46" rx="6" fill="#1E293B" stroke="#334155" stroke-width="2"/>
+              <rect x="152" y="68" width="46" height="30" rx="4" fill="#0F172A"/>
+              <polyline id="lc-ecg-line" class="anim" points="154,83 158,83 161,72 164,94 167,83 170,83 173,75 176,91 179,83 182,83 185,78 188,88 191,83 196,83" fill="none" stroke="#4ADE80" stroke-width="1.8" stroke-linecap="round"/>
+              <rect x="152" y="100" width="46" height="8" rx="2" fill="#0F172A"/>
+              <text x="175" y="107" text-anchor="middle" font-size="5.5" fill="#4ADE80">HR 68</text>
+              <rect x="171" y="110" width="4"  height="18" fill="#475569"/>
+              <rect x="162" y="126" width="22" height="5"  rx="2" fill="#475569"/>
+              <g transform="translate(268,40)">
+                <circle r="26" fill="#FFFBEB" stroke="#F59E0B" stroke-width="2.5"/>
+                <line x1="0"   y1="-22" x2="0"   y2="-18" stroke="#92400E" stroke-width="2"/>
+                <line x1="0"   y1="22"  x2="0"   y2="18"  stroke="#92400E" stroke-width="2"/>
+                <line x1="-22" y1="0"   x2="-18" y2="0"   stroke="#92400E" stroke-width="2"/>
+                <line x1="22"  y1="0"   x2="18"  y2="0"   stroke="#92400E" stroke-width="2"/>
+                <line x1="-15" y1="-15" x2="-12" y2="-12" stroke="#92400E" stroke-width="1.5"/>
+                <line x1="15"  y1="-15" x2="12"  y2="-12" stroke="#92400E" stroke-width="1.5"/>
+                <line x1="-15" y1="15"  x2="-12" y2="12"  stroke="#92400E" stroke-width="1.5"/>
+                <line x1="15"  y1="15"  x2="12"  y2="12"  stroke="#92400E" stroke-width="1.5"/>
+                <line id="lc-clock-hand" class="anim" x1="0" y1="0" x2="0" y2="-19" stroke="#B45309" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="0" y1="0" x2="-9" y2="-9" stroke="#92400E" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+                <circle r="3" fill="#D97706"/>
+              </g>
+              <text x="268" y="76" text-anchor="middle" font-size="8" fill="#92400E" font-weight="700">10–15 min</text>
+              <g transform="translate(220,150)">
+                <g id="lc-nurse" class="anim">
+                  <g id="lc-nurse-flip" class="anim" style="transform-origin:13px 0px;">
+                    <circle cx="13" cy="-62" r="12" fill="#F5CBA7" stroke="#C8956C" stroke-width="1.5"/>
+                    <rect x="3"  y="-77" width="20" height="8"  rx="2" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
+                    <rect x="9"  y="-79" width="8"  height="5"  rx="1" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
+                    <rect x="12" y="-79" width="2.5" height="6" fill="#E63946"/>
+                    <rect x="9"  y="-76" width="8"   height="2.5" fill="#E63946"/>
+                    <circle cx="9"  cy="-64" r="1.5" fill="#92400E" opacity="0.7"/>
+                    <circle cx="17" cy="-64" r="1.5" fill="#92400E" opacity="0.7"/>
+                    <path d="M9,-59 Q13,-57 17,-59" fill="none" stroke="#92400E" stroke-width="1.2"/>
+                    <rect x="3"  y="-50" width="20" height="28" rx="5" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+                    <rect x="11" y="-46" width="3"  height="10" fill="#E63946"/>
+                    <rect x="8"  y="-42" width="9"  height="3"  fill="#E63946"/>
+                    <rect x="-5" y="-48" width="8"  height="22" rx="4" fill="#F5CBA7" stroke="#C8956C" stroke-width="1"/>
+                    <rect x="21" y="-48" width="8"  height="22" rx="4" fill="#F5CBA7" stroke="#C8956C" stroke-width="1"/>
+                    <rect x="27" y="-32" width="8"  height="18" rx="3" fill="#FCA5A5" stroke="#E63946" stroke-width="1.5"/>
+                    <rect x="29" y="-35" width="4"  height="5"  rx="1" fill="#94A3B8"/>
+                    <rect x="29" y="-35" width="4"  height="3"  fill="#E63946"/>
+                    <rect id="lc-leg-l" class="anim" x="5"  y="-22" width="8" height="24" rx="3" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1" style="transform-origin:9px -22px;"/>
+                    <rect id="lc-leg-r" class="anim" x="15" y="-22" width="8" height="24" rx="3" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1" style="transform-origin:19px -22px;"/>
+                    <rect x="3"  y="0" width="12" height="7" rx="2" fill="#334155"/>
+                    <rect x="13" y="0" width="12" height="7" rx="2" fill="#334155"/>
+                  </g>
+                </g>
+              </g>
+              <rect x="408" y="52" width="48" height="98" rx="4" fill="#CBD5E1" stroke="#94A3B8" stroke-width="2"/>
+              <rect x="411" y="55" width="42" height="92" rx="3" fill="#E2E8F0"/>
+              <circle cx="420" cy="102" r="4.5" fill="#F59E0B" stroke="#D97706" stroke-width="1"/>
+              <rect x="406" y="50" width="52" height="102" rx="4" fill="none" stroke="#94A3B8" stroke-width="2"/>
+              <line x1="240" y1="150" x2="404" y2="150" stroke="#CBD5E1" stroke-width="1.5" stroke-dasharray="6,4"/>
+              <polygon points="407,146 401,150 407,154" fill="#94A3B8"/>
+              <g transform="translate(168,150)">
+                <circle cx="0" cy="-68" r="12" fill="#FDE8D8" stroke="#C8956C" stroke-width="1.5"/>
+                <path d="M-11,-74 Q0,-82 11,-74" fill="#3B1E08"/>
+                <circle cx="-4" cy="-70" r="1.5" fill="#7C3AED" opacity="0.6"/>
+                <circle cx="4"  cy="-70" r="1.5" fill="#7C3AED" opacity="0.6"/>
+                <rect x="-10" y="-56" width="20" height="28" rx="5" fill="#7DD3FC" stroke="#38BDF8" stroke-width="1.5"/>
+                <path d="M-5,-50 Q-12,-42 -10,-35 Q-8,-28 -3,-28" fill="none" stroke="#0369A1" stroke-width="1.8"/>
+                <circle cx="-2" cy="-27" r="4" fill="#0369A1"/>
+                <rect x="-18" y="-54" width="8" height="20" rx="4" fill="#FDE8D8" stroke="#C8956C" stroke-width="1"/>
+                <rect x="10"  y="-54" width="8" height="20" rx="4" fill="#FDE8D8" stroke="#C8956C" stroke-width="1"/>
+                <rect x="-8"  y="-28" width="8" height="28" rx="3" fill="#BFDBFE" stroke="#93C5FD" stroke-width="1"/>
+                <rect x="2"   y="-28" width="8" height="28" rx="3" fill="#BFDBFE" stroke="#93C5FD" stroke-width="1"/>
+                <rect x="-10" y="0"  width="12" height="7" rx="2" fill="#1E3A5F"/>
+                <rect x="0"   y="0"  width="12" height="7" rx="2" fill="#1E3A5F"/>
+              </g>
+              <g id="lc-paper" class="anim" transform="translate(168,150)">
+                <rect x="12" y="-56" width="30" height="38" rx="4" fill="#FFFFFF" stroke="#3B82F6" stroke-width="2"/>
+                <line x1="17" y1="-48" x2="37" y2="-48" stroke="#BFDBFE" stroke-width="1.5"/>
+                <line x1="17" y1="-42" x2="37" y2="-42" stroke="#BFDBFE" stroke-width="1.5"/>
+                <line x1="17" y1="-36" x2="37" y2="-36" stroke="#BFDBFE" stroke-width="1.5"/>
+                <text x="27" y="-27" text-anchor="middle" font-size="6.5" fill="#1E40AF" font-weight="800">ACT</text>
+                <text x="27" y="-21" text-anchor="middle" font-size="6"   fill="#DC2626" font-weight="700">420s ↑</text>
+                <text x="37" y="-48" font-size="9" fill="#16A34A">✓</text>
+              </g>
+            </svg>
+          </div>
+          <div class="caption-zone" id="cap-lc"></div>
+        </div>
+
+        <div class="scene-sep"></div>
+
+        <!-- LEFT HOME -->
+        <div class="half">
+          <div class="scene-label">Home Setting — Anticoagulated Patient</div>
+          <div class="stage">
+            <svg id="svg-lh" viewBox="0 0 460 175" xmlns="http://www.w3.org/2000/svg">
+              <rect width="460" height="175" fill="#FFF8F0"/>
+              <rect y="150" width="460" height="25" fill="#FED7AA"/>
+              <rect y="148" width="460" height="4" fill="#D97706" opacity="0.3"/>
+              <rect x="330" y="8"  width="96" height="72" rx="6" fill="#BAE6FD" stroke="#7DD3FC" stroke-width="2"/>
+              <line x1="378" y1="8"  x2="378" y2="80"  stroke="#7DD3FC" stroke-width="1.5"/>
+              <line x1="330" y1="44" x2="426" y2="44"  stroke="#7DD3FC" stroke-width="1.5"/>
+              <path d="M330,8 Q320,25 325,80" fill="#FDE68A" stroke="#F59E0B" stroke-width="1" opacity="0.7"/>
+              <path d="M426,8 Q436,25 431,80" fill="#FDE68A" stroke="#F59E0B" stroke-width="1" opacity="0.7"/>
+              <circle cx="360" cy="28" r="12" fill="#FEF08A" opacity="0.6"/>
+              <path d="M345,65 Q352,50 360,65 Q368,50 378,65" fill="#86EFAC" opacity="0.7"/>
+              <g transform="translate(380,115)">
+                <circle r="20" fill="#FFFBEB" stroke="#F59E0B" stroke-width="2"/>
+                <line x1="0"   y1="-17" x2="0"   y2="-14" stroke="#92400E" stroke-width="1.5"/>
+                <line x1="0"   y1="17"  x2="0"   y2="14"  stroke="#92400E" stroke-width="1.5"/>
+                <line x1="-17" y1="0"   x2="-14" y2="0"   stroke="#92400E" stroke-width="1.5"/>
+                <line x1="17"  y1="0"   x2="14"  y2="0"   stroke="#92400E" stroke-width="1.5"/>
+                <line id="lh-clock-hand" class="anim" x1="0" y1="0" x2="0" y2="-14" stroke="#B45309" stroke-width="2" stroke-linecap="round"/>
+                <line x1="0" y1="0" x2="5" y2="-7" stroke="#92400E" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+                <circle r="2.5" fill="#D97706"/>
+              </g>
+              <text x="380" y="140" text-anchor="middle" font-size="7.5" fill="#92400E" font-weight="700">~30 sec</text>
+              <rect x="95"  y="118" width="270" height="10" rx="4" fill="#92400E" stroke="#78350F" stroke-width="1.5"/>
+              <rect x="110" y="128" width="10"  height="24" rx="3" fill="#7C2D12"/>
+              <rect x="340" y="128" width="10"  height="24" rx="3" fill="#7C2D12"/>
+              <g transform="translate(82,150)">
+                <circle cx="0" cy="-70" r="14" fill="#F5CBA7" stroke="#C8956C" stroke-width="1.5"/>
+                <path d="M-13,-76 Q0,-88 13,-76" fill="#451A03"/>
+                <circle cx="-5" cy="-72" r="1.5" fill="#92400E" opacity="0.7"/>
+                <circle cx="5"  cy="-72" r="1.5" fill="#92400E" opacity="0.7"/>
+                <rect x="-12" y="-56" width="24" height="30" rx="6" fill="#FDE68A" stroke="#D97706" stroke-width="1.5"/>
+                <path d="M-6,-56 L0,-48 L6,-56" fill="#FCD34D" stroke="#D97706" stroke-width="1"/>
+                <rect x="-22" y="-54" width="10" height="24" rx="4" fill="#F5CBA7" stroke="#C8956C" stroke-width="1"/>
+                <rect x="-22" y="-32" width="10" height="15" rx="4" fill="#F5CBA7" stroke="#C8956C" stroke-width="1"/>
+                <rect x="12"  y="-54" width="10" height="24" rx="4" fill="#F5CBA7" stroke="#C8956C" stroke-width="1"/>
+                <rect x="12"  y="-32" width="72" height="9"  rx="4" fill="#F5CBA7" stroke="#C8956C" stroke-width="1"/>
+                <rect x="-10" y="-26" width="9" height="26" rx="3" fill="#1E3A5F"/>
+                <rect x="1"   y="-26" width="9" height="26" rx="3" fill="#1E3A5F"/>
+              </g>
+              <g transform="translate(148,118)">
+                <rect x="-10" y="0"   width="24" height="20" rx="5" fill="#F5CBA7" stroke="#C8956C" stroke-width="1.2"/>
+                <rect x="-8"  y="-16" width="5"  height="18" rx="3" fill="#F5CBA7" stroke="#C8956C" stroke-width="1.2"/>
+                <rect x="-1"  y="-18" width="5"  height="20" rx="3" fill="#F5CBA7" stroke="#C8956C" stroke-width="1.2"/>
+                <rect x="6"   y="-16" width="5"  height="18" rx="3" fill="#F5CBA7" stroke="#C8956C" stroke-width="1.2"/>
+                <rect x="12"  y="-12" width="5"  height="14" rx="3" fill="#F5CBA7" stroke="#C8956C" stroke-width="1.2"/>
+                <rect x="-18" y="4"   width="10" height="6"  rx="3" fill="#F5CBA7" stroke="#C8956C" stroke-width="1.2"/>
+                <rect x="-7"  y="-15" width="3"  height="4"  rx="1" fill="#FECACA" opacity="0.7"/>
+                <rect x="0"   y="-17" width="3"  height="4"  rx="1" fill="#FECACA" opacity="0.7"/>
+                <rect x="7"   y="-15" width="3"  height="4"  rx="1" fill="#FECACA" opacity="0.7"/>
+              </g>
+              <rect x="145" y="106" width="10" height="30" rx="5" fill="#475569" stroke="#334155" stroke-width="1.5"/>
+              <rect x="147" y="133" width="6"  height="5"  rx="1" fill="#64748B"/>
+              <polygon points="150,138 149,146 151,146" fill="#E2E8F0"/>
+              <rect x="145" y="114" width="10" height="5"  rx="2" fill="#3B82F6"/>
+              <g id="lh-drop" class="anim">
+                <ellipse cx="150" cy="154" rx="6" ry="8"  fill="#E63946"/>
+                <polygon points="150,141 146,152 154,152"  fill="#E63946"/>
+                <ellipse cx="147" cy="150" rx="2.5" ry="3" fill="#FECACA" opacity="0.5"/>
+              </g>
+              <g id="lh-glucometer" class="anim">
+                <rect x="200" y="100" width="62" height="40" rx="9" fill="#1E293B" stroke="#334155" stroke-width="2"/>
+                <rect x="206" y="105" width="42" height="22" rx="4" fill="#0F172A"/>
+                <text x="218" y="116" font-size="7" fill="#64748B">INR</text>
+                <text id="lh-result-num" class="anim" x="236" y="122" text-anchor="middle" font-size="11" fill="#FCD34D" font-weight="800">2.4</text>
+                <rect x="260" y="116" width="10" height="6"  rx="2" fill="#334155"/>
+                <circle cx="212" cy="130" r="5" fill="#3B82F6" stroke="#1D4ED8" stroke-width="1"/>
+                <circle cx="228" cy="130" r="2" fill="#475569"/>
+                <circle cx="235" cy="130" r="2" fill="#475569"/>
+                <circle cx="242" cy="130" r="2" fill="#475569"/>
+                <rect x="258" y="108" width="6" height="26" rx="2" fill="#FCD34D" stroke="#D97706" stroke-width="1.2"/>
+              </g>
+              <circle class="lh-dot anim" cx="240" cy="84" r="5" fill="#F59E0B"/>
+              <circle class="lh-dot anim" cx="256" cy="84" r="5" fill="#F59E0B"/>
+              <circle class="lh-dot anim" cx="272" cy="84" r="5" fill="#F59E0B"/>
+            </svg>
+          </div>
+          <div class="caption-zone" id="cap-lh"></div>
+        </div>
+        <div class="progress-bar-wrap"><div class="progress-bar"></div></div>
+      </div><!-- /panel-left -->
+
+
+      <!-- RIGHT PANEL -->
+      <div class="panel panel-right">
+        <div class="panel-header"><span class="header-icon">✦</span> The KADI Solution</div>
+
+        <!-- RIGHT CLINICAL -->
+        <div class="half">
+          <div class="scene-label">Clinical Setting — Real-Time CPB Monitoring</div>
+          <div class="stage">
+            <svg id="svg-rc" viewBox="0 0 460 175" xmlns="http://www.w3.org/2000/svg">
+              <rect width="460" height="175" fill="#EFFEFB"/>
+              <rect y="150" width="460" height="25" fill="#CCFBF1"/>
+              <rect y="148" width="460" height="4" fill="#99F6E4" opacity="0.5"/>
+              <rect x="60"  y="0" width="56" height="7" rx="2" fill="#FEF9C3" stroke="#FDE68A" stroke-width="1"/>
+              <rect x="200" y="0" width="56" height="7" rx="2" fill="#FEF9C3" stroke="#FDE68A" stroke-width="1"/>
+              <polygon points="60,7 116,7 102,38 74,38"    fill="#FFFDE7" opacity="0.35"/>
+              <polygon points="200,7 256,7 242,38 214,38"  fill="#FFFDE7" opacity="0.35"/>
+              <rect x="12" y="104" width="122" height="16" rx="5" fill="#6EE7B7" stroke="#10B981" stroke-width="2"/>
+              <rect x="12" y="100" width="32"  height="20" rx="5" fill="#A7F3D0" stroke="#10B981" stroke-width="1.5"/>
+              <rect x="14" y="92"  width="118" height="14" rx="4" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1"/>
+              <rect x="55"  y="90" width="3" height="14" rx="1" fill="#6EE7B7"/>
+              <rect x="100" y="90" width="3" height="14" rx="1" fill="#6EE7B7"/>
+              <rect x="15"  y="120" width="7" height="30" rx="3" fill="#34D399"/>
+              <rect x="130" y="120" width="7" height="30" rx="3" fill="#34D399"/>
+              <rect x="14"  y="82"  width="36" height="14" rx="5" fill="#F0FDF4" stroke="#A7F3D0" stroke-width="1"/>
+              <circle cx="32" cy="78" r="13" fill="#F5CBA7" stroke="#C8956C" stroke-width="1.5"/>
+              <path d="M20,73 Q32,60 44,73" fill="#78350F"/>
+              <circle cx="28" cy="76" r="1.5" fill="#92400E" opacity="0.6"/>
+              <circle cx="36" cy="76" r="1.5" fill="#92400E" opacity="0.6"/>
+              <rect x="22" y="91" width="20" height="18" rx="4" fill="#A7F3D0" stroke="#6EE7B7" stroke-width="1"/>
+              <rect x="136" y="32" width="3"  height="72" rx="1" fill="#94A3B8"/>
+              <rect x="128" y="32" width="19" height="4"  rx="2" fill="#94A3B8"/>
+              <path d="M133,37 Q128,40 128,52 Q128,66 137,68 Q146,66 146,52 Q146,40 141,37 Z" fill="#D1FAE5" stroke="#6EE7B7" stroke-width="1.5"/>
+              <rect x="135" y="68" width="4" height="6" fill="#6EE7B7"/>
+              <path d="M137,74 Q128,82 42,88" stroke="#FCA5A5" stroke-width="1.5" fill="none" stroke-dasharray="3,2"/>
+              <!-- Venous pipe (blue, patient→machine) -->
+              <path d="M134,96 Q170,90 220,88" stroke="#3B82F6" stroke-width="9" fill="none" stroke-linecap="round"/>
+              <path d="M134,96 Q170,90 220,88" stroke="#BFDBFE" stroke-width="4" fill="none" stroke-linecap="round"/>
+              <path id="rc-venous-flow" class="anim" d="M134,96 Q170,90 220,88" stroke="#93C5FD" stroke-width="3" fill="none" stroke-dasharray="11,11" stroke-linecap="round"/>
+              <text x="160" y="82" text-anchor="middle" font-size="7" fill="#1D4ED8" font-weight="700">Venous</text>
+              <!-- Arterial pipe (red, machine→patient) -->
+              <path d="M220,108 Q172,114 134,110" stroke="#E63946" stroke-width="9" fill="none" stroke-linecap="round"/>
+              <path d="M220,108 Q172,114 134,110" stroke="#FECACA" stroke-width="4" fill="none" stroke-linecap="round"/>
+              <path id="rc-arterial-flow" class="anim" d="M220,108 Q172,114 134,110" stroke="#FCA5A5" stroke-width="3" fill="none" stroke-dasharray="11,11" stroke-linecap="round"/>
+              <text x="162" y="127" text-anchor="middle" font-size="7" fill="#B91C1C" font-weight="700">Arterial</text>
+              <polygon points="134,92 128,96 134,100" fill="#3B82F6"/>
+              <polygon points="134,106 140,110 134,114" fill="#E63946"/>
+              <!-- KADI probe on venous line -->
+              <circle cx="178" cy="90" r="9" fill="#ECFDF5" stroke="#0D9488" stroke-width="2.5"/>
+              <line x1="178" y1="83" x2="178" y2="97" stroke="#0D9488" stroke-width="2"/>
+              <line x1="171" y1="90" x2="185" y2="90" stroke="#0D9488" stroke-width="2"/>
+              <line id="rc-fiber" class="anim" x1="178" y1="99" x2="178" y2="124" stroke="#0D9488" stroke-width="2.5" stroke-linecap="round"/>
+              <g id="rc-kadi-unit" class="anim">
+                <rect x="154" y="124" width="48" height="26" rx="7" fill="#0F172A" stroke="#0D9488" stroke-width="2"/>
+                <rect x="158" y="128" width="30" height="16" rx="4" fill="#071525" stroke="#164E63" stroke-width="1"/>
+                <line x1="158" y1="136" x2="166" y2="136" stroke="#7DD3FC" stroke-width="1.5" stroke-linecap="round"/>
+                <polygon points="166,128 166,144 178,136" fill="none" stroke="#0D9488" stroke-width="1.5"/>
+                <line x1="178" y1="136" x2="187" y2="130" stroke="#60A5FA" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="178" y1="136" x2="187" y2="134" stroke="#34D399" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="178" y1="136" x2="187" y2="138" stroke="#FCD34D" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="178" y1="136" x2="187" y2="142" stroke="#F87171" stroke-width="1.5" stroke-linecap="round"/>
+                <circle id="rc-led" class="anim" cx="195" cy="136" r="4" fill="#0D9488"/>
+                <text x="178" y="156" text-anchor="middle" font-size="5.5" fill="#64748B" font-weight="700">KADI OPTICS</text>
+              </g>
+              <path id="rc-data-cable" class="anim" d="M202,136 Q260,132 315,76" fill="none" stroke="#475569" stroke-width="1.8" stroke-dasharray="200" stroke-dashoffset="200" stroke-linecap="round"/>
+              <!-- CPB Machine -->
+              <rect x="224" y="18"  width="90" height="132" rx="8" fill="#DBEAFE" stroke="#3B82F6" stroke-width="2.5"/>
+              <rect x="228" y="22"  width="82" height="124" rx="6" fill="#EFF6FF"/>
+              <rect x="232" y="26"  width="74" height="36"  rx="4" fill="#1E293B"/>
+              <rect x="235" y="29"  width="68" height="28"  rx="3" fill="#0F172A"/>
+              <text x="248" y="39" font-size="5.5" fill="#4ADE80">♥ HR  72</text>
+              <text x="248" y="47" font-size="5.5" fill="#60A5FA">O₂  99%</text>
+              <text x="248" y="55" font-size="5.5" fill="#FCD34D">BP  82/50</text>
+              <circle cx="295" cy="30" r="3" fill="#22C55E"><animate attributeName="opacity" values="1;0.2;1" dur="1s" repeatCount="indefinite"/></circle>
+              <rect x="244" y="68"  width="22" height="72"  rx="6" fill="#BFDBFE" stroke="#3B82F6" stroke-width="1.5"/>
+              <line x1="246" y1="78"  x2="264" y2="78"  stroke="#93C5FD" stroke-width="1"/>
+              <line x1="246" y1="86"  x2="264" y2="86"  stroke="#93C5FD" stroke-width="1"/>
+              <line x1="246" y1="94"  x2="264" y2="94"  stroke="#93C5FD" stroke-width="1"/>
+              <line x1="246" y1="102" x2="264" y2="102" stroke="#93C5FD" stroke-width="1"/>
+              <line x1="246" y1="110" x2="264" y2="110" stroke="#93C5FD" stroke-width="1"/>
+              <line x1="246" y1="118" x2="264" y2="118" stroke="#93C5FD" stroke-width="1"/>
+              <text x="255" y="73" text-anchor="middle" font-size="6" fill="#1D4ED8" font-weight="700">O₂</text>
+              <circle cx="288" cy="86" r="20" fill="#BFDBFE" stroke="#3B82F6" stroke-width="2"/>
+              <circle cx="288" cy="86" r="14" fill="#DBEAFE" stroke="#60A5FA" stroke-width="1"/>
+              <g id="rc-pump-blades" class="anim">
+                <line x1="288" y1="72"  x2="288" y2="82"  stroke="#3B82F6" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="288" y1="90"  x2="288" y2="100" stroke="#3B82F6" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="274" y1="86"  x2="284" y2="86"  stroke="#3B82F6" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="292" y1="86"  x2="302" y2="86"  stroke="#3B82F6" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="278" y1="76"  x2="285" y2="83"  stroke="#3B82F6" stroke-width="2" stroke-linecap="round"/>
+                <line x1="291" y1="89"  x2="298" y2="96"  stroke="#3B82F6" stroke-width="2" stroke-linecap="round"/>
+                <line x1="278" y1="96"  x2="285" y2="89"  stroke="#3B82F6" stroke-width="2" stroke-linecap="round"/>
+                <line x1="291" y1="83"  x2="298" y2="76"  stroke="#3B82F6" stroke-width="2" stroke-linecap="round"/>
+              </g>
+              <circle cx="288" cy="86" r="4" fill="#1D4ED8"/>
+              <text x="288" y="116" text-anchor="middle" font-size="5.5" fill="#1D4ED8" font-weight="700">PUMP</text>
+              <rect x="216" y="87"  width="10" height="8" rx="2" fill="#3B82F6" stroke="#1D4ED8" stroke-width="1"/>
+              <rect x="216" y="105" width="10" height="8" rx="2" fill="#E63946" stroke="#B91C1C" stroke-width="1"/>
+              <rect x="224" y="89"  width="4"  height="4" fill="#2563EB"/>
+              <rect x="224" y="107" width="4"  height="4" fill="#DC2626"/>
+              <rect x="272" y="112" width="34" height="26" rx="4" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1.5"/>
+              <line x1="274" y1="118" x2="304" y2="118" stroke="#93C5FD" stroke-width="1.5"/>
+              <line x1="274" y1="122" x2="304" y2="122" stroke="#93C5FD" stroke-width="1.5"/>
+              <line x1="274" y1="126" x2="304" y2="126" stroke="#93C5FD" stroke-width="1.5"/>
+              <text x="288" y="145" text-anchor="middle" font-size="5" fill="#3B82F6">HEAT EXCHANGER</text>
+              <text x="269" y="157" text-anchor="middle" font-size="6.5" fill="#1D4ED8" font-weight="800">CPB Machine</text>
+              <!-- Monitor -->
+              <rect x="318" y="24"  width="100" height="80" rx="8" fill="#1E293B" stroke="#0D9488" stroke-width="2.5"/>
+              <rect x="322" y="28"  width="92"  height="68" rx="6" fill="#0F172A"/>
+              <rect x="362" y="104" width="6"   height="22" fill="#334155"/>
+              <rect x="350" y="124" width="30"  height="6"  rx="3" fill="#334155"/>
+              <rect x="322" y="28"  width="92"  height="12" rx="6" fill="#071525"/>
+              <circle id="rc-live-dot" class="anim" cx="333" cy="34" r="4.5" fill="#22C55E"/>
+              <text x="342" y="38" font-size="7.5" fill="#4ADE80" font-weight="700">LIVE</text>
+              <text x="395" y="38" font-size="6.5" fill="#475569">00:00</text>
+              <text x="368" y="52" text-anchor="middle" font-size="6" fill="#64748B">Coagulation Index</text>
+              <polyline id="rc-wave" class="anim" points="324,72 328,72 332,58 336,86 340,72 344,72 348,62 352,82 356,72 360,72 364,65 368,79 372,72 376,72 380,66 384,78 388,72 392,72 396,68 400,76 404,72 408,72" fill="none" stroke="#0D9488" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              <text x="368" y="98" text-anchor="middle" font-size="8" fill="#34D399" font-weight="800">ACT: 412 s</text>
+              <g transform="translate(420,150)">
+                <circle cx="0" cy="-70" r="12" fill="#FDE8D8" stroke="#C8956C" stroke-width="1.5"/>
+                <path d="M-11,-76 Q0,-84 11,-76" fill="#3B1E08"/>
+                <circle cx="-4" cy="-72" r="1.5" fill="#0E7490" opacity="0.7"/>
+                <circle cx="4"  cy="-72" r="1.5" fill="#0E7490" opacity="0.7"/>
+                <rect x="-10" y="-58" width="20" height="28" rx="5" fill="#0E7490" stroke="#0891B2" stroke-width="1.5"/>
+                <rect x="-8"  y="-30" width="8"  height="30" rx="3" fill="#0C4A6E"/>
+                <rect x="2"   y="-30" width="8"  height="30" rx="3" fill="#0C4A6E"/>
+                <rect x="-18" y="-56" width="8"  height="22" rx="4" fill="#FDE8D8" stroke="#C8956C" stroke-width="1"/>
+                <rect x="-26" y="-38" width="28" height="8"  rx="4" fill="#FDE8D8" stroke="#C8956C" stroke-width="1"/>
+              </g>
+            </svg>
+          </div>
+          <div class="caption-zone" id="cap-rc"></div>
+        </div>
+
+        <div class="scene-sep"></div>
+
+        <!-- RIGHT HOME -->
+        <div class="half">
+          <div class="scene-label">Home Setting — DOAC / Warfarin Patient</div>
+          <div class="stage">
+            <svg id="svg-rh" viewBox="0 0 460 175" xmlns="http://www.w3.org/2000/svg">
+              <rect width="460" height="175" fill="#F0FFF9"/>
+              <rect y="150" width="460" height="25" fill="#CCFBF1"/>
+              <rect y="148" width="460" height="4" fill="#99F6E4" opacity="0.4"/>
+              <rect x="18" y="18" width="8"  height="36" rx="3" fill="#D97706"/>
+              <ellipse cx="22" cy="18" rx="18" ry="10" fill="#FDE68A" stroke="#F59E0B" stroke-width="1.5"/>
+              <ellipse cx="22" cy="28" rx="28" ry="28" fill="#FEF9C3" opacity="0.3"/>
+              <rect x="340" y="8"  width="96" height="72" rx="6" fill="#BAE6FD" stroke="#7DD3FC" stroke-width="2"/>
+              <line x1="388" y1="8"  x2="388" y2="80"  stroke="#7DD3FC" stroke-width="1.5"/>
+              <line x1="340" y1="44" x2="436" y2="44"  stroke="#7DD3FC" stroke-width="1.5"/>
+              <path d="M340,8 Q330,25 335,80" fill="#D1FAE5" stroke="#6EE7B7" stroke-width="1" opacity="0.7"/>
+              <path d="M436,8 Q446,25 441,80" fill="#D1FAE5" stroke="#6EE7B7" stroke-width="1" opacity="0.7"/>
+              <ellipse cx="365" cy="38" rx="14" ry="18" fill="#4ADE80" opacity="0.6"/>
+              <rect x="363" y="56" width="4" height="18" fill="#92400E" opacity="0.7"/>
+              <circle cx="395" cy="30" r="10" fill="#86EFAC" opacity="0.5"/>
+              <rect x="10" y="104" width="155" height="46" rx="10" fill="#A7F3D0" stroke="#34D399" stroke-width="2"/>
+              <rect x="10" y="96"  width="155" height="14" rx="6"  fill="#6EE7B7" stroke="#34D399" stroke-width="1.5"/>
+              <rect x="12" y="106" width="74"  height="40" rx="6" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1"/>
+              <rect x="88" y="106" width="75"  height="40" rx="6" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1"/>
+              <rect x="10"  y="98" width="20" height="52" rx="7" fill="#6EE7B7" stroke="#34D399" stroke-width="1.5"/>
+              <rect x="145" y="98" width="20" height="52" rx="7" fill="#6EE7B7" stroke="#34D399" stroke-width="1.5"/>
+              <g transform="translate(72,150)">
+                <circle cx="0" cy="-72" r="14" fill="#F5CBA7" stroke="#C8956C" stroke-width="1.5"/>
+                <path d="M-13,-78 Q0,-90 13,-78" fill="#1C1917"/>
+                <circle cx="-5" cy="-74" r="1.5" fill="#92400E" opacity="0.7"/>
+                <circle cx="5"  cy="-74" r="1.5" fill="#92400E" opacity="0.7"/>
+                <path d="M-5,-68 Q0,-65 5,-68" fill="none" stroke="#92400E" stroke-width="1.5"/>
+                <rect x="-12" y="-58" width="24" height="32" rx="6" fill="#D1FAE5" stroke="#6EE7B7" stroke-width="1.5"/>
+                <rect x="-20" y="-56" width="10" height="56" rx="5" fill="#F5CBA7" stroke="#C8956C" stroke-width="1"/>
+                <rect x="12"  y="-56" width="10" height="26" rx="5" fill="#F5CBA7" stroke="#C8956C" stroke-width="1"/>
+                <rect x="12"  y="-32" width="80" height="10" rx="5" fill="#F5CBA7" stroke="#C8956C" stroke-width="1"/>
+                <rect x="-10" y="-26" width="9" height="26" rx="3" fill="#0F4C2A"/>
+                <rect x="2"   y="-26" width="9" height="26" rx="3" fill="#0F4C2A"/>
+              </g>
+              <ellipse cx="148" cy="120" rx="12" ry="8" fill="#F5CBA7" stroke="#C8956C" stroke-width="1.2"/>
+              <g id="rh-device" class="anim">
+                <rect x="135" y="115" width="26" height="10" rx="8" fill="#0D9488" stroke="#0D9488" stroke-width="1"/>
+                <rect x="138" y="111" width="20" height="18" rx="5" fill="#0F172A" stroke="#0D9488" stroke-width="2.5"/>
+                <rect x="140" y="113" width="16" height="14" rx="3" fill="#071525"/>
+                <polyline id="rh-wrist-wave" class="anim" points="141,120 143,117 145,123 147,119 149,120 151,120 153,118 155,122" fill="none" stroke="#0D9488" stroke-width="1.4" stroke-linecap="round"/>
+                <circle cx="148" cy="126" r="2.5" fill="#22C55E"><animate attributeName="opacity" values="1;0.15;1" dur="0.8s" repeatCount="indefinite"/></circle>
+                <rect x="158" y="117" width="3" height="6" rx="1" fill="#0D9488"/>
+              </g>
+              <g transform="translate(148,112)">
+                <path class="rh-arc anim" d="M-14,-10 Q0,-26 14,-10"  stroke="#0D9488" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                <path class="rh-arc anim" d="M-22,-18 Q0,-40 22,-18"  stroke="#0D9488" stroke-width="2"   fill="none" stroke-linecap="round" opacity="0.7"/>
+                <path class="rh-arc anim" d="M-30,-26 Q0,-54 30,-26"  stroke="#0D9488" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.4"/>
+              </g>
+              <rect x="175" y="116" width="62" height="8" rx="3" fill="#92400E" stroke="#78350F" stroke-width="1.5"/>
+              <rect x="184" y="124" width="8"  height="26" rx="3" fill="#7C2D12"/>
+              <rect x="218" y="124" width="8"  height="26" rx="3" fill="#7C2D12"/>
+              <rect x="184" y="98"  width="22" height="20" rx="4" fill="#7C3AED" stroke="#6D28D9" stroke-width="1.5"/>
+              <path d="M206,102 Q215,102 215,111 Q215,116 206,116" fill="none" stroke="#7C3AED" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M190,97 Q192,91 190,85" fill="none" stroke="#CBD5E1" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M197,96 Q199,90 197,84" fill="none" stroke="#CBD5E1" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M204,97 Q206,91 204,85" fill="none" stroke="#CBD5E1" stroke-width="1.5" stroke-linecap="round"/>
+              <g id="rh-phone" class="anim">
+                <rect x="248" y="46"  width="72"  height="120" rx="12" fill="#1E293B" stroke="#0D9488" stroke-width="2.5"/>
+                <rect x="252" y="58"  width="64"  height="98"  rx="7"  fill="#0F172A"/>
+                <rect x="274" y="48"  width="16"  height="6"   rx="3"  fill="#0F172A"/>
+                <rect x="276" y="162" width="12"  height="3"   rx="1"  fill="#334155"/>
+                <rect x="252" y="58"  width="64"  height="14"  rx="7"  fill="#071525"/>
+                <circle id="rh-live-dot" class="anim" cx="261" cy="65" r="4" fill="#22C55E"/>
+                <text x="268" y="69" font-size="7" fill="#4ADE80" font-weight="700">LIVE</text>
+                <text x="306" y="69" font-size="6" fill="#475569">24/7</text>
+                <text x="284" y="84" text-anchor="middle" font-size="6" fill="#64748B">Coagulation Monitor</text>
+                <rect x="254" y="88" width="60"  height="36"  rx="3" fill="#071525" stroke="#0F4C2A" stroke-width="1"/>
+                <polyline id="rh-phone-wave" class="anim" points="256,106 259,106 262,96 265,116 268,106 271,106 274,99 277,113 280,106 283,106 286,101 289,111 292,106 295,106 298,103 301,109 304,106 307,106 310,104 313,108" fill="none" stroke="#0D9488" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <text x="256" y="96"  font-size="5" fill="#0F4C2A">High</text>
+                <text x="256" y="122" font-size="5" fill="#0F4C2A">Low</text>
+                <rect x="254" y="128" width="60" height="16" rx="4" fill="#064E3B"/>
+                <text x="284" y="139" text-anchor="middle" font-size="7.5" fill="#34D399" font-weight="700">● Normal Range</text>
+                <text x="260" y="152" font-size="6"  fill="#94A3B8">INR</text>
+                <text x="260" y="160" font-size="8"  fill="#34D399" font-weight="700">2.3</text>
+                <text x="285" y="152" font-size="6"  fill="#94A3B8">Trend</text>
+                <text x="285" y="160" font-size="8"  fill="#34D399" font-weight="700">→ Stable</text>
+              </g>
+              <rect x="8" y="14" width="98" height="30" rx="8" fill="#FFF1F2" stroke="#FDA4AF" stroke-width="1.5"/>
+              <rect x="18" y="20" width="4"  height="18" rx="2" fill="#94A3B8"/>
+              <polygon points="20,38 18,44 22,44" fill="#94A3B8"/>
+              <line x1="14" y1="18" x2="28" y2="46" stroke="#E63946" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="14" y1="46" x2="28" y2="18" stroke="#E63946" stroke-width="2.5" stroke-linecap="round"/>
+              <text x="36" y="27" font-size="7" fill="#B91C1C" font-weight="700">No blood</text>
+              <text x="36" y="37" font-size="7" fill="#B91C1C" font-weight="700">draws ever</text>
+            </svg>
+          </div>
+          <div class="caption-zone" id="cap-rh"></div>
+        </div>
+        <div class="progress-bar-wrap"><div class="progress-bar"></div></div>
+      </div><!-- /panel-right -->
+
+    </div><!-- /panels-wrapper -->
+  </div>
+</section>
+
+
+<!-- ══════════ TECHNOLOGY ══════════ -->
+<section id="technology" class="section section-dark">
+  <div class="container">
+    <div class="section-label">The Science Behind KADI</div>
+    <h2 class="section-title">How LC-DLS Works</h2>
+    <p class="section-sub">Low-Coherence Dynamic Light Scattering (LC-DLS) probes the mechanical state of blood by measuring how scattered light fluctuates — with no contact with blood required.</p>
+
+    <div class="tech-flow">
+      <div class="tech-step">
+        <div class="tech-step-icon">
+          <svg viewBox="0 0 40 40" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="8" cy="20" r="5" fill="#0D9488"/>
+            <line x1="13" y1="20" x2="35" y2="20" stroke="#2DD4BF" stroke-width="2.5" stroke-linecap="round"/>
+            <polygon points="30,15 38,20 30,25" fill="#2DD4BF"/>
+          </svg>
+        </div>
+        <h4>Low-Coherence Laser Probe</h4>
+        <p>A near-infrared laser is directed at the skin above a blood vessel. No needle, no blood draw, no skin penetration.</p>
+      </div>
+      <div class="tech-arrow">→</div>
+      <div class="tech-step">
+        <div class="tech-step-icon">
+          <svg viewBox="0 0 40 40" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="20" r="7" fill="none" stroke="#2DD4BF" stroke-width="2"/>
+            <circle cx="12" cy="14" r="3" fill="#F87171" opacity="0.85"/>
+            <circle cx="28" cy="15" r="3" fill="#F87171" opacity="0.85"/>
+            <circle cx="15" cy="27" r="3" fill="#F87171" opacity="0.85"/>
+            <circle cx="27" cy="27" r="3" fill="#F87171" opacity="0.85"/>
+            <line x1="3" y1="20" x2="13" y2="16" stroke="#60A5FA" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="3" y1="20" x2="14" y2="25" stroke="#34D399" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="37" y1="12" x2="27" y2="16" stroke="#FCD34D" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h4>Light Scatters Off Blood Cells</h4>
+        <p>Photons scatter off red blood cells. As blood coagulates, RBC motion changes — and so does the scattered light pattern.</p>
+      </div>
+      <div class="tech-arrow">→</div>
+      <div class="tech-step">
+        <div class="tech-step-icon">
+          <svg viewBox="0 0 40 40" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="12" width="32" height="20" rx="4" fill="none" stroke="#2DD4BF" stroke-width="1.8"/>
+            <polyline points="6,26 9,26 12,18 15,30 18,22 21,26 24,20 27,28 30,22 34,26" fill="none" stroke="#0D9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="34" cy="26" r="3" fill="#22C55E"/>
+          </svg>
+        </div>
+        <h4>Real-Time Coagulation Readout</h4>
+        <p>Signal autocorrelation reveals blood viscosity and elastic state — a direct, continuous readout of coagulation status.</p>
+      </div>
+    </div>
+
+    <div class="tech-cards">
+      <div class="tech-card">
+        <div class="tech-card-icon">⚡</div>
+        <h3>Sub-Second Updates</h3>
+        <p>Coagulation status updated continuously. Clinicians see changes in real time, not after a 10–15 minute lab turnaround.</p>
+      </div>
+      <div class="tech-card">
+        <div class="tech-card-icon">🩸</div>
+        <h3>Zero Blood Draws</h3>
+        <p>Optical measurement through intact skin. No needles, no test strips, no sample collection — designed for long-term continuous use.</p>
+      </div>
+      <div class="tech-card">
+        <div class="tech-card-icon">📡</div>
+        <h3>Always-On Monitoring</h3>
+        <p>Unlike point-in-time tests (ACT, INR), LC-DLS streams data 24/7 — catching dangerous changes the moment they occur.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════ APPLICATIONS ══════════ -->
+<section id="applications" class="section section-light">
+  <div class="container">
+    <div class="section-label">Where It Matters</div>
+    <h2 class="section-title">Two Markets. One Platform.</h2>
+    <p class="section-sub">KADI Optics addresses two distinct but urgent unmet needs — with the same core LC-DLS technology adapted for each setting.</p>
+
+    <div class="apps-grid">
+      <div class="app-card clinical">
+        <div class="app-card-header">
+          <div class="app-card-icon">🏥</div>
+          <div>
+            <h3>Clinical — Cardiac Surgery &amp; ECMO</h3>
+            <span>Hospital / Perioperative Setting</span>
+          </div>
+        </div>
+        <div class="app-card-body">
+          <p>During CPB and ECMO, patients receive high-dose heparin. Coagulation must be monitored continuously — but current tests (ACT, TEG) require blood samples and leave monitoring blind spots of 10–15 minutes. KADI places a fiber probe directly on the circuit for continuous live data.</p>
+          <ul class="app-bullets">
+            <li>Eliminates monitoring gaps during cardiac surgery</li>
+            <li>ECMO-compatible — designed for long-duration monitoring</li>
+            <li>Directly informs heparin dosing in real time</li>
+            <li>Cardiac anesthesiologists and perfusionists as primary users</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="app-card home">
+        <div class="app-card-header">
+          <div class="app-card-icon">🏠</div>
+          <div>
+            <h3>Home — DOAC &amp; Warfarin Patients</h3>
+            <span>Remote Patient Monitoring</span>
+          </div>
+        </div>
+        <div class="app-card-body">
+          <p>Over 6 million Americans take anticoagulants daily. Warfarin patients require frequent INR testing — painful and time-consuming. DOAC patients have <em>no home monitoring option at all</em>. The KADI wrist device would be the first continuous, non-invasive coagulation monitor for home use.</p>
+          <ul class="app-bullets">
+            <li>First DOAC home monitor — a unique, unmet capability</li>
+            <li>Replaces daily or weekly finger-stick blood tests</li>
+            <li>Streams live data to smartphone for patient and physician</li>
+            <li>RPM reimbursement eligible (CPT 99454 / 99457)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════ RESEARCH ══════════ -->
+<section id="research" class="section section-dark">
+  <div class="container">
+    <div class="research-grid">
+      <div class="research-text">
+        <div class="research-badge">UCF CREOL · Orlando, FL</div>
+        <h2>Built on Decades of<br>Rigorous Photonics Research</h2>
+        <p>KADI Optics is built on LC-DLS technology developed at the <strong style="color:rgba(255,255,255,0.88)">University of Central Florida's CREOL</strong> — one of the world's largest and most respected optics and photonics research institutes.</p>
+        <p>The technology originates from fundamental research in dynamic light scattering applied to biological tissues, developed over many years by Prof. Aristide Dogariu and his team.</p>
+        <div class="research-highlights">
+          <div class="rh-item">
+            <div class="rh-dot"></div>
+            <div>
+              <strong>Clinical validation underway</strong>
+              <span>Customer discovery with cardiac surgeons, anesthesiologists, and perfusionists at Orlando Health and beyond</span>
+            </div>
+          </div>
+          <div class="rh-item">
+            <div class="rh-dot"></div>
+            <div>
+              <strong>Federally funded foundation</strong>
+              <span>$250K+ secured from ONR and Lockheed Martin for optical sensing research by the founding team</span>
+            </div>
+          </div>
+          <div class="rh-item">
+            <div class="rh-dot"></div>
+            <div>
+              <strong>NSF I-Corps customer discovery</strong>
+              <span>10+ interviews with clinical stakeholders; ECMO and cardiac anesthesiology identified as primary beachhead markets</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="research-stats">
+        <div class="rs-card"><div class="big">200+</div><div class="lbl">Peer-reviewed publications from the founding research group</div></div>
+        <div class="rs-card"><div class="big">20+</div><div class="lbl">Registered patents from UCF CREOL research</div></div>
+        <div class="rs-card"><div class="big">$4.7B</div><div class="lbl">Global coagulation monitoring market (2024)</div></div>
+        <div class="rs-card"><div class="big">6M+</div><div class="lbl">Americans on long-term anticoagulation therapy</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════ TEAM ══════════ -->
+<section id="team" class="section section-light">
+  <div class="container">
+    <div class="section-label">The Team</div>
+    <h2 class="section-title">World-Class Expertise</h2>
+    <p class="section-sub">KADI Optics brings together deep expertise across photonics, optics engineering, biology, and industry commercialization.</p>
+
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-avatar" style="background:linear-gradient(135deg,#1D4ED8,#0D9488);">AD</div>
+        <h4>Prof. Aristide Dogariu</h4>
+        <div class="team-role">Principal Investigator · UCF CREOL Pegasus Professor</div>
+        <p class="team-bio">Inventor of the LC-DLS technology. OSA Fellow, APS Fellow. 200+ publications, 20+ patents. Among the world's foremost experts in light scattering and photonic sensing.</p>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar" style="background:linear-gradient(135deg,#0D9488,#0284C7);">ME</div>
+        <h4>Dr. Mahdi Eshaghi</h4>
+        <div class="team-role">Founder &amp; Postdoctoral Innovation Fellow</div>
+        <p class="team-bio">Ph.D. Optics &amp; Photonics, UCF CREOL (2024). Secured $250K+ in research funding from ONR and Lockheed Martin. Leading KADI's commercialization through UCF ART and I-Corps.</p>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar" style="background:linear-gradient(135deg,#7C3AED,#1D4ED8);">RM</div>
+        <h4>Dr. Robert MacDonald</h4>
+        <div class="team-role">Industry Mentor</div>
+        <p class="team-bio">Ph.D. Brown, M.S. Stanford. CEO/CTO Skyline Solar (acq. First Solar). Co-founder Onetta (Sequoia/Matrix-backed). Led New Focus IPO ($500M+). Google Project Euphonia (2015–2025).</p>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar" style="background:linear-gradient(135deg,#0D9488,#059669);">YH</div>
+        <h4>Dr. Yonglin Huang</h4>
+        <div class="team-role">Optical Engineer</div>
+        <p class="team-bio">30+ years in micro-optics and fiber optics. Held senior roles at E-Tek Dynamics, New Focus, and Finisar. Deep expertise in precision optical system design and manufacturing.</p>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar" style="background:linear-gradient(135deg,#0284C7,#0D9488);">SD</div>
+        <h4>Shubham Dawda</h4>
+        <div class="team-role">Optical Scientist · Ph.D. Candidate, UCF CREOL</div>
+        <p class="team-bio">Light scattering expert with deep knowledge of dynamic light scattering in biological contexts. Contributes to signal processing and measurement optimization.</p>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar" style="background:linear-gradient(135deg,#059669,#0D9488);">AH</div>
+        <h4>Aseel Halwani</h4>
+        <div class="team-role">Biological Scientist</div>
+        <p class="team-bio">Bridges the optical technology with physiological understanding of coagulation and blood mechanics, providing critical biological and clinical science expertise.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════ FOOTER / CONTACT ══════════ -->
+<footer id="contact" class="footer">
+  <div class="container">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="#" class="logo" style="margin-bottom:16px;display:inline-flex;">
+          <svg class="logo-icon" viewBox="0 0 52 42" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="26,3 3,39 49,39" fill="rgba(13,148,136,0.15)" stroke="#0D9488" stroke-width="1.8"/>
+            <line x1="0"  y1="21" x2="14" y2="21" stroke="rgba(255,255,255,0.85)" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="37" y1="21" x2="52" y2="10" stroke="#60A5FA" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="37" y1="21" x2="52" y2="16" stroke="#34D399" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="37" y1="21" x2="52" y2="22" stroke="#2DD4BF" stroke-width="2.2" stroke-linecap="round"/>
+            <line x1="37" y1="21" x2="52" y2="28" stroke="#FCD34D" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="37" y1="21" x2="52" y2="34" stroke="#F87171" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <div class="logo-text">
+            <span class="logo-name">KADI</span>
+            <span class="logo-sub">OPTICS</span>
+          </div>
+        </a>
+        <p>Developing continuous, non-invasive blood coagulation monitoring using Low-Coherence Dynamic Light Scattering — from the operating room to the patient's home.</p>
+        <p style="margin-top:10px; color:rgba(255,255,255,0.3);">UCF CREOL · Orlando, Florida</p>
+      </div>
+
+      <div class="footer-contact">
+        <h3>Let's Connect</h3>
+        <p>Investors, clinical partners, and collaborators — we would love to hear from you.</p>
+        <a href="mailto:m.eshaghi2010@gmail.com" class="btn btn-primary">m.eshaghi2010@gmail.com</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 KADI Optics LLC · All rights reserved</span>
+      <a href="#hero">Back to top ↑</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/animation.js"></script>
+</body>
+</html>
