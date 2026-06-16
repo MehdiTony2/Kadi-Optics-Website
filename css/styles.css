@@ -126,6 +126,30 @@ a { text-decoration: none; color: inherit; }
   font-weight: 600;
 }
 .nav-links .nav-cta:hover { background: var(--teal-light); }
+.nav-links .nav-contact {
+  margin-left: 4px;
+  padding: 7px 16px;
+  border: 1.5px solid rgba(13,148,136,0.45);
+  border-radius: 9px;
+  color: var(--teal-light);
+  font-weight: 500;
+  background: none;
+}
+.nav-links .nav-contact:hover {
+  border-color: var(--teal-light);
+  background: rgba(13,148,136,0.1);
+  color: var(--teal-glow);
+}
+
+/* Logo image — invert makes white bg transparent and black text white on dark nav */
+.logo-img {
+  height: 46px;
+  width: auto;
+  display: block;
+  filter: invert(1);
+  mix-blend-mode: screen;
+}
+.logo-img-footer { height: 54px; }
 
 /* Hamburger */
 .hamburger {
