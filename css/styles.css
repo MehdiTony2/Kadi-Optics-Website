@@ -141,13 +141,11 @@ a { text-decoration: none; color: inherit; }
   color: var(--teal-glow);
 }
 
-/* Logo image — invert makes white bg transparent and black text white on dark nav */
+/* Logo image — transparent PNG, no filters needed */
 .logo-img {
   height: 46px;
   width: auto;
   display: block;
-  filter: invert(1);
-  mix-blend-mode: screen;
 }
 .logo-img-footer { height: 54px; }
 
