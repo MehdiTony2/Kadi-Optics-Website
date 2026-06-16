@@ -446,11 +446,12 @@ body:not(.light-theme) .section-sub { color: rgba(255,255,255,0.42); }
 .dv-lab    { background: linear-gradient(135deg, #FAF5FF, #F5F3FF); }
 .company-name {
   font-family: 'Space Grotesk', system-ui, sans-serif;
-  font-size: 0.78rem;
+  font-size: 1rem;
   font-weight: 700;
   color: #0F172A;
-  padding: 14px 14px 2px;
-  letter-spacing: 0.02em;
+  padding: 20px 16px 4px;
+  letter-spacing: 0.01em;
+  line-height: 1.25;
 }
 .company-device {
   font-size: 0.72rem;
