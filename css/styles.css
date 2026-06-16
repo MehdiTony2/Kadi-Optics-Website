@@ -925,3 +925,254 @@ a { text-decoration: none; color: inherit; }
   .stat { border-right: 1px solid rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.06); }
   .stat:nth-child(2n) { border-right: none; }
 }
+
+/* ══════════════════════════════════════════════════
+   NEW LOGO (KADI beam wordmark)
+══════════════════════════════════════════════════ */
+.logo-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1;
+  gap: 1px;
+}
+.logo-kadi {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--white);
+}
+.logo-beam { width: 88px; height: 10px; display: block; }
+.logo-optics {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-size: 0.56rem;
+  font-weight: 600;
+  letter-spacing: 0.4em;
+  color: rgba(255,255,255,0.5);
+}
+
+/* ══════════════════════════════════════════════════
+   MARKET STATS BAR (replaces old 4-col stats)
+══════════════════════════════════════════════════ */
+.market-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  margin-bottom: 28px;
+}
+.yr-btn {
+  padding: 6px 20px;
+  border-radius: 100px;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  background: transparent;
+  color: rgba(255,255,255,0.35);
+  border: 1px solid rgba(255,255,255,0.1);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.yr-btn.active {
+  background: rgba(13,148,136,0.18);
+  color: var(--teal-glow);
+  border-color: rgba(13,148,136,0.4);
+}
+.yr-sep {
+  color: rgba(255,255,255,0.2);
+  font-size: 1rem;
+  padding: 0 10px;
+}
+.stats-grid { grid-template-columns: repeat(3, 1fr); }
+.stat-name {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 6px;
+  display: block;
+}
+.mkt-num {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--teal-light);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  display: block;
+  transition: opacity 0.3s, transform 0.3s;
+}
+.mkt-num.fade { opacity: 0; transform: translateY(6px); }
+.mkt-ctx {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.35);
+  margin-top: 4px;
+  display: block;
+  transition: opacity 0.3s;
+}
+
+/* ══════════════════════════════════════════════════
+   BENEFITS SECTION
+══════════════════════════════════════════════════ */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 48px;
+}
+.benefit-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(13,148,136,0.15);
+  border-radius: var(--radius-md);
+  padding: 22px 20px;
+  transition: border-color var(--transition), transform var(--transition);
+}
+.benefit-card:hover {
+  border-color: rgba(13,148,136,0.4);
+  transform: translateY(-2px);
+}
+.benefit-icon {
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  background: rgba(13,148,136,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+  color: var(--teal-light);
+}
+.benefit-card h4 {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 7px;
+}
+.benefit-card p {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.65;
+}
+@media (max-width: 960px) { .benefits-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .benefits-grid { grid-template-columns: 1fr; } }
+
+/* ══════════════════════════════════════════════════
+   TEAM PHOTO
+══════════════════════════════════════════════════ */
+.team-photo {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  border: 2px solid rgba(13,148,136,0.3);
+  margin-bottom: 14px;
+  display: block;
+}
+
+/* ══════════════════════════════════════════════════
+   MULTI-STEP CONTACT FORM
+══════════════════════════════════════════════════ */
+.form-step { display: none; }
+.form-step.active { display: block; animation: step-in 0.35s ease; }
+@keyframes step-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+.step-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.step-row textarea { align-self: stretch; }
+.step-num {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--teal);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 0.88rem;
+  flex-shrink: 0;
+}
+.step-row input,
+.step-row textarea {
+  flex: 1;
+  padding: 11px 14px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  color: var(--white);
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s;
+  resize: none;
+}
+.step-row input::placeholder,
+.step-row textarea::placeholder { color: rgba(255,255,255,0.25); }
+.step-row input:focus,
+.step-row textarea:focus { border-color: var(--teal); }
+.step-arrow {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--teal);
+  color: var(--white);
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+.step-arrow:hover { background: var(--teal-light); }
+.step-submit {
+  padding: 10px 22px;
+  background: var(--teal);
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 0.88rem;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background 0.2s;
+}
+.step-submit:hover { background: var(--teal-light); }
+.form-confirm {
+  display: none;
+  padding: 28px 0 8px;
+  animation: step-in 0.4s ease;
+}
+.confirm-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(13,148,136,0.15);
+  border: 1.5px solid rgba(13,148,136,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--teal-glow);
+  font-size: 1.4rem;
+  margin-bottom: 14px;
+}
+.form-confirm h4 {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+.form-confirm p { font-size: 0.875rem; color: rgba(255,255,255,0.45); }
