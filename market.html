@@ -8,9 +8,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="/css/internal.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   <script src="/js/auth.js"></script>
 </head>
-<body>
+<body class="light-theme">
 
   <nav class="int-nav">
     <a href="/" class="brand-box">KADI OPTICS</a>
@@ -25,126 +26,383 @@
 
   <main class="int-page">
 
+    <!-- ── Header ── -->
     <header class="page-header">
-      <div class="page-tag">Internal · Market Intelligence</div>
+      <div class="page-tag">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="vertical-align:-1px;margin-right:5px"><circle cx="6" cy="6" r="5" fill="#0D9488" opacity=".18"/><circle cx="6" cy="6" r="2.5" fill="#0D9488"/></svg>
+        Internal · Market Intelligence
+      </div>
       <h1 class="page-title">Blood Coagulation Market</h1>
-      <p class="page-desc">Global market analysis, current landscape, competitive positioning, and the opportunity for KADI Optics. This document is a living report — updated as new data becomes available.</p>
+      <p class="page-desc">Global market analysis, competitive landscape, and the opportunity for KADI Optics. Prepared for patent and funding discussions.</p>
     </header>
 
     <!-- ── Key Stats ── -->
     <div class="stat-grid">
       <div class="stat-card">
+        <div class="stat-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" fill="#0D9488"/></svg>
+        </div>
         <div class="stat-value">$4.72B</div>
-        <div class="stat-label">Global coagulation testing market size (2024)</div>
+        <div class="stat-label">Global coagulation testing market (2024)</div>
       </div>
       <div class="stat-card">
+        <div class="stat-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z" fill="#0D9488"/></svg>
+        </div>
         <div class="stat-value">$6.43B</div>
         <div class="stat-label">Projected market size by 2030</div>
       </div>
       <div class="stat-card">
+        <div class="stat-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z" fill="#0D9488"/></svg>
+        </div>
         <div class="stat-value">~5.3%</div>
         <div class="stat-label">CAGR 2024–2030</div>
       </div>
       <div class="stat-card">
+        <div class="stat-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z" fill="#0D9488"/></svg>
+        </div>
         <div class="stat-value">1.5M+</div>
-        <div class="stat-label">Open-heart surgeries per year in the US alone</div>
+        <div class="stat-label">Open-heart surgeries per year in the US</div>
       </div>
-      <div class="stat-card">
-        <div class="stat-value">0</div>
-        <div class="stat-label">Continuous real-time coagulation monitors currently available</div>
+      <div class="stat-card stat-card-highlight">
+        <div class="stat-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="#0D9488"/></svg>
+        </div>
+        <div class="stat-value highlight-zero">0</div>
+        <div class="stat-label">Continuous real-time coagulation monitors on the market today</div>
       </div>
-      <div class="stat-card">
-        <div class="stat-value">0</div>
-        <div class="stat-label">Home monitoring options for DOAC patients today</div>
+      <div class="stat-card stat-card-highlight">
+        <div class="stat-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" fill="#0D9488"/></svg>
+        </div>
+        <div class="stat-value highlight-zero">0</div>
+        <div class="stat-label">Home monitoring options for ~6M DOAC patients in the US</div>
       </div>
     </div>
 
-    <!-- ── Current Solutions ── -->
+    <!-- ── Opportunity Banner ── -->
+    <div class="opportunity-banner">
+      <div class="opp-icon">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z" fill="#0D9488"/></svg>
+      </div>
+      <div class="opp-text">
+        <strong>The Core Opportunity:</strong> Every existing method requires a blood draw. No continuous, non-invasive coagulation monitor exists anywhere in the market — in the clinic or at home. KADI Optics is building the first.
+      </div>
+    </div>
+
+    <!-- ── Three Markets Growth Charts ── -->
     <section class="section">
-      <h2 class="section-title">Current Monitoring Methods &amp; Their Limitations</h2>
-      <table class="data-table">
-        <thead>
-          <tr>
-            <th>Method</th>
-            <th>Setting</th>
-            <th>Turnaround</th>
-            <th>Blood Draw?</th>
-            <th>Continuous?</th>
-            <th>Key Limitation</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>ACT</strong> (Activated Clotting Time)</td>
-            <td>OR, cath lab, ECMO</td>
-            <td>2–5 min</td>
-            <td><span class="tag tag-red">Yes</span></td>
-            <td><span class="tag tag-red">No</span></td>
-            <td>Intermittent only; creates monitoring blind spots during surgery</td>
-          </tr>
-          <tr>
-            <td><strong>TEG</strong> (Thromboelastography)</td>
-            <td>Hospital lab, major ORs</td>
-            <td>10–30 min</td>
-            <td><span class="tag tag-red">Yes</span></td>
-            <td><span class="tag tag-red">No</span></td>
-            <td>Slow turnaround; batch testing; expensive equipment</td>
-          </tr>
-          <tr>
-            <td><strong>ROTEM</strong> (Rotational Thromboelastometry)</td>
-            <td>Hospital lab, major ORs</td>
-            <td>10–30 min</td>
-            <td><span class="tag tag-red">Yes</span></td>
-            <td><span class="tag tag-red">No</span></td>
-            <td>Same as TEG; operator-dependent; not real-time</td>
-          </tr>
-          <tr>
-            <td><strong>PT / INR</strong></td>
-            <td>Lab (send-out)</td>
-            <td>Hours to days</td>
-            <td><span class="tag tag-red">Yes</span></td>
-            <td><span class="tag tag-red">No</span></td>
-            <td>No continuous monitoring; lab send-out delays therapy adjustment</td>
-          </tr>
-          <tr>
-            <td><strong>aPTT</strong></td>
-            <td>Hospital lab</td>
-            <td>1–2 hours</td>
-            <td><span class="tag tag-red">Yes</span></td>
-            <td><span class="tag tag-red">No</span></td>
-            <td>Lab-based; batch; not suitable for bedside or home</td>
-          </tr>
-          <tr>
-            <td><strong>Anti-Xa Assay</strong></td>
-            <td>Hospital lab</td>
-            <td>1–2 hours</td>
-            <td><span class="tag tag-red">Yes</span></td>
-            <td><span class="tag tag-red">No</span></td>
-            <td>DOAC monitoring only; lab-based; not point-of-care</td>
-          </tr>
-          <tr>
-            <td><strong>CoaguChek (Roche)</strong></td>
-            <td>Home / clinic</td>
-            <td>1–2 min</td>
-            <td><span class="tag tag-red">Yes — finger prick</span></td>
-            <td><span class="tag tag-red">No</span></td>
-            <td>Warfarin only; cannot monitor DOACs; requires daily finger stick</td>
-          </tr>
-          <tr>
-            <td><strong>KADI Optics (LC-DLS)</strong></td>
-            <td>OR / ICU / Home</td>
-            <td>Real-time</td>
-            <td><span class="tag tag-green">No</span></td>
-            <td><span class="tag tag-green">Yes — always on</span></td>
-            <td>—</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="section-header-row">
+        <svg class="section-icon-svg" viewBox="0 0 24 24" fill="none"><path d="M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 17.08z" fill="currentColor"/></svg>
+        <h2 class="section-title-inline">Three Converging Markets</h2>
+      </div>
+      <p class="section-sub">KADI Optics addresses three high-growth markets simultaneously. A single optical platform covers clinical surgical monitoring, blood diagnostics, and the exploding medical wearables space.</p>
+      <div class="chart-trio">
+        <div class="chart-card">
+          <div class="chart-meta">
+            <div class="chart-market-label">Blood Coagulation Testing</div>
+            <div class="chart-cagr">CAGR 5.3%</div>
+          </div>
+          <div class="chart-endpoints">
+            <span class="chart-start">$4.72B <em>2024</em></span>
+            <svg width="32" height="14" viewBox="0 0 32 14"><path d="M2 7h22M20 2l8 5-8 5" stroke="#0D9488" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+            <span class="chart-end">$6.43B <em>2030</em></span>
+          </div>
+          <canvas id="chart-coag" height="180"></canvas>
+        </div>
+        <div class="chart-card">
+          <div class="chart-meta">
+            <div class="chart-market-label">Blood Diagnostics Sensors</div>
+            <div class="chart-cagr">CAGR 9.7%</div>
+          </div>
+          <div class="chart-endpoints">
+            <span class="chart-start">$8.5B <em>2024</em></span>
+            <svg width="32" height="14" viewBox="0 0 32 14"><path d="M2 7h22M20 2l8 5-8 5" stroke="#0D9488" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+            <span class="chart-end">$14.8B <em>2030</em></span>
+          </div>
+          <canvas id="chart-diag" height="180"></canvas>
+        </div>
+        <div class="chart-card">
+          <div class="chart-meta">
+            <div class="chart-market-label">Medical Wearables</div>
+            <div class="chart-cagr">CAGR 23.8%</div>
+          </div>
+          <div class="chart-endpoints">
+            <span class="chart-start">$54B <em>2024</em></span>
+            <svg width="32" height="14" viewBox="0 0 32 14"><path d="M2 7h22M20 2l8 5-8 5" stroke="#0D9488" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+            <span class="chart-end">$195B <em>2030</em></span>
+          </div>
+          <canvas id="chart-wear" height="180"></canvas>
+        </div>
+      </div>
+      <p class="chart-note">Sources: Grand View Research, MarketsandMarkets, Mordor Intelligence. Intermediate values interpolated at stated CAGR.</p>
+    </section>
+
+    <!-- ── Top 5 Companies ── -->
+    <section class="section">
+      <div class="section-header-row">
+        <svg class="section-icon-svg" viewBox="0 0 24 24" fill="none"><path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z" fill="currentColor"/></svg>
+        <h2 class="section-title-inline">Current Market Leaders</h2>
+      </div>
+      <p class="section-sub">The dominant players in blood coagulation monitoring today — all relying on invasive, intermittent blood testing. None offer continuous or non-invasive monitoring.</p>
+      <div class="company-grid">
+
+        <!-- Roche -->
+        <div class="company-card">
+          <div class="device-visual dv-home">
+            <svg viewBox="0 0 160 130" xmlns="http://www.w3.org/2000/svg">
+              <rect x="30" y="8" width="100" height="114" rx="14" fill="#DDE4EC" stroke="#C4CEDB" stroke-width="1.5"/>
+              <rect x="42" y="20" width="76" height="52" rx="6" fill="#1E3050"/>
+              <text x="80" y="41" text-anchor="middle" fill="#2DD4BF" font-family="monospace" font-size="10" font-weight="bold">INR  2.4</text>
+              <text x="80" y="55" text-anchor="middle" fill="#5B8DB8" font-family="monospace" font-size="8">THERAPEUTIC</text>
+              <rect x="55" y="62" width="50" height="1.5" rx="1" fill="#4DF0C8" opacity=".4"/>
+              <text x="80" y="72" text-anchor="middle" fill="#3A7AB5" font-family="monospace" font-size="7">11:42 AM</text>
+              <rect x="50" y="85" width="60" height="10" rx="5" fill="#C4CEDB"/>
+              <rect x="50" y="100" width="60" height="7" rx="3.5" fill="#C4CEDB"/>
+              <rect x="64" y="96" width="32" height="14" rx="3" fill="#E8D48A" stroke="#C4A830" stroke-width="1"/>
+              <text x="80" y="119" text-anchor="middle" fill="#8FA3BC" font-family="sans-serif" font-size="7" font-weight="600">CoaguChek XS</text>
+            </svg>
+          </div>
+          <div class="company-name">Roche Diagnostics</div>
+          <div class="company-device">CoaguChek XS Series</div>
+          <div class="company-tags">
+            <span class="tag tag-blue">Home</span>
+            <span class="tag tag-yellow">Warfarin / PT-INR</span>
+          </div>
+          <p class="company-desc">The world's most-used home INR monitoring device. Finger-prick strip-based test. Warfarin patients only — cannot monitor DOACs. Requires daily or weekly testing with no continuous data.</p>
+          <div class="company-gap"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" fill="#EF4444"/></svg> No DOAC support · No continuous monitoring</div>
+        </div>
+
+        <!-- Haemonetics TEG -->
+        <div class="company-card">
+          <div class="device-visual dv-clinical">
+            <svg viewBox="0 0 160 130" xmlns="http://www.w3.org/2000/svg">
+              <rect x="10" y="18" width="140" height="94" rx="10" fill="#E4E9F0" stroke="#C8D0DC" stroke-width="1.5"/>
+              <rect x="20" y="26" width="72" height="78" rx="7" fill="#1A2D44"/>
+              <polyline points="26,74 34,70 42,78 50,56 58,72 66,60 74,68 82,65 86,68" stroke="#2DD4BF" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <text x="56" y="40" text-anchor="middle" fill="#4A90C4" font-family="monospace" font-size="8">CLOT TIME</text>
+              <text x="56" y="52" text-anchor="middle" fill="#fff" font-family="monospace" font-size="11" font-weight="bold">8.2 min</text>
+              <rect x="102" y="26" width="38" height="18" rx="5" fill="#C8D4E0"/>
+              <circle cx="108" cy="58" r="12" fill="#B8C4D0"/>
+              <circle cx="130" cy="58" r="12" fill="#B8C4D0"/>
+              <circle cx="119" cy="80" r="12" fill="#B8C4D0"/>
+              <circle cx="108" cy="58" r="7" fill="#D4DDE8"/>
+              <circle cx="130" cy="58" r="7" fill="#D4DDE8"/>
+              <circle cx="119" cy="80" r="7" fill="#D4DDE8"/>
+              <text x="80" y="122" text-anchor="middle" fill="#8FA3BC" font-family="sans-serif" font-size="7" font-weight="600">TEG 6s Hemostasis Analyzer</text>
+            </svg>
+          </div>
+          <div class="company-name">Haemonetics</div>
+          <div class="company-device">TEG 6s Hemostasis Analyzer</div>
+          <div class="company-tags">
+            <span class="tag tag-purple">Clinical / Surgical</span>
+            <span class="tag tag-blue">Viscoelastic</span>
+          </div>
+          <p class="company-desc">The gold standard in viscoelastic coagulation testing for cardiac surgery, trauma, and liver transplant. Cartridge-based, requires fresh blood sample. Single test takes 10–30 min with no continuous output.</p>
+          <div class="company-gap"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" fill="#EF4444"/></svg> Blood draw required · Batch testing · 10–30 min gaps</div>
+        </div>
+
+        <!-- Werfen ROTEM -->
+        <div class="company-card">
+          <div class="device-visual dv-clinical">
+            <svg viewBox="0 0 160 130" xmlns="http://www.w3.org/2000/svg">
+              <rect x="8" y="15" width="144" height="100" rx="10" fill="#ECF0F5" stroke="#D0D8E4" stroke-width="1.5"/>
+              <rect x="18" y="24" width="58" height="82" rx="6" fill="#162438"/>
+              <text x="47" y="42" text-anchor="middle" fill="#60A0D0" font-family="monospace" font-size="8">ROTEM</text>
+              <rect x="24" y="47" width="46" height="32" rx="3" fill="#0D1F30"/>
+              <path d="M26 63 Q37 48 47 63 Q52 70 57 63 Q62 56 68 60" stroke="#F59E0B" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+              <text x="47" y="88" text-anchor="middle" fill="#4A90C4" font-family="monospace" font-size="7">α=62° MA=58mm</text>
+              <rect x="86" y="24" width="56" height="82" rx="6" fill="#D8E2EE"/>
+              <rect x="92" y="30" width="44" height="14" rx="4" fill="#C0CEDC"/>
+              <circle cx="100" cy="60" r="10" fill="#C0CEDC" stroke="#B0BCCC" stroke-width="1"/>
+              <circle cx="126" cy="60" r="10" fill="#C0CEDC" stroke="#B0BCCC" stroke-width="1"/>
+              <circle cx="100" cy="84" r="10" fill="#C0CEDC" stroke="#B0BCCC" stroke-width="1"/>
+              <circle cx="126" cy="84" r="10" fill="#C0CEDC" stroke="#B0BCCC" stroke-width="1"/>
+              <text x="80" y="123" text-anchor="middle" fill="#8FA3BC" font-family="sans-serif" font-size="7" font-weight="600">ROTEM Sigma · Werfen Group</text>
+            </svg>
+          </div>
+          <div class="company-name">Werfen (Instrumentation Lab)</div>
+          <div class="company-device">ROTEM Sigma</div>
+          <div class="company-tags">
+            <span class="tag tag-purple">Clinical / Surgical</span>
+            <span class="tag tag-blue">Viscoelastic</span>
+          </div>
+          <p class="company-desc">The primary European competitor to TEG. Rotational thromboelastometry platform widely adopted in EU hospitals for cardiac surgery and trauma. Same fundamental limitation: invasive, batch, not real-time.</p>
+          <div class="company-gap"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" fill="#EF4444"/></svg> Operator-dependent · Blood draw required · Not real-time</div>
+        </div>
+
+        <!-- Siemens Xprecia -->
+        <div class="company-card">
+          <div class="device-visual dv-poc">
+            <svg viewBox="0 0 160 130" xmlns="http://www.w3.org/2000/svg">
+              <rect x="48" y="8" width="64" height="114" rx="12" fill="#E0E6EE" stroke="#C8D0DC" stroke-width="1.5"/>
+              <rect x="56" y="18" width="48" height="36" rx="5" fill="#1A2D44"/>
+              <text x="80" y="33" text-anchor="middle" fill="#5B9BD5" font-family="monospace" font-size="8">PT/INR</text>
+              <text x="80" y="46" text-anchor="middle" fill="#fff" font-family="monospace" font-size="12" font-weight="bold">1.8</text>
+              <circle cx="80" cy="72" r="12" fill="#C8D2DE" stroke="#B0BCCC" stroke-width="1"/>
+              <circle cx="80" cy="72" r="6" fill="#D8E0EA"/>
+              <rect x="60" y="92" width="40" height="8" rx="4" fill="#C8D2DE"/>
+              <rect x="68" y="88" width="24" height="16" rx="3" fill="#E8E0A8" stroke="#C8C080" stroke-width="0.8"/>
+              <text x="80" y="119" text-anchor="middle" fill="#8FA3BC" font-family="sans-serif" font-size="7" font-weight="600">Xprecia Stride · Siemens</text>
+            </svg>
+          </div>
+          <div class="company-name">Siemens Healthineers</div>
+          <div class="company-device">Xprecia Stride — POC Coagulation</div>
+          <div class="company-tags">
+            <span class="tag tag-green">Point-of-Care</span>
+            <span class="tag tag-yellow">PT / INR / aPTT</span>
+          </div>
+          <p class="company-desc">Point-of-care coagulation analyzer used in clinics and hospital outpatient settings. Handheld, single-use strips. Faster than lab testing but still requires a blood draw and provides only a single snapshot result.</p>
+          <div class="company-gap"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" fill="#EF4444"/></svg> Blood draw required · Snapshot only · No home use</div>
+        </div>
+
+        <!-- Stago -->
+        <div class="company-card">
+          <div class="device-visual dv-lab">
+            <svg viewBox="0 0 160 130" xmlns="http://www.w3.org/2000/svg">
+              <rect x="12" y="12" width="136" height="106" rx="10" fill="#E8EEF6" stroke="#C8D4E4" stroke-width="1.5"/>
+              <rect x="20" y="20" width="54" height="90" rx="6" fill="#1C2E44"/>
+              <text x="47" y="38" text-anchor="middle" fill="#4A90C4" font-family="monospace" font-size="8">STA-R MAX</text>
+              <rect x="26" y="44" width="42" height="28" rx="3" fill="#0D1E30"/>
+              <text x="47" y="55" text-anchor="middle" fill="#2DD4BF" font-family="monospace" font-size="7">RUNNING</text>
+              <text x="47" y="66" text-anchor="middle" fill="#fff" font-family="monospace" font-size="8">96 samples</text>
+              <rect x="26" y="80" width="42" height="8" rx="3" fill="#C0CEDC"/>
+              <rect x="84" y="20" width="56" height="90" rx="6" fill="#D8E2EE"/>
+              <rect x="90" y="28" width="44" height="50" rx="4" fill="#C0CEDC"/>
+              <rect x="94" y="32" width="8" height="8" rx="2" fill="#A8B8C8"/>
+              <rect x="106" y="32" width="8" height="8" rx="2" fill="#A8B8C8"/>
+              <rect x="118" y="32" width="8" height="8" rx="2" fill="#A8B8C8"/>
+              <rect x="94" y="44" width="8" height="8" rx="2" fill="#A8B8C8"/>
+              <rect x="106" y="44" width="8" height="8" rx="2" fill="#A8B8C8"/>
+              <rect x="118" y="44" width="8" height="8" rx="2" fill="#A8B8C8"/>
+              <rect x="94" y="56" width="8" height="8" rx="2" fill="#A8B8C8"/>
+              <rect x="106" y="56" width="8" height="8" rx="2" fill="#A8B8C8"/>
+              <rect x="118" y="56" width="8" height="8" rx="2" fill="#A8B8C8"/>
+              <rect x="90" y="84" width="44" height="18" rx="4" fill="#C0CEDC"/>
+              <text x="80" y="123" text-anchor="middle" fill="#8FA3BC" font-family="sans-serif" font-size="7" font-weight="600">STA-R Max · Stago</text>
+            </svg>
+          </div>
+          <div class="company-name">Diagnostica Stago</div>
+          <div class="company-device">STA-R Max Coagulation Analyzer</div>
+          <div class="company-tags">
+            <span class="tag tag-purple">Clinical Lab</span>
+            <span class="tag tag-blue">High-Volume</span>
+          </div>
+          <p class="company-desc">Leading laboratory coagulation analyzer used by hospital labs worldwide for high-volume PT, aPTT, fibrinogen, and anti-Xa testing. Stago commands a major share of the clinical lab coagulation market globally.</p>
+          <div class="company-gap"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" fill="#EF4444"/></svg> Lab-only · Hours turnaround · No bedside or home use</div>
+        </div>
+
+      </div>
+
+      <div class="company-kadi-callout">
+        <div class="kadi-callout-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z" fill="#0D9488" opacity=".15"/><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 4.18L19 8.3V11c0 4.52-3.17 8.76-7 9.93-3.83-1.17-7-5.41-7-9.93V8.3l7-3.12zm-1.41 7.23L9 10.82l-1.41 1.41 3 3L16 9.82 14.59 8.4z" fill="#0D9488"/></svg>
+        </div>
+        <div class="kadi-callout-text">
+          <strong>Where KADI Optics stands apart:</strong> Every competitor above shares the same fundamental constraint — a blood draw is required, and monitoring is intermittent. KADI's optical platform is the only approach that is simultaneously non-invasive, continuous, and deployable in both the OR and at home.
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Current Methods (card style) ── -->
+    <section class="section">
+      <div class="section-header-row">
+        <svg class="section-icon-svg" viewBox="0 0 24 24" fill="none"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z" fill="currentColor"/></svg>
+        <h2 class="section-title-inline">Current Monitoring Methods &amp; Their Limitations</h2>
+      </div>
+      <div class="method-grid">
+        <div class="method-card">
+          <div class="method-name">ACT <span class="method-full">Activated Clotting Time</span></div>
+          <div class="method-row"><span class="method-attr">Setting</span><span class="method-val">OR, Cath Lab, ECMO</span></div>
+          <div class="method-row"><span class="method-attr">Turnaround</span><span class="method-val">2–5 min</span></div>
+          <div class="method-indicators">
+            <span class="ind ind-bad"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" fill="currentColor"/></svg> Blood Draw</span>
+            <span class="ind ind-bad"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" fill="currentColor"/></svg> Not Continuous</span>
+          </div>
+          <div class="method-limit">Intermittent only — creates monitoring blind spots during critical surgery phases</div>
+        </div>
+        <div class="method-card">
+          <div class="method-name">TEG <span class="method-full">Thromboelastography</span></div>
+          <div class="method-row"><span class="method-attr">Setting</span><span class="method-val">Hospital Lab, Major ORs</span></div>
+          <div class="method-row"><span class="method-attr">Turnaround</span><span class="method-val">10–30 min</span></div>
+          <div class="method-indicators">
+            <span class="ind ind-bad"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" fill="currentColor"/></svg> Blood Draw</span>
+            <span class="ind ind-bad"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" fill="currentColor"/></svg> Not Continuous</span>
+          </div>
+          <div class="method-limit">Slow turnaround; batch testing; expensive equipment ($30–80K per unit)</div>
+        </div>
+        <div class="method-card">
+          <div class="method-name">ROTEM <span class="method-full">Rotational Thromboelastometry</span></div>
+          <div class="method-row"><span class="method-attr">Setting</span><span class="method-val">Hospital Lab, Major ORs</span></div>
+          <div class="method-row"><span class="method-attr">Turnaround</span><span class="method-val">10–30 min</span></div>
+          <div class="method-indicators">
+            <span class="ind ind-bad"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" fill="currentColor"/></svg> Blood Draw</span>
+            <span class="ind ind-bad"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" fill="currentColor"/></svg> Not Continuous</span>
+          </div>
+          <div class="method-limit">Operator-dependent; same batch limitations as TEG; dominant in European market</div>
+        </div>
+        <div class="method-card">
+          <div class="method-name">PT / INR</div>
+          <div class="method-row"><span class="method-attr">Setting</span><span class="method-val">Lab (send-out)</span></div>
+          <div class="method-row"><span class="method-attr">Turnaround</span><span class="method-val">Hours to days</span></div>
+          <div class="method-indicators">
+            <span class="ind ind-bad"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" fill="currentColor"/></svg> Blood Draw</span>
+            <span class="ind ind-bad"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" fill="currentColor"/></svg> Not Continuous</span>
+          </div>
+          <div class="method-limit">Lab send-out delays therapy adjustment; no option for continuous or home monitoring</div>
+        </div>
+        <div class="method-card">
+          <div class="method-name">aPTT</div>
+          <div class="method-row"><span class="method-attr">Setting</span><span class="method-val">Hospital Lab</span></div>
+          <div class="method-row"><span class="method-attr">Turnaround</span><span class="method-val">1–2 hours</span></div>
+          <div class="method-indicators">
+            <span class="ind ind-bad"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" fill="currentColor"/></svg> Blood Draw</span>
+            <span class="ind ind-bad"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" fill="currentColor"/></svg> Not Continuous</span>
+          </div>
+          <div class="method-limit">Lab-based; batch testing; not suitable for bedside or home use</div>
+        </div>
+        <div class="method-card">
+          <div class="method-name">Anti-Xa Assay</div>
+          <div class="method-row"><span class="method-attr">Setting</span><span class="method-val">Hospital Lab</span></div>
+          <div class="method-row"><span class="method-attr">Turnaround</span><span class="method-val">1–2 hours</span></div>
+          <div class="method-indicators">
+            <span class="ind ind-bad"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" fill="currentColor"/></svg> Blood Draw</span>
+            <span class="ind ind-bad"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" fill="currentColor"/></svg> Not Continuous</span>
+          </div>
+          <div class="method-limit">DOAC monitoring only; lab-based; not point-of-care or home</div>
+        </div>
+        <div class="method-card">
+          <div class="method-name">CoaguChek <span class="method-full">Roche Home INR</span></div>
+          <div class="method-row"><span class="method-attr">Setting</span><span class="method-val">Home / Clinic</span></div>
+          <div class="method-row"><span class="method-attr">Turnaround</span><span class="method-val">1–2 min</span></div>
+          <div class="method-indicators">
+            <span class="ind ind-bad"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" fill="currentColor"/></svg> Finger Prick</span>
+            <span class="ind ind-bad"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" fill="currentColor"/></svg> Not Continuous</span>
+          </div>
+          <div class="method-limit">Warfarin only — cannot monitor DOACs; requires daily finger stick; no DOAC patients covered</div>
+        </div>
+        <div class="method-card method-card-kadi">
+          <div class="method-kadi-badge">KADI OPTICS</div>
+          <div class="method-name">Optical Coagulation Sensing <span class="method-full">Photonic Platform</span></div>
+          <div class="method-row"><span class="method-attr">Setting</span><span class="method-val">OR / ICU / ECMO / Home</span></div>
+          <div class="method-row"><span class="method-attr">Turnaround</span><span class="method-val">Real-time · Continuous</span></div>
+          <div class="method-indicators">
+            <span class="ind ind-good"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="currentColor"/></svg> No Blood Draw</span>
+            <span class="ind ind-good"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="currentColor"/></svg> Always-On</span>
+          </div>
+          <div class="method-limit method-kadi-advantage">First-ever non-invasive, continuous coagulation monitor — covers all patient segments including DOACs</div>
+        </div>
+      </div>
     </section>
 
     <!-- ── Market Segments ── -->
     <section class="section">
-      <h2 class="section-title">Target Market Segments</h2>
+      <div class="section-header-row">
+        <svg class="section-icon-svg" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z" fill="currentColor"/></svg>
+        <h2 class="section-title-inline">Target Market Segments</h2>
+      </div>
       <table class="data-table">
         <thead>
           <tr>
@@ -163,27 +421,27 @@
           </tr>
           <tr>
             <td><strong>ECMO</strong></td>
-            <td><span class="tag tag-green">Elevated — Tier 1</span></td>
+            <td><span class="tag tag-green">Tier 1</span></td>
             <td>Anticoagulation management during extracorporeal membrane oxygenation</td>
-            <td>ECMO patients require continuous anticoagulation monitoring 24/7 — exact gap KADI fills</td>
+            <td>ECMO patients require continuous anticoagulation monitoring 24/7 — the exact gap KADI fills</td>
           </tr>
           <tr>
             <td><strong>ICU / Critical Care</strong></td>
             <td><span class="tag tag-blue">Tier 1</span></td>
             <td>Post-surgical coagulation monitoring, sepsis, DIC management</td>
-            <td>Reduces blood draws; enables real-time response to coagulopathy</td>
+            <td>Reduces blood draws; enables real-time response to coagulopathy events</td>
           </tr>
           <tr>
             <td><strong>Anticoagulation Clinics</strong></td>
             <td><span class="tag tag-blue">Tier 1</span></td>
             <td>Warfarin and DOAC patient management</td>
-            <td>Could replace or supplement INR testing; extends to DOAC monitoring (no current option)</td>
+            <td>Extends to DOAC monitoring — no current option exists for this population</td>
           </tr>
           <tr>
-            <td><strong>Home Health (DOAC patients)</strong></td>
+            <td><strong>Home Health (DOAC Patients)</strong></td>
             <td><span class="tag tag-yellow">Tier 2</span></td>
             <td>Continuous home monitoring for patients on rivaroxaban, apixaban, etc.</td>
-            <td><strong>First-ever DOAC home monitor</strong> — unique differentiator with no existing competition</td>
+            <td><strong>First-ever DOAC home monitor</strong> — unique differentiator with zero existing competition</td>
           </tr>
           <tr>
             <td><strong>Dialysis Centers</strong></td>
@@ -201,7 +459,7 @@
             <td><strong>Veterinary Critical Care</strong></td>
             <td><span class="tag tag-purple">Emerging</span></td>
             <td>Surgical anticoagulation monitoring in large animals</td>
-            <td>Identified in I-Corps Week 3 interviews; no strong competitors in vet space</td>
+            <td>Identified in I-Corps interviews; no strong competitors in the veterinary space</td>
           </tr>
         </tbody>
       </table>
@@ -209,46 +467,81 @@
 
     <!-- ── Customer Segments ── -->
     <section class="section">
-      <h2 class="section-title">Key Customer &amp; Decision-Maker Segments</h2>
+      <div class="section-header-row">
+        <svg class="section-icon-svg" viewBox="0 0 24 24" fill="none"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" fill="currentColor"/></svg>
+        <h2 class="section-title-inline">Key Customer &amp; Decision-Maker Segments</h2>
+      </div>
       <div class="two-col">
         <div class="info-card">
           <div class="info-card-title">Cardiac Anesthesiologists <span class="tag tag-green" style="margin-left:6px">Key decision-maker</span></div>
-          <p>Identified in Week 3 I-Corps as the primary coagulation decision-makers in the OR — not the surgeon. Control heparin dosing and anticoagulation protocols. High influence on device adoption.</p>
+          <p>The primary coagulation decision-makers in the OR — not the surgeon. Control heparin dosing and anticoagulation protocols. High influence on device adoption and hospital purchasing decisions.</p>
         </div>
         <div class="info-card">
           <div class="info-card-title">Cardiac Surgeons</div>
-          <p>Primary end-user in cardiac surgery beachhead. Benefit from real-time coagulation feedback during CPB and ECMO. Champions for hospital purchasing decisions.</p>
+          <p>Primary end-user in the cardiac surgery beachhead. Benefit from real-time coagulation feedback during CPB and ECMO. Clinical champions for hospital purchasing decisions.</p>
         </div>
         <div class="info-card">
           <div class="info-card-title">Perfusionists</div>
-          <p>Operate the CPB machine. Direct users of KADI probe in the OR clinical setting. Very process-oriented — value workflow integration and ease of use.</p>
+          <p>Operate the CPB machine during cardiac surgery. Direct users of the KADI probe in the OR. Process-oriented — value workflow integration and ease of use.</p>
         </div>
         <div class="info-card">
           <div class="info-card-title">Intensivists / ICU Physicians</div>
-          <p>Manage post-surgical patients on ECMO and anticoagulation therapy. High demand for continuous data; currently rely on intermittent blood draws.</p>
+          <p>Manage post-surgical patients on ECMO and anticoagulation therapy. High demand for continuous data; currently rely on intermittent blood draws every 1–2 hours.</p>
         </div>
         <div class="info-card">
           <div class="info-card-title">DOAC Patients (Home)</div>
-          <p>~6M Americans on direct oral anticoagulants (rivaroxaban, apixaban, dabigatran). No home monitoring option exists today. RPM reimbursement via CPT 99454/99457 highlighted as revenue stream.</p>
+          <p>~6M Americans on direct oral anticoagulants (rivaroxaban, apixaban, dabigatran). No home monitoring option exists today. RPM reimbursement via CPT codes 99454/99457 is a viable revenue stream.</p>
         </div>
         <div class="info-card">
           <div class="info-card-title">Hematologists</div>
-          <p>Manage complex coagulopathies, bleeding disorders, and anticoagulation regimens. Potential clinical champions for hospital-wide adoption.</p>
+          <p>Manage complex coagulopathies, bleeding disorders, and anticoagulation regimens. Potential clinical champions for hospital-wide adoption and research partnerships.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Market Gaps ── -->
+    <section class="section">
+      <div class="section-header-row">
+        <svg class="section-icon-svg" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" fill="currentColor"/></svg>
+        <h2 class="section-title-inline">Key Market Gaps — The KADI Opportunity</h2>
+      </div>
+      <div class="gap-grid">
+        <div class="gap-card">
+          <div class="gap-number">01</div>
+          <div class="gap-title">No continuous real-time coagulation monitor exists</div>
+          <div class="gap-impact"><strong>Impact:</strong> Surgeons and intensivists operate with monitoring blind spots of 10–30+ minutes during critical care.</div>
+          <div class="gap-solution"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="#0D9488"/></svg> KADI provides continuous, always-on optical signal — no gaps, no delays.</div>
+        </div>
+        <div class="gap-card">
+          <div class="gap-number">02</div>
+          <div class="gap-title">Every existing method requires a blood draw</div>
+          <div class="gap-impact"><strong>Impact:</strong> Patient discomfort, nursing burden, infection risk, and inherent sampling delays in every measurement.</div>
+          <div class="gap-solution"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="#0D9488"/></svg> Non-invasive transcutaneous measurement — no blood draw, ever.</div>
+        </div>
+        <div class="gap-card">
+          <div class="gap-number">03</div>
+          <div class="gap-title">No home monitoring for ~6M DOAC patients in the US</div>
+          <div class="gap-impact"><strong>Impact:</strong> Patients cannot self-monitor; clinic visits required; dosing errors go undetected between appointments.</div>
+          <div class="gap-solution"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="#0D9488"/></svg> Wrist device enabling 24/7 home monitoring — the first of its kind.</div>
+        </div>
+        <div class="gap-card">
+          <div class="gap-number">04</div>
+          <div class="gap-title">ECMO patients need constant monitoring but get hourly draws</div>
+          <div class="gap-impact"><strong>Impact:</strong> Elevated bleeding and clotting risk; ICU nursing labor intensive; resource strain during critical periods.</div>
+          <div class="gap-solution"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="#0D9488"/></svg> KADI fiber probe clips onto ECMO circuit — real-time data, zero blood draws.</div>
         </div>
       </div>
     </section>
 
     <!-- ── Clinical Network ── -->
     <section class="section">
-      <h2 class="section-title">Clinical Network &amp; Partners</h2>
+      <div class="section-header-row">
+        <svg class="section-icon-svg" viewBox="0 0 24 24" fill="none"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z" fill="currentColor"/></svg>
+        <h2 class="section-title-inline">Clinical Network &amp; Partners</h2>
+      </div>
       <table class="data-table">
         <thead>
-          <tr>
-            <th>Partner</th>
-            <th>Type</th>
-            <th>Role</th>
-            <th>Status</th>
-          </tr>
+          <tr><th>Partner</th><th>Type</th><th>Role</th><th>Status</th></tr>
         </thead>
         <tbody>
           <tr>
@@ -273,75 +566,46 @@
       </table>
     </section>
 
-    <!-- ── Market Gaps ── -->
-    <section class="section">
-      <h2 class="section-title">Key Market Gaps — The KADI Opportunity</h2>
-      <table class="data-table">
-        <thead>
-          <tr>
-            <th>Gap</th>
-            <th>Impact</th>
-            <th>KADI Solution</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>No continuous real-time coagulation monitor exists anywhere in the market</td>
-            <td>Surgeons and intensivists operate in monitoring blind spots lasting 10–30+ minutes</td>
-            <td>LC-DLS provides continuous, always-on optical signal — no gaps, no delays</td>
-          </tr>
-          <tr>
-            <td>Every existing method requires a blood draw</td>
-            <td>Patient discomfort, nursing burden, risk of infection, sampling delays</td>
-            <td>Non-invasive transcutaneous measurement — no blood draw ever</td>
-          </tr>
-          <tr>
-            <td>No home monitoring option for ~6M DOAC patients in the US</td>
-            <td>Patients cannot self-monitor; clinic visits required; dosing errors go undetected</td>
-            <td>Wrist device enabling 24/7 home coagulation monitoring — first of its kind</td>
-          </tr>
-          <tr>
-            <td>ECMO patients need continuous anticoagulation monitoring but rely on hourly ACT draws</td>
-            <td>Elevated bleeding/clotting risk; nursing labor intensive; ICU resource strain</td>
-            <td>KADI fiber probe clips onto ECMO circuit — real-time monitoring with zero blood draws</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
     <!-- ── Business Model ── -->
     <section class="section">
-      <h2 class="section-title">Business Model Overview</h2>
+      <div class="section-header-row">
+        <svg class="section-icon-svg" viewBox="0 0 24 24" fill="none"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z" fill="currentColor"/></svg>
+        <h2 class="section-title-inline">Business Model Overview</h2>
+      </div>
       <div class="two-col">
         <div class="info-card">
           <div class="info-card-title">Clinical / Hospital Revenue</div>
-          <p>Durable hardware sale (no consumables model). One-time device placement with service/maintenance contract. No per-test reagent costs — key differentiation from TEG/ROTEM.</p>
+          <p>Durable hardware sale with no consumables. One-time device placement plus service contract. No per-test reagent costs — a key differentiator from TEG/ROTEM which require costly cartridges.</p>
         </div>
         <div class="info-card">
           <div class="info-card-title">Home Monitoring Revenue</div>
-          <p>Device sale + remote patient monitoring (RPM) reimbursement. CPT codes 99454 and 99457 enable physician billing for continuous monitoring data. Subscription model possible.</p>
+          <p>Device sale plus remote patient monitoring (RPM) reimbursement. CPT codes 99454 and 99457 enable physician billing for continuous monitoring data. Subscription model also feasible.</p>
         </div>
         <div class="info-card">
           <div class="info-card-title">Data &amp; Software (Future)</div>
-          <p>Future layer: coagulation trend analytics, AI-assisted dosing recommendations, integration with hospital EHR systems. Revenue from SaaS / data services.</p>
+          <p>Future layer: coagulation trend analytics, AI-assisted dosing recommendations, and EHR integration. Revenue from SaaS / data services alongside hardware.</p>
         </div>
         <div class="info-card">
           <div class="info-card-title">Regulatory Pathway</div>
-          <p>FDA regulatory strategy to be defined. Clinical use device likely requires 510(k) clearance. Home device pathway to be determined in consultation with regulatory advisor.</p>
+          <p>Clinical device likely requires 510(k) clearance. Home device pathway to be determined with a regulatory advisor. FDA Breakthrough Device Designation may apply given unmet need.</p>
         </div>
       </div>
     </section>
 
-    <!-- ── Notes / To Do ── -->
+    <!-- ── Data Gaps ── -->
     <section class="section">
-      <h2 class="section-title">Data Gaps — To Be Researched</h2>
+      <div class="section-header-row">
+        <svg class="section-icon-svg" viewBox="0 0 24 24" fill="none"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" fill="currentColor"/></svg>
+        <h2 class="section-title-inline">Data Gaps — To Be Researched</h2>
+      </div>
       <div class="placeholder-box">
         <strong>Items to add to this report:</strong><br><br>
         ACT market share by geography (US, EU, Asia) · ECMO patient volume per year · DOAC patient population breakdown by drug ·
         Hospital purchasing decision timelines · TEG/ROTEM installed base estimates ·
         Reimbursement rate data for RPM codes (99454/99457) ·
         Competitor funding &amp; valuation data · Regulatory timeline estimates ·
-        Market size breakdown by segment (perioperative vs. home vs. ICU)
+        Market size breakdown by segment (perioperative vs. home vs. ICU) ·
+        Verify blood diagnostics sensor and medical wearables market figures
       </div>
     </section>
 
@@ -350,6 +614,85 @@
   <footer class="int-footer">
     © 2026 KADI Optics LLC · Internal Use Only · Not for Distribution
   </footer>
+
+  <script>
+    const YEARS = ['2024','2025','2026','2027','2028','2029','2030'];
+    const tealGrad = (ctx) => {
+      const g = ctx.chart.ctx.createLinearGradient(0, 0, 0, 220);
+      g.addColorStop(0, 'rgba(13,148,136,0.22)');
+      g.addColorStop(1, 'rgba(13,148,136,0.01)');
+      return g;
+    };
+    const chartOpts = (yLabel) => ({
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: { label: ctx => `$${ctx.parsed.y.toFixed(1)}B` },
+          backgroundColor: '#0F172A',
+          titleColor: '#94A3B8',
+          bodyColor: '#fff',
+          padding: 10,
+          cornerRadius: 8
+        }
+      },
+      scales: {
+        x: {
+          grid: { display: false },
+          ticks: { color: '#94A3B8', font: { size: 11, family: 'Inter' } },
+          border: { display: false }
+        },
+        y: {
+          grid: { color: '#F1F5F9', drawBorder: false },
+          ticks: { color: '#94A3B8', font: { size: 11, family: 'Inter' }, callback: v => '$' + v + 'B' },
+          border: { display: false }
+        }
+      }
+    });
+
+    new Chart(document.getElementById('chart-coag'), {
+      type: 'line',
+      data: {
+        labels: YEARS,
+        datasets: [{
+          data: [4.72, 4.97, 5.23, 5.51, 5.80, 6.10, 6.43],
+          borderColor: '#0D9488', borderWidth: 2.5, pointRadius: 4,
+          pointBackgroundColor: '#0D9488', pointBorderColor: '#fff', pointBorderWidth: 2,
+          fill: true, backgroundColor: tealGrad, tension: 0.35
+        }]
+      },
+      options: chartOpts('$B')
+    });
+
+    new Chart(document.getElementById('chart-diag'), {
+      type: 'line',
+      data: {
+        labels: YEARS,
+        datasets: [{
+          data: [8.50, 9.32, 10.23, 11.22, 12.31, 13.51, 14.82],
+          borderColor: '#0D9488', borderWidth: 2.5, pointRadius: 4,
+          pointBackgroundColor: '#0D9488', pointBorderColor: '#fff', pointBorderWidth: 2,
+          fill: true, backgroundColor: tealGrad, tension: 0.35
+        }]
+      },
+      options: chartOpts('$B')
+    });
+
+    new Chart(document.getElementById('chart-wear'), {
+      type: 'line',
+      data: {
+        labels: YEARS,
+        datasets: [{
+          data: [54.0, 66.9, 82.8, 102.5, 126.9, 157.1, 194.5],
+          borderColor: '#0D9488', borderWidth: 2.5, pointRadius: 4,
+          pointBackgroundColor: '#0D9488', pointBorderColor: '#fff', pointBorderWidth: 2,
+          fill: true, backgroundColor: tealGrad, tension: 0.35
+        }]
+      },
+      options: chartOpts('$B')
+    });
+  </script>
 
 </body>
 </html>
