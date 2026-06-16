@@ -855,8 +855,10 @@
         <h3>Let's Connect</h3>
         <p>Investors, clinical partners, and collaborators, we would love to hear from you.</p>
 
-        <form id="contact-form" name="contact" method="POST" data-netlify="true">
-          <input type="hidden" name="form-name" value="contact"/>
+        <form id="contact-form" name="contact" method="POST">
+          <input type="hidden" name="access_key" value="379c8a63-23a8-4530-b07a-12c46e4a0f6c"/>
+          <input type="hidden" name="subject" value="New message from kadioptics.com"/>
+          <input type="hidden" name="from_name" value="KADI Optics Website"/>
 
           <div class="form-step active" id="step-1">
             <div class="step-row">
@@ -923,7 +925,7 @@ function cfNext(step) {
 document.getElementById('contact-form').addEventListener('submit', function(e) {
   e.preventDefault();
   if (!document.getElementById('cf-message').value.trim()) { document.getElementById('cf-message').focus(); return; }
-  fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(new FormData(this)).toString() })
+  fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(new FormData(this)).toString() })
     .finally(() => { this.style.display = 'none'; document.getElementById('form-confirm').style.display = 'block'; });
 });
 </script>
