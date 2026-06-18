@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KADI Optics | Customer Discovery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="/css/internal.css"/>
+  <script src="/js/auth.js"></script>
+</head>
+<body class="light-theme">
+
+  <nav class="int-nav">
+    <a href="/" class="brand-box">KADI OPTICS</a>
+    <div class="int-links">
+      <a href="/market.html"       class="int-link">Market</a>
+      <a href="/discovery.html"    class="int-link active">Customer Discovery</a>
+      <a href="/tech.html"         class="int-link">Technology</a>
+      <a href="/publications.html" class="int-link">Publications</a>
+      <a href="/proposals.html"    class="int-link">Proposals</a>
+    </div>
+    <button class="logout-btn" onclick="logout()">Log out</button>
+  </nav>
+
+  <main class="int-page">
+
+    <header class="page-header">
+      <div class="page-tag">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="vertical-align:-1px;margin-right:5px"><circle cx="6" cy="6" r="5" fill="#0D9488" opacity=".18"/><circle cx="6" cy="6" r="2.5" fill="#0D9488"/></svg>
+        Internal · UCF ART / I-Corps Program
+      </div>
+      <h1 class="page-title">Customer Discovery</h1>
+      <p class="page-desc">Tracking all customer interviews, insights, and hypothesis validation from the I-Corps program. Add transcripts to the <code>/transcripts/</code> folder to enable full analysis.</p>
+    </header>
+
+    <!-- ── Summary Stats ── -->
+    <div class="stat-grid" style="margin-bottom:48px">
+      <div class="stat-card">
+        <div class="stat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" fill="#0D9488"/></svg></div>
+        <div class="stat-value">0</div>
+        <div class="stat-label">Interviews completed</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="#0D9488"/></svg></div>
+        <div class="stat-value">0</div>
+        <div class="stat-label">Customer segments covered</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="#0D9488"/></svg></div>
+        <div class="stat-value">0</div>
+        <div class="stat-label">Hypotheses validated</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" fill="#0D9488"/></svg></div>
+        <div class="stat-value">0</div>
+        <div class="stat-label">Hypotheses invalidated</div>
+      </div>
+    </div>
+
+    <!-- ── Hypotheses ── -->
+    <section class="section">
+      <div class="section-header-row">
+        <svg class="section-icon-svg" viewBox="0 0 24 24" fill="none"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z" fill="currentColor"/></svg>
+        <h2 class="section-title-inline">Hypotheses Being Tested</h2>
+      </div>
+      <p class="section-sub">Core assumptions we are testing through customer interviews. Updated as evidence accumulates.</p>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Hypothesis</th>
+            <th>Segment</th>
+            <th>Status</th>
+            <th>Evidence</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>H1</td>
+            <td>Cardiac surgeons and perfusionists experience significant monitoring gaps during CPB due to intermittent ACT testing</td>
+            <td><span class="tag tag-purple">Cardiac Surgery</span></td>
+            <td><span class="tag tag-yellow">Testing</span></td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>H2</td>
+            <td>ECMO specialists would adopt a continuous coagulation monitor if it eliminated the need for hourly ACT blood draws</td>
+            <td><span class="tag tag-purple">ECMO / ICU</span></td>
+            <td><span class="tag tag-yellow">Testing</span></td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>H3</td>
+            <td>DOAC patients on rivaroxaban or apixaban have no reliable home monitoring option and want one</td>
+            <td><span class="tag tag-blue">Home / DOAC</span></td>
+            <td><span class="tag tag-yellow">Testing</span></td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>H4</td>
+            <td>Cardiac anesthesiologists — not surgeons — are the primary decision-makers for coagulation monitoring devices in the OR</td>
+            <td><span class="tag tag-purple">Cardiac Surgery</span></td>
+            <td><span class="tag tag-yellow">Testing</span></td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>H5</td>
+            <td>Hospitals would pay a premium for a device that eliminates per-test reagent costs (vs. TEG/ROTEM model)</td>
+            <td><span class="tag tag-green">Hospital / Admin</span></td>
+            <td><span class="tag tag-yellow">Testing</span></td>
+            <td>—</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ── Interview Log ── -->
+    <section class="section">
+      <div class="section-header-row">
+        <svg class="section-icon-svg" viewBox="0 0 24 24" fill="none"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z" fill="currentColor"/></svg>
+        <h2 class="section-title-inline">Interview Log</h2>
+      </div>
+      <p class="section-sub">One row per interview. Add transcript filename once available for full analysis.</p>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Date</th>
+            <th>Interviewee Role</th>
+            <th>Segment</th>
+            <th>Setting</th>
+            <th>Transcript</th>
+            <th>Key Takeaway</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td colspan="7" style="text-align:center; color:#94A3B8; padding:32px 0; font-size:0.85rem;">
+              No interviews logged yet. Add rows here as interviews are completed.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ── Key Themes ── -->
+    <section class="section">
+      <div class="section-header-row">
+        <svg class="section-icon-svg" viewBox="0 0 24 24" fill="none"><path d="M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 17.08z" fill="currentColor"/></svg>
+        <h2 class="section-title-inline">Emerging Themes</h2>
+      </div>
+      <p class="section-sub">Patterns and recurring insights from interviews. Updated as more data is collected.</p>
+      <div class="placeholder-box">
+        No themes identified yet — themes will emerge once interviews are logged and transcripts are analyzed.
+      </div>
+    </section>
+
+    <!-- ── Segments Reached ── -->
+    <section class="section">
+      <div class="section-header-row">
+        <svg class="section-icon-svg" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z" fill="currentColor"/></svg>
+        <h2 class="section-title-inline">Segments Reached</h2>
+      </div>
+      <div class="two-col">
+        <div class="info-card">
+          <div class="info-card-title">Cardiac Anesthesiologists <span class="tag tag-yellow" style="margin-left:6px">0 interviews</span></div>
+          <p>Primary OR decision-maker for coagulation monitoring. Top priority segment.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-title">Cardiac Surgeons <span class="tag tag-yellow" style="margin-left:6px">0 interviews</span></div>
+          <p>End-user in the cardiac surgery beachhead. Champions for hospital purchasing.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-title">Perfusionists <span class="tag tag-yellow" style="margin-left:6px">0 interviews</span></div>
+          <p>Operate the CPB machine. Direct users of the KADI probe in the OR.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-title">Intensivists / ICU Physicians <span class="tag tag-yellow" style="margin-left:6px">0 interviews</span></div>
+          <p>Manage post-surgical ECMO and anticoagulation therapy patients.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-title">DOAC Patients <span class="tag tag-yellow" style="margin-left:6px">0 interviews</span></div>
+          <p>~6M Americans on direct oral anticoagulants with no home monitoring option.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-title">Hematologists <span class="tag tag-yellow" style="margin-left:6px">0 interviews</span></div>
+          <p>Manage complex coagulopathies and anticoagulation regimens.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── How to Add Transcripts ── -->
+    <section class="section">
+      <div class="section-header-row">
+        <svg class="section-icon-svg" viewBox="0 0 24 24" fill="none"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11zM8 15h8v2H8zm0-4h8v2H8z" fill="currentColor"/></svg>
+        <h2 class="section-title-inline">How to Add Interview Transcripts</h2>
+      </div>
+      <div class="gap-card" style="max-width:640px">
+        <div class="gap-title">Workflow for transcript analysis</div>
+        <div class="gap-impact">
+          1. Record your interview (phone, Zoom, etc.)<br/>
+          2. Transcribe using <strong>Otter.ai</strong> (free) or <strong>Whisper</strong> (local, free)<br/>
+          3. Save the transcript as a <code>.txt</code> file named by interviewee role and date<br/>
+          &nbsp;&nbsp;&nbsp;e.g. <code>cardiac_anesthesiologist_2026-06-17.txt</code><br/>
+          4. Place it in <code>C:\Users\ma884162\Claude\Kadi-Optics-Website\transcripts\</code><br/>
+          5. Share it in the chat — full analysis: themes, pain points, hypothesis evidence, direct quotes
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="int-footer">
+    © 2026 KADI Optics LLC · Internal Use Only · Not for Distribution
+  </footer>
+
+</body>
+</html>
