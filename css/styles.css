@@ -1085,8 +1085,8 @@ a { text-decoration: none; color: inherit; }
    TEAM PHOTO
 ══════════════════════════════════════════════════ */
 .team-photo {
-  width: 64px;
-  height: 64px;
+  width: 83px;
+  height: 83px;
   border-radius: 50%;
   object-fit: cover;
   object-position: center top;
