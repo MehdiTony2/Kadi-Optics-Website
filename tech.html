@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="/css/internal.css"/>
   <script src="/js/auth.js"></script>
 </head>
-<body class="light-theme">
+<body>
 
   <nav class="int-nav">
     <a href="/" class="brand-box">KADI OPTICS</a>
@@ -29,98 +29,15 @@
     <header class="page-header">
       <div class="page-tag">Internal · Technical Reference</div>
       <h1 class="page-title">LC-DLS Technology &amp; Analysis Framework</h1>
-      <p class="page-desc">The physical and mathematical framework underlying low-coherence dynamic light scattering (LC-DLS). The interactive GUI walkthrough will be added here once the MATLAB interface is shared.</p>
+      <p class="page-desc">Complete mathematical and physical framework underlying the LC-DLS measurement platform — including signal processing, scattering physics, and the analytical models used to extract coagulation parameters. The interactive GUI details will be integrated here once the MATLAB interface is shared.</p>
     </header>
 
-    <!-- ── Core principle ── -->
-    <section class="section">
-      <div class="section-header-row">
-        <svg class="section-icon-svg" viewBox="0 0 24 24" fill="none"><path d="M12 2v20M2 12h20" stroke="currentColor" stroke-width="1.8"/></svg>
-        <h2 class="section-title-inline">Core Principle: Coherence-Gated Single Scattering</h2>
-      </div>
-      <p class="section-sub">Ordinary dynamic light scattering (DLS) only works reliably in dilute, single-scattering samples. Diffusing Wave Spectroscopy (DWS) handles dense, multiply-scattering media but loses single-particle-level information. Whole blood is a uniquely hard case: it is <em>optically dense</em> (heavy multiple scattering) <em>and</em> "non-ergodic" — a single measurement at one point in time does not represent the whole system, because clotting is a slow, spatially uneven process.</p>
-      <div class="two-col">
-        <div class="info-card">
-          <div class="info-card-title">The coherence volume trick</div>
-          <p>A low-coherence light source (superluminescent diode) delivered through an optical fiber creates a tiny "coherence volume" at the fiber tip — set by the source's coherence length × the fiber core's cross-sectional area (picoliter-to-femtoliter scale). Only backscattered light returning within one coherence length of the Fresnel-reflected reference field can interfere and be detected, which mathematically guarantees the collected signal is dominated by <strong>single scattering</strong>, even inside a dense medium like whole blood.</p>
-        </div>
-        <div class="info-card">
-          <div class="info-card-title">Common-path heterodyne detection</div>
-          <p>The reference field is simply the Fresnel reflection at the fiber's own end facet — no separate reference arm is needed (a "common-path interferometer"). The field scattered by moving red blood cells interferes with this reference, and because the reference is much stronger than the weak scattered signal, this heterodyne mixing acts as built-in optical amplification of the dynamics being measured.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ── RBCs as probes ── -->
-    <section class="section">
-      <div class="section-header-row">
-        <svg class="section-icon-svg" viewBox="0 0 24 24" fill="none"><path d="M12 21s-8-4.5-8-11a8 8 0 0116 0c0 6.5-8 11-8 11z" fill="currentColor"/></svg>
-        <h2 class="section-title-inline">Red Blood Cells as Passive Probes</h2>
-      </div>
-      <p class="section-sub">Red blood cells (~45% of blood volume) are the dominant scatterers and are treated as passive Brownian probes of their immediate plasma environment. As fibrinogen polymerizes into a fibrin network during clotting, the mechanical environment immediately surrounding each RBC stiffens — measurable as a shift in the frequency content of the scattered-light signal, with <strong>no activating reagent needed</strong>. This is the key conceptual difference from every conventional test (ACT, TEG, PT/aPTT), all of which require an external activator (kaolin, calcium, glass) to accelerate clotting into a measurable window.</p>
-    </section>
-
-    <!-- ── Governing equations ── -->
-    <section class="section">
-      <div class="section-header-row">
-        <svg class="section-icon-svg" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h10M4 18h7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-        <h2 class="section-title-inline">Governing Equations</h2>
-      </div>
-      <p class="section-sub">Signal decomposition, in the order the analysis pipeline applies them:</p>
-      <table class="data-table">
-        <thead><tr><th>Step</th><th>Relation</th><th>What it extracts</th></tr></thead>
-        <tbody>
-          <tr>
-            <td>1. Power spectral density (PSD)</td>
-            <td>PSD(f) = (2/π) Σᵢ (aᵢ/τᵢ) / [f² + (1/τᵢ)²] — sum of Lorentzian modes, amplitudes aᵢ, relaxation times τᵢ</td>
-            <td>Raw frequency-domain signature of RBC motion</td>
-          </tr>
-          <tr>
-            <td>2. Mean-square displacement (MSD)</td>
-            <td>⟨Δr²(t)⟩ = −(6/q²) ln[Σᵢ aᵢ exp(−2πt/τᵢ)], q = scattering wavevector</td>
-            <td>How far a "typical" RBC has moved by time t</td>
-          </tr>
-          <tr>
-            <td>3. Complex viscoelastic modulus</td>
-            <td>|G*(ω)| ≈ k_BT / (π a ⟨Δr²(1/ω)⟩ Γ[1+α(ω)]) — generalized Stokes–Einstein relation</td>
-            <td>Elastic (G′) and viscous (G″) response of the surrounding plasma</td>
-          </tr>
-          <tr>
-            <td>4. Single figure-of-merit γ</td>
-            <td>γ = −(α+1) = average log-slope of PSD (250–750 Hz band); bounded −2 (purely viscous) to −1 (elastic confinement)</td>
-            <td>One clean, real-time-trackable coagulability number</td>
-          </tr>
-          <tr>
-            <td>5. Maxwell model (most recent, 2022)</td>
-            <td>G′(ω)=η₁τ₁ω²/(1+ω²τ₁²);  G″(ω)=η₁ω/(1+ω²τ₁²)+η₀ω</td>
-            <td>Three physically-interpretable parameters: η₀ (free/unpolymerized fibrinogen pool), η₁ &amp; τ₁ (growing fibrin-network element)</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <!-- ── Clinical correlation ── -->
-    <section class="section">
-      <div class="section-header-row">
-        <svg class="section-icon-svg" viewBox="0 0 24 24" fill="none"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="currentColor"/></svg>
-        <h2 class="section-title-inline">Clinical Correlation (Published Results)</h2>
-      </div>
-      <div class="two-col">
-        <div class="info-card">
-          <div class="info-card-title">N=10 (2017, <em>Nature Biomedical Engineering</em>)</div>
-          <p>Differential correlation vs. ACT: r = −0.76, p = 0.0001. Direct correlation vs. TEG Coagulation Index: r = 0.57, p = 0.009.</p>
-        </div>
-        <div class="info-card">
-          <div class="info-card-title">N=30 (2020, <em>Hemato</em>)</div>
-          <p>Differential ACT correlation r = −0.73, p &lt; 0.0001. TEG-CI direct correlation r = 0.446 — strongest of all TEG parameters; TEG max-amplitude weakest (expected, since LC-DLS never lets a solid clot fully form).</p>
-        </div>
-      </div>
-      <p class="section-sub" style="margin-top:16px;">Context: published literature shows standard tests correlate only ~0.3–0.5 with <em>each other</em> — LC-DLS's correlation strength is competitive with, or better than, inter-assay agreement among existing gold standards.</p>
-    </section>
-
-    <div class="placeholder-box" style="margin-top:8px;">
-      <strong>Interactive GUI documentation — coming soon.</strong><br><br>
-      Once the MATLAB analysis interface is shared, this page will be extended with a walkthrough of the live signal-processing pipeline, example spectra, and the probe-design details (single-mode vs. multi-mode fiber, coherence length selection, K-gating) from the 2026 sensor-head disclosures.
+    <div class="placeholder-box">
+      <strong>Content coming soon.</strong><br><br>
+      This page will contain the full LC-DLS mathematical framework:<br>
+      scattering theory, autocorrelation analysis, blood microrheology models,<br>
+      signal processing pipeline, and the interactive GUI documentation.<br><br>
+      <em>Share the MATLAB GUI with Claude to begin building this section.</em>
     </div>
 
   </main>
