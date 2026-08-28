@@ -60,6 +60,10 @@
     animation: drift 10s ease-in-out infinite alternate; }
   @keyframes drift{ from{ transform:translate(0,0) scale(1);} to{ transform:translate(36px,26px) scale(1.1);} }
   @media (prefers-reduced-motion: reduce){ .blob{ animation:none; } }
+  /* the moving, heavily-blurred blobs are expensive to recomposite every frame
+     on weaker mobile GPUs and were stealing frame budget from the scenario
+     crossfade, making it look choppy; freeze them on small screens */
+  @media (max-width: 900px){ .blob{ animation:none; } }
 
   /* ══════════ PAGE FRAME ══════════ */
   .page{
@@ -88,6 +92,7 @@
     50%{     filter: drop-shadow(0 0 30px rgba(255,155,150,0.40)); }
   }
   @media (prefers-reduced-motion: reduce){ .logo-mark{ animation:none; } }
+  @media (max-width: 900px){ .logo-mark{ animation:none; } }
 
   .badge{
     display:inline-flex;
@@ -219,6 +224,7 @@
   .scenario-name{
     font-size: 1.5rem; font-weight:700; color:var(--white); letter-spacing:-0.01em;
     transition: opacity 0.4s ease;
+    will-change: opacity;
   }
   .scenario-name.fading{ opacity: 0; }
 
@@ -249,6 +255,7 @@
     font-size:1rem; line-height:1.45; color: var(--on-dark-dim); min-height: 2.4em;
     display:flex; align-items:center;
     transition: opacity 0.4s ease;
+    will-change: opacity;
   }
   .srow .v.fading{ opacity: 0; }
   .srow.fix .v{ color: rgba(255,255,255,0.88); }
@@ -271,7 +278,7 @@
     .hero-actions{ justify-content:center; }
     h1 .accent{ margin-top:4px; }
     .scenario-head{ justify-content:center; }
-    .scenario-box{ height:auto; }
+    .scenario-box{ height:auto; backdrop-filter:none; }
   }
   @media (max-width: 560px){
     .scenario-head{ flex-direction:column; gap:10px; }
@@ -361,7 +368,7 @@
       var cycleTimer = null;
       var swapTimer = null;
       var DURATION = 3900;
-      var FADE_MS = 380;
+      var FADE_MS = 420;
       var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
       function applyData(i){
