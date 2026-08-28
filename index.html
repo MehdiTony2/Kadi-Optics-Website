@@ -1,167 +1,403 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>KADI Optics | Coming Soon</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet"/>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body { height: 100%; }
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="KADI Optics is under construction. We're building an optical platform for continuous, real-time blood coagulation monitoring: no blood draw, no reagent."/>
+<title>KADI Optics | Coming Soon</title>
+<link rel="icon" href="/favicon.png" type="image/png"/>
+<style>
+  :root{
+    --maroon-deep:  #2B0303;
+    --maroon:       #4A0404;
+    --maroon-mid:   #5C0505;
+    --maroon-card:  #6B1414;
+    --wine:         #8A1030;
+    --coral:        #FF9B96;
+    --coral-soft:   rgba(255,155,150,0.5);
+    --cta-1:        #B8210A;
+    --cta-2:        #FF5223;
+    --green:        #3CAA6E;
+    --gray-warm:    #E7DEDC;
+    --gray-warm-hover: #D9CBC8;
+    --cream:        #FDECEA;
+    --white:        #FFFFFF;
+    --on-dark:      rgba(255,255,255,0.92);
+    --on-dark-dim:  rgba(255,255,255,0.58);
+    --on-dark-dim2: rgba(255,255,255,0.38);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
 
-    body {
-      font-family: 'Inter', system-ui, sans-serif;
-      background: #07111F;
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      padding: 32px 24px;
-      -webkit-font-smoothing: antialiased;
-    }
+  *,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
+  html{ scroll-behavior:smooth; }
+  body{
+    font-family: var(--font);
+    background: var(--maroon-deep);
+    color: var(--on-dark);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+  img,svg{ max-width:100%; display:block; }
+  a{ color:inherit; text-decoration:none; }
 
-    body::before {
-      content: '';
-      position: fixed;
-      top: -200px; right: -200px;
-      width: 600px; height: 600px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(13,148,136,0.10) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    body::after {
-      content: '';
-      position: fixed;
-      bottom: -200px; left: -200px;
-      width: 500px; height: 500px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(29,78,216,0.08) 0%, transparent 70%);
-      pointer-events: none;
-    }
+  /* ══════════ Fixed mesh-gradient backdrop ══════════ */
+  .backdrop{
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background:
+      radial-gradient(ellipse 120% 70% at 50% -10%, #6E0B0B 0%, transparent 60%),
+      linear-gradient(165deg, var(--maroon-deep) 0%, var(--maroon) 45%, #390808 100%);
+    overflow: hidden;
+  }
+  .blob{ position:absolute; border-radius:50%; filter: blur(95px); opacity:0.30; }
+  .blob.b1{ width:620px; height:620px; background: var(--coral); top:-220px; right:-160px;
+    animation: drift 13s ease-in-out infinite alternate; }
+  .blob.b2{ width:480px; height:480px; background: var(--cta-2); bottom:-200px; left:-140px;
+    animation: drift 16s ease-in-out infinite alternate-reverse; }
+  .blob.b3{ width:360px; height:360px; background: var(--wine); top:38%; left:46%; opacity:0.34;
+    animation: drift 10s ease-in-out infinite alternate; }
+  @keyframes drift{ from{ transform:translate(0,0) scale(1);} to{ transform:translate(36px,26px) scale(1.1);} }
+  @media (prefers-reduced-motion: reduce){ .blob{ animation:none; } }
 
-    .wrap {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 28px;
-      text-align: center;
-      max-width: 560px;
-    }
+  /* ══════════ PAGE FRAME ══════════ */
+  .page{
+    min-height: 100svh;
+    max-width: 1280px;
+    margin: 0 auto;
+    display:flex;
+    flex-direction:column;
+    padding: 26px 40px 18px;
+  }
 
-    /* Brand name — text only, no icon */
-    .brand {
-      font-family: 'Space Grotesk', system-ui, sans-serif;
-      font-size: 2rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      color: #fff;
-      line-height: 1;
-      background: #0A6B62;
-      padding: 18px 28px;
-      border-radius: 12px;
-    }
-    .brand span { color: #fff; }
+  .masthead{
+    flex: 0 0 auto;
+    text-align:center;
+    padding-top: 6px;
+  }
+  .logo-mark{
+    width: 272px;
+    max-width: 54vw;
+    margin: 0 auto 16px;
+    filter: drop-shadow(0 0 22px rgba(255,155,150,0.26));
+    animation: glow-breathe 4.5s ease-in-out infinite;
+  }
+  @keyframes glow-breathe{
+    0%,100%{ filter: drop-shadow(0 0 18px rgba(255,155,150,0.20)); }
+    50%{     filter: drop-shadow(0 0 30px rgba(255,155,150,0.40)); }
+  }
+  @media (prefers-reduced-motion: reduce){ .logo-mark{ animation:none; } }
 
-    h1 {
-      font-family: 'Space Grotesk', system-ui, sans-serif;
-      font-size: clamp(1.6rem, 4vw, 2.4rem);
-      font-weight: 700;
-      line-height: 1.18;
-      letter-spacing: -0.02em;
-      color: #fff;
-    }
-    h1 span { color: #2DD4BF; }
+  .badge{
+    display:inline-flex;
+    align-items:center;
+    gap:11px;
+    padding: 10px 22px;
+    border-radius: 100px;
+    background: linear-gradient(100deg, var(--cta-1), var(--cta-2));
+    box-shadow: 0 6px 24px rgba(184,33,10,0.4);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--white);
+  }
+  .badge .pulse-dot{ position:relative; width:12px; height:12px; border-radius:50%; background: var(--white); flex-shrink:0; }
+  .badge .pulse-dot::before{
+    content:''; position:absolute; inset:-3px; border-radius:50%;
+    border: 2px solid rgba(255,255,255,0.9);
+    animation: pulse-ring 1.6s ease-out infinite;
+  }
+  @keyframes pulse-ring{ 0%{ transform:scale(0.7); opacity:1; } 100%{ transform:scale(2.1); opacity:0; } }
+  @media (prefers-reduced-motion: reduce){ .badge .pulse-dot::before{ animation:none; } }
 
-    p {
-      font-size: 1rem;
-      color: rgba(255,255,255,0.52);
-      line-height: 1.75;
-    }
+  /* ══════════ MAIN: two columns, fills remaining screen ══════════ */
+  .main-grid{
+    flex: 1 1 auto;
+    display:grid;
+    grid-template-columns: 55fr 45fr;
+    align-items: center;
+    gap: 56px;
+    min-height: 0;
+    padding: 30px 0 8px;
+  }
 
-    /* Badge — sharper corners, no blinking dot */
-    .badge {
-      display: inline-flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 6px;
-      padding: 12px 24px;
-      border-radius: 8px;
-      border: 1px solid rgba(13,148,136,0.35);
-      background: rgba(13,148,136,0.08);
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: #2DD4BF;
-      letter-spacing: 0.04em;
-    }
-    .badge-sub {
-      font-size: 0.75rem;
-      font-weight: 400;
-      color: rgba(255,255,255,0.4);
-      letter-spacing: 0.02em;
-    }
+  .left-col{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    text-align:left;
+  }
 
-    /* Consecutive dots */
-    .dot {
-      opacity: 0;
-      display: inline-block;
-      animation: dot-seq 2.2s ease-in-out infinite;
-    }
-    .dot.d1 { animation-delay: 0.0s; }
-    .dot.d2 { animation-delay: 0.5s; }
-    .dot.d3 { animation-delay: 1.0s; }
+  h1{
+    font-size: clamp(1.65rem, 2.7vw, 2.3rem);
+    font-weight: 700;
+    line-height: 1.16;
+    letter-spacing: -0.02em;
+    color: var(--white);
+    text-wrap: balance;
+  }
+  h1 .accent{ color: var(--coral); display:block; margin-top: 2px; }
 
-    @keyframes dot-seq {
-      0%,  12% { opacity: 0; }
-      22%, 80% { opacity: 1; }
-      92%, 100% { opacity: 0; }
-    }
+  .lead{
+    font-size: clamp(1rem, 1.4vw, 1.15rem);
+    font-weight: 500;
+    font-style: italic;
+    color: rgba(255,255,255,0.72);
+    margin-top: 18px;
+    max-width: 460px;
+  }
 
-    .contact {
-      font-size: 0.875rem;
-      color: rgba(255,255,255,0.35);
-    }
-    .contact a {
-      color: #14B8A6;
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .contact a:hover { color: #2DD4BF; }
+  .hero-actions{
+    display:flex;
+    align-items:center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 48px;
+  }
 
-    .footer-note {
-      position: fixed;
-      bottom: 20px;
-      font-size: 0.75rem;
-      color: rgba(255,255,255,0.18);
-    }
-  </style>
+  .btn-primary{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding: 14px 28px;
+    border-radius: 11px;
+    background: var(--gray-warm);
+    color: var(--wine);
+    font-weight: 700;
+    font-size: 0.94rem;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  }
+  .btn-primary:hover{ background: var(--gray-warm-hover); transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,0,0,0.38); }
+  .btn-primary:focus-visible, .node:focus-visible{ outline: 2px solid var(--coral); outline-offset: 3px; }
+
+  .contact-inline{ font-size: 0.86rem; color: var(--on-dark-dim2); }
+
+  /* ══════════ RIGHT COLUMN: problem box ══════════ */
+  .right-col{ min-width:0; }
+
+  .scenario-box{
+    display:flex;
+    flex-direction:column;
+    background: linear-gradient(165deg, rgba(15,2,2,0.6), rgba(70,8,8,0.5));
+    border: 1px solid rgba(255,155,150,0.28);
+    border-radius: 20px;
+    padding: 30px 32px 30px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 24px 60px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.05);
+  }
+
+  /* overlapping number nav, sits beside each scenario's title */
+  .scenario-head{ display:flex; align-items:center; gap:16px; margin-bottom: 30px; }
+  .nav-row{ flex:0 0 auto; display:flex; align-items:center; }
+  .node{
+    position: relative;
+    flex: 0 0 auto;
+    width: 42px; height: 42px;
+    border-radius: 50%;
+    display:flex; align-items:center; justify-content:center;
+    font-size: 0.92rem; font-weight:600;
+    color: rgba(255,255,255,0.5);
+    background: rgba(255,255,255,0.1);
+    border: 2px solid var(--maroon-deep);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: -13px;
+  }
+  .node:first-child{ margin-left:0; }
+  .node.active{
+    background: var(--coral);
+    color: var(--maroon-deep);
+    font-weight: 800;
+    transform: scale(1.1);
+    z-index: 2;
+  }
+
+  .scenario-name{
+    font-size: 1.5rem; font-weight:700; color:var(--white); letter-spacing:-0.01em;
+    transition: opacity 0.4s ease;
+  }
+  .scenario-name.fading{ opacity: 0; }
+
+  /* Today / The Gap / Our Solution: these three are static and never fade — */
+  /* only the description text (.v) beside them changes and crossfades in place */
+  .scenario-rows{ display:flex; flex-direction:column; }
+  .row-connector{ width:2px; height:22px; margin-left:43px; background: rgba(255,255,255,0.18); }
+  .srow{ display:flex; align-items:center; gap: 14px; }
+  .srow .k{
+    flex-shrink:0;
+    width: 88px;
+    min-height: 58px;
+    padding: 6px;
+    border-radius: 10px;
+    display:flex; align-items:center; justify-content:center;
+    text-align:center;
+    font-size:0.78rem;
+    font-weight:700;
+    letter-spacing:0.03em;
+    text-transform:uppercase;
+    color: rgba(255,255,255,0.92);
+    line-height:1.25;
+  }
+  .srow.today .k{ background: rgba(255,255,255,0.09); }
+  .srow.gap .k{ background: rgba(255,120,90,0.18); }
+  .srow.fix .k{ background: rgba(60,170,110,0.2); }
+  .srow .v{
+    font-size:1rem; line-height:1.45; color: var(--on-dark-dim); min-height: 2.4em;
+    display:flex; align-items:center;
+    transition: opacity 0.4s ease;
+  }
+  .srow .v.fading{ opacity: 0; }
+  .srow.fix .v{ color: rgba(255,255,255,0.88); }
+
+  /* footer */
+  .foot-note{
+    flex: 0 0 auto;
+    text-align:center;
+    font-size:0.74rem;
+    color: var(--on-dark-dim2);
+    padding-top: 14px;
+  }
+
+  /* ══════════ RESPONSIVE ══════════ */
+  @media (max-width: 900px){
+    .page{ min-height:auto; padding: 28px 24px 28px; }
+    .main-grid{ grid-template-columns: 1fr; gap: 36px; padding: 26px 0 8px; align-items:normal; }
+    .left-col{ text-align:center; align-items:center; }
+    .lead{ margin-left:auto; margin-right:auto; }
+    .hero-actions{ justify-content:center; }
+    h1 .accent{ margin-top:4px; }
+    .scenario-head{ justify-content:center; }
+    .scenario-box{ height:auto; }
+  }
+  @media (max-width: 520px){
+    .srow .k{ width:72px; min-height:50px; font-size:0.68rem; }
+    .srow .v{ font-size:0.92rem; }
+  }
+</style>
 </head>
 <body>
 
-  <div class="wrap">
+  <div class="backdrop">
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="blob b3"></div>
+  </div>
 
-    <div class="brand">KADI <span>OPTICS</span></div>
+  <div class="page">
 
-    <div class="badge">
-      <span>Something big is coming <span class="dot d1">.</span><span class="dot d2">.</span><span class="dot d3">.</span></span>
-      <span class="badge-sub">Our website is on its way</span>
+    <!-- ══════════ MASTHEAD ══════════ -->
+    <div class="masthead">
+      <img class="logo-mark" src="/images/logo_pitch_white.png" alt="KADI Optics"/>
+      <div class="badge"><span class="pulse-dot"></span> Coming Soon &nbsp;·&nbsp; Site Under Construction</div>
     </div>
 
-    <h1><span>Always-On</span> Coagulation Monitoring.<br><span>Without</span> a Drop of Blood.</h1>
+    <!-- ══════════ MAIN ══════════ -->
+    <div class="main-grid">
 
-    <p>We are building an optical platform for continuous, non-invasive coagulation monitoring. From the operating room to the patient's home. Our website is on its way.</p>
+      <div class="left-col">
+        <h1>Real-Time Coagulation Monitoring<span class="accent">No Blood Draw. No Reagent. Ever</span></h1>
+        <p class="lead">Closing the blind spot between when clotting changes and when clinicians find out</p>
 
-    <div class="contact">
-      Interested in learning more? &nbsp;<a href="mailto:kadioptics@gmail.com">Get in touch →</a>
+        <div class="hero-actions">
+          <a class="btn-primary" href="mailto:kadioptics@gmail.com">Get in Touch →</a>
+          <span class="contact-inline">For more information, partnership, and early access</span>
+        </div>
+      </div>
+
+      <div class="right-col">
+        <div class="scenario-box">
+
+          <div class="scenario-head">
+            <div class="nav-row">
+              <div class="node active" data-i="0">1</div>
+              <div class="node" data-i="1">2</div>
+              <div class="node" data-i="2">3</div>
+              <div class="node" data-i="3">4</div>
+            </div>
+            <div class="scenario-name" id="scenario-name">Cardiac OR &amp; Bypass</div>
+          </div>
+
+          <div class="scenario-rows">
+            <div class="srow today"><div class="k">Today</div><div class="v" id="v-today">ACT test, roughly every 30 minutes</div></div>
+            <div class="row-connector"></div>
+            <div class="srow gap"><div class="k">The Gap</div><div class="v" id="v-gap">A 30-minute blind spot; fails under hypothermia</div></div>
+            <div class="row-connector"></div>
+            <div class="srow fix"><div class="k">Our<br>Solution</div><div class="v" id="v-fix">Continuous optical probe in the bypass circuit</div></div>
+          </div>
+
+        </div>
+      </div>
+
     </div>
+
+    <div class="foot-note">© 2026 KADI Optics LLC · Orlando, FL</div>
 
   </div>
 
-  <span class="footer-note">© 2026 KADI Optics LLC · Orlando, FL</span>
+  <script>
+    (function(){
+      // Today / The Gap / Our Solution stay on screen always — only the
+      // name and the three description lines swap and crossfade in place.
+      var DATA = [
+        { name: "Cardiac OR & Bypass",     today: "ACT test, roughly every 30 minutes",              gap: "A 30-minute blind spot; fails under hypothermia",      fix: "Continuous optical probe in the bypass circuit" },
+        { name: "ICU & ECMO",              today: "Anti-Factor Xa, off-site lab, every 1 to 4 hours", gap: "45+ minute turnaround; can't test at the bedside",     fix: "Continuous sensor built into the ECMO circuit" },
+        { name: "Home INR Monitoring",     today: "Finger-prick test strips, checked weekly",         gap: "Daily to weekly gaps; real burden on patients",        fix: "Wrist-worn monitor, continuous and painless" },
+        { name: "Home DOAC Monitoring",    today: "Nothing exists; zero approved home test",          gap: "6 million U.S. patients go unmonitored",               fix: "The first non-invasive DOAC monitor" }
+      ];
+
+      var nodes = Array.prototype.slice.call(document.querySelectorAll('.node'));
+      var nameEl = document.getElementById('scenario-name');
+      var fadeEls = [nameEl, document.getElementById('v-today'), document.getElementById('v-gap'), document.getElementById('v-fix')];
+      var total = DATA.length;
+      var current = 0;
+      var cycleTimer = null;
+      var swapTimer = null;
+      var DURATION = 3900;
+      var FADE_MS = 380;
+      var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      function applyData(i){
+        var d = DATA[i];
+        nameEl.textContent = d.name;
+        fadeEls[1].textContent = d.today;
+        fadeEls[2].textContent = d.gap;
+        fadeEls[3].textContent = d.fix;
+        nodes.forEach(function(n){ n.classList.toggle('active', +n.dataset.i === i); });
+      }
+
+      function show(i){
+        current = (i + total) % total;
+        if (reduceMotion){ applyData(current); return; }
+        clearTimeout(swapTimer);
+        fadeEls.forEach(function(el){ el.classList.add('fading'); });
+        swapTimer = setTimeout(function(){
+          applyData(current);
+          fadeEls.forEach(function(el){ el.classList.remove('fading'); });
+        }, FADE_MS);
+      }
+
+      function start(){
+        if (reduceMotion) return;
+        stop();
+        cycleTimer = setInterval(function(){ show(current + 1); }, DURATION);
+      }
+      function stop(){ if (cycleTimer) { clearInterval(cycleTimer); cycleTimer = null; } }
+
+      nodes.forEach(function(n){
+        n.addEventListener('click', function(){ show(+n.dataset.i); start(); });
+      });
+
+      var box = document.querySelector('.scenario-box');
+      box.addEventListener('mouseenter', stop);
+      box.addEventListener('mouseleave', start);
+
+      applyData(0);
+      start();
+    })();
+  </script>
+
 </body>
 </html>
