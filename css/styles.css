@@ -209,44 +209,36 @@ a { text-decoration: none; color: inherit; }
   gap: 60px;
 }
 
-.hero-badge {
-  display: inline-block;
-  padding: 5px 14px;
-  border-radius: 100px;
-  border: 1px solid rgba(184,33,10,0.45);
-  background: rgba(184,33,10,0.1);
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: var(--teal-glow);
-  letter-spacing: 0.04em;
-  margin-bottom: 24px;
-}
+/* grid items default to min-width:auto, which refuses to shrink below the
+   paragraph's unwrapped width and gets silently clipped by .hero's overflow:hidden
+   on narrow screens; min-width:0 lets the text wrap inside its column instead */
+.hero-text { min-width: 0; }
 
 .hero h1 {
-  font-size: clamp(2.4rem, 4.5vw, 4rem);
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
   font-weight: 700;
-  line-height: 1.1;
+  line-height: 1.15;
   color: var(--white);
-  margin-bottom: 18px;
+  margin-bottom: 16px;
   letter-spacing: -0.02em;
 }
 
 .hero h1 .accent { color: var(--teal-glow); }
 
 .hero-lead {
-  font-size: 1.25rem;
+  font-size: 1.05rem;
   font-weight: 600;
   color: var(--on-dark-dim);
-  margin-bottom: 16px;
+  margin-bottom: 14px;
   letter-spacing: 0.02em;
 }
 
 .hero-body {
-  font-size: 1.0rem;
+  font-size: 0.92rem;
   color: rgba(255,255,255,0.55);
   max-width: 520px;
-  margin-bottom: 36px;
-  line-height: 1.75;
+  margin-bottom: 32px;
+  line-height: 1.7;
 }
 
 .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
@@ -300,20 +292,34 @@ a { text-decoration: none; color: inherit; }
 }
 @keyframes wave-flow { to { stroke-dashoffset: -22; } }
 
-/* RBCs drifting through the circuit */
-.rbc-flow { animation: rbc-drift 4.5s linear infinite; }
+/* RBCs fading in/out as they drift along the vein (position comes from animateMotion in the markup) */
+.rbc-flow { animation: rbc-fade 4.5s linear infinite; }
 .rbc-flow.d2 { animation-delay: -1.1s; }
 .rbc-flow.d3 { animation-delay: -2.3s; }
 .rbc-flow.d4 { animation-delay: -3.4s; }
-@keyframes rbc-drift {
-  0%   { transform: translateX(0);    opacity: 0; }
+@keyframes rbc-fade {
+  0%   { opacity: 0; }
   8%   { opacity: 1; }
   92%  { opacity: 1; }
-  100% { transform: translateX(248px); opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* the probe's light beam and glow spot, breathing gently */
+.light-beam { animation: beam-glow 2.6s ease-in-out infinite; }
+@keyframes beam-glow {
+  0%, 100% { opacity: 0.6; }
+  50%      { opacity: 1; }
+}
+
+/* the readout monitor's live status dot */
+.blink-dot { animation: dot-blink 1.4s ease-in-out infinite; transform-origin: center; }
+@keyframes dot-blink {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.25; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .live-wave, .rbc-flow, .pulse-ring, .pulse-ring-2 { animation: none; }
+  .live-wave, .rbc-flow, .pulse-ring, .pulse-ring-2, .light-beam, .blink-dot { animation: none; }
 }
 
 /* Scroll hint */
