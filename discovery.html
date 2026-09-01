@@ -4,9 +4,6 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>KADI Optics | Customer Discovery</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="/css/internal.css"/>
   <script src="/js/auth.js"></script>
 </head>
@@ -28,136 +25,573 @@
 
     <header class="page-header">
       <div class="page-tag">
-        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="vertical-align:-1px;margin-right:5px"><circle cx="6" cy="6" r="5" fill="#0D9488" opacity=".18"/><circle cx="6" cy="6" r="2.5" fill="#0D9488"/></svg>
-        Internal · UCF ART / I-Corps Program
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="vertical-align:-1px;margin-right:5px"><circle cx="6" cy="6" r="5" fill="#B8210A" opacity=".18"/><circle cx="6" cy="6" r="2.5" fill="#B8210A"/></svg>
+        Internal &middot; UCF ART / I-Corps Program
       </div>
       <h1 class="page-title">Customer Discovery</h1>
-      <p class="page-desc">Tracking all customer interviews, insights, and hypothesis validation from the I-Corps program. Add transcripts to the <code>/transcripts/</code> folder to enable full analysis.</p>
+      <p class="page-desc">59 structured interviews conducted May through August 2026, primarily through NSF/UCF I-Corps. Source: <code>I-CORP/Interviews/UCF I-Corps Cohort Data Collection.xlsx</code>. This flipped the original beachhead assumption from home/DOAC monitoring to cardiac OR and ECMO, and surfaced a durable DOAC home-monitoring opportunity as a longer-term platform.</p>
     </header>
 
-    <!-- ── Summary Stats ── -->
     <div class="stat-grid" style="margin-bottom:48px">
-      <div class="stat-card">
-        <div class="stat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" fill="#0D9488"/></svg></div>
-        <div class="stat-value">0</div>
+      <div class="stat-card stat-card-highlight">
+        <div class="stat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" fill="#B8210A"/></svg></div>
+        <div class="stat-value">59</div>
         <div class="stat-label">Interviews completed</div>
       </div>
       <div class="stat-card">
-        <div class="stat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="#0D9488"/></svg></div>
-        <div class="stat-value">0</div>
+        <div class="stat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="#B8210A"/></svg></div>
+        <div class="stat-value">9</div>
         <div class="stat-label">Customer segments covered</div>
       </div>
       <div class="stat-card">
-        <div class="stat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="#0D9488"/></svg></div>
-        <div class="stat-value">0</div>
+        <div class="stat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="#B8210A"/></svg></div>
+        <div class="stat-value">6</div>
         <div class="stat-label">Hypotheses validated</div>
       </div>
       <div class="stat-card">
-        <div class="stat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" fill="#0D9488"/></svg></div>
-        <div class="stat-value">0</div>
-        <div class="stat-label">Hypotheses invalidated</div>
+        <div class="stat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" fill="#B8210A"/></svg></div>
+        <div class="stat-value">2</div>
+        <div class="stat-label">Hypotheses revised by evidence</div>
       </div>
     </div>
 
-    <!-- ── Hypotheses ── -->
     <section class="section">
       <div class="section-header-row">
         <svg class="section-icon-svg" viewBox="0 0 24 24" fill="none"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z" fill="currentColor"/></svg>
-        <h2 class="section-title-inline">Hypotheses Being Tested</h2>
+        <h2 class="section-title-inline">Hypotheses Tested</h2>
       </div>
-      <p class="section-sub">Core assumptions we are testing through customer interviews. Updated as evidence accumulates.</p>
+      <p class="section-sub">Core assumptions tested through customer interviews, with the specific evidence behind each status.</p>
+      <div class="table-scroll" style="overflow-x:auto">
       <table class="data-table">
         <thead>
-          <tr>
-            <th>#</th>
-            <th>Hypothesis</th>
-            <th>Segment</th>
-            <th>Status</th>
-            <th>Evidence</th>
-          </tr>
+          <tr><th>#</th><th>Hypothesis</th><th>Segment</th><th>Status</th><th>Evidence</th></tr>
         </thead>
         <tbody>
           <tr>
             <td>H1</td>
-            <td>Cardiac surgeons and perfusionists experience significant monitoring gaps during CPB due to intermittent ACT testing</td>
-            <td><span class="tag tag-purple">Cardiac Surgery</span></td>
-            <td><span class="tag tag-yellow">Testing</span></td>
-            <td>—</td>
+            <td>Cardiac surgeons and perfusionists experience real monitoring gaps from intermittent ACT testing</td>
+            <td><span class="tag tag-orange">Cardiac Surgery</span></td>
+            <td><span class="tag tag-green">Validated</span></td>
+            <td>Cardarelli, Toloueitabar, Ravikant, and Thakur independently confirmed ACT's failure modes and the value of continuous data.</td>
           </tr>
           <tr>
             <td>H2</td>
-            <td>ECMO specialists would adopt a continuous coagulation monitor if it eliminated the need for hourly ACT blood draws</td>
-            <td><span class="tag tag-purple">ECMO / ICU</span></td>
-            <td><span class="tag tag-yellow">Testing</span></td>
-            <td>—</td>
+            <td>ECMO specialists would adopt a continuous monitor that eliminates hourly ACT draws</td>
+            <td><span class="tag tag-green">ECMO / ICU</span></td>
+            <td><span class="tag tag-green">Validated</span></td>
+            <td>Cardarelli named ECMO the single highest-priority market; Toloueitabar confirmed value in ECMO/dialysis; Kroh confirmed unmet need in critical/sepsis cases.</td>
           </tr>
           <tr>
             <td>H3</td>
-            <td>DOAC patients on rivaroxaban or apixaban have no reliable home monitoring option and want one</td>
+            <td>DOAC patients have no reliable home monitoring option and want one</td>
             <td><span class="tag tag-blue">Home / DOAC</span></td>
-            <td><span class="tag tag-yellow">Testing</span></td>
-            <td>—</td>
+            <td><span class="tag tag-yellow">Validated, with caveat</span></td>
+            <td>Confirmed zero DOAC home-monitoring option exists, a real opening. But Gioffre (Roche) confirmed the broader home/point-of-care coagulation market is shrinking as warfarin gives way to generic DOACs, so this is a narrow, durable opportunity rather than a broad one.</td>
           </tr>
           <tr>
             <td>H4</td>
-            <td>Cardiac anesthesiologists — not surgeons — are the primary decision-makers for coagulation monitoring devices in the OR</td>
-            <td><span class="tag tag-purple">Cardiac Surgery</span></td>
-            <td><span class="tag tag-yellow">Testing</span></td>
-            <td>—</td>
+            <td>Cardiac anesthesiologists, not surgeons, are the primary decision-makers for OR coagulation devices</td>
+            <td><span class="tag tag-orange">Cardiac Surgery</span></td>
+            <td><span class="tag tag-red">Revised</span></td>
+            <td>Hanna and Mango both independently said operational and product-development leaders, not any clinician, control pricing and purchasing; clinicians drive clinical adoption, not the buying decision.</td>
           </tr>
           <tr>
             <td>H5</td>
-            <td>Hospitals would pay a premium for a device that eliminates per-test reagent costs (vs. TEG/ROTEM model)</td>
-            <td><span class="tag tag-green">Hospital / Admin</span></td>
-            <td><span class="tag tag-yellow">Testing</span></td>
-            <td>—</td>
+            <td>Hospitals would pay a premium for a device that eliminates per-test reagent costs</td>
+            <td><span class="tag tag-purple">Hospital / Admin</span></td>
+            <td><span class="tag tag-yellow">Partially validated</span></td>
+            <td>Cost elimination is repeatedly valued (Castro, Fisher, Bobek, Mullen, Panganiban), but under DRG bundle payment pressure (Mango) hospitals want cost parity or reduction, not a premium.</td>
+          </tr>
+          <tr>
+            <td>H6</td>
+            <td>Workflow and EMR integration matter more to adoption than raw device performance</td>
+            <td><span class="tag tag-purple">Hospital / Admin</span></td>
+            <td><span class="tag tag-green">Validated</span></td>
+            <td>Raised unprompted and independently by Wright, Logue, Khouy, Pierson, Shalev, and Murray, among others; the most repeated theme across all 59 interviews.</td>
+          </tr>
+          <tr>
+            <td>H7</td>
+            <td>The FDA regulatory pathway is the hardest, most underestimated part of commercialization</td>
+            <td><span class="tag tag-purple">Hospital / Admin</span></td>
+            <td><span class="tag tag-green">Validated</span></td>
+            <td>Klang (from direct personal FDA experience), Penoyer, Singh, Ravikant, and Murray all independently flagged this as the critical path.</td>
+          </tr>
+          <tr>
+            <td>H8</td>
+            <td>A clinical champion is the make-or-break factor for landing the first hospital pilot</td>
+            <td><span class="tag tag-orange">Cardiac Surgery</span></td>
+            <td><span class="tag tag-green">Validated</span></td>
+            <td>Mango, Hanna, and Mechanic each independently named securing a physician champion as the single hardest, most important milestone.</td>
           </tr>
         </tbody>
       </table>
+      </div>
     </section>
 
-    <!-- ── Interview Log ── -->
     <section class="section">
       <div class="section-header-row">
         <svg class="section-icon-svg" viewBox="0 0 24 24" fill="none"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z" fill="currentColor"/></svg>
         <h2 class="section-title-inline">Interview Log</h2>
       </div>
-      <p class="section-sub">One row per interview. Add transcript filename once available for full analysis.</p>
+      <p class="section-sub">All 59 interviews, chronological. Full notes for each live in the source spreadsheet; the four most recent (Aug 1) are logged with contact details but notes are still being transcribed.</p>
+      <div class="table-scroll" style="overflow-x:auto">
       <table class="data-table">
         <thead>
-          <tr>
-            <th>#</th>
-            <th>Date</th>
-            <th>Interviewee Role</th>
-            <th>Segment</th>
-            <th>Setting</th>
-            <th>Transcript</th>
-            <th>Key Takeaway</th>
-          </tr>
+          <tr><th>Date</th><th>Name</th><th>Role / Organization</th><th>Segment</th><th>Key Takeaway</th></tr>
         </thead>
         <tbody>
           <tr>
-            <td colspan="7" style="text-align:center; color:#94A3B8; padding:32px 0; font-size:0.85rem;">
-              No interviews logged yet. Add rows here as interviews are completed.
-            </td>
+            <td>2026-05-29</td>
+            <td>Dr. Michael N. Hanna</td>
+            <td>Cardiothoracic Surgery, Orlando Health Heart & Vascular</td>
+            <td><span class="tag tag-orange">Cardiac Surgery</span></td>
+            <td>Already familiar and strongly positive; identified six possible sensing modalities and ranked a fully non-invasive version as the highest-value outcome.</td>
+          </tr>
+          <tr>
+            <td>2026-05-30</td>
+            <td>Dr. Farhan Khawaja</td>
+            <td>Interventional Cardiology, Orlando Health Heart & Vascular</td>
+            <td><span class="tag tag-blue">Interventional Cardiology</span></td>
+            <td>Most enthusiastic interviewee of the series; sees billion-dollar potential in catheter-embedded and IV-line sensing. Now the team's clinical collaborator.</td>
+          </tr>
+          <tr>
+            <td>2026-06-03</td>
+            <td>Robin K. Wright</td>
+            <td>COO, UCF Life Science Incubator, Lake Nona</td>
+            <td><span class="tag tag-purple">Hospital Ops / Innovation</span></td>
+            <td>Device failure during surgery and silent home-monitor drop-off are critical risks; users want one clear answer, not twenty-five metrics.</td>
+          </tr>
+          <tr>
+            <td>2026-06-03</td>
+            <td>Carol Ann Logue</td>
+            <td>Executive Director, Florida Photonics</td>
+            <td><span class="tag tag-yellow">Investor / Advisor</span></td>
+            <td>Workflow compatibility is the single most important adoption factor; confirmed the wearable medical device market is large and growing.</td>
+          </tr>
+          <tr>
+            <td>2026-06-03</td>
+            <td>Darren T. Engle</td>
+            <td>COO, Stratos Jets</td>
+            <td><span class="tag tag-yellow">Investor / Advisor</span></td>
+            <td>Confirmed a transcutaneous design is hardware-feasible from a mechanical-engineering standpoint; offered hardware design resources.</td>
+          </tr>
+          <tr>
+            <td>2026-06-11</td>
+            <td>Dr. Marcelo Cardarelli</td>
+            <td>Pediatric Cardiac Surgeon, Johns Hopkins Children's Center</td>
+            <td><span class="tag tag-orange">Cardiac Surgery</span></td>
+            <td>ACT is often inaccurate and surgeons are &ldquo;always a bit behind reality&rdquo;; specifically flagged ECMO as the highest-priority near-term market.</td>
+          </tr>
+          <tr>
+            <td>2026-06-11</td>
+            <td>Dr. David Braun</td>
+            <td>Interim Medical Director, UCF Health Center</td>
+            <td><span class="tag tag-green">ICU / Critical Care</span></td>
+            <td>INR delays, travel burden, and infrequent insurance-driven testing are major warfarin pain points; enthusiastic about wearable/remote monitoring.</td>
+          </tr>
+          <tr>
+            <td>2026-06-15</td>
+            <td>Habeel Ghazi</td>
+            <td>Founder, HHG Healthcare & Life Sciences Consulting</td>
+            <td><span class="tag tag-yellow">Investor / Advisor</span></td>
+            <td>Workflow adoption is the most critical success factor; challenged the team to prove coagulation changes fast enough to justify continuous monitoring.</td>
+          </tr>
+          <tr>
+            <td>2026-06-17</td>
+            <td>Mounir Khouy</td>
+            <td>Founder & CEO, Venturion.ai</td>
+            <td><span class="tag tag-yellow">Investor / Advisor</span></td>
+            <td>Devices fail when treated as standalone products; KADI must integrate with EMR systems and the broader care ecosystem.</td>
+          </tr>
+          <tr>
+            <td>2026-06-17</td>
+            <td>Aparna Dubey</td>
+            <td>Financial Services Professional</td>
+            <td><span class="tag tag-red">Patient / Consumer</span></td>
+            <td>Adoption depends on ease of use and lifestyle fit; strong preference for non-invasive testing on hygiene grounds; ranked accuracy as the top must-have.</td>
+          </tr>
+          <tr>
+            <td>2026-06-17</td>
+            <td>Albee Lin</td>
+            <td>Sales Manager, Taizhou Chunlai Electrical Co.</td>
+            <td><span class="tag tag-purple">General Business</span></td>
+            <td>Not familiar with coagulation devices specifically; for medical devices generally, cost is probably the most important factor.</td>
+          </tr>
+          <tr>
+            <td>2026-06-17</td>
+            <td>Andrea Xu</td>
+            <td>Business Development Manager, Assure Tech</td>
+            <td><span class="tag tag-purple">General Business</span></td>
+            <td>Not coagulation-specific, but confirmed overall device cost is usually the key factor in adoption and purchasing decisions.</td>
+          </tr>
+          <tr>
+            <td>2026-06-18</td>
+            <td>Steve Nunn</td>
+            <td>CEO, Intista</td>
+            <td><span class="tag tag-yellow">Investor / Advisor</span></td>
+            <td>Material quality control and manufacturing precision are paramount for any device entering the body; doctors are often poor businesspeople, an opening for entrepreneurs.</td>
+          </tr>
+          <tr>
+            <td>2026-06-18</td>
+            <td>William Fisher</td>
+            <td>Founder, WadjetLabs</td>
+            <td><span class="tag tag-blue">Industry / Diagnostics</span></td>
+            <td>Independently built a handheld optical coagulation-cartridge system, confirming the optical approach; cost and lab-independence are the biggest value drivers.</td>
+          </tr>
+          <tr>
+            <td>2026-06-18</td>
+            <td>Ramon Gibson</td>
+            <td>Assistant Manager, Doctors Hospital</td>
+            <td><span class="tag tag-purple">Hospital Ops / Innovation</span></td>
+            <td>Absence of real-time documentation is a critical gap; wants one-button simplicity and recommends pursuing CE Mark alongside FDA.</td>
+          </tr>
+          <tr>
+            <td>2026-06-18</td>
+            <td>Craig A. Pierson</td>
+            <td>Managing Director, LifeTech Capital</td>
+            <td><span class="tag tag-yellow">Investor / Advisor</span></td>
+            <td>A new device should address a significant, broadly-applicable problem, not a niche one with limited clinical adoption.</td>
+          </tr>
+          <tr>
+            <td>2026-06-18</td>
+            <td>Brian Katz</td>
+            <td>CEO, BK Growth Advisory Services</td>
+            <td><span class="tag tag-yellow">Investor / Advisor</span></td>
+            <td>The customer may be the clinician, not the patient, which changes device design and go-to-market; ranked easy workflow and non-invasiveness as top priorities.</td>
+          </tr>
+          <tr>
+            <td>2026-06-18</td>
+            <td>John Bromfield</td>
+            <td>Strategic Advisor, Agile Infoways</td>
+            <td><span class="tag tag-yellow">Investor / Advisor</span></td>
+            <td>Device must show clear need from both physicians and patients and integrate easily into existing clinical workflows.</td>
+          </tr>
+          <tr>
+            <td>2026-06-18</td>
+            <td>Matt Castro, BSN, RN</td>
+            <td>Senior Sales Executive, ARROTEK</td>
+            <td><span class="tag tag-blue">Industry / Diagnostics</span></td>
+            <td>Lower cost is the top priority since financial gatekeepers, not clinicians, drive purchasing; draw delays and sample integrity are key pain points.</td>
+          </tr>
+          <tr>
+            <td>2026-06-18</td>
+            <td>Clive Digby-Jones</td>
+            <td>Founder, Global Wellness Transformation USA</td>
+            <td><span class="tag tag-red">Patient / Consumer</span></td>
+            <td>Speaking from a personal cancer diagnosis; his sole device priority is fewer side effects, technology must not create new problems.</td>
+          </tr>
+          <tr>
+            <td>2026-06-18</td>
+            <td>Karl R. Wolcott</td>
+            <td>VP OEM Program, TriImaging Solutions</td>
+            <td><span class="tag tag-blue">Industry / Diagnostics</span></td>
+            <td>Non-invasiveness is the single most value-creating design improvement he has seen; advised securing a mentor early since the industry runs on relationships.</td>
+          </tr>
+          <tr>
+            <td>2026-06-18</td>
+            <td>Tuna Kavak</td>
+            <td>Sales Executive, MIXTA</td>
+            <td><span class="tag tag-purple">General Business</span></td>
+            <td>Not familiar with coagulation specifically; stressed a clear application and ease of use for any new device.</td>
+          </tr>
+          <tr>
+            <td>2026-06-18</td>
+            <td>Dr. Yaser Toloueitabar</td>
+            <td>Cardiac Surgeon, Fellowship of Congenital Cardiac Surgery</td>
+            <td><span class="tag tag-orange">Cardiac Surgery</span></td>
+            <td>Confirmed ACT fails under antithrombin III deficiency, hemodilution, and hypothermia; strongly validated continuous monitoring for bypass, protamine reversal, and ECMO/dialysis.</td>
+          </tr>
+          <tr>
+            <td>2026-06-18</td>
+            <td>Uri Yudewitz</td>
+            <td>VP Business Development, CH Groups</td>
+            <td><span class="tag tag-yellow">Investor / Advisor</span></td>
+            <td>Argued the healthcare system is too selective; sees a large, underserved market for gentle, universally accessible monitoring.</td>
+          </tr>
+          <tr>
+            <td>2026-06-18</td>
+            <td>Rajiv Singh</td>
+            <td>Founder & CEO, Conciercare</td>
+            <td><span class="tag tag-red">Patient / Consumer</span></td>
+            <td>Discarded a Coumadin home monitor after finger-stick results didn't match lab values; accuracy is the absolute top priority.</td>
+          </tr>
+          <tr>
+            <td>2026-06-18</td>
+            <td>Jacqueline Barberena</td>
+            <td>VP Marketing, DermaSensor</td>
+            <td><span class="tag tag-blue">Industry / Diagnostics</span></td>
+            <td>The shift from reactive to proactive health monitoring is the biggest unmet need; accuracy ranked as the single most important device attribute.</td>
+          </tr>
+          <tr>
+            <td>2026-06-18</td>
+            <td>Jorge Rivera, Ph.D.</td>
+            <td>CEO & Director, AHC Films</td>
+            <td><span class="tag tag-yellow">Investor / Advisor</span></td>
+            <td>Physician burnout and lack of patient education are the biggest systemic challenges; device must be designed for easy use with built-in guidance.</td>
+          </tr>
+          <tr>
+            <td>2026-06-18</td>
+            <td>Boaz Shalev</td>
+            <td>Chief Product Officer / Strategist</td>
+            <td><span class="tag tag-yellow">Investor / Advisor</span></td>
+            <td>Value proposition must be deliverable in under twenty seconds; ranked easy workflow and non-invasiveness as top priorities.</td>
+          </tr>
+          <tr>
+            <td>2026-06-18</td>
+            <td>Mindi Hertzog</td>
+            <td>Trade Promotion, U.S. Dept. of Commerce</td>
+            <td><span class="tag tag-purple">Hospital Ops / Innovation</span></td>
+            <td>Absence of real-time documentation and one-button simplicity are the top two priorities; offered physician and lab network contacts.</td>
+          </tr>
+          <tr>
+            <td>2026-06-18</td>
+            <td>Nicole Miranda</td>
+            <td>Program Manager, Plug and Play Orlando</td>
+            <td><span class="tag tag-yellow">Investor / Advisor</span></td>
+            <td>Easy workflow and low cost are the two most critical adoption attributes; offered accelerator mentorship and investor introductions.</td>
+          </tr>
+          <tr>
+            <td>2026-06-18</td>
+            <td>Dr. Oren Mechanic</td>
+            <td>Healthcare Executive / Network &amp; Distribution Advisor</td>
+            <td><span class="tag tag-purple">Hospital Ops / Innovation</span></td>
+            <td>Finding a clinical champion and fitting the existing care pathway are the hardest adoption challenges; must beat rapid INR testing on outcomes.</td>
+          </tr>
+          <tr>
+            <td>2026-06-18</td>
+            <td>Dr. Matthew Kroh</td>
+            <td>CMO Core Surgical Innovation, Medtronic &amp; Cleveland Clinic</td>
+            <td><span class="tag tag-purple">Hospital Ops / Innovation</span></td>
+            <td>Lack of reimbursement pathways is the biggest barrier to hospital adoption; confirmed unmet need in severe sepsis and surgical resuscitation.</td>
+          </tr>
+          <tr>
+            <td>2026-06-18</td>
+            <td>Matthew Arrasmith</td>
+            <td>Supply Chain &amp; Logistics Intern, Cincinnati VA Medical Center</td>
+            <td><span class="tag tag-purple">Hospital Ops / Innovation</span></td>
+            <td>Device tracking within hospitals is a real operational challenge; ranked accuracy first and lower invasiveness second.</td>
+          </tr>
+          <tr>
+            <td>2026-06-21</td>
+            <td>Chuck Mattera</td>
+            <td>Founder, Avalanche Thinking; former Chair/CEO, Coherent Corp.</td>
+            <td><span class="tag tag-blue">Industry / Diagnostics</span></td>
+            <td>Validated the optical approach as a photonics-industry expert and repeat patient; device must be deployable quickly, not on a ten-year timeline.</td>
+          </tr>
+          <tr>
+            <td>2026-06-23</td>
+            <td>Daleen (Aragon) Penoyer</td>
+            <td>Sr. Director, Research Partnerships, Orlando Health</td>
+            <td><span class="tag tag-purple">Hospital Ops / Innovation</span></td>
+            <td>Coagulation testing is inherently fragmented across anticoagulants; advised mapping the FDA risk classification and predicate-device pathway early.</td>
+          </tr>
+          <tr>
+            <td>2026-06-23</td>
+            <td>Dr. Mai H. Vo</td>
+            <td>ICU Director, Orlando Regional Medical Center</td>
+            <td><span class="tag tag-green">ICU / Critical Care</span></td>
+            <td>Wants continuous, non-invasive monitoring analogous to pulse oximetry, with an instantly interpretable red/green status and optional drill-down.</td>
+          </tr>
+          <tr>
+            <td>2026-06-23</td>
+            <td>Kelli Murray</td>
+            <td>Investor, Startup Coach</td>
+            <td><span class="tag tag-yellow">Investor / Advisor</span></td>
+            <td>Interoperability and reliable alerting solve the most problems across devices; advised securing a strong FDA advisor early and learning how GPOs like Premier work.</td>
+          </tr>
+          <tr>
+            <td>2026-06-23</td>
+            <td>Darby O'Connell, RN</td>
+            <td>Operating Room, Orlando Health</td>
+            <td><span class="tag tag-purple">Hospital Ops / Innovation</span></td>
+            <td>Device count, physical footprint, and power demand are the biggest day-to-day OR challenges; ranked ease of use and smaller size as top priorities.</td>
+          </tr>
+          <tr>
+            <td>2026-06-24</td>
+            <td>Dr. Anand Thakur</td>
+            <td>Anesthesiology &amp; Interventional Pain Medicine</td>
+            <td><span class="tag tag-orange">Cardiac Anesthesia</span></td>
+            <td>Confirmed a genuine unmet need for rapid pre-procedure profiling; wants a glucometer-equivalent for PT/INR/PTT at the point of care.</td>
+          </tr>
+          <tr>
+            <td>2026-06-24</td>
+            <td>Brendan Bobek</td>
+            <td>Senior Territory Manager, Bristol Myers Squibb</td>
+            <td><span class="tag tag-blue">Industry / Diagnostics</span></td>
+            <td>Consumable cost must be comparable to current technology or adoption becomes very difficult; hospitals resist changing established workflows.</td>
+          </tr>
+          <tr>
+            <td>2026-06-24</td>
+            <td>Dr. Kapil Kashyap</td>
+            <td>Anesthesiologist, Citizens Medical Center</td>
+            <td><span class="tag tag-orange">Cardiac Anesthesia</span></td>
+            <td>Precise heparin/protamine management is genuinely difficult; envisions every patient with a wrist sensor for automatic Bluetooth monitoring.</td>
+          </tr>
+          <tr>
+            <td>2026-06-26</td>
+            <td>Dr. Neeju Ravikant</td>
+            <td>Pediatric Cardiac Anesthesiologist, Henry Ford Health</td>
+            <td><span class="tag tag-orange">Cardiac Anesthesia</span></td>
+            <td>The 45-minute coagulation wait is a genuine intraoperative burden; advised prioritizing FDA clearance and a well-validated proof of concept backed by publications.</td>
+          </tr>
+          <tr>
+            <td>2026-07-01</td>
+            <td>Steve Kitchen</td>
+            <td>Scientific Director, UK NEQAS for Blood Coagulation</td>
+            <td><span class="tag tag-blue">Industry / Diagnostics</span></td>
+            <td>Flagged bedside diagnostics for undiagnosed bleeding disorders and urgent point-of-care emergency testing as major global unmet needs.</td>
+          </tr>
+          <tr>
+            <td>2026-07-01</td>
+            <td>Gregg Klang</td>
+            <td>Founder, Cern Corporation</td>
+            <td><span class="tag tag-blue">Industry / Diagnostics</span></td>
+            <td>The FDA pathway is the hardest, most time-consuming part of commercialization; device parameters are deeply interconnected and can't be optimized in isolation.</td>
+          </tr>
+          <tr>
+            <td>2026-07-06</td>
+            <td>Tony Mango</td>
+            <td>Sr. Manager, Product Development &amp; Commercialization, Orlando Health</td>
+            <td><span class="tag tag-purple">Hospital Ops / Innovation</span></td>
+            <td>Compared KADI to the shift from fingerstick to continuous glucose monitoring in diabetes; landing the first pilot site is the single hardest milestone.</td>
+          </tr>
+          <tr>
+            <td>2026-07-06</td>
+            <td>Riham Hanna</td>
+            <td>AVP, Product Development &amp; Strategic Innovations, Orlando Health</td>
+            <td><span class="tag tag-purple">Hospital Ops / Innovation</span></td>
+            <td>Operational decision-makers, not physicians, are the right people to answer pricing questions; recommended securing a high-profile physician champion early.</td>
+          </tr>
+          <tr>
+            <td>2026-07-16</td>
+            <td>Nicholas Gendron</td>
+            <td>Research Fellow, Hematology, Boston Children's Hospital</td>
+            <td><span class="tag tag-green">ICU / Critical Care</span></td>
+            <td>Thrombosis and hemostasis research fellow; detailed interview notes pending transcription.</td>
+          </tr>
+          <tr>
+            <td>2026-07-28</td>
+            <td>Paul Panganiban</td>
+            <td>Medical Laboratory Scientist, community hospital lab (Santa Cruz, CA)</td>
+            <td><span class="tag tag-blue">Industry / Diagnostics</span></td>
+            <td>Hemolyzed, icteric, and lipemic samples all interfere with coagulation testing; ranked turnaround speed and batch throughput as the top new-device priorities.</td>
+          </tr>
+          <tr>
+            <td>2026-07-29</td>
+            <td>Anis H. Khimani, Ph.D.</td>
+            <td>Senior Strategy Leader, Revvity (formerly PerkinElmer Life Sciences)</td>
+            <td><span class="tag tag-blue">Industry / Diagnostics</span></td>
+            <td>A new device's readings must reconcile with the established gold standard or it won't scale; head-to-head validation is a precondition, not an afterthought.</td>
+          </tr>
+          <tr>
+            <td>2026-07-29</td>
+            <td>Shirlene Leongson</td>
+            <td>Technical Sales Representative, Helena Laboratories</td>
+            <td><span class="tag tag-blue">Industry / Diagnostics</span></td>
+            <td>The ACT/coagulation testing market is dominated by entrenched incumbents (Siemens, Beckman); the improvement must be obvious enough to justify switching risk.</td>
+          </tr>
+          <tr>
+            <td>2026-07-30</td>
+            <td>Danielle Gioffre</td>
+            <td>National Account Manager, Point of Care, Roche Diagnostics</td>
+            <td><span class="tag tag-blue">Industry / Diagnostics</span></td>
+            <td>The home/point-of-care anticoagulation market is declining as warfarin gives way to generic DOACs; Roche holds roughly 85% share of today's point-of-care segment.</td>
+          </tr>
+          <tr>
+            <td>2026-07-30</td>
+            <td>Annette Abello (Batres)</td>
+            <td>Hemostasis / Coagulation Diagnostics, Werfen</td>
+            <td><span class="tag tag-blue">Industry / Diagnostics</span></td>
+            <td>The coagulation device market itself is large and growing, but hospitals satisfied with a working incumbent device are reluctant to switch.</td>
+          </tr>
+          <tr>
+            <td>2026-07-31</td>
+            <td>Usama Sadiq, MD, FACC</td>
+            <td>Interventional Cardiologist, Deborah Heart and Lung Center</td>
+            <td><span class="tag tag-blue">Interventional Cardiology</span></td>
+            <td>Interview completed; detailed notes pending transcription.</td>
+          </tr>
+          <tr>
+            <td>2026-07-31</td>
+            <td>Haidar Hajeh, MD</td>
+            <td>Cardiovascular Fellow, UC Riverside</td>
+            <td><span class="tag tag-orange">Cardiac Surgery</span></td>
+            <td>Interview completed; detailed notes pending transcription.</td>
+          </tr>
+          <tr>
+            <td>2026-08-01</td>
+            <td>Daryn Bauermeister</td>
+            <td>Abbott Vascular / Coronary</td>
+            <td><span class="tag tag-blue">Industry / Diagnostics</span></td>
+            <td>Interview completed; detailed notes pending transcription.</td>
+          </tr>
+          <tr>
+            <td>2026-08-01</td>
+            <td>Dr. Alexander Warner</td>
+            <td>WellStar MCG, Augusta</td>
+            <td><span class="tag tag-orange">Cardiac Surgery</span></td>
+            <td>Interview completed; detailed notes pending transcription.</td>
+          </tr>
+          <tr>
+            <td>2026-08-01</td>
+            <td>Dr. James M. McCabe</td>
+            <td>Interventional Cardiology, Beth Israel Deaconess Medical Center</td>
+            <td><span class="tag tag-blue">Interventional Cardiology</span></td>
+            <td>Interview completed; detailed notes pending transcription.</td>
+          </tr>
+          <tr>
+            <td>2026-08-01</td>
+            <td>Dr. Paul Mahoney</td>
+            <td>Interventional Cardiology, Banner University Medicine</td>
+            <td><span class="tag tag-blue">Interventional Cardiology</span></td>
+            <td>Interview completed; detailed notes pending transcription.</td>
+          </tr>
+          <tr>
+            <td>2026-08-07</td>
+            <td>Molly Mullen</td>
+            <td>Coagulation Specialist, Siemens Healthineers</td>
+            <td><span class="tag tag-blue">Industry / Diagnostics</span></td>
+            <td>Access and compliance are the biggest patient-side gaps; sample integrity is the biggest lab-quality driver; advised building reimbursement/coding knowledge early.</td>
           </tr>
         </tbody>
       </table>
+      </div>
     </section>
 
-    <!-- ── Key Themes ── -->
     <section class="section">
       <div class="section-header-row">
         <svg class="section-icon-svg" viewBox="0 0 24 24" fill="none"><path d="M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 17.08z" fill="currentColor"/></svg>
         <h2 class="section-title-inline">Emerging Themes</h2>
       </div>
-      <p class="section-sub">Patterns and recurring insights from interviews. Updated as more data is collected.</p>
-      <div class="placeholder-box">
-        No themes identified yet — themes will emerge once interviews are logged and transcripts are analyzed.
+      <p class="section-sub">Patterns that surfaced independently across many interviewees rather than being asked for directly.</p>
+      <div class="two-col">
+        <div class="info-card">
+          <div class="info-card-title">Workflow and EMR integration beat raw performance</div>
+          <p>Named as the top adoption factor far more often than accuracy or speed. Any device that adds friction to existing clinical workflows struggles regardless of how well it performs.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-title">Operational leaders, not physicians, control pricing</div>
+          <p>Confirmed independently by two separate Orlando Health product-development leaders: clinicians drive clinical adoption and championing, but budget-holders decide whether a hospital actually buys.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-title">The FDA pathway is the critical path, not a formality</div>
+          <p>Raised unprompted by regulatory-experienced interviewees as the single hardest part of commercialization, more difficult and slower than founders typically expect going in.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-title">A physician champion determines the first pilot</div>
+          <p>Multiple hospital-operations interviewees called landing that first champion, and the first pilot site behind them, the hardest milestone in the entire commercialization path.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-title">Displacing an incumbent is harder than the opportunity looks</div>
+          <p>Diagnostics-industry contacts (Siemens, Roche, Werfen, Helena) consistently warned that hospitals satisfied with a working device resist switching risk, even for a meaningfully better one.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-title">The DOAC home-monitoring opportunity is real but narrow</div>
+          <p>Confirmed zero existing DOAC home test, a genuine blue ocean, but the broader warfarin-era home-monitoring market is structurally shrinking, so the addressable population is smaller than the initial premise assumed.</p>
+        </div>
       </div>
     </section>
 
-    <!-- ── Segments Reached ── -->
     <section class="section">
       <div class="section-header-row">
         <svg class="section-icon-svg" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z" fill="currentColor"/></svg>
@@ -165,47 +599,40 @@
       </div>
       <div class="two-col">
         <div class="info-card">
-          <div class="info-card-title">Cardiac Anesthesiologists <span class="tag tag-yellow" style="margin-left:6px">0 interviews</span></div>
-          <p>Primary OR decision-maker for coagulation monitoring. Top priority segment.</p>
+          <div class="info-card-title">Industry: Diagnostics, Device &amp; Lab Science <span class="tag tag-yellow" style="margin-left:6px">15 interviews</span></div>
+          <p>Sales, strategy, and lab-science contacts across Siemens, Roche, Werfen, Revvity, and other coagulation/diagnostics companies. Deepest read yet on incumbent positioning, sample-integrity requirements, and the DOAC-driven home-testing decline.</p>
         </div>
         <div class="info-card">
-          <div class="info-card-title">Cardiac Surgeons <span class="tag tag-yellow" style="margin-left:6px">0 interviews</span></div>
-          <p>End-user in the cardiac surgery beachhead. Champions for hospital purchasing.</p>
+          <div class="info-card-title">Investors, Advisors &amp; Strategic Consultants <span class="tag tag-yellow" style="margin-left:6px">13 interviews</span></div>
+          <p>MedTech strategists, accelerator staff, and investors. Consistent, independent focus on workflow integration, cost, and a fast path to market.</p>
         </div>
         <div class="info-card">
-          <div class="info-card-title">Perfusionists <span class="tag tag-yellow" style="margin-left:6px">0 interviews</span></div>
-          <p>Operate the CPB machine. Direct users of the KADI probe in the OR.</p>
+          <div class="info-card-title">Hospital Product Development &amp; Operations Leaders <span class="tag tag-yellow" style="margin-left:6px">10 interviews</span></div>
+          <p>Orlando Health innovation, product development, and OR/nursing staff. The clearest source yet on who actually controls hospital purchasing decisions.</p>
         </div>
         <div class="info-card">
-          <div class="info-card-title">Intensivists / ICU Physicians <span class="tag tag-yellow" style="margin-left:6px">0 interviews</span></div>
-          <p>Manage post-surgical ECMO and anticoagulation therapy patients.</p>
+          <div class="info-card-title">Cardiac Surgeons <span class="tag tag-yellow" style="margin-left:6px">5 interviews</span></div>
+          <p>The original target beachhead. Independently confirmed ACT's real-world failure modes and named ECMO as the next platform.</p>
         </div>
         <div class="info-card">
-          <div class="info-card-title">DOAC Patients <span class="tag tag-yellow" style="margin-left:6px">0 interviews</span></div>
-          <p>~6M Americans on direct oral anticoagulants with no home monitoring option.</p>
+          <div class="info-card-title">Interventional &amp; General Cardiology <span class="tag tag-yellow" style="margin-left:6px">4 interviews</span></div>
+          <p>Includes Dr. Khawaja, now the team's clinical collaborator, leading the adult cardiac surgery and cath-lab IRB expansion.</p>
         </div>
         <div class="info-card">
-          <div class="info-card-title">Hematologists <span class="tag tag-yellow" style="margin-left:6px">0 interviews</span></div>
-          <p>Manage complex coagulopathies and anticoagulation regimens.</p>
+          <div class="info-card-title">ICU, Critical Care &amp; Hematology <span class="tag tag-yellow" style="margin-left:6px">3 interviews</span></div>
+          <p>Confirmed demand for a pulse-oximetry-style continuous status readout in critical care, plus an early hematology research contact.</p>
         </div>
-      </div>
-    </section>
-
-    <!-- ── How to Add Transcripts ── -->
-    <section class="section">
-      <div class="section-header-row">
-        <svg class="section-icon-svg" viewBox="0 0 24 24" fill="none"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11zM8 15h8v2H8zm0-4h8v2H8z" fill="currentColor"/></svg>
-        <h2 class="section-title-inline">How to Add Interview Transcripts</h2>
-      </div>
-      <div class="gap-card" style="max-width:640px">
-        <div class="gap-title">Workflow for transcript analysis</div>
-        <div class="gap-impact">
-          1. Record your interview (phone, Zoom, etc.)<br/>
-          2. Transcribe using <strong>Otter.ai</strong> (free) or <strong>Whisper</strong> (local, free)<br/>
-          3. Save the transcript as a <code>.txt</code> file named by interviewee role and date<br/>
-          &nbsp;&nbsp;&nbsp;e.g. <code>cardiac_anesthesiologist_2026-06-17.txt</code><br/>
-          4. Place it in <code>C:\Users\ma884162\Claude\Kadi-Optics-Website\transcripts\</code><br/>
-          5. Share it in the chat — full analysis: themes, pain points, hypothesis evidence, direct quotes
+        <div class="info-card">
+          <div class="info-card-title">Cardiac Anesthesiologists <span class="tag tag-yellow" style="margin-left:6px">3 interviews</span></div>
+          <p>Confirmed the 45-minute coagulation wait as a genuine intraoperative burden and independently requested point-of-care PT/INR/PTT.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-title">Patient / Consumer Perspective <span class="tag tag-yellow" style="margin-left:6px">3 interviews</span></div>
+          <p>Direct accounts of finger-stick unreliability and non-invasive preference from people managing anticoagulation personally.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-title">General Business (outside healthcare) <span class="tag tag-yellow" style="margin-left:6px">3 interviews</span></div>
+          <p>Standard I-Corps &ldquo;get out of the building&rdquo; contacts with limited coagulation-specific insight, kept for completeness.</p>
         </div>
       </div>
     </section>
@@ -213,7 +640,7 @@
   </main>
 
   <footer class="int-footer">
-    © 2026 KADI Optics LLC · Internal Use Only · Not for Distribution
+    &copy; 2026 KADI Optics LLC &middot; Internal Use Only &middot; Not for Distribution
   </footer>
 
 </body>

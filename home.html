@@ -3,13 +3,9 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="KADI Optics — Continuous, non-invasive blood coagulation monitoring. From the operating room to the patient's home."/>
+  <meta name="description" content="KADI Optics: Continuous, non-invasive blood coagulation monitoring. From the operating room to the patient's home."/>
   <title>KADI Optics | Real-time Noninvasive Blood Coagulation Monitoring</title>
-  <link rel="icon" href="/favicon.png" type="image/png"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="css/styles.css"/>
+  <link rel="icon" href="/favicon.png" type="image/png"/>  <link rel="stylesheet" href="css/styles.css"/>
   <link rel="stylesheet" href="css/animation.css"/>
 </head>
 <body>
@@ -18,7 +14,7 @@
 <nav class="site-nav" id="site-nav">
   <div class="nav-inner">
     <a href="#" class="logo">
-      <img src="/images/logo_new.png" class="logo-img" alt="KADI Optics"/>
+      <img src="/images/logo_pitch_white.png" class="logo-img" alt="KADI Optics"/>
     </a>
 
     <div id="nav-menu">
@@ -60,26 +56,37 @@
     </div>
 
     <div class="hero-visual">
-      <svg class="prism-svg" viewBox="0 0 320 240" xmlns="http://www.w3.org/2000/svg">
-        <ellipse cx="160" cy="140" rx="110" ry="90" fill="none" stroke="rgba(13,148,136,0.06)" stroke-width="30"/>
-        <polygon points="160,18 20,222 300,222" fill="rgba(13,148,136,0.07)" stroke="rgba(13,148,136,0.45)" stroke-width="1.8"/>
-        <line x1="160" y1="18"  x2="20"  y2="222" stroke="rgba(255,255,255,0.1)"  stroke-width="1"/>
-        <line x1="160" y1="18"  x2="300" y2="222" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
-        <line class="beam-in" x1="0" y1="120" x2="90" y2="120" stroke="rgba(255,255,255,0.85)" stroke-width="2.2" stroke-linecap="round"/>
-        <circle cx="90" cy="120" r="4" fill="rgba(0,0,0,0)" stroke="rgba(13,148,136,0.6)" stroke-width="1.5"/>
-        <line x1="90" y1="120" x2="230" y2="120" stroke="rgba(255,255,255,0.05)" stroke-width="1.5" stroke-dasharray="4,4"/>
-        <line class="beam-out d1" x1="230" y1="120" x2="320" y2="66"  stroke="#60A5FA" stroke-width="2"   stroke-linecap="round"/>
-        <line class="beam-out d2" x1="230" y1="120" x2="320" y2="92"  stroke="#34D399" stroke-width="2"   stroke-linecap="round"/>
-        <line class="beam-out d3" x1="230" y1="120" x2="320" y2="120" stroke="#2DD4BF" stroke-width="2.8" stroke-linecap="round"/>
-        <line class="beam-out d4" x1="230" y1="120" x2="320" y2="149" stroke="#FCD34D" stroke-width="2"   stroke-linecap="round"/>
-        <line class="beam-out d5" x1="230" y1="120" x2="320" y2="176" stroke="#F87171" stroke-width="2"   stroke-linecap="round"/>
-        <circle cx="320" cy="66"  r="5" fill="#60A5FA" opacity="0.7"><animate attributeName="opacity" values="0.7;0.2;0.7" dur="2.2s" repeatCount="indefinite"/></circle>
-        <circle cx="320" cy="92"  r="5" fill="#34D399" opacity="0.7"><animate attributeName="opacity" values="0.7;0.2;0.7" dur="2.6s" repeatCount="indefinite"/></circle>
-        <circle cx="320" cy="120" r="6" fill="#2DD4BF" opacity="0.9"><animate attributeName="opacity" values="0.9;0.3;0.9" dur="1.8s" repeatCount="indefinite"/></circle>
-        <circle cx="320" cy="149" r="5" fill="#FCD34D" opacity="0.7"><animate attributeName="opacity" values="0.7;0.2;0.7" dur="3.0s" repeatCount="indefinite"/></circle>
-        <circle cx="320" cy="176" r="5" fill="#F87171" opacity="0.7"><animate attributeName="opacity" values="0.7;0.2;0.7" dur="2.4s" repeatCount="indefinite"/></circle>
-        <circle class="pulse-ring"   cx="160" cy="130" r="28" fill="none" stroke="rgba(13,148,136,0.35)" stroke-width="1.5"/>
-        <circle class="pulse-ring-2" cx="160" cy="130" r="28" fill="none" stroke="rgba(13,148,136,0.18)" stroke-width="1"/>
+      <svg class="sensor-svg" viewBox="0 0 320 240" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="160" cy="150" rx="140" ry="95" fill="none" stroke="rgba(184,33,10,0.06)" stroke-width="30"/>
+
+        <!-- the bypass / ECMO circuit the probe clips onto -->
+        <rect x="20" y="146" width="280" height="30" rx="15" fill="rgba(255,155,150,0.07)" stroke="rgba(255,155,150,0.3)" stroke-width="1.5"/>
+        <rect x="8"  y="138" width="18" height="46" rx="5" fill="#6B1414" stroke="rgba(255,155,150,0.35)" stroke-width="1.5"/>
+        <rect x="294" y="138" width="18" height="46" rx="5" fill="#6B1414" stroke="rgba(255,155,150,0.35)" stroke-width="1.5"/>
+
+        <!-- RBCs, the natural label-free probes LC-DLS reads -->
+        <clipPath id="tube-clip"><rect x="26" y="147" width="268" height="28" rx="14"/></clipPath>
+        <g clip-path="url(#tube-clip)">
+          <circle class="rbc-flow d1" cx="34" cy="161" r="4.5" fill="#FF6B5B"/>
+          <circle class="rbc-flow d2" cx="34" cy="155" r="4.5" fill="#FF6B5B"/>
+          <circle class="rbc-flow d3" cx="34" cy="167" r="4.5" fill="#FF6B5B"/>
+          <circle class="rbc-flow d4" cx="34" cy="161" r="4.5" fill="#FF6B5B"/>
+        </g>
+
+        <!-- fiber-optic probe clipped onto the circuit -->
+        <line x1="160" y1="124" x2="160" y2="148" stroke="#FF9B96" stroke-width="3"/>
+        <circle class="pulse-ring"   cx="160" cy="100" r="24" fill="none" stroke="rgba(255,155,150,0.35)" stroke-width="1.5"/>
+        <circle class="pulse-ring-2" cx="160" cy="100" r="24" fill="none" stroke="rgba(255,155,150,0.18)" stroke-width="1"/>
+        <circle cx="160" cy="100" r="22" fill="#6B1414" stroke="#FF9B96" stroke-width="2.5"/>
+        <polyline points="148,100 154,100 157,92 161,108 164,100 172,100" fill="none" stroke="#FF9B96" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+        <!-- continuous real-time readout, the "always on" signal -->
+        <line x1="160" y1="88" x2="184" y2="58" stroke="rgba(255,155,150,0.45)" stroke-width="1.5" stroke-dasharray="3,3"/>
+        <polyline class="live-wave" points="184,58 198,58 203,38 210,74 217,50 224,58 238,58 243,42 249,68 255,58 312,58"
+                  fill="none" stroke="#FF9B96" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+        <text x="160" y="204" text-anchor="middle" font-size="10" fill="rgba(255,255,255,0.4)" letter-spacing="0.05em">FIBER-OPTIC PROBE, IN-LINE</text>
+        <text x="248" y="30" text-anchor="middle" font-size="10" fill="rgba(255,155,150,0.7)" letter-spacing="0.05em">CONTINUOUS SIGNAL</text>
       </svg>
     </div>
   </div>
@@ -127,7 +134,7 @@
   <div class="container">
     <div class="section-label">The Problem and Our Solution</div>
     <h2 class="section-title">Today's coagulation monitoring has dangerous gaps.</h2>
-    <p class="section-sub">Patients undergoing cardiac surgery or managing anticoagulation at home are left without live data for critical minutes — or entirely. KADI Optics closes that gap.</p>
+    <p class="section-sub">Patients undergoing cardiac surgery or managing anticoagulation at home are left without live data for critical minutes, or entirely. KADI Optics closes that gap.</p>
 
     <div class="panels-wrapper">
 
@@ -137,7 +144,7 @@
 
         <!-- LEFT CLINICAL -->
         <div class="half">
-          <div class="scene-label">Clinical Setting — Cardiac Surgery / CPB</div>
+          <div class="scene-label">Clinical Setting: Cardiac Surgery / CPB</div>
           <div class="stage">
             <svg id="svg-lc" viewBox="0 0 460 175" xmlns="http://www.w3.org/2000/svg">
               <rect width="460" height="175" fill="#EBF2FA"/>
@@ -252,7 +259,7 @@
 
         <!-- LEFT HOME -->
         <div class="half">
-          <div class="scene-label">Home Setting — Anticoagulated Patient</div>
+          <div class="scene-label">Home Setting: Anticoagulated Patient</div>
           <div class="stage">
             <svg id="svg-lh" viewBox="0 0 460 175" xmlns="http://www.w3.org/2000/svg">
               <rect width="460" height="175" fill="#FFF8F0"/>
@@ -342,7 +349,7 @@
 
         <!-- RIGHT CLINICAL -->
         <div class="half">
-          <div class="scene-label">Clinical Setting — Real-Time CPB Monitoring</div>
+          <div class="scene-label">Clinical Setting: Real-Time CPB Monitoring</div>
           <div class="stage">
             <svg id="svg-rc" viewBox="0 0 460 175" xmlns="http://www.w3.org/2000/svg">
               <rect width="460" height="175" fill="#EFFEFB"/>
@@ -383,20 +390,20 @@
               <polygon points="134,92 128,96 134,100" fill="#3B82F6"/>
               <polygon points="134,106 140,110 134,114" fill="#E63946"/>
               <!-- KADI probe on venous line -->
-              <circle cx="178" cy="90" r="9" fill="#ECFDF5" stroke="#0D9488" stroke-width="2.5"/>
-              <line x1="178" y1="83" x2="178" y2="97" stroke="#0D9488" stroke-width="2"/>
-              <line x1="171" y1="90" x2="185" y2="90" stroke="#0D9488" stroke-width="2"/>
-              <line id="rc-fiber" class="anim" x1="178" y1="99" x2="178" y2="124" stroke="#0D9488" stroke-width="2.5" stroke-linecap="round"/>
+              <circle cx="178" cy="90" r="9" fill="#ECFDF5" stroke="#B8210A" stroke-width="2.5"/>
+              <line x1="178" y1="83" x2="178" y2="97" stroke="#B8210A" stroke-width="2"/>
+              <line x1="171" y1="90" x2="185" y2="90" stroke="#B8210A" stroke-width="2"/>
+              <line id="rc-fiber" class="anim" x1="178" y1="99" x2="178" y2="124" stroke="#B8210A" stroke-width="2.5" stroke-linecap="round"/>
               <g id="rc-kadi-unit" class="anim">
-                <rect x="154" y="124" width="48" height="26" rx="7" fill="#0F172A" stroke="#0D9488" stroke-width="2"/>
+                <rect x="154" y="124" width="48" height="26" rx="7" fill="#0F172A" stroke="#B8210A" stroke-width="2"/>
                 <rect x="158" y="128" width="30" height="16" rx="4" fill="#071525" stroke="#164E63" stroke-width="1"/>
                 <line x1="158" y1="136" x2="166" y2="136" stroke="#7DD3FC" stroke-width="1.5" stroke-linecap="round"/>
-                <polygon points="166,128 166,144 178,136" fill="none" stroke="#0D9488" stroke-width="1.5"/>
+                <polygon points="166,128 166,144 178,136" fill="none" stroke="#B8210A" stroke-width="1.5"/>
                 <line x1="178" y1="136" x2="187" y2="130" stroke="#60A5FA" stroke-width="1.5" stroke-linecap="round"/>
                 <line x1="178" y1="136" x2="187" y2="134" stroke="#34D399" stroke-width="1.5" stroke-linecap="round"/>
                 <line x1="178" y1="136" x2="187" y2="138" stroke="#FCD34D" stroke-width="1.5" stroke-linecap="round"/>
                 <line x1="178" y1="136" x2="187" y2="142" stroke="#F87171" stroke-width="1.5" stroke-linecap="round"/>
-                <circle id="rc-led" class="anim" cx="195" cy="136" r="4" fill="#0D9488"/>
+                <circle id="rc-led" class="anim" cx="195" cy="136" r="4" fill="#B8210A"/>
                 <text x="178" y="156" text-anchor="middle" font-size="5.5" fill="#64748B" font-weight="700">KADI OPTICS</text>
               </g>
               <path id="rc-data-cable" class="anim" d="M202,136 Q260,132 315,76" fill="none" stroke="#475569" stroke-width="1.8" stroke-dasharray="200" stroke-dashoffset="200" stroke-linecap="round"/>
@@ -442,7 +449,7 @@
               <text x="288" y="145" text-anchor="middle" font-size="5" fill="#3B82F6">HEAT EXCHANGER</text>
               <text x="269" y="157" text-anchor="middle" font-size="6.5" fill="#1D4ED8" font-weight="800">CPB Machine</text>
               <!-- Monitor -->
-              <rect x="318" y="24"  width="100" height="80" rx="8" fill="#1E293B" stroke="#0D9488" stroke-width="2.5"/>
+              <rect x="318" y="24"  width="100" height="80" rx="8" fill="#1E293B" stroke="#B8210A" stroke-width="2.5"/>
               <rect x="322" y="28"  width="92"  height="68" rx="6" fill="#0F172A"/>
               <rect x="362" y="104" width="6"   height="22" fill="#334155"/>
               <rect x="350" y="124" width="30"  height="6"  rx="3" fill="#334155"/>
@@ -451,7 +458,7 @@
               <text x="342" y="38" font-size="7.5" fill="#4ADE80" font-weight="700">LIVE</text>
               <text x="395" y="38" font-size="6.5" fill="#475569">00:00</text>
               <text x="368" y="52" text-anchor="middle" font-size="6" fill="#64748B">Coagulation Index</text>
-              <polyline id="rc-wave" class="anim" points="324,72 328,72 332,58 336,86 340,72 344,72 348,62 352,82 356,72 360,72 364,65 368,79 372,72 376,72 380,66 384,78 388,72 392,72 396,68 400,76 404,72 408,72" fill="none" stroke="#0D9488" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              <polyline id="rc-wave" class="anim" points="324,72 328,72 332,58 336,86 340,72 344,72 348,62 352,82 356,72 360,72 364,65 368,79 372,72 376,72 380,66 384,78 388,72 392,72 396,68 400,76 404,72 408,72" fill="none" stroke="#B8210A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
               <text x="368" y="98" text-anchor="middle" font-size="8" fill="#34D399" font-weight="800">ACT: 412 s</text>
               <g transform="translate(420,150)">
                 <circle cx="0" cy="-70" r="12" fill="#FDE8D8" stroke="#C8956C" stroke-width="1.5"/>
@@ -473,7 +480,7 @@
 
         <!-- RIGHT HOME -->
         <div class="half">
-          <div class="scene-label">Home Setting — DOAC / Warfarin Patient</div>
+          <div class="scene-label">Home Setting: DOAC / Warfarin Patient</div>
           <div class="stage">
             <svg id="svg-rh" viewBox="0 0 460 175" xmlns="http://www.w3.org/2000/svg">
               <rect width="460" height="175" fill="#F0FFF9"/>
@@ -511,17 +518,17 @@
               </g>
               <ellipse cx="148" cy="120" rx="12" ry="8" fill="#F5CBA7" stroke="#C8956C" stroke-width="1.2"/>
               <g id="rh-device" class="anim">
-                <rect x="135" y="115" width="26" height="10" rx="8" fill="#0D9488" stroke="#0D9488" stroke-width="1"/>
-                <rect x="138" y="111" width="20" height="18" rx="5" fill="#0F172A" stroke="#0D9488" stroke-width="2.5"/>
+                <rect x="135" y="115" width="26" height="10" rx="8" fill="#B8210A" stroke="#B8210A" stroke-width="1"/>
+                <rect x="138" y="111" width="20" height="18" rx="5" fill="#0F172A" stroke="#B8210A" stroke-width="2.5"/>
                 <rect x="140" y="113" width="16" height="14" rx="3" fill="#071525"/>
-                <polyline id="rh-wrist-wave" class="anim" points="141,120 143,117 145,123 147,119 149,120 151,120 153,118 155,122" fill="none" stroke="#0D9488" stroke-width="1.4" stroke-linecap="round"/>
+                <polyline id="rh-wrist-wave" class="anim" points="141,120 143,117 145,123 147,119 149,120 151,120 153,118 155,122" fill="none" stroke="#B8210A" stroke-width="1.4" stroke-linecap="round"/>
                 <circle cx="148" cy="126" r="2.5" fill="#22C55E"><animate attributeName="opacity" values="1;0.15;1" dur="0.8s" repeatCount="indefinite"/></circle>
-                <rect x="158" y="117" width="3" height="6" rx="1" fill="#0D9488"/>
+                <rect x="158" y="117" width="3" height="6" rx="1" fill="#B8210A"/>
               </g>
               <g transform="translate(148,112)">
-                <path class="rh-arc anim" d="M-14,-10 Q0,-26 14,-10"  stroke="#0D9488" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-                <path class="rh-arc anim" d="M-22,-18 Q0,-40 22,-18"  stroke="#0D9488" stroke-width="2"   fill="none" stroke-linecap="round" opacity="0.7"/>
-                <path class="rh-arc anim" d="M-30,-26 Q0,-54 30,-26"  stroke="#0D9488" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.4"/>
+                <path class="rh-arc anim" d="M-14,-10 Q0,-26 14,-10"  stroke="#B8210A" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                <path class="rh-arc anim" d="M-22,-18 Q0,-40 22,-18"  stroke="#B8210A" stroke-width="2"   fill="none" stroke-linecap="round" opacity="0.7"/>
+                <path class="rh-arc anim" d="M-30,-26 Q0,-54 30,-26"  stroke="#B8210A" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.4"/>
               </g>
               <rect x="175" y="116" width="62" height="8" rx="3" fill="#92400E" stroke="#78350F" stroke-width="1.5"/>
               <rect x="184" y="124" width="8"  height="26" rx="3" fill="#7C2D12"/>
@@ -532,7 +539,7 @@
               <path d="M197,96 Q199,90 197,84" fill="none" stroke="#CBD5E1" stroke-width="1.5" stroke-linecap="round"/>
               <path d="M204,97 Q206,91 204,85" fill="none" stroke="#CBD5E1" stroke-width="1.5" stroke-linecap="round"/>
               <g id="rh-phone" class="anim">
-                <rect x="248" y="46"  width="72"  height="120" rx="12" fill="#1E293B" stroke="#0D9488" stroke-width="2.5"/>
+                <rect x="248" y="46"  width="72"  height="120" rx="12" fill="#1E293B" stroke="#B8210A" stroke-width="2.5"/>
                 <rect x="252" y="58"  width="64"  height="98"  rx="7"  fill="#0F172A"/>
                 <rect x="274" y="48"  width="16"  height="6"   rx="3"  fill="#0F172A"/>
                 <rect x="276" y="162" width="12"  height="3"   rx="1"  fill="#334155"/>
@@ -542,7 +549,7 @@
                 <text x="306" y="69" font-size="6" fill="#475569">24/7</text>
                 <text x="284" y="84" text-anchor="middle" font-size="6" fill="#64748B">Coagulation Monitor</text>
                 <rect x="254" y="88" width="60"  height="36"  rx="3" fill="#071525" stroke="#0F4C2A" stroke-width="1"/>
-                <polyline id="rh-phone-wave" class="anim" points="256,106 259,106 262,96 265,116 268,106 271,106 274,99 277,113 280,106 283,106 286,101 289,111 292,106 295,106 298,103 301,109 304,106 307,106 310,104 313,108" fill="none" stroke="#0D9488" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <polyline id="rh-phone-wave" class="anim" points="256,106 259,106 262,96 265,116 268,106 271,106 274,99 277,113 280,106 283,106 286,101 289,111 292,106 295,106 298,103 301,109 304,106 307,106 310,104 313,108" fill="none" stroke="#B8210A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
                 <text x="256" y="96"  font-size="5" fill="#0F4C2A">High</text>
                 <text x="256" y="122" font-size="5" fill="#0F4C2A">Low</text>
                 <rect x="254" y="128" width="60" height="16" rx="4" fill="#064E3B"/>
@@ -608,7 +615,7 @@
           </svg>
         </div>
         <h4>Rapid Responsiveness</h4>
-        <p>Detects changes in coagulation state within seconds to minutes — far faster than any lab-based method.</p>
+        <p>Detects changes in coagulation state within seconds to minutes, far faster than any lab-based method.</p>
       </div>
 
       <div class="benefit-card">
@@ -640,7 +647,7 @@
           </svg>
         </div>
         <h4>Cost Efficiency</h4>
-        <p>Eliminates consumables entirely — no test strips, no reagent kits — lowering per-patient and hospital costs significantly.</p>
+        <p>Eliminates consumables entirely: no test strips, no reagent kits, lowering per-patient and hospital costs significantly.</p>
       </div>
 
       <div class="benefit-card">
@@ -690,22 +697,22 @@
   <div class="container">
     <div class="section-label">Where It Matters</div>
     <h2 class="section-title">Two Markets. One Platform.</h2>
-    <p class="section-sub">KADI Optics addresses two distinct but urgent unmet needs — with the same core optical sensing platform adapted for each setting.</p>
+    <p class="section-sub">KADI Optics addresses two distinct but urgent unmet needs, both served by the same core optical sensing platform adapted for each setting.</p>
 
     <div class="apps-grid">
       <div class="app-card clinical">
         <div class="app-card-header">
           <div class="app-card-icon">🏥</div>
           <div>
-            <h3>Clinical — Cardiac Surgery &amp; ECMO</h3>
+            <h3>Clinical: Cardiac Surgery &amp; ECMO</h3>
             <span>Hospital / Perioperative Setting</span>
           </div>
         </div>
         <div class="app-card-body">
-          <p>During CPB and ECMO, patients receive high-dose heparin. Coagulation must be monitored continuously — but current tests (ACT, TEG) require blood samples and leave monitoring blind spots of 10–15 minutes. KADI places a fiber probe directly on the circuit for continuous live data.</p>
+          <p>During CPB and ECMO, patients receive high-dose heparin. Coagulation must be monitored continuously, but current tests (ACT, TEG) require blood samples and leave monitoring blind spots of 10–15 minutes. KADI places a fiber probe directly on the circuit for continuous live data.</p>
           <ul class="app-bullets">
             <li>Eliminates monitoring gaps during cardiac surgery</li>
-            <li>ECMO-compatible — designed for long-duration monitoring</li>
+            <li>ECMO-compatible, designed for long-duration monitoring</li>
             <li>Directly informs heparin dosing in real time</li>
             <li>Cardiac anesthesiologists and perfusionists as primary users</li>
           </ul>
@@ -716,14 +723,14 @@
         <div class="app-card-header">
           <div class="app-card-icon">🏠</div>
           <div>
-            <h3>Home — DOAC &amp; Warfarin Patients</h3>
+            <h3>Home: DOAC &amp; Warfarin Patients</h3>
             <span>Remote Patient Monitoring</span>
           </div>
         </div>
         <div class="app-card-body">
-          <p>Over 6 million Americans take anticoagulants daily. Warfarin patients require frequent INR testing — painful and time-consuming. DOAC patients have <em>no home monitoring option at all</em>. The KADI wrist device would be the first continuous, non-invasive coagulation monitor for home use.</p>
+          <p>Over 6 million Americans take anticoagulants daily. Warfarin patients require frequent INR testing, painful and time-consuming. DOAC patients have <em>no home monitoring option at all</em>. The KADI wrist device would be the first continuous, non-invasive coagulation monitor for home use.</p>
           <ul class="app-bullets">
-            <li>First DOAC home monitor — a unique, unmet capability</li>
+            <li>First DOAC home monitor, a unique, unmet capability</li>
             <li>Replaces daily or weekly finger-stick blood tests</li>
             <li>Streams live data to smartphone for patient and physician</li>
             <li>RPM reimbursement eligible (CPT 99454 / 99457)</li>
@@ -743,7 +750,7 @@
         <div class="research-badge">College of Optics and Photonics · Orlando, FL</div>
         <h2>Built on Decades of<br>Rigorous Photonics Research</h2>
         <p>KADI Optics is built on an optical technology developed at the University of Central Florida at the College of Optics and Photonics (CREOL), one of the world's leading academic centers for photonics and optical sciences research.</p>
-        <p>The founding team brings decades of combined expertise in optical sensing, photon-matter interaction, and biomedical measurement — translating rigorous academic research into a clinical platform.</p>
+        <p>The founding team brings decades of combined expertise in optical sensing, photon-matter interaction, and biomedical measurement, translating rigorous academic research into a clinical platform.</p>
         <div class="research-highlights">
           <div class="rh-item">
             <div class="rh-dot"></div>
@@ -799,7 +806,7 @@
       </div>
       <div class="team-card">
         <!-- TODO(Mahdi): swap in a real headshot at /images/team/Farhan_Khawaja.jpg and replace this placeholder with a standard <img class="team-photo"> tag -->
-        <div class="team-photo" style="display:flex;align-items:center;justify-content:center;background:#0D9488;color:#fff;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.3rem;">FK</div>
+        <div class="team-photo" style="display:flex;align-items:center;justify-content:center;background:#B8210A;color:#fff;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','SF Pro Text','Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-weight:700;font-size:1.3rem;">FK</div>
         <h4>Dr. Farhan Khawaja, MD</h4>
         <div class="team-role">Clinical Collaborator · Orlando Health Heart &amp; Vascular Institute</div>
         <p class="team-bio">Fellowship-trained interventional cardiologist (Mayo Clinic, Columbia University Medical Center). Fellow, American College of Cardiology &amp; Society for Cardiovascular Angiography and Interventions. Leading expanded clinical validation of the KADI platform into adult cardiac surgery and the cath lab.</p>
@@ -833,9 +840,9 @@
     <div class="footer-main">
       <div class="footer-brand">
         <a href="#" class="logo" style="margin-bottom:16px;display:inline-flex;">
-          <img src="/images/logo_new.png" class="logo-img logo-img-footer" alt="KADI Optics"/>
+          <img src="/images/logo_pitch_white.png" class="logo-img logo-img-footer" alt="KADI Optics"/>
         </a>
-        <p>Developing continuous, non-invasive blood coagulation monitoring — from the operating room to the patient's home.</p>
+        <p>Developing continuous, non-invasive blood coagulation monitoring, from the operating room to the patient's home.</p>
         <p style="margin-top:10px; color:rgba(255,255,255,0.3);">Orlando, Florida · KADI Optics LLC</p>
       </div>
 

@@ -251,9 +251,9 @@
   animation: device-glow 8s linear infinite;
 }
 @keyframes device-glow {
-  0%   { opacity: 0; filter: drop-shadow(0 0 0px #0D9488); }
-  10%  { opacity: 1; filter: drop-shadow(0 0 8px #0D9488); }
-  55%  { filter: drop-shadow(0 0 14px #0D9488); }
+  0%   { opacity: 0; filter: drop-shadow(0 0 0px #B8210A); }
+  10%  { opacity: 1; filter: drop-shadow(0 0 8px #B8210A); }
+  55%  { filter: drop-shadow(0 0 14px #B8210A); }
   90%  { opacity: 1; }
   100% { opacity: 0; }
 }

@@ -2,8 +2,8 @@
 html, body { height: 100%; }
 
 body {
-  font-family: 'Inter', system-ui, sans-serif;
-  background: #07111F;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background: #2B0303;
   color: #fff;
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
@@ -18,18 +18,18 @@ body {
   align-items: center;
   gap: 20px;
   padding: 12px 40px;
-  background: rgba(7,17,31,0.94);
+  background: rgba(43,3,3,0.94);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255,255,255,0.07);
 }
 
 .brand-box {
-  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   color: #fff;
-  background: #0A6B62;
+  background: #43050A;
   padding: 7px 12px;
   border-radius: 7px;
   white-space: nowrap;
@@ -55,11 +55,11 @@ body {
   white-space: nowrap;
 }
 .int-link:hover { color: #fff; background: rgba(255,255,255,0.06); }
-.int-link.active { color: #2DD4BF; background: rgba(13,148,136,0.12); }
+.int-link.active { color: #FF9B96; background: rgba(184,33,10,0.12); }
 
 .logout-btn {
   margin-left: auto;
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   font-size: 0.8rem;
   font-weight: 500;
   color: rgba(255,255,255,0.3);
@@ -90,11 +90,11 @@ body {
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #0D9488;
+  color: #B8210A;
   margin-bottom: 10px;
 }
 .page-title {
-  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   font-size: 2rem;
   font-weight: 700;
   color: #fff;
@@ -122,10 +122,10 @@ body {
   padding: 22px 24px;
 }
 .stat-value {
-  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   font-size: 1.85rem;
   font-weight: 700;
-  color: #2DD4BF;
+  color: #FF9B96;
   line-height: 1;
   margin-bottom: 6px;
 }
@@ -138,7 +138,7 @@ body {
 /* ── Sections ── */
 .section { margin-bottom: 52px; }
 .section-title {
-  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   font-size: 1.05rem;
   font-weight: 600;
   color: #fff;
@@ -184,10 +184,11 @@ body {
   white-space: nowrap;
 }
 .tag-red    { background: rgba(239,68,68,0.14);   color: #F87171; }
-.tag-green  { background: rgba(13,148,136,0.14);  color: #2DD4BF; }
+.tag-green  { background: rgba(34,197,94,0.14);   color: #4ADE80; }
 .tag-yellow { background: rgba(234,179,8,0.14);   color: #FCD34D; }
 .tag-blue   { background: rgba(99,102,241,0.14);  color: #A5B4FC; }
 .tag-purple { background: rgba(168,85,247,0.14);  color: #D8B4FE; }
+.tag-orange { background: rgba(184,33,10,0.16);   color: #FF9B96; }
 
 /* ── Placeholder ── */
 .placeholder-box {
@@ -215,7 +216,7 @@ body {
   padding: 20px 22px;
 }
 .info-card-title {
-  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   font-size: 0.9rem;
   font-weight: 600;
   color: #fff;
@@ -255,14 +256,14 @@ body.light-theme .int-nav {
   border-bottom: 1px solid #E2E8F0;
   box-shadow: 0 1px 4px rgba(0,0,0,0.06);
 }
-body.light-theme .brand-box { background: #0A6B62; color: #fff; }
+body.light-theme .brand-box { background: #43050A; color: #fff; }
 body.light-theme .int-link { color: #64748B; }
 body.light-theme .int-link:hover { color: #0F172A; background: #F1F5F9; }
-body.light-theme .int-link.active { color: #0D9488; background: rgba(13,148,136,0.09); }
+body.light-theme .int-link.active { color: #B8210A; background: rgba(184,33,10,0.09); }
 body.light-theme .logout-btn { color: #94A3B8; border-color: #E2E8F0; }
 body.light-theme .logout-btn:hover { color: #EF4444; border-color: rgba(239,68,68,0.3); }
 body.light-theme .page-header { border-bottom-color: #E2E8F0; }
-body.light-theme .page-tag { color: #0D9488; }
+body.light-theme .page-tag { color: #B8210A; }
 body.light-theme .page-title { color: #0F172A; }
 body.light-theme .page-desc { color: #64748B; }
 body.light-theme .stat-card {
@@ -270,7 +271,7 @@ body.light-theme .stat-card {
   border-color: #E2E8F0;
   box-shadow: 0 1px 4px rgba(0,0,0,0.05);
 }
-body.light-theme .stat-card-highlight { border-color: rgba(13,148,136,0.3); background: rgba(13,148,136,0.04); }
+body.light-theme .stat-card-highlight { border-color: rgba(184,33,10,0.3); background: rgba(184,33,10,0.04); }
 body.light-theme .stat-label { color: #64748B; }
 body.light-theme .highlight-zero { color: #0F172A; }
 body.light-theme .section { margin-bottom: 60px; }
@@ -284,10 +285,11 @@ body.light-theme .info-card p { color: #64748B; }
 body.light-theme .int-footer { border-top-color: #E2E8F0; color: #94A3B8; background: transparent; }
 body.light-theme .placeholder-box { border-color: #E2E8F0; color: #94A3B8; background: #fff; }
 body.light-theme .tag-red    { background: rgba(239,68,68,0.08);   color: #DC2626; }
-body.light-theme .tag-green  { background: rgba(13,148,136,0.10);  color: #0D7B73; }
+body.light-theme .tag-green  { background: rgba(22,163,74,0.10);   color: #15803D; }
 body.light-theme .tag-yellow { background: rgba(234,179,8,0.10);   color: #B45309; }
 body.light-theme .tag-blue   { background: rgba(99,102,241,0.10);  color: #4338CA; }
 body.light-theme .tag-purple { background: rgba(168,85,247,0.10);  color: #7C3AED; }
+body.light-theme .tag-orange { background: rgba(184,33,10,0.10);   color: #C22D0E; }
 
 /* ── Stat card icon ── */
 .stat-icon { margin-bottom: 10px; }
@@ -305,10 +307,10 @@ body.light-theme .tag-purple { background: rgba(168,85,247,0.10);  color: #7C3AE
 body:not(.light-theme) .section-header-row { border-bottom-color: rgba(255,255,255,0.06); }
 .section-icon-svg {
   width: 20px; height: 20px; flex-shrink: 0;
-  color: #0D9488;
+  color: #B8210A;
 }
 .section-title-inline {
-  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   font-size: 1.05rem;
   font-weight: 600;
   color: #0F172A;
@@ -329,8 +331,8 @@ body:not(.light-theme) .section-sub { color: rgba(255,255,255,0.42); }
   display: flex;
   align-items: flex-start;
   gap: 16px;
-  background: rgba(13,148,136,0.08);
-  border: 1px solid rgba(13,148,136,0.2);
+  background: rgba(184,33,10,0.08);
+  border: 1px solid rgba(184,33,10,0.2);
   border-radius: 12px;
   padding: 20px 24px;
   margin-bottom: 52px;
@@ -338,10 +340,10 @@ body:not(.light-theme) .section-sub { color: rgba(255,255,255,0.42); }
 .opp-icon { flex-shrink: 0; padding-top: 2px; }
 .opp-text {
   font-size: 0.9rem;
-  color: #0F4A45;
+  color: #4A0D05;
   line-height: 1.65;
 }
-.opp-text strong { color: #0A6B62; }
+.opp-text strong { color: #43050A; }
 
 /* ── Chart trio ── */
 .chart-trio {
@@ -369,7 +371,7 @@ body:not(.light-theme) .section-sub { color: rgba(255,255,255,0.42); }
   margin-bottom: 10px;
 }
 .chart-market-label {
-  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   font-size: 0.82rem;
   font-weight: 600;
   color: #0F172A;
@@ -377,8 +379,8 @@ body:not(.light-theme) .section-sub { color: rgba(255,255,255,0.42); }
 .chart-cagr {
   font-size: 0.72rem;
   font-weight: 600;
-  color: #0D9488;
-  background: rgba(13,148,136,0.1);
+  color: #B8210A;
+  background: rgba(184,33,10,0.1);
   padding: 2px 8px;
   border-radius: 20px;
 }
@@ -389,7 +391,7 @@ body:not(.light-theme) .section-sub { color: rgba(255,255,255,0.42); }
   margin-bottom: 12px;
 }
 .chart-start, .chart-end {
-  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   font-size: 0.85rem;
   font-weight: 700;
   color: #0F172A;
@@ -445,7 +447,7 @@ body:not(.light-theme) .section-sub { color: rgba(255,255,255,0.42); }
 .dv-poc    { background: linear-gradient(135deg, #FFF7ED, #FFFBEB); }
 .dv-lab    { background: linear-gradient(135deg, #FAF5FF, #F5F3FF); }
 .company-name {
-  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   font-size: 1rem;
   font-weight: 700;
   color: #0F172A;
@@ -488,18 +490,18 @@ body:not(.light-theme) .section-sub { color: rgba(255,255,255,0.42); }
   display: flex;
   align-items: flex-start;
   gap: 14px;
-  background: rgba(13,148,136,0.06);
-  border: 1px solid rgba(13,148,136,0.18);
+  background: rgba(184,33,10,0.06);
+  border: 1px solid rgba(184,33,10,0.18);
   border-radius: 12px;
   padding: 18px 22px;
 }
 .kadi-callout-icon { flex-shrink: 0; padding-top: 2px; }
 .kadi-callout-text {
   font-size: 0.875rem;
-  color: #134E4A;
+  color: #5C0F06;
   line-height: 1.65;
 }
-.kadi-callout-text strong { color: #0A6B62; }
+.kadi-callout-text strong { color: #43050A; }
 
 /* ── Method cards ── */
 .method-grid {
@@ -520,16 +522,16 @@ body:not(.light-theme) .section-sub { color: rgba(255,255,255,0.42); }
   box-shadow: 0 1px 3px rgba(0,0,0,0.04);
 }
 .method-card-kadi {
-  border-color: #0D9488;
-  background: linear-gradient(135deg, rgba(13,148,136,0.04), rgba(45,212,191,0.04));
-  box-shadow: 0 0 0 2px rgba(13,148,136,0.15), 0 2px 8px rgba(13,148,136,0.1);
+  border-color: #B8210A;
+  background: linear-gradient(135deg, rgba(184,33,10,0.04), rgba(255,155,150,0.04));
+  box-shadow: 0 0 0 2px rgba(184,33,10,0.15), 0 2px 8px rgba(184,33,10,0.1);
 }
 .method-kadi-badge {
   font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   color: #fff;
-  background: #0D9488;
+  background: #B8210A;
   padding: 2px 8px;
   border-radius: 4px;
   display: inline-block;
@@ -537,7 +539,7 @@ body:not(.light-theme) .section-sub { color: rgba(255,255,255,0.42); }
   margin-bottom: 2px;
 }
 .method-name {
-  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   font-size: 0.9rem;
   font-weight: 700;
   color: #0F172A;
@@ -548,7 +550,7 @@ body:not(.light-theme) .section-sub { color: rgba(255,255,255,0.42); }
   font-weight: 400;
   color: #94A3B8;
   display: block;
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   margin-top: 1px;
 }
 .method-row {
@@ -580,7 +582,7 @@ body:not(.light-theme) .section-sub { color: rgba(255,255,255,0.42); }
   gap: 3px;
 }
 .ind-bad  { background: rgba(239,68,68,0.08);  color: #DC2626; }
-.ind-good { background: rgba(13,148,136,0.10); color: #0D7B73; }
+.ind-good { background: rgba(184,33,10,0.10); color: #C22D0E; }
 .method-limit {
   font-size: 0.76rem;
   color: #64748B;
@@ -590,8 +592,8 @@ body:not(.light-theme) .section-sub { color: rgba(255,255,255,0.42); }
   padding-top: 8px;
 }
 .method-kadi-advantage {
-  color: #0A6B62;
-  border-top-color: rgba(13,148,136,0.15);
+  color: #43050A;
+  border-top-color: rgba(184,33,10,0.15);
   font-weight: 500;
 }
 
@@ -610,15 +612,15 @@ body:not(.light-theme) .section-sub { color: rgba(255,255,255,0.42); }
   box-shadow: 0 1px 4px rgba(0,0,0,0.04);
 }
 .gap-number {
-  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.1em;
-  color: #0D9488;
+  color: #B8210A;
   margin-bottom: 8px;
 }
 .gap-title {
-  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   font-size: 0.92rem;
   font-weight: 700;
   color: #0F172A;
@@ -634,13 +636,13 @@ body:not(.light-theme) .section-sub { color: rgba(255,255,255,0.42); }
 .gap-impact strong { color: #475569; }
 .gap-solution {
   font-size: 0.8rem;
-  color: #0A6B62;
+  color: #43050A;
   font-weight: 500;
   line-height: 1.5;
   display: flex;
   align-items: flex-start;
   gap: 6px;
-  border-top: 1px solid rgba(13,148,136,0.12);
+  border-top: 1px solid rgba(184,33,10,0.12);
   padding-top: 10px;
 }
 .gap-solution svg { flex-shrink: 0; margin-top: 2px; }
